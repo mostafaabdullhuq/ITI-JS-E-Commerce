@@ -1,0 +1,6 @@
+@import url("./style.css");
+
+.shopping-cart h1 {
+    color: var(--ltn__secondary-color-3);
+    font-family: var(--ltn-font-family);
+}
