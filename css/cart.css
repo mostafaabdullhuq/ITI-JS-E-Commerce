@@ -1,0 +1,5 @@
+@import url("./style.css");
+
+.shopping-cart {
+    color: var(--ltn__heading-color);
+}
