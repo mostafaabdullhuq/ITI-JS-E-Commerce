@@ -27,6 +27,7 @@ li{
 .icon:hover,.icon1:hover{
     color: var( --ltn__secondary-color);
 }
-.nav-active .nav-link:active{
-    border-bottom: 1px solid black ;
+.second-nav{
+    background-color: var(--white-6);
+
 }
