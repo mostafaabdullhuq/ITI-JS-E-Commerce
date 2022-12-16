@@ -1,5 +1,11 @@
 @import url('./style.css');
 
+ul{
+    display: inline;
+    padding: 0;
+}
+a:link {text-decoration:none}
+a:hover {text-decoration:underline}
 
 
 
