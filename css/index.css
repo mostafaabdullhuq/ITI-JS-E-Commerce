@@ -4,3 +4,15 @@
 
 
 /* put css code here for index page */
+
+/* nav style */
+/* icons hover */
+.icon1{
+    color: var(--ltn__primary-color-2);
+}
+.icon:hover,.icon1:hover{
+    color: var( --ltn__secondary-color);
+}
+.nav-active .nav-link:active{
+    border-bottom: 1px solid black ;
+}
