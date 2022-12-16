@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+i {
+    cursor: pointer;
+}
+
 /* variables used accross all pages */
 :root {
     --ltn__primary-color: #071c1f;
