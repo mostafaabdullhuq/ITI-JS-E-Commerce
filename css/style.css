@@ -1,9 +1,11 @@
+/* reset css default settings */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* variables used accross all pages */
 :root {
     --ltn__primary-color: #071c1f;
     --ltn__primary-color-2: #041113;
@@ -85,4 +87,9 @@
     --wechat: #7bb32e;
     --youtube: #cb2027;
     --email: #f89a1e;
+}
+
+/* class adds border to element for testing purposes */
+.bor {
+    border: 1px solid crimson !important;
 }
