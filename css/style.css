@@ -13,8 +13,7 @@
     --ltn__secondary-color-3: #fb412a;
     --ltn__heading-color: #071c1f;
     --ltn__paragraph-color: #071c1f;
-    --ltn__heading-font: Futura, sans-serif;
-    --ltn__body-font: Poppins, sans-serif;
+    --ltn-font-family: "Roboto", sans-serif;
     --ltn__color-1: #8cb2b2;
     --ltn__color-2: #acd2d8;
     --ltn__color-3: #a3bcc0;
