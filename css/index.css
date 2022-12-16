@@ -1,7 +1,21 @@
 @import url('./style.css');
-
-
-
+footer{
+    background-color: var(--white-6);
+}
+ul{
+    display: inline;
+    padding: 1;
+}
+a:link {text-decoration:none}
+a:hover {text-decoration:underline}
+hr {
+    align-content : center;
+    margin-left : auto;
+    margin-right : auto;
+    }
+li{
+  color: brown;
+}
 
 /* put css code here for index page */
 

@@ -1,6 +1,25 @@
 @import url("./style.css");
 
+body {
+    color: var(--ltn__paragraph-color);
+    font-family: var(--ltn-font-family);
+}
+
 .shopping-cart h1 {
     color: var(--ltn__secondary-color-3);
-    font-family: var(--ltn-font-family);
+}
+
+.prod-info .image-container {
+    /* height: 250px !important; */
+    /* min-height: 150px !important; */
+    max-height: 250px;
+    /* width: 250px !important;
+    min-width: 250px !important; */
+    /* max-width: 250px !important; */
+    overflow: hidden;
+}
+.prod-info .prod-title {
+    /* font-size: 1.5rem; */
+    font-weight: 600;
+    /* color: var(--ltn__secondary-color-3); */
 }
