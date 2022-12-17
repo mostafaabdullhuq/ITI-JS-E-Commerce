@@ -170,3 +170,12 @@ li{
 .btn-form:hover{
     border: 1px solid black;
 }
+/* mid-nav */
+.mid-nav{
+    background-color: var(--nude);
+}
+@media(max-width: 767px){
+    .mid-small p{
+        border-bottom: 1px solid rgb(246, 241, 241);
+    }
+}
