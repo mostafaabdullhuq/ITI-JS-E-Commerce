@@ -11,6 +11,7 @@
         <!-- include fontawesome css file from node modules -->
         <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css" />
         <!-- include css files -->
+        <link rel="stylesheet" href="./node_modules/@splidejs/splide/dist/css/splide.min.css">
         <link rel="stylesheet" href="./css/style.css" />
         <link rel="stylesheet" href="./css/index.css">
         <link rel="stylesheet" href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
@@ -166,6 +167,16 @@
     </div>
  </div>
 
+ <!-- aaaa thing  -->
+ <section class="splide" aria-label="Splide Basic HTML Example">
+    <div class="splide__track">
+          <ul class="splide__list">
+              <li class="splide__slide">Slide 01</li>
+              <li class="splide__slide">Slide 02</li>
+              <li class="splide__slide">Slide 03</li>
+          </ul>
+    </div>
+  </section>
 <!-- form (H)-->
 <div class="container-fluid d-flex justify-content-center mt-3 mb-3" id="contact">
     <div class= "row">
@@ -235,5 +246,10 @@
         <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <!-- include javascript files -->
         <script src="./js/script.js"></script>
+        <!-- splide -->
+        <script src="./node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
+        <script>
+            new Splide( '.splide' ).mount();
+          </script>
     </body>
 </html>

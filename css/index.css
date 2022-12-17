@@ -1,6 +1,5 @@
 @import url('./style.css');
-
-
+@import '@splidejs/splide/css';
 /* slider */
 .home .carousel-item{
 	min-height: 100vh;
