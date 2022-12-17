@@ -180,14 +180,14 @@
 .mid-nav{
     background-color: var(--nude);
 }
-@media(max-width: 990px){
+@media(max-width: 770px){
     .mid-small{
         border-bottom: 1px solid rgb(246, 241, 241);
     }
-<<<<<<< HEAD
     .mid-nav{
-=======
-}
+      text-align: center;
+}}
+
 /* footer */
 footer{
     background-color: var(--white-6);
@@ -208,7 +208,6 @@ li{
 }
 @media(max-width: 767px){
     .foot{
->>>>>>> 4f9632cde86c6a14a2439f7a239ff11b28d3c04a
         text-align: center;
     }
 }
