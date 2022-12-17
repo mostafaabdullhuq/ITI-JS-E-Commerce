@@ -1,32 +1,9 @@
 @import url('./style.css');
 
-/* footer */
-footer{
-    background-color: var(--white-6);
-}
-ul{
-    display: inline;
-    padding: 1;
-}
-a:link {text-decoration:none}
-a:hover {text-decoration:underline}
-hr {
-    align-content : center;
-    margin-left : auto;
-    margin-right : auto;
-    }
-li{
-  color: brown;
-}
-@media(max-width: 767px){
-    .foot{
-        text-align: center;
-    }
-}
 
 /* slider */
 .home .carousel-item{
-	min-height: 80vh;
+	min-height: 100vh;
 	background-position: center;
 	background-size: cover;
 	position: relative;
@@ -44,7 +21,7 @@ li{
 }
 .home .carousel-item .container{
 	position: absolute;
-	left: 50%;
+	left: 20%;
 	top:50%;
 	transform: translate(-50%,-50%);
 	text-align: center;
@@ -104,7 +81,7 @@ li{
 
 .home .carousel-indicators li{
 	height: 70px;
-	width: 70px; 
+	width: 70px;
 	margin:0 5px;
 	border-radius: 50%;
 	background-position: center;
@@ -117,14 +94,39 @@ li{
 	transform: scale(1.2);
 }
 
-/* .home .carousel-control-next{
+.home .carousel-control-next, 
+.home .carousel-control-prev{
+	height: 60px;
+	width: 60px;
+	opacity: 1;
+	z-index: 3;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	transition: all 0.3s ease;
+}
+.home .carousel-control-next:hover, 
+.home .carousel-control-prev:hover{
+   box-shadow: 0 0 10px #ffffff;
+}
+.home .carousel-control-next img, 
+.home .carousel-control-prev img{
+   width: 30px;
+}
+.home .carousel-control-next{
 	right: -90px;
 }
 .home .carousel-control-prev{
 	left: -90px;
-} */
-
-/*responsive*/
+} 
+.btn1{
+	margin-top: 60px;
+	margin-left: 60px;
+	font-size: 26px;
+	transform: translate(-50%);
+	transition: all s ease;
+	background-color: rgb(232, 227, 227);
+}
 @media(max-width: 767px){
   .home .carousel-control-next, 
   .home .carousel-control-prev{
@@ -183,7 +185,31 @@ li{
     .mid-small{
         border-bottom: 1px solid rgb(246, 241, 241);
     }
+<<<<<<< HEAD
     .mid-nav{
+=======
+}
+/* footer */
+footer{
+    background-color: var(--white-6);
+}
+ul{
+    display: inline;
+    padding: 1;
+}
+a:link {text-decoration:none}
+a:hover {text-decoration:underline}
+hr {
+    align-content : center;
+    margin-left : auto;
+    margin-right : auto;
+    }
+li{
+  color: brown;
+}
+@media(max-width: 767px){
+    .foot{
+>>>>>>> 4f9632cde86c6a14a2439f7a239ff11b28d3c04a
         text-align: center;
     }
 }
