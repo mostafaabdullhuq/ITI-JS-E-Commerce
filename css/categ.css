@@ -1,0 +1,8 @@
+@import url("./style.css");
+.product-item .price , .title {
+    text-align: center;
+}
+/* .image-fluid{
+   width: 200px;
+   height: 200px;
+} */

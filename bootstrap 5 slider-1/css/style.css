@@ -1,27 +1,5 @@
-@import url('./style.css');
-
-/* footer */
-footer{
-    background-color: var(--white-6);
-}
-ul{
-    display: inline;
-    padding: 1;
-}
-a:link {text-decoration:none}
-a:hover {text-decoration:underline}
-hr {
-    align-content : center;
-    margin-left : auto;
-    margin-right : auto;
-    }
-li{
-  color: brown;
-}
-
-/* slider */
 .home .carousel-item{
-	min-height: 80vh;
+	min-height: 100vh;
 	background-position: center;
 	background-size: cover;
 	position: relative;
@@ -97,10 +75,10 @@ li{
 	margin:0;
 }
 
-.home .carousel-indicators li{
+/* .home .carousel-indicators li{
 	height: 70px;
-	width: 70px; 
-	margin:0 5px;
+	width: 70px; */
+	/* margin:0 5px;
 	border-radius: 50%;
 	background-position: center;
 	background-size: cover;
@@ -112,7 +90,26 @@ li{
 	transform: scale(1.2);
 }
 
-/* .home .carousel-control-next{
+.home .carousel-control-next, 
+.home .carousel-control-prev{
+	height: 60px;
+	width: 60px;
+	opacity: 1;
+	z-index: 3;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	transition: all 0.3s ease;
+}
+.home .carousel-control-next:hover, 
+.home .carousel-control-prev:hover{
+   box-shadow: 0 0 10px #ffffff;
+}
+.home .carousel-control-next img, 
+.home .carousel-control-prev img{
+   width: 30px;
+}
+.home .carousel-control-next{
 	right: -90px;
 }
 .home .carousel-control-prev{
@@ -138,44 +135,4 @@ li{
 }
 
 
-/* nav style  */
-/* icons hover */
-.icon1{
-    color: var(--ltn__primary-color-2);
-} 
 
- .icon:hover,.icon1:hover{
-    color: var( --ltn__secondary-color);
-}
- .second-nav{
-    background-color: var(--white-6);
-}
-.cart-btn{
-    border-radius: 50%;
-    height: 27px;
-    width: 25px;
-    border: 0;
-    background-color: var(--ltn__secondary-color);
-    position: relative;
-    right: 25%;
-    bottom: 15%;
-} 
-
-/* form */
-.btn-form{
-    background-color: var(--border-color-4);
-    margin-right: 20%;
-    color: aliceblue;
-}
-.btn-form:hover{
-    border: 1px solid black;
-}
-/* mid-nav */
-.mid-nav{
-    background-color: var(--nude);
-}
-@media(max-width: 767px){
-    .mid-small p{
-        border-bottom: 1px solid rgb(246, 241, 241);
-    }
-}
