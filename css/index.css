@@ -26,7 +26,7 @@ nav style */
  .icon1{
     color: var(--ltn__primary-color-2);
 } 
- .icon:hover,.icon1:hover{
+ .icon:hover, .icon1:hover{
     color: var( --ltn__secondary-color);
 } 
  .second-nav{
