@@ -14,85 +14,82 @@
         <title>Shopping Cart</title>
     </head>
     <body>
-        <h1 class="my-5 mx-5">Your Shopping Cart</h1>
+        <h2 class="h1 my-5 mx-5 text-center text-lg-start">Your Shopping Cart</h2>
         <!-- page container -->
-        <div class="cart-container d-flex mt-5">
+        <div class="cart-container d-flex my-5 flex-lg-row flex-column">
             <!-- left cart side -->
-            <div class="left col-8">
+            <div class="left col-xl-8 col-lg-9 col-md-12">
                 <!-- cart content container -->
-                <div class="cart-content">
+                <div class="cart-content text-center">
                     <!-- cart titles -->
-                    <div class="cart-titles row d-flex justify-content-between align-items-center text-center py-4">
-                        <p class="h4 col-1 prod-delete me-3"></p>
-                        <p class="h4 col products-title">Product</p>
-                        <p class="h4 col">Price</p>
-                        <p class="h4 col">Qty</p>
-                        <p class="h4 col">Subtotal</p>
+                    <div class="cart-titles row d-md-flex d-none py-4 justify-content-between px-3">
+                        <!-- <p class="h5 col prod-delete fw-bolder"></p> -->
+                        <p class="h5 col products-title fw-bolder ms-xl-4">Product</p>
+                        <p class="h5 col-xl-2 col-md-1 fw-bolder">Price</p>
+                        <p class="h5 col-xl-2 col-md-2 fw-bolder">Qty</p>
+                        <p class="h5 col-xl-2 col-md-2 fw-bolder">Subtotal</p>
                     </div>
                     <!-- cart products -->
-                    <div class="cart-prods d-flex flex-column mt-3 px-3">
+                    <div class="cart-prods mt-3 px-3 row">
                         <!-- product -->
-                        <div class="prod row py-4 px-2 align-items-center">
-                            <!-- product delete -->
-                            <div class="prod-delete col text-center fs-2 me-3">
-                                <i class="fa-solid fa-xmark"></i>
-                            </div>
-                            <!-- product image and title -->
-                            <div class="prod-info col d-flex flex-column">
+                        <div class="prod row py-4 align-items-center justify-content-between">
+                            <!--? product delete -->
+                            <!-- <i class="prod-delete col d-none d-md-flex fs-2 fa-solid fa-xmark"></i> -->
+                            <!--? product image and title -->
+                            <div class="prod-info col d-flex flex-column m-md-0 m-auto mb-3 mb-md-0 ms-xl-4">
                                 <div
                                     style="
                                         background: url('https://images.unsplash.com/photo-1570831739435-6601aa3fa4fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1452&q=80');
                                     "
-                                    class="image-container col d-flex flex-column"
+                                    class="image-container col-12 d-flex flex-column"
                                 ></div>
-                                <p class="col prod-title text-center ps-1 pe-1 mt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                <p class="col-12 prod-title ps-1 pe-1 mt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                             </div>
-                            <!-- product price -->
-                            <div class="prod-price col text-center ps-2 pe-2">
-                                <p class="h4">$100</p>
+                            <!--? product price -->
+                            <div class="prod-price col-xl-2 col-md-1 h5 py-2 mb-3 py-md-0 mb-md-0">$100</div>
+                            <!--? product quantity -->
+                            <div class="prod-qty col-6 m-auto m-md-0 col-xl-2 col-md-2 d-flex justify-content-between py-2 mb-3 py-md-0 mb-md-0">
+                                <!-- if cart has more than 1 item of that product -->
+                                <!-- <i class="prod-qty-add fs-3 col-2 fa-solid fa-minus"></i> -->
+                                <!-- if cart has only 1 item of that product -->
+                                <i class="prod-qty-add fs-3 col-2 fa-solid fa-trash-can"></i>
+                                <input type="text" class="text-center fw-bold fs-5 prod-qty-value col-6 p-0" value="1" />
+                                <i class="prod-qty-remove fs-3 col-2 fa-solid fa-plus"></i>
                             </div>
-                            <!-- product quantity -->
-                            <div class="prod-qty col d-flex bor">
-                                <button class="rounded-0 p-3 prod-qty-add fs-4" type="button">-</button>
-                                <input type="text" class="text-center fw-bold fs-5 prod-qty-value" value="0" />
-                                <button class="rounded-0 p-3 prod-qty-remove fs-4" type="button">+</button>
-                            </div>
-                            <!-- product total -->
-                            <div class="prod-total col text-center ps-3 pe-3">
-                                <p class="h4">$5000</p>
-                            </div>
+                            <!--? product total -->
+                            <div class="h5 prod-total col-xl-2 col-md-2 py-2 mb-3 py-md-0 mb-md-0">$5000</div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- right cart side -->
-            <div class="right col d-flex flex-column">
+            <div class="right col-lg col-md-12 mt-md-4 mt-lg-0 d-flex flex-column">
                 <!-- total side title -->
                 <!-- <h2 class="h1 mb-5">Order Summery</h2> -->
                 <!-- total content -->
-                <div class="col right-sub-container d-flex">
+                <div class="col right-sub-container d-flex px-3 px-lg-0">
                     <div class="separator col"></div>
                     <div class="content col">
                         <div class="details-content d-flex flex-column">
                             <!-- subtotal -->
-                            <div class="cart-subtotal d-flex justify-content-between align-items-center py-4 mb-3 px-5">
-                                <p class="h4">Subtotal</p>
+                            <div class="cart-subtotal d-flex justify-content-between align-items-center py-4 mb-3 px-xl-5 px-lg-3">
+                                <p class="h5 fw-bolder">Subtotal</p>
                                 <p class="h5">$5000</p>
                             </div>
                             <!-- shipping -->
-                            <div class="cart-shipping d-flex justify-content-between align-items-center py-4 mb-3 px-5">
-                                <p class="h4">Shipping</p>
+                            <div class="cart-shipping d-flex justify-content-between align-items-center py-4 mb-3 px-xl-5 px-lg-3">
+                                <p class="h5 fw-bolder">Shipping</p>
                                 <p class="h5">$5000</p>
                             </div>
                             <!-- total -->
-                            <div class="cart-total d-flex justify-content-between align-items-center py-4 mb-3 px-5">
-                                <p class="h4">Total</p>
+                            <div class="cart-total d-flex justify-content-between align-items-center py-4 mb-3 px-xl-5 px-lg-3">
+                                <p class="h5 fw-bolder">Total</p>
                                 <p class="h5">$5000</p>
                             </div>
                             <!-- checkout button -->
-                            <div class="checkout-btn d-flex flex-column justify-content-center mt-3 px-4">
-                                <button class="btn checkout-button rounded-0 px-5 py-4 mx-3 mb-3 fs-5 text-uppercase">Proceed to Checkout</button>
-                                <button class="btn continue-shopping-button rounded-0 px-5 py-4 mx-3 fs-5 text-uppercase">Continue Shopping</button>
+                            <div class="checkout-btn d-flex flex-column justify-content-center mt-3 px-xl-5 px-lg-3">
+                                <button class="btn checkout-button rounded-0 py-4 px-2 mb-3 text-uppercase">Checkout</button>
+                                <button class="btn continue-shopping-button rounded-0 px-2 py-4 text-uppercase">Continue Shopping</button>
                             </div>
                         </div>
                     </div>

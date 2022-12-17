@@ -6,7 +6,7 @@
 }
 
 i {
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 /* variables used accross all pages */
