@@ -62,12 +62,12 @@ bor {
 
 /* product */
 
-.prod {
+/* .prod {
     border: 2px solid var(--ltn__primary-color);
-}
+} */
 
 .prod-qty {
-    border: 2px solid var(--ltn__primary-color-3);
+    /* border: 2px solid var(--ltn__primary-color-3); */
     /* padding: 10px !important; */
 }
 
@@ -158,4 +158,8 @@ button.confirm-button:hover {
 
 button.back-to-cart-button:hover {
     background-color: var(--ltn__secondary-color-2);
+}
+
+.prod-qty input {
+    background-color: transparent !important;
 }
