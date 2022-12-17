@@ -139,17 +139,17 @@ li{
 
 
 nav style */
-icons hover
-.icon1{
+/* icons hover */
+/* .icon1{
     color: var(--ltn__primary-color-2);
 } */
-.icon:hover,.icon1:hover{
+/* .icon:hover,.icon1:hover{
     color: var( --ltn__secondary-color);
 } */
- .second-nav{
+/* .second-nav{
     background-color: var(--white-6);
 } */
-.cart-btn{
+/* .cart-btn{
     border-radius: 50%;
     height: 27px;
     width: 25px;
@@ -164,6 +164,7 @@ icons hover
 .btn-form{
     background-color: var(--border-color-4);
     margin-right: 20%;
+    color: aliceblue;
 }
 .btn-form:hover{
     border: 1px solid black;
