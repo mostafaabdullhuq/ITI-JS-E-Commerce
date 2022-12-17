@@ -18,6 +18,11 @@ hr {
 li{
   color: brown;
 }
+@media(max-width: 767px){
+    .foot{
+        text-align: center;
+    }
+}
 
 /* slider */
 .home .carousel-item{
