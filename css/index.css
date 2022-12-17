@@ -29,5 +29,23 @@ li{
 }
 .second-nav{
     background-color: var(--white-6);
+}
+.cart-btn{
+    border-radius: 50%;
+    height: 27px;
+    width: 25px;
+    border: 0;
+    background-color: var(--ltn__secondary-color);
+    position: relative;
+    right: 25%;
+    bottom: 15%;
+}
 
+/* form */
+.btn-form{
+    background-color: var(--border-color-4);
+    margin-right: 25%;
+}
+.btn-form:hover{
+    border: 1px solid black;
 }

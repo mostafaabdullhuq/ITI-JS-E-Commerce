@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (window.scrollY > 100) {
             document.getElementById("navbar_top").classList.add("fixed-top");
             document.getElementById("navbar_top").style.backgroundColor = "white";
+            document.getElementById("navbar_top").style.boxShadow = "2px 10px 4px rgb(133, 132, 132)";
             navbar_height = document.querySelector(".navbar").offsetHeight;
             document.body.style.paddingTop = navbar_height + "px";
         } else {
