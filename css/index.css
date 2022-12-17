@@ -179,8 +179,11 @@ li{
 .mid-nav{
     background-color: var(--nude);
 }
-@media(max-width: 767px){
-    .mid-small p{
+@media(max-width: 990px){
+    .mid-small{
         border-bottom: 1px solid rgb(246, 241, 241);
+    }
+    .mid-nav{
+        text-align: center;
     }
 }
