@@ -1,12 +1,12 @@
 /* reset css default settings */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
 }
 
 i {
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 /* variables used accross all pages */
