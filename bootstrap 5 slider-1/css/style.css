@@ -17,7 +17,7 @@
 }
 .home .carousel-item .container{
 	position: absolute;
-	left: 50%;
+	left: 20%;
 	top:50%;
 	transform: translate(-50%,-50%);
 	text-align: center;
@@ -75,10 +75,10 @@
 	margin:0;
 }
 
-/* .home .carousel-indicators li{
+.home .carousel-indicators li{
 	height: 70px;
-	width: 70px; */
-	/* margin:0 5px;
+	width: 70px;
+	margin:0 5px;
 	border-radius: 50%;
 	background-position: center;
 	background-size: cover;
@@ -114,7 +114,16 @@
 }
 .home .carousel-control-prev{
 	left: -90px;
-} */
+} 
+.btn{
+	margin-top: 60px;
+	position: relative;
+	margin-left: 60px;
+	font-size: 26px;
+	transform: translate(-50%);
+	transition: all 0.3s ease;
+	background-color: rgb(232, 227, 227);
+}
 
 /*responsive*/
 @media(max-width: 767px){
