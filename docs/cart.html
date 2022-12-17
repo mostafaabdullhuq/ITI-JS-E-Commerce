@@ -14,165 +14,31 @@
         <title>Shopping Cart</title>
     </head>
     <body>
-        <h1 class="mt-5 mb-5 mx-5">Your Shopping Cart</h1>
+        <h1 class="my-5 mx-5">Your Shopping Cart</h1>
         <!-- page container -->
         <div class="cart-container d-flex mt-5">
             <!-- left cart side -->
-            <div class="left col-8 overflow-hidden">
-                <!-- cart side title -->
-                <!-- <h2 class="h1 mb-5">Shopping Cart</h2> -->
+            <div class="left col-8">
                 <!-- cart content container -->
-                <div class="cart-content d-flex flex-column">
+                <div class="cart-content">
                     <!-- cart titles -->
-                    <div class="cart-titles col d-flex justify-content-between align-items-center text-center py-4">
-                        <p class="h5 col-1"></p>
-                        <p class="h5 col-4">Product</p>
-                        <p class="h5 col-2">Price</p>
-                        <p class="h5 col-3">Qty</p>
-                        <p class="h5 col-2">Subtotal</p>
+                    <div class="cart-titles row d-flex justify-content-between align-items-center text-center py-4">
+                        <p class="h4 col-1 prod-delete me-3"></p>
+                        <p class="h4 col products-title">Product</p>
+                        <p class="h4 col">Price</p>
+                        <p class="h4 col">Qty</p>
+                        <p class="h4 col">Subtotal</p>
                     </div>
                     <!-- cart products -->
-                    <div class="cart-prods d-flex flex-column mt-3">
+                    <div class="cart-prods d-flex flex-column mt-3 px-3">
                         <!-- product -->
-                        <div class="prod d-flex pt-4 pb-4 ps-2 pe-2 align-items-center">
+                        <div class="prod row py-4 px-2 align-items-center">
                             <!-- product delete -->
-                            <div class="prod-delete col-1 text-center fs-2">
+                            <div class="prod-delete col text-center fs-2 me-3">
                                 <i class="fa-solid fa-xmark"></i>
                             </div>
                             <!-- product image and title -->
-                            <div class="prod-info col-4 d-flex flex-column">
-                                <div
-                                    style="
-                                        background: url('https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80');
-                                    "
-                                    class="image-container col d-flex flex-column"
-                                ></div>
-                                <p class="col prod-title text-center ps-1 pe-1 mt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                            </div>
-                            <!-- product price -->
-                            <div class="prod-price col-2 text-center ps-2 pe-2">
-                                <p class="h5">$100</p>
-                            </div>
-                            <!-- product quantity -->
-                            <div class="prod-qty col-3 ps-4 pe-4">
-                                <div class="input-group">
-                                    <button class="btn btn-outline-secondary rounded-0 p-3" type="button">-</button>
-                                    <input type="text" class="form-control text-center fw-bold fs-5" value="0" />
-                                    <button class="btn btn-outline-secondary rounded-0 p-3" type="button">+</button>
-                                </div>
-                            </div>
-                            <!-- product total -->
-                            <div class="prod-total col-2 text-center ps-3 pe-3">
-                                <p class="h5">$5000</p>
-                            </div>
-                        </div>
-                        <!-- product -->
-                        <div class="prod d-flex pt-4 pb-4 ps-2 pe-2 align-items-center">
-                            <!-- product delete -->
-                            <div class="prod-delete col-1 text-center fs-2">
-                                <i class="fa-solid fa-xmark"></i>
-                            </div>
-                            <!-- product image and title -->
-                            <div class="prod-info col-4 d-flex flex-column">
-                                <div
-                                    style="
-                                        background: url('https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80');
-                                    "
-                                    class="image-container col d-flex flex-column"
-                                ></div>
-                                <p class="col prod-title text-center ps-1 pe-1 mt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                            </div>
-                            <!-- product price -->
-                            <div class="prod-price col-2 text-center ps-2 pe-2">
-                                <p class="h5">$100</p>
-                            </div>
-                            <!-- product quantity -->
-                            <div class="prod-qty col-3 ps-4 pe-4">
-                                <div class="input-group">
-                                    <button class="btn btn-outline-secondary rounded-0 p-3" type="button">-</button>
-                                    <input type="text" class="form-control text-center fw-bold fs-5" value="0" />
-                                    <button class="btn btn-outline-secondary rounded-0 p-3" type="button">+</button>
-                                </div>
-                            </div>
-                            <!-- product total -->
-                            <div class="prod-total col-2 text-center ps-3 pe-3">
-                                <p class="h5">$5000</p>
-                            </div>
-                        </div>
-                        <!-- product -->
-                        <div class="prod d-flex pt-4 pb-4 ps-2 pe-2 align-items-center">
-                            <!-- product delete -->
-                            <div class="prod-delete col-1 text-center fs-2">
-                                <i class="fa-solid fa-xmark"></i>
-                            </div>
-                            <!-- product image and title -->
-                            <div class="prod-info col-4 d-flex flex-column">
-                                <div
-                                    style="
-                                        background: url('https://images.unsplash.com/photo-1564466809058-bf4114d55352?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80');
-                                    "
-                                    class="image-container col d-flex flex-column"
-                                ></div>
-                                <p class="col prod-title text-center ps-1 pe-1 mt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                            </div>
-                            <!-- product price -->
-                            <div class="prod-price col-2 text-center ps-2 pe-2">
-                                <p class="h5">$100</p>
-                            </div>
-                            <!-- product quantity -->
-                            <div class="prod-qty col-3 ps-4 pe-4">
-                                <div class="input-group">
-                                    <button class="btn btn-outline-secondary rounded-0 p-3" type="button">-</button>
-                                    <input type="text" class="form-control text-center fw-bold fs-5" value="0" />
-                                    <button class="btn btn-outline-secondary rounded-0 p-3" type="button">+</button>
-                                </div>
-                            </div>
-                            <!-- product total -->
-                            <div class="prod-total col-2 text-center ps-3 pe-3">
-                                <p class="h5">$5000</p>
-                            </div>
-                        </div>
-                        <!-- product -->
-                        <div class="prod d-flex pt-4 pb-4 ps-2 pe-2 align-items-center">
-                            <!-- product delete -->
-                            <div class="prod-delete col-1 text-center fs-2">
-                                <i class="fa-solid fa-xmark"></i>
-                            </div>
-                            <!-- product image and title -->
-                            <div class="prod-info col-4 d-flex flex-column">
-                                <div
-                                    style="
-                                        background: url('https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1722&q=80');
-                                    "
-                                    class="image-container col d-flex flex-column"
-                                ></div>
-                                <p class="col prod-title text-center ps-1 pe-1 mt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                            </div>
-                            <!-- product price -->
-                            <div class="prod-price col-2 text-center ps-2 pe-2">
-                                <p class="h5">$100</p>
-                            </div>
-                            <!-- product quantity -->
-                            <div class="prod-qty col-3 ps-4 pe-4">
-                                <div class="input-group">
-                                    <button class="btn btn-outline-secondary rounded-0 p-3" type="button">-</button>
-                                    <input type="text" class="form-control text-center fw-bold fs-5" value="0" />
-                                    <button class="btn btn-outline-secondary rounded-0 p-3" type="button">+</button>
-                                </div>
-                            </div>
-                            <!-- product total -->
-                            <div class="prod-total col-2 text-center ps-3 pe-3">
-                                <p class="h5">$5000</p>
-                            </div>
-                        </div>
-                        <!-- product -->
-                        <div class="prod d-flex pt-4 pb-4 ps-2 pe-2 align-items-center">
-                            <!-- product delete -->
-                            <div class="prod-delete col-1 text-center fs-2">
-                                <i class="fa-solid fa-xmark"></i>
-                            </div>
-                            <!-- product image and title -->
-                            <div class="prod-info col-4 d-flex flex-column">
+                            <div class="prod-info col d-flex flex-column">
                                 <div
                                     style="
                                         background: url('https://images.unsplash.com/photo-1570831739435-6601aa3fa4fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1452&q=80');
@@ -182,20 +48,18 @@
                                 <p class="col prod-title text-center ps-1 pe-1 mt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                             </div>
                             <!-- product price -->
-                            <div class="prod-price col-2 text-center ps-2 pe-2">
-                                <p class="h5">$100</p>
+                            <div class="prod-price col text-center ps-2 pe-2">
+                                <p class="h4">$100</p>
                             </div>
                             <!-- product quantity -->
-                            <div class="prod-qty col-3 ps-4 pe-4">
-                                <div class="input-group">
-                                    <button class="btn btn-outline-secondary rounded-0 p-3" type="button">-</button>
-                                    <input type="text" class="form-control text-center fw-bold fs-5" value="0" />
-                                    <button class="btn btn-outline-secondary rounded-0 p-3" type="button">+</button>
-                                </div>
+                            <div class="prod-qty col d-flex bor">
+                                <button class="rounded-0 p-3 prod-qty-add fs-4" type="button">-</button>
+                                <input type="text" class="text-center fw-bold fs-5 prod-qty-value" value="0" />
+                                <button class="rounded-0 p-3 prod-qty-remove fs-4" type="button">+</button>
                             </div>
                             <!-- product total -->
-                            <div class="prod-total col-2 text-center ps-3 pe-3">
-                                <p class="h5">$5000</p>
+                            <div class="prod-total col text-center ps-3 pe-3">
+                                <p class="h4">$5000</p>
                             </div>
                         </div>
                     </div>
@@ -212,17 +76,17 @@
                         <div class="details-content d-flex flex-column">
                             <!-- subtotal -->
                             <div class="cart-subtotal d-flex justify-content-between align-items-center py-4 mb-3 px-5">
-                                <p class="h5">Subtotal</p>
+                                <p class="h4">Subtotal</p>
                                 <p class="h5">$5000</p>
                             </div>
                             <!-- shipping -->
                             <div class="cart-shipping d-flex justify-content-between align-items-center py-4 mb-3 px-5">
-                                <p class="h5">Shipping</p>
+                                <p class="h4">Shipping</p>
                                 <p class="h5">$5000</p>
                             </div>
                             <!-- total -->
                             <div class="cart-total d-flex justify-content-between align-items-center py-4 mb-3 px-5">
-                                <p class="h5">Total</p>
+                                <p class="h4">Total</p>
                                 <p class="h5">$5000</p>
                             </div>
                             <!-- checkout button -->
