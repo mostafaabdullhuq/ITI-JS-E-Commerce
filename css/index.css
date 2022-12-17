@@ -1,28 +1,5 @@
 @import url('./style.css');
 
-/* footer */
-footer{
-    background-color: var(--white-6);
-}
-ul{
-    display: inline;
-    padding: 1;
-}
-a:link {text-decoration:none}
-a:hover {text-decoration:underline}
-hr {
-    align-content : center;
-    margin-left : auto;
-    margin-right : auto;
-    }
-li{
-  color: brown;
-}
-@media(max-width: 767px){
-    .foot{
-        text-align: center;
-    }
-}
 
 /* slider */
 .home .carousel-item{
@@ -207,5 +184,28 @@ li{
 @media(max-width: 767px){
     .mid-small p{
         border-bottom: 1px solid rgb(246, 241, 241);
+    }
+}
+/* footer */
+footer{
+    background-color: var(--white-6);
+}
+ul{
+    display: inline;
+    padding: 1;
+}
+a:link {text-decoration:none}
+a:hover {text-decoration:underline}
+hr {
+    align-content : center;
+    margin-left : auto;
+    margin-right : auto;
+    }
+li{
+  color: brown;
+}
+@media(max-width: 767px){
+    .foot{
+        text-align: center;
     }
 }
