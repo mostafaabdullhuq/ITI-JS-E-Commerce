@@ -40,3 +40,12 @@ li{
     right: 25%;
     bottom: 15%;
 }
+
+/* form */
+.btn-form{
+    background-color: var(--border-color-4);
+    margin-right: 25%;
+}
+.btn-form:hover{
+    border: 1px solid black;
+}
