@@ -138,23 +138,19 @@ li{
 }
 
 
-nav style */
+/* nav style  */
 /* icons hover */
-/* .icon1{
+.icon1{
     color: var(--ltn__primary-color-2);
-<<<<<<< HEAD
 } 
- .icon:hover, .icon1:hover{
-=======
-} */
-/* .icon:hover,.icon1:hover{
->>>>>>> c9768e24eaaf566e13c48fe2b6c28248d0e3f30c
+
+ .icon:hover,.icon1:hover{
     color: var( --ltn__secondary-color);
-} */
-/* .second-nav{
+}
+ .second-nav{
     background-color: var(--white-6);
-} */
-/* .cart-btn{
+}
+.cart-btn{
     border-radius: 50%;
     height: 27px;
     width: 25px;
