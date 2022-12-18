@@ -1,6 +1,19 @@
 @import url("./style.css");
+@import '@splidejs/splide/css';
 body{
     overflow-x: hidden;
+}
+.nav{
+    background-color:var(--border-color-8);
+}
+.nav-link:hover{
+    background-color: var(--ltn__secondary-color);
+}
+#sortBy:hover{
+    background-color: var(--ltn__secondary-color);
+}
+#sortBy a{
+    text-decoration: none;
 }
 .product-item .price , .title {
     text-align: center;
@@ -39,26 +52,38 @@ input:hover{
   color: var(--ltn__secondary-color);
   border-right: 5px solid var(--ltn__secondary-color);
 }
-@media (min-width: 500px) and (max-width:15px) {
+@media (max-width: 800px){
+    .menu-toggle{
+        display:block;
+    }
     .left{
-        position: fixed;
-        max-width: 200px;
+        /* position: fixed; */
+        width: 200px;
     }
   }
-
-/* @media (max-width:768px) {
+/* @media (min-width: 700px){
     .menu-toggle{
         display: block;
     }
     .left{
         position: fixed;
-        height: 100vh;
-        width: 100%;
-        max-width: 300px;
-        transition: 0.2s linear;
+        width: 200px;
+    }
+  } */
+
+@media (max-width:600px) {
+    .menu-toggle{
+        display: block;
+    }
+    .left{
+        /* position: fixed; */
+        /* height: 100vh; */
+        /* width: 100%; */
+        width: 400px;
+        /* transition: 0.2s linear; */
     }
     .left.is-active{
         left: 0;
     }
     
-} */
+}
