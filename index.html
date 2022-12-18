@@ -11,6 +11,7 @@
         <!-- include fontawesome css file from node modules -->
         <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css" />
         <!-- include css files -->
+        <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
         <link rel="stylesheet" href="./node_modules/@splidejs/splide/dist/css/splide.min.css" />
         <link rel="stylesheet" href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
         <link rel="stylesheet" href="./css/style.css" />
@@ -264,8 +265,8 @@
     
     <!-- Feedback -->
     <section class="testimonials">
-      <div class="container">
-    
+      <div class="container-fluid bg-secondary">
+    <h1 style="text-align: center;" class="fw-bolder fs-2">Customers Feedback</h1>
           <div class="row">
             <div class="col-sm-12">
               <div id="customers-testimonials" class="owl-carousel">
@@ -273,28 +274,39 @@
                 <!--TESTIMONIAL 1 -->
                 <div class="item">
                   <div class="shadow-effect">
-                    <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+                    <span class="fs-2 fw-bold">Mostafa</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
                     <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
                   </div>
-                  <div class="testimonial-name">EMILIANO AQUILANI</div>
                 </div>
                 <!--END OF TESTIMONIAL 1 -->
                 <!--TESTIMONIAL 2 -->
                 <div class="item">
                   <div class="shadow-effect">
-                    <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+                    <span>Sara</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
                     <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
                   </div>
-                  <div class="testimonial-name">ANNA ITURBE</div>
                 </div>
                 <!--END OF TESTIMONIAL 2 -->
                 <!--TESTIMONIAL 3 -->
                 <div class="item">
                   <div class="shadow-effect">
-                    <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
-                    <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+                    <span>Hagar</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>                    <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
                   </div>
-                  <div class="testimonial-name">LARA ATKINSON</div>
                 </div>
                 <!--END OF TESTIMONIAL 3 --> 
               </div>
@@ -348,7 +360,10 @@
           </div></footer>
 
     <!-- include jquery file -->
+    <!-- <link rel="stylesheet" href="./node_modules/owl.carousel/dist/owl.carousel.min.js"> -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+<script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
     <script>
     jQuery(document).ready(function($) {
       "use strict";
@@ -374,7 +389,11 @@
             }
           }
       });
-    });</script>
+    });
+    $(document).ready(function(){
+  $('.owl-carousel').owlCarousel();
+});
+    </script>
     <!-- include bootstrap js file from node modules -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- include javascript files -->
