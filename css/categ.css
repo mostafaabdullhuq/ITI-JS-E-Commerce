@@ -1,4 +1,20 @@
 @import url("./style.css");
+@import '@splidejs/splide/css';
+body{
+    overflow-x: hidden;
+}
+.nav{
+    background-color:var(--border-color-8);
+}
+.nav-link:hover{
+    background-color: var(--ltn__secondary-color);
+}
+#sortBy:hover{
+    background-color: var(--ltn__secondary-color);
+}
+#sortBy a{
+    text-decoration: none;
+}
 .product-item .price , .title {
     text-align: center;
 }
@@ -6,3 +22,68 @@
    width: 200px;
    height: 200px;
 } */
+/* .bt{
+    display: flex;
+    justify-content: end;
+    width:9%;
+    height: 60px;
+    padding: 20px;
+    
+}
+.bt:hover{
+    color: var(--ltn__secondary-color);
+} */
+.left{
+    background-color: var(--border-color-8);
+}
+input:hover{
+    background-color: var(--ltn__secondary-color);
+    cursor: pointer;
+}
+.card:hover{
+    border-width: 3px;
+    height:400px;
+    border-radius: 10px;
+    border-color: var(--ltn__secondary-color);
+    background-color: var(--ltn__secondary-color);
+}
+.left .menu .menu-item:hover,
+.left .menu .menu-item.is-active{
+  color: var(--ltn__secondary-color);
+  border-right: 5px solid var(--ltn__secondary-color);
+}
+@media (max-width: 800px){
+    .menu-toggle{
+        display:block;
+    }
+    .left{
+        /* position: fixed; */
+        width: 200px;
+    }
+  }
+/* @media (min-width: 700px){
+    .menu-toggle{
+        display: block;
+    }
+    .left{
+        position: fixed;
+        width: 200px;
+    }
+  } */
+
+@media (max-width:600px) {
+    .menu-toggle{
+        display: block;
+    }
+    .left{
+        /* position: fixed; */
+        /* height: 100vh; */
+        /* width: 100%; */
+        width: 400px;
+        /* transition: 0.2s linear; */
+    }
+    .left.is-active{
+        left: 0;
+    }
+    
+}

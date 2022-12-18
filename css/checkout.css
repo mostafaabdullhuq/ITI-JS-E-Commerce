@@ -1,19 +1,29 @@
 @import url("./style.css");
+
+.iti__flag {
+    background-image: url("./../node_modules/intl-tel-input/build/img/flags.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .iti__flag {
+        background-image: url("./../node_modules/intl-tel-input/build/img/flags@2x.png");
+    }
+}
+
+.iti {
+    width: 100%;
+}
+
 /* general */
 :root {
     --separators-color: #eee;
 }
-
-* {
+.form-control,
+.form-control:focus,
+.form-control:active,
+.form-control:hover {
     outline: none !important;
-}
-
-*:focus {
-    outline: none !important;
-}
-textarea:focus,
-input:focus {
-    outline: none !important;
+    box-shadow: none;
 }
 
 body {
@@ -27,48 +37,60 @@ i {
 
 i:hover {
     color: var(--ltn__secondary-color-2) !important;
-    animation: rotate 0.5s linear 1;
-    -webkit-animation: rotate 0.5s linear 1;
+    animation: scale 0.3s linear 1;
+    -webkit-animation: scale 0.3s linear 1;
 }
 
-@keyframes rotate {
+@keyframes scale {
     0%,
     100% {
-        transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
     }
-    25% {
-        transform: rotate(25deg);
-        -webkit-transform: rotate(25deg);
-        -moz-transform: rotate(25deg);
-        -ms-transform: rotate(25deg);
-        -o-transform: rotate(25deg);
-    }
-    75% {
-        transform: rotate(-25deg);
-        -webkit-transform: rotate(-25deg);
-        -moz-transform: rotate(-25deg);
-        -ms-transform: rotate(-25deg);
-        -o-transform: rotate(-25deg);
+
+    50% {
+        transform: scale(1.3);
+        -webkit-transform: scale(1.3);
+        -moz-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        -o-transform: scale(1.3);
     }
 }
-
 bor {
     border: 1px solid var(--separators-color);
 }
 
+/* shipping details */
+
+#shipping-dt-form input,
+#shipping-dt-form select {
+    border: 1px solid var(--border-color-1);
+}
+
 /* product */
 
-/* .prod {
-    border: 2px solid var(--ltn__primary-color);
-} */
+.prod:hover {
+    background-color: var(--ltn__secondary-color);
+    color: white;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transform: scale(1.01);
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
+}
 
-.prod-qty {
-    /* border: 2px solid var(--ltn__primary-color-3); */
-    /* padding: 10px !important; */
+.prod:hover .prod-qty-remove,
+.prod:hover .prod-qty-add,
+.prod:hover .prod-qty-value {
+    color: white !important;
 }
 
 .prod-qty-add,
@@ -94,6 +116,10 @@ bor {
 }
 .qty-controls {
     border: 3px solid var(--ltn__primary-color-3);
+}
+
+input:focus::placeholder {
+    color: transparent !important;
 }
 
 input::placeholder,
@@ -162,4 +188,46 @@ button.back-to-cart-button:hover {
 
 .prod-qty input {
     background-color: transparent !important;
+}
+
+.prod-name,
+.prod-price,
+.prod-qty,
+.prod-qty input {
+    font-weight: 500;
+}
+
+select,
+input::placeholder {
+    font-weight: 420 !important;
+    outline: none !important;
+}
+
+form input:invalid,
+select:invalid {
+    border: 1px solid var(--ltn__secondary-color-3) !important;
+}
+
+form input:valid,
+select:valid {
+    border: 1px solid var(--ltn__primary-color-3) !important;
+}
+
+.iti--allow-dropdown input,
+.iti--allow-dropdown input[type="tel"],
+.iti--allow-dropdown input[type="text"],
+.iti--separate-dial-code input,
+.iti--separate-dial-code input[type="tel"],
+.iti--separate-dial-code input[type="text"] {
+    padding-left: calc(1.5rem + 52px);
+}
+
+.iti__selected-flag:hover,
+.iti__selected-flag:focus {
+    background-color: transparent !important;
+}
+
+.back-to-cart-button a {
+    color: white;
+    text-decoration: none;
 }

@@ -7,165 +7,156 @@
 
         <!-- include bootstrap css file from node modules -->
         <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
         <!-- include fontawesome css file from node modules -->
         <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css" />
         <!-- include css files -->
+        <link rel="stylesheet" href="./node_modules/@splidejs/splide/dist/css/splide.min.css">
         <link rel="stylesheet" href="./css/style.css" />
         <link rel="stylesheet" href="./css/index.css">
         <link rel="stylesheet" href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/index.css" />
         <title>E-Commerce</title>
     </head>
     <body>
-            <!-- head Navbar -->
-        <div class="container-fluid pt-3 pb-3 border border-bottom ">
+        <!-- head Navbar -->
+        <div class="container-fluid pt-3 pb-3 border border-bottom">
             <div class="row">
                 <div class="col col-sm-2">
-                        <a href="#"><img style="width: 100px; height: 50px;" src="./Hagar_logo.svg.png" alt=""></a>
-                        </div>
-                    <div class="col col-sm-8">
+                    <a href="#"><img style="width: 100px; height: 50px" src="./Hagar_logo.svg.png" alt="" /></a>
+                </div>
+                <div class="col col-sm-8">
                     <form class="d-flex" role="search">
-                    <input class="form-control me-2 border border-0 border-bottom rounded-0" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn " type="submit"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                        </svg></button>
+                        <input class="form-control me-2 border border-0 border-bottom rounded-0" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn" type="submit">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                                />
+                            </svg>
+                        </button>
                     </form>
-                    </div>
-                    <div class="col col-sm-2 d-flex justify-content-end">
-                    <a class="me-3" href="#"> 
+                </div>
+                <div class="col col-sm-2 d-flex justify-content-end">
+                    <a class="me-3" href="./docs/profile.html">
                         <svg class="icon1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
-                    </svg>
-                </a>
-                    <a class="ms-3" href="./docs/cart.html"><svg class="icon1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                    </svg></a>
-                    <a href="#"> <input class="cart-btn" type="button" value="0"></a>
-                    </div>
+                            <path
+                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"
+                            />
+                        </svg>
+                    </a>
+                    <a class="ms-3" href="./docs/cart.html"
+                        ><svg class="icon1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                            />
+                        </svg>
+                    </a>
+                    <a href="#"> <input class="cart-btn" type="button" value="0" /></a>
+                </div>
             </div>
         </div>
-             
+
         <!-- Navbar -->
-    <div class="container-fluid border-bottom second-nav mb-2">
-        <div class="row">
-            <nav id="navbar_top" class="navbar navbar-expand-md fw-bold pt-1 pb-1">
-                <div class="container-fluid justify-content-end">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-                <div class="collapse navbar-collapse justify-content-around nav-active" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item me-4">
-                            <a class="nav-link  active text-dark me-4" aria-current="page" href="#">HOME</a>
-                        </li>
-                        <li class="nav-item dropdown me-4">
-                            <a class="nav-link dropdown-toggle text-dark me-4" href="./docs/categ.html"  data-bs-toggle="dropdown" aria-expanded="false">
-                                PRODUCTS
-                            </a>
-                        <ul class="dropdown-menu p-4">
-                            <li><a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 1</a></li>
-                            <li><a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 2</a></li>
-                            <li><a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 3</a></li>
-                            <li><a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 4</a></li>
-                            <li><a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 5</a></li>
+        <div class="container-fluid border-bottom second-nav mb-2">
+            <div class="row">
+                <nav id="navbar_top" class="navbar navbar-expand-md fw-bold pt-1 pb-1">
+                    <div>
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavDropdown"
+                            aria-controls="navbarNavDropdown"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse justify-content-around nav-active" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item me-4">
+                                <a class="nav-link active text-dark me-4" aria-current="page" href="#">HOME</a>
+                            </li>
+                            <li class="nav-item dropdown me-4">
+                                <a class="nav-link dropdown-toggle text-dark me-4" href="./docs/categ.html" data-bs-toggle="dropdown" aria-expanded="false"> PRODUCTS </a>
+                                <ul class="dropdown-menu p-4">
+                                    <li><a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 1</a></li>
+                                    <li><a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 2</a></li>
+                                    <li><a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 3</a></li>
+                                    <li><a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 4</a></li>
+                                    <li><a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 5</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item me-4">
+                                <a class="nav-link text-dark me-4" href="#footer">ABOUT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="#contact">CONTACT</a>
+                            </li>
                         </ul>
-                        </li>
-                        <li class="nav-item me-4">
-                            <a class="nav-link text-dark me-4" href="#footer">ABOUT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="#contact">CONTACT</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-    </div>
-    </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
 
-    <!-- carousel -->
- <!-- <div class="container-fluid p-0">
-  <section class="home">
-   <div id="carousel" class="carousel slide" data-ride="carousel">
-   <div class="carousel-controls">
-     <ol class="carousel-indicators">
-       <li data-target="#carousel" data-slide-to="0" class="active" style="background-image:url('https://images.unsplash.com/photo-1574885914529-e157b2664e4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXRodW1ibmFpbHx8NzE0NjcwM3x8ZW58MHx8fHw%3D&dpr=2&auto=format&fit=crop&w=294&q=60')"></li>
-       <li data-target="#carousel" data-slide-to="1" style="background-image:url('https://images.unsplash.com/photo-1583209814683-c023dd293cc6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXRodW1ibmFpbHx8MGxPMFFrdEtzNGN8fGVufDB8fHx8&dpr=2&auto=format&fit=crop&w=126&q=60')"></li>
-       
-     </ol>
-     <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-      <img src="https://images.unsplash.com/photo-1574885914529-e157b2664e4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXRodW1ibmFpbHx8NzE0NjcwM3x8ZW58MHx8fHw%3D&dpr=2&auto=format&fit=crop&w=294&q=60" alt="Prev"> 
-   </a>
-   <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-     <img src="img/right-arrow.svg" alt="Next">
-   </a>
-   </div>
-   <div class="carousel-inner">
-     <div class="carousel-item active" style="background-image:url('https://images.unsplash.com/photo-1574885914529-e157b2664e4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXRodW1ibmFpbHx8NzE0NjcwM3x8ZW58MHx8fHw%3D&dpr=2&auto=format&fit=crop&w=294&q=60')">
-       <div class="container">
-          <h2>ANY THING</h2>
-          <p>Quick description</p>
-       </div>
-     </div>
-     <div class="carousel-item" style="background-image:url('https://images.unsplash.com/photo-1614859386044-8660004c5fd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXRodW1ibmFpbHx8MGxPMFFrdEtzNGN8fGVufDB8fHx8&dpr=2&auto=format&fit=crop&w=294&q=60')">
-       <div class="container">
-         <h2>ANY THING</h2>
-         <p>Quick description</p>
-         </div>
-       </div>
-     </div>
-   </div>
+        <!-- mid nav -->
+        <div class="container-fluid p-4 border-bottom border-top mt-5 mb-5 mid-nav">
+            <div class="row ps-4">
+                <div class="col-md-4 mid-small">
+                    <div class="container ps-4">
+                        <div class="row">
+                            <div class="col-lg-2 col-sm-4">
+                                <a class="text-dark fs-1"> <i class="fa-solid fa-truck-fast"></i></a>
+                            </div>
+                            <div class="col-lg-10 col-sm-8">
+                                <h4>Free Shipping</h4>
+                                <p>Free shipping on orders over $99.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mid-small">
+                    <div class="container ps-3">
+                        <div class="row">
+                            <div class="col-lg-2 col-sm-4">
+                                <a class="text-dark fs-1"> <i class="fa-solid fa-headset"></i></a>
+                            </div>
+                            <div class="col-lg-10 col-sm-8">
+                                <h4>Customer Support</h4>
+                                <p>Quick customer support guarantee.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="container ps-4">
+                        <div class="row">
+                            <div class="col-lg-2 col-sm-4">
+                                <a class="text-dark fs-1"><i class="fa-solid fa-circle-dollar-to-slot"></i></a>
+                            </div>
+                            <div class="col-lg-10 col-sm-8">
+                                <h4>Money Back</h4>
+                                <p>15 days money back guarantee.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+ <!-- aaaa thing  -->
+ <section class="splide" aria-label="Splide Basic HTML Example">
+    <div class="splide__track">
+          <ul class="splide__list">
+              <li class="splide__slide">Slide 01</li>
+              <li class="splide__slide">Slide 02</li>
+              <li class="splide__slide">Slide 03</li>
+          </ul>
+    </div>
   </section>
- </div> -->
-
-
-
- <!-- mid nav -->
- <div class="container-fluid p-4  border-bottom border-top mt-5 mb-5 mid-nav">
-    <div class="row ps-4">
-        <div class="col-md-4 mid-small ">
-            <div class="container ps-4">
-                <div class="row">
-                    <div class="col-lg-2 col-sm-4">
-                        <a class="text-dark fs-1"> <i class="fa-solid fa-truck-fast"></i></i></a>
-                        
-                    </div>
-                    <div class="col-lg-10 col-sm-8">
-                        <h4>Free Shipping</h4>
-                        <p>Free shipping on orders over $99.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mid-small">
-            <div class="container ps-3 ">
-                <div class="row">
-                    <div class="col-lg-2 col-sm-4">
-                        <a class="text-dark fs-1"> <i class="fa-solid fa-headset"></i></a>
-                        
-                    </div>
-                    <div class="col-lg-10 col-sm-8">
-                        <h4>Customer Support</h4>
-                        <p>Quick customer support guarantee.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="container ps-4">
-                <div class="row">
-                    <div class="col-lg-2 col-sm-4">
-                        <a class="text-dark fs-1"><i class="fa-solid fa-circle-dollar-to-slot"></i></a> 
-                    </div>
-                    <div class="col-lg-10 col-sm-8">
-                        <h4>Money Back</h4>
-                        <p>15 days money back guarantee.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
- </div>
-
 <!-- form (H)-->
 <div class="container-fluid d-flex justify-content-center mt-3 mb-3" id="contact">
     <div class= "row">
@@ -203,24 +194,19 @@
                     <a href="#" class="text-dark pe-3 fs-4"><i class="fa-solid fa-w icon"></a></i>
                    </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <h2 class="text-dark fw-bolder">Need Help?</h2>
-                     <ul type=none >
-                      <li><a href="#" class="text-dark fs-6">Payment Methods</li>
-                      <li><a href="#" class=" text-dark fs-6">Money Back Gurantee</a> </li>
-                      <li><a href="#" class=" text-dark fs-6">Customer Service</a></li>
-                      <li><a href="#" class="text-dark fs-6">Terms & Conditions</a></li>
-                     </ul>
+                <!--END OF TESTIMONIAL 2 -->
+                <!--TESTIMONIAL 3 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <span>Hagar</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>                    <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
                   </div>
-                <div class="col-lg-2 text-white">
-                    <h2 class="text-dark fw-bolder">Navigate</h2>
-                   <ul type=none>
-                    <li><a href="#" class="text-dark fs-6">My Orders</a></li>
-                    <li><a href="#" class="text-dark fs-6">My Account</a></li>
-                    <li><a href="#" class=" text-dark fs-6">Products </a></li>
-                    <li><a href="#" class="text-dark fs-6">Change Password </a></li>
-                    <li><a href="#" class=" text-dark fs-6">Track Order</a></li>
-                   </ul>
+                </div>
+                <!--END OF TESTIMONIAL 3 --> 
               </div>
               <hr style="width: 70%; position: relative; right: 4%;" >
               <div class="text-dark fw-bold fs-5" style="text-align: center;"> Copyright &copy; 2022-ITI Group 2</div>
@@ -235,5 +221,14 @@
         <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <!-- include javascript files -->
         <script src="./js/script.js"></script>
+        <!-- splide -->
+        <script src="./node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
+        <!-- <script>
+            new Splide( '.splide' ).mount();
+          </script> -->
+          <script>
+            import Splide from '@splidejs/splide';
+            new Splide( '.splide' ).mount();
+          </script>
     </body>
 </html>
