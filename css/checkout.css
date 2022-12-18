@@ -60,7 +60,35 @@ bor {
     border: 1px solid var(--separators-color);
 }
 
+/* shipping details */
+
+#shipping-dt-form input,
+#shipping-dt-form select {
+    border: 1px solid var(--separators-color);
+}
+
 /* product */
+
+.prod:hover {
+    background-color: var(--ltn__secondary-color);
+    color: white;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transform: scale(1.01);
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
+}
+
+.prod:hover .prod-qty-remove,
+.prod:hover .prod-qty-add,
+.prod:hover .prod-qty-value {
+    color: white !important;
+}
 
 .prod-qty-add,
 .prod-qty-remove {
