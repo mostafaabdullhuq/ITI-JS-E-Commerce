@@ -17,6 +17,8 @@
         <link rel="stylesheet" href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
         <link rel="stylesheet" href="./css/style.css" />
         <link rel="stylesheet" href="./css/index.css" />
+        <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
+
         <title>E-Commerce</title>
     </head>
     <body>
@@ -176,33 +178,7 @@
             </div>
         </div>
 
-        <!-- Img Slider -->
-        <section class="splide" aria-label="Slide Container Example">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide">
-                        <div class="splide__slide__container">
-                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1699&q=80" />
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="splide__slide__container">
-                            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" />
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="splide__slide__container">
-                            <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80" />
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="splide__slide__container">
-                            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" />
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
+      
         <!-- form -->
         <div class="container-fluid d-flex justify-content-center mt-3 mb-3" id="contact">
             <div class="row">
@@ -281,8 +257,8 @@
                                       
         <footer class="bd-footer">
             <div class="container py-5 pe-5">
-                <div class="row">
-                    <div class="col-lg-4 col-sm-12-justify-content-center offset-lg-1 mb-4">
+                <div class="row foot">
+                    <div class="col-lg-4 col-md-6 col-sm-12-justify-content-center offset-lg-1 mb-4">
                         <h2 class="text-dark fw-bolder">Contact Us</h2>
                         <ul type="none">
                             <li><span class="fw-bold">Phone Number:</span> <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">+11111111111</a></li>
@@ -296,7 +272,7 @@
                             <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-solid fa-w"></i></a>
                         </div>
                     </div>
-                    <div class="col-lg-4 mb-4">
+                    <div class="col-lg-4 col-md-6 mb-4">
                         <h2 class="text-dark fw-bolder">Need Help?</h2>
                         <ul type="none">
                             <li><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Payment Methods</a></li>
@@ -327,58 +303,11 @@
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/node_modules/jquery/dist/jquery.js"></script>
 <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
-    <script>
-    jQuery(document).ready(function($) {
-      "use strict";
-      //  TESTIMONIALS CAROUSEL HOOK
-      $('#customers-testimonials').owlCarousel({
-          loop: true,
-          center: true,
-          items: 3,
-          margin: 0,
-          autoplay: true,
-          dots:true,
-          autoplayTimeout: 8500,
-          smartSpeed: 450,
-          responsive: {
-            0: {
-              items: 1
-            },
-            768: {
-              items: 2
-            },
-            1170: {
-              items: 3
-            }
-          }
-      });
-    });
-    $(document).ready(function(){
-  $('.owl-carousel').owlCarousel();
-});
-    </script>
     <!-- include bootstrap js file from node modules -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- include javascript files -->
     <script src="./js/script.js"></script>
     <!-- splide -->
-    <script src="./node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
-    <script>
-      $(function () {
-        var splide = new Splide(".splide");
-        splide.mount();
-      });
-
-      $(function () {
-        var splide = new Splide( '.splide1', {
-  type   : 'loop',
-  padding: '5rem',
-} );
-
-splide.mount();
-      });
-    </script>
-
-   
+    <script src="./node_modules/@splidejs/splide/dist/js/splide.min.js"></script>   
   </body>
 </html>
