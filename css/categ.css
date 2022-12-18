@@ -6,3 +6,39 @@
    width: 200px;
    height: 200px;
 } */
+/* .bt{
+    display: flex;
+    justify-content: end;
+    width:9%;
+    height: 60px;
+    padding: 20px;
+    
+}
+.bt:hover{
+    color: var(--ltn__secondary-color);
+} */
+.left{
+    background-color: var(--border-color-8);
+}
+input:hover{
+    background-color: var(--ltn__secondary-color);
+    cursor: pointer;
+}
+
+
+/* @media (max-width:768px) {
+    .menu-toggle{
+        display: block;
+    }
+    .left{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        max-width: 300px;
+        transition: 0.2s linear;
+    }
+    .left.is-active{
+        left: 0;
+    }
+    
+} */
