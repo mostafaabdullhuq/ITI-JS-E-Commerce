@@ -3,17 +3,12 @@
 :root {
     --separators-color: #eee;
 }
-
-* {
+.form-control,
+.form-control:focus,
+.form-control:active,
+.form-control:hover {
     outline: none !important;
-}
-
-*:focus {
-    outline: none !important;
-}
-textarea:focus,
-input:focus {
-    outline: none !important;
+    box-shadow: none;
 }
 
 body {
@@ -27,8 +22,8 @@ i {
 
 i:hover {
     color: var(--ltn__secondary-color-2) !important;
-    animation: rotate 0.5s linear 1;
-    -webkit-animation: rotate 0.5s linear 1;
+    animation: rotate 0.3s linear 1;
+    -webkit-animation: rotate 0.3s linear 1;
 }
 
 @keyframes rotate {
@@ -41,18 +36,18 @@ i:hover {
         -o-transform: rotate(0deg);
     }
     25% {
-        transform: rotate(25deg);
-        -webkit-transform: rotate(25deg);
-        -moz-transform: rotate(25deg);
-        -ms-transform: rotate(25deg);
-        -o-transform: rotate(25deg);
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
     }
     75% {
-        transform: rotate(-25deg);
-        -webkit-transform: rotate(-25deg);
-        -moz-transform: rotate(-25deg);
-        -ms-transform: rotate(-25deg);
-        -o-transform: rotate(-25deg);
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
     }
 }
 
@@ -60,7 +55,35 @@ bor {
     border: 1px solid var(--separators-color);
 }
 
+/* shipping details */
+
+#shipping-dt-form input,
+#shipping-dt-form select {
+    border: 1px solid var(--border-color-1);
+}
+
 /* product */
+
+.prod:hover {
+    background-color: var(--ltn__secondary-color);
+    color: white;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transform: scale(1.01);
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
+}
+
+.prod:hover .prod-qty-remove,
+.prod:hover .prod-qty-add,
+.prod:hover .prod-qty-value {
+    color: white !important;
+}
 
 .prod-qty-add,
 .prod-qty-remove {
@@ -85,6 +108,10 @@ bor {
 }
 .qty-controls {
     border: 3px solid var(--ltn__primary-color-3);
+}
+
+input:focus::placeholder {
+    color: transparent !important;
 }
 
 input::placeholder,
@@ -153,4 +180,17 @@ button.back-to-cart-button:hover {
 
 .prod-qty input {
     background-color: transparent !important;
+}
+
+.prod-name,
+.prod-price,
+.prod-qty,
+.prod-qty input {
+    font-weight: 500;
+}
+
+select,
+input::placeholder {
+    font-weight: 420 !important;
+    outline: none !important;
 }
