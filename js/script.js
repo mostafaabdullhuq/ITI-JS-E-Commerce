@@ -13,3 +13,46 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+// carousel
+jQuery(document).ready(function($) {
+    "use strict";
+    //  TESTIMONIALS CAROUSEL HOOK
+    $('#customers-testimonials').owlCarousel({
+        loop: true,
+        center: true,
+        items: 3,
+        margin: 0,
+        autoplay: true,
+        dots:true,
+        autoplayTimeout: 8500,
+        smartSpeed: 450,
+        responsive: {
+          0: {
+            items: 1
+          },
+          768: {
+            items: 2
+          },
+          1170: {
+            items: 3
+          }
+        }
+    });
+  });
+  $(document).ready(function(){
+$('.owl-carousel').owlCarousel();
+});
+// feedback
+$(function () {
+    var splide = new Splide(".splide");
+    splide.mount();
+  });
+
+  $(function () {
+    var splide = new Splide( '.splide1', {
+type   : 'loop',
+padding: '5rem',
+} );
+
+splide.mount();
+  });
