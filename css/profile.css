@@ -1,0 +1,18 @@
+@import url('./style.css');
+
+body {
+    background-color: var(--nude);
+
+}
+.labels {
+    font-size: 16px
+}
+.btn-form{
+    background-color: var(--border-color-4);
+    margin-right: 20%;
+    color: aliceblue;
+}
+.btn-form:hover{
+    border: 1px solid black;
+    background-color: white;
+}
