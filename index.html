@@ -11,14 +11,11 @@
         <!-- include fontawesome css file from node modules -->
         <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css" />
         <!-- include css files -->
-        <link rel="stylesheet" href="./node_modules/@splidejs/splide/dist/css/splide.min.css">
-        <link rel="stylesheet" href="./css/style.css" />
-        <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
+        <link rel="stylesheet" href="./node_modules/@splidejs/splide/dist/css/splide.min.css" />
         <link rel="stylesheet" href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
         <link rel="stylesheet" href="./css/style.css" />
         <link rel="stylesheet" href="./css/index.css" />
-        <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
-
         <title>E-Commerce</title>
     </head>
     <body>
@@ -178,7 +175,7 @@
             </div>
         </div>
 
-        
+      
         <!-- form -->
         <div class="container-fluid d-flex justify-content-center mt-3 mb-3" id="contact">
             <div class="row">
@@ -200,65 +197,15 @@
       </div>
     </div>
     
-    <!-- Feedback -->
-    <section class="testimonials">
-      <div class="container-fluid bg-secondary">
-    <h1 style="text-align: center;" class="fw-bolder fs-2">Customers Feedback</h1>
-          <div class="row">
-            <div class="col-sm-12">
-              <div id="customers-testimonials" class="owl-carousel">
     
-                <!--TESTIMONIAL 1 -->
-                <div class="item">
-                  <div class="shadow-effect">
-                    <span class="fs-2 fw-bold">Mostafa</span>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
-                  </div>
-                </div>
-                <!--END OF TESTIMONIAL 1 -->
-                <!--TESTIMONIAL 2 -->
-                <div class="item">
-                  <div class="shadow-effect">
-                    <span>Sara</span>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
-                  </div>
-                </div>
-                <!--END OF TESTIMONIAL 2 -->
-                <!--TESTIMONIAL 3 -->
-                <div class="item">
-                  <div class="shadow-effect">
-                    <span>Hagar</span>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>                    <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
-                  </div>
-                </div>
-                <!--END OF TESTIMONIAL 3 --> 
-              </div>
-            </div>
-          </div>
-          </div>
-        </section>
             
 
     <!-- Footer -->
                                       
         <footer class="bd-footer">
             <div class="container py-5 pe-5">
-                <div class="row foot">
-                    <div class="col-lg-4 col-md-6 col-sm-12-justify-content-center offset-lg-1 mb-4">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-12-justify-content-center offset-lg-1 mb-4">
                         <h2 class="text-dark fw-bolder">Contact Us</h2>
                         <ul type="none">
                             <li><span class="fw-bold">Phone Number:</span> <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">+11111111111</a></li>
@@ -272,7 +219,7 @@
                             <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-solid fa-w"></i></a>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="col-lg-4 mb-4">
                         <h2 class="text-dark fw-bolder">Need Help?</h2>
                         <ul type="none">
                             <li><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Payment Methods</a></li>
@@ -303,11 +250,58 @@
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/node_modules/jquery/dist/jquery.js"></script>
 <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script>
+    jQuery(document).ready(function($) {
+      "use strict";
+      //  TESTIMONIALS CAROUSEL HOOK
+      $('#customers-testimonials').owlCarousel({
+          loop: true,
+          center: true,
+          items: 3,
+          margin: 0,
+          autoplay: true,
+          dots:true,
+          autoplayTimeout: 8500,
+          smartSpeed: 450,
+          responsive: {
+            0: {
+              items: 1
+            },
+            768: {
+              items: 2
+            },
+            1170: {
+              items: 3
+            }
+          }
+      });
+    });
+    $(document).ready(function(){
+  $('.owl-carousel').owlCarousel();
+});
+    </script>
     <!-- include bootstrap js file from node modules -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- include javascript files -->
     <script src="./js/script.js"></script>
     <!-- splide -->
-    <script src="./node_modules/@splidejs/splide/dist/js/splide.min.js"></script>   
+    <script src="./node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
+    <script>
+      $(function () {
+        var splide = new Splide(".splide");
+        splide.mount();
+      });
+
+      $(function () {
+        var splide = new Splide( '.splide1', {
+  type   : 'loop',
+  padding: '5rem',
+} );
+
+splide.mount();
+      });
+    </script>
+
+   
   </body>
 </html>
