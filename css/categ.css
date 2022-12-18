@@ -24,7 +24,13 @@ input:hover{
     background-color: var(--ltn__secondary-color);
     cursor: pointer;
 }
-
+.card:hover{
+    border-width: 3px;
+    height:400px;
+    border-radius: 10px;
+    border-color: var(--ltn__secondary-color);
+    background-color: var(--ltn__secondary-color);
+  }
 
 /* @media (max-width:768px) {
     .menu-toggle{
