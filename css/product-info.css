@@ -1,0 +1,59 @@
+@import url("./style.css");
+
+:root {
+    --cart_prod_size: 350px;
+    --separators-color: #eee;
+}
+
+* {
+    outline: none !important;
+}
+
+*:focus {
+    outline: none !important;
+}
+body {
+    font-family: var(--ltn-font-family);
+}
+
+button {
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+}
+
+button:hover{
+    background-color: var(--ltn__secondary-color);
+}
+
+i {
+    color: var(--ltn__primary-color) !important;
+}
+
+i:hover {
+    color: var(--ltn__secondary-color-2) !important;
+    animation: scale 0.3s linear 1;
+    -webkit-animation: scale 0.3s linear 1;
+    /* border-color:var(--ltn__secondary-color-2) ; */
+}
+@keyframes scale {
+    0%,
+    100% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+        -webkit-transform: scale(1.3);
+        -moz-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        -o-transform: scale(1.3);
+    }
+}
+
+
+
