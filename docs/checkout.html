@@ -22,10 +22,10 @@
                     <h2 class="h3 fw-bolder mb-5 text-center text-lg-start">Shipping Details</h2>
                     <form id="shipping-dt-form" class="ps-xl-4">
                         <div class="mb-3">
-                            <input type="text" class="form-control rounded-0 py-3 px-4" placeholder="Full Name" />
+                            <input id="checkout-full-name" type="text" class="form-control rounded-0 py-3 px-4" placeholder="Full Name" />
                         </div>
                         <div class="mb-3">
-                            <input type="text" class="form-control rounded-0 py-3 px-4" placeholder="Shipping Address" />
+                            <input id="checkout-address" type="text" class="form-control rounded-0 py-3 px-4" placeholder="Shipping Address" />
                         </div>
                         <div class="mb-3 d-flex">
                             <select class="form-select me-3 rounded-0 country-select px-4">
@@ -275,11 +275,11 @@
                                 <option value="Zambia">Zambia</option>
                                 <option value="Zimbabwe">Zimbabwe</option>
                             </select>
-                            <input type="text" class="form-control rounded-0 py-3 px-4" placeholder="City" />
+                            <input id="checkout-city" type="text" class="form-control rounded-0 py-3 px-4" placeholder="City" />
                         </div>
 
                         <div class="mb-3">
-                            <input type="text" class="form-control rounded-0 py-3 px-4" placeholder="Phone Number" />
+                            <input id="checkout-phone" type="text" class="form-control rounded-0 py-3 px-4" placeholder="Phone Number" />
                         </div>
                     </form>
                 </div>
@@ -289,88 +289,88 @@
                         <!-- product -->
                         <div class="list-group-item col list-group-item-action prod d-flex flex-row align-items-center py-3 px-3">
                             <!--? product title -->
-                            <div class="prod-name fs-5 fw-bold col-lg-8 col-6">Lorem ipsum, dolor sit amet consectetur</div>
+                            <div class="prod-name fs-5 col-lg-8 col-6">Lorem ipsum, dolor sit amet consectetur</div>
                             <!--? product quantity -->
                             <div class="prod-qty col d-flex justify-content-between px-3">
-                                <!-- if cart has more than 1 item of that product -->
+                                <!-- if checkout has more than 1 item of that product -->
                                 <!-- <i class="prod-qty-add fs-3 col-2 fa-solid fa-minus"></i> -->
-                                <!-- if cart has only 1 item of that product -->
+                                <!-- if checkout has only 1 item of that product -->
                                 <i class="prod-qty-add fs-5 col-2 fa-solid fa-trash-can text-start"></i>
-                                <input type="text" class="text-center fw-bold fs-5 prod-qty-value col-6 p-0" value="1" />
+                                <input type="text" class="text-center fs-5 prod-qty-value col-6 p-0" value="1" />
                                 <i class="prod-qty-remove fs-5 col-2 fa-solid fa-plus text-end"></i>
                             </div>
                             <!--? product price -->
-                            <div class="prod-price col fs-5 text-end fw-bold">$5000</div>
+                            <div class="prod-price col fs-5 text-end">$5000</div>
                         </div>
                         <!-- product -->
                         <div class="list-group-item col list-group-item-action prod d-flex flex-row align-items-center py-3 px-3">
                             <!--? product title -->
-                            <div class="prod-name fs-5 fw-bold col-lg-8 col-6">Lorem ipsum, dolor sit amet consectetur</div>
+                            <div class="prod-name fs-5 col-lg-8 col-6">Lorem ipsum, dolor sit amet consectetur</div>
                             <!--? product quantity -->
                             <div class="prod-qty col d-flex justify-content-between px-3">
-                                <!-- if cart has more than 1 item of that product -->
+                                <!-- if checkout has more than 1 item of that product -->
                                 <!-- <i class="prod-qty-add fs-3 col-2 fa-solid fa-minus"></i> -->
-                                <!-- if cart has only 1 item of that product -->
+                                <!-- if checkout has only 1 item of that product -->
                                 <i class="prod-qty-add fs-5 col-2 fa-solid fa-trash-can text-start"></i>
-                                <input type="text" class="text-center fw-bold fs-5 prod-qty-value col-6 p-0" value="1" />
+                                <input type="text" class="text-center fs-5 prod-qty-value col-6 p-0" value="1" />
                                 <i class="prod-qty-remove fs-5 col-2 fa-solid fa-plus text-end"></i>
                             </div>
                             <!--? product price -->
-                            <div class="prod-price col fs-5 text-end fw-bold">$5000</div>
+                            <div class="prod-price col fs-5 text-end">$5000</div>
                         </div>
                         <!-- product -->
                         <div class="list-group-item col list-group-item-action prod d-flex flex-row align-items-center py-3 px-3">
                             <!--? product title -->
-                            <div class="prod-name fs-5 fw-bold col-lg-8 col-6">Lorem ipsum, dolor sit amet consectetur</div>
+                            <div class="prod-name fs-5 col-lg-8 col-6">Lorem ipsum, dolor sit amet consectetur</div>
                             <!--? product quantity -->
                             <div class="prod-qty col d-flex justify-content-between px-3">
-                                <!-- if cart has more than 1 item of that product -->
+                                <!-- if checkout has more than 1 item of that product -->
                                 <!-- <i class="prod-qty-add fs-3 col-2 fa-solid fa-minus"></i> -->
-                                <!-- if cart has only 1 item of that product -->
+                                <!-- if checkout has only 1 item of that product -->
                                 <i class="prod-qty-add fs-5 col-2 fa-solid fa-trash-can text-start"></i>
-                                <input type="text" class="text-center fw-bold fs-5 prod-qty-value col-6 p-0" value="1" />
+                                <input type="text" class="text-center fs-5 prod-qty-value col-6 p-0" value="1" />
                                 <i class="prod-qty-remove fs-5 col-2 fa-solid fa-plus text-end"></i>
                             </div>
                             <!--? product price -->
-                            <div class="prod-price col fs-5 text-end fw-bold">$5000</div>
+                            <div class="prod-price col fs-5 text-end">$5000</div>
                         </div>
                         <!-- product -->
                         <div class="list-group-item col list-group-item-action prod d-flex flex-row align-items-center py-3 px-3">
                             <!--? product title -->
-                            <div class="prod-name fs-5 fw-bold col-lg-8 col-6">Lorem ipsum, dolor sit amet consectetur</div>
+                            <div class="prod-name fs-5 col-lg-8 col-6">Lorem ipsum, dolor sit amet consectetur</div>
                             <!--? product quantity -->
                             <div class="prod-qty col d-flex justify-content-between px-3">
-                                <!-- if cart has more than 1 item of that product -->
+                                <!-- if checkout has more than 1 item of that product -->
                                 <!-- <i class="prod-qty-add fs-3 col-2 fa-solid fa-minus"></i> -->
-                                <!-- if cart has only 1 item of that product -->
+                                <!-- if checkout has only 1 item of that product -->
                                 <i class="prod-qty-add fs-5 col-2 fa-solid fa-trash-can text-start"></i>
-                                <input type="text" class="text-center fw-bold fs-5 prod-qty-value col-6 p-0" value="1" />
+                                <input type="text" class="text-center fs-5 prod-qty-value col-6 p-0" value="1" />
                                 <i class="prod-qty-remove fs-5 col-2 fa-solid fa-plus text-end"></i>
                             </div>
                             <!--? product price -->
-                            <div class="prod-price col fs-5 text-end fw-bold">$5000</div>
+                            <div class="prod-price col fs-5 text-end">$5000</div>
                         </div>
                         <!-- product -->
                         <div class="list-group-item col list-group-item-action prod d-flex flex-row align-items-center py-3 px-3">
                             <!--? product title -->
-                            <div class="prod-name fs-5 fw-bold col-lg-8 col-6">Lorem ipsum, dolor sit amet consectetur</div>
+                            <div class="prod-name fs-5 col-lg-8 col-6">Lorem ipsum, dolor sit amet consectetur</div>
                             <!--? product quantity -->
                             <div class="prod-qty col d-flex justify-content-between px-3">
-                                <!-- if cart has more than 1 item of that product -->
+                                <!-- if checkout has more than 1 item of that product -->
                                 <!-- <i class="prod-qty-add fs-3 col-2 fa-solid fa-minus"></i> -->
-                                <!-- if cart has only 1 item of that product -->
+                                <!-- if checkout has only 1 item of that product -->
                                 <i class="prod-qty-add fs-5 col-2 fa-solid fa-trash-can text-start"></i>
-                                <input type="text" class="text-center fw-bold fs-5 prod-qty-value col-6 p-0" value="1" />
+                                <input type="text" class="text-center fs-5 prod-qty-value col-6 p-0" value="1" />
                                 <i class="prod-qty-remove fs-5 col-2 fa-solid fa-plus text-end"></i>
                             </div>
                             <!--? product price -->
-                            <div class="prod-price col fs-5 text-end fw-bold">$5000</div>
+                            <div class="prod-price col fs-5 text-end">$5000</div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- right side -->
-            <!-- right cart side -->
+            <!-- right checout side -->
             <div class="right col-xl col-lg-4 col d-flex flex-column px-3 px-lg-0 mt-5 mt-lg-0">
                 <h2 class="h3 fw-bolder mb-5 text-center text-lg-start">Order Summery</h2>
                 <!-- total side title -->
@@ -386,12 +386,12 @@
                                 <p class="h5">$5000</p>
                             </div>
                             <!-- shipping -->
-                            <div class="cart-shipping d-flex justify-content-between align-items-center py-4 mb-3 px-xl-5 px-lg-3">
+                            <div class="checkout-shipping d-flex justify-content-between align-items-center py-4 mb-3 px-xl-5 px-lg-3">
                                 <p class="h5 fw-bolder">Shipping</p>
                                 <p class="h5">$5000</p>
                             </div>
                             <!-- total -->
-                            <div class="cart-total d-flex justify-content-between align-items-center py-4 mb-3 px-xl-5 px-lg-3">
+                            <div class="checkout-total d-flex justify-content-between align-items-center py-4 mb-3 px-xl-5 px-lg-3">
                                 <p class="h5 fw-bolder">Total</p>
                                 <p class="h5">$5000</p>
                             </div>

@@ -3,17 +3,12 @@
 :root {
     --separators-color: #eee;
 }
-
-* {
+.form-control,
+.form-control:focus,
+.form-control:active,
+.form-control:hover {
     outline: none !important;
-}
-
-*:focus {
-    outline: none !important;
-}
-textarea:focus,
-input:focus {
-    outline: none !important;
+    box-shadow: none;
 }
 
 body {
@@ -64,7 +59,7 @@ bor {
 
 #shipping-dt-form input,
 #shipping-dt-form select {
-    border: 1px solid var(--separators-color);
+    border: 1px solid var(--border-color-1);
 }
 
 /* product */
@@ -113,6 +108,10 @@ bor {
 }
 .qty-controls {
     border: 3px solid var(--ltn__primary-color-3);
+}
+
+input:focus::placeholder {
+    color: transparent !important;
 }
 
 input::placeholder,
@@ -181,4 +180,17 @@ button.back-to-cart-button:hover {
 
 .prod-qty input {
     background-color: transparent !important;
+}
+
+.prod-name,
+.prod-price,
+.prod-qty,
+.prod-qty input {
+    font-weight: 500;
+}
+
+select,
+input::placeholder {
+    font-weight: 420 !important;
+    outline: none !important;
 }
