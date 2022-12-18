@@ -1,10 +1,7 @@
 @import url('./style.css');
-@import '@splidejs/splide/css';
 
 body {
-    /* background: rgb(99, 39, 120) */
     background-color: var(--nude);
-    /* background-color: var(--border-color-4);  */
 
 }
 .labels {
