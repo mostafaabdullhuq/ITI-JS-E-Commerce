@@ -27,8 +27,8 @@ i {
 
 i:hover {
     color: var(--ltn__secondary-color-2) !important;
-    animation: rotate 0.5s linear 1;
-    -webkit-animation: rotate 0.5s linear 1;
+    animation: rotate 0.3s linear 1;
+    -webkit-animation: rotate 0.3s linear 1;
 }
 
 @keyframes rotate {
@@ -41,18 +41,18 @@ i:hover {
         -o-transform: rotate(0deg);
     }
     25% {
-        transform: rotate(25deg);
-        -webkit-transform: rotate(25deg);
-        -moz-transform: rotate(25deg);
-        -ms-transform: rotate(25deg);
-        -o-transform: rotate(25deg);
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
     }
     75% {
-        transform: rotate(-25deg);
-        -webkit-transform: rotate(-25deg);
-        -moz-transform: rotate(-25deg);
-        -ms-transform: rotate(-25deg);
-        -o-transform: rotate(-25deg);
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
     }
 }
 
