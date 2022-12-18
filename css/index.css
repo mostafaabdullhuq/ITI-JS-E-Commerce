@@ -1,147 +1,6 @@
 @import url('./style.css');
 @import '@splidejs/splide/css';
-/* slider */
-.home .carousel-item{
-	min-height: 100vh;
-	background-position: center;
-	background-size: cover;
-	position: relative;
-	z-index: 1;
-}
-.home .carousel-item:before{
-	content: '';
-	position: absolute;
-	left:0;
-	top:0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0,0,0,0.5);
-	z-index: -1;
-}
-.home .carousel-item .container{
-	position: absolute;
-	left: 20%;
-	top:50%;
-	transform: translate(-50%,-50%);
-	text-align: center;
-}
-.home .carousel-item h2{
-	font-size: 80px;
-	color: #ffffff;
-	margin:0 0 10px;
-	opacity: 0;
-}
-.home .carousel-item p{
-	font-size: 30px;
-	margin:0;
-	color: #eeeeee;
-	opacity:0;
-}
-.home .carousel-item.active h2{
-	animation: fadeInLeft 0.5s ease forwards;
-}
-.home .carousel-item.active p{
-	animation: fadeInRight 0.5s ease forwards;
-}
 
-@keyframes fadeInLeft{
-	0%{
-		opacity: 0;
-		transform: translateX(-30px);
-	}
-	100%{
-		opacity: 1;
-		transform: translateX(0px);
-	}
-}
-@keyframes fadeInRight{
-	0%{
-		opacity: 0;
-		transform: translateX(30px);
-	}
-	100%{
-		opacity: 1;
-		transform: translateX(0px);
-	}
-}
-
-.home .carousel-controls{
-	position: absolute;
-	left: 50%;
-	bottom: 40px;
-	z-index: 10;
-	transform: translateX(-50%);
-}
-
-.home .carousel-indicators{
-	position: relative;
-	margin:0;
-}
-
-.home .carousel-indicators li{
-	height: 70px;
-	width: 70px;
-	margin:0 5px;
-	border-radius: 50%;
-	background-position: center;
-	background-size: cover;
-	border:3px solid transparent;
-	transition: all 0.3s ease;
-}
-.home .carousel-indicators li.active{
-	border-color: #ffffff;
-	transform: scale(1.2);
-}
-
-.home .carousel-control-next, 
-.home .carousel-control-prev{
-	height: 60px;
-	width: 60px;
-	opacity: 1;
-	z-index: 3;
-	top: 50%;
-	transform: translateY(-50%);
-	border-radius: 50%;
-	transition: all 0.3s ease;
-}
-.home .carousel-control-next:hover, 
-.home .carousel-control-prev:hover{
-   box-shadow: 0 0 10px #ffffff;
-}
-.home .carousel-control-next img, 
-.home .carousel-control-prev img{
-   width: 30px;
-}
-.home .carousel-control-next{
-	right: -90px;
-}
-.home .carousel-control-prev{
-	left: -90px;
-} 
-.btn1{
-	margin-top: 60px;
-	margin-left: 60px;
-	font-size: 26px;
-	transform: translate(-50%);
-	transition: all s ease;
-	background-color: rgb(232, 227, 227);
-}
-@media(max-width: 767px){
-  .home .carousel-control-next, 
-  .home .carousel-control-prev{
-  	display: none;
-  }
-  .home .carousel-indicators li{
-  	height: 60px;
-  	width: 60px;
-  }
-  .home .carousel-item h2{
-  	font-size: 45px;
-  }
-  .home .carousel-item p{
-  	font-size: 22px;
-  }
-}
 
 
 /* nav style  */
@@ -197,7 +56,13 @@ ul{
     padding: 1;
 }
 a:link {text-decoration:none}
-a:hover {text-decoration:underline}
+a:hover {
+	text-decoration:underline 
+}
+a i:hover{
+	color: coral;
+}
+
 hr {
     align-content : center;
     margin-left : auto;
@@ -210,4 +75,77 @@ li{
     .foot{
         text-align: center;
     }
+}
+
+
+/* feedback */
+.shadow-effect {
+	background: #fff;
+	padding: 20px;
+	border-radius: 4px;
+	text-align: center;
+border:1px solid #ECECEC;
+	box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.02);
+}
+#customers-testimonials .shadow-effect p {
+	font-family: inherit;
+	font-size: 17px;
+	line-height: 1.5;
+	margin: 0 0 17px 0;
+	font-weight: 300;
+}
+.testimonial-name {
+	margin: -17px auto 0;
+	display: table;
+	width: auto;
+	background: #3190E7;
+	padding: 9px 35px;
+	border-radius: 12px;
+	text-align: center;
+	color: #fff;
+	box-shadow: 0 9px 18px rgba(0,0,0,0.12), 0 5px 7px rgba(0,0,0,0.05);
+}
+#customers-testimonials .item {
+	text-align: center;
+	padding: 50px;
+		margin-bottom:80px;
+	opacity: .2;
+	-webkit-transform: scale3d(0.8, 0.8, 1);
+	transform: scale3d(0.8, 0.8, 1);
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+#customers-testimonials .owl-item.active.center .item {
+	opacity: 1;
+	-webkit-transform: scale3d(1.0, 1.0, 1);
+	transform: scale3d(1.0, 1.0, 1);
+}
+.owl-carousel .owl-item img {
+	transform-style: preserve-3d;
+	max-width: 90px;
+	margin: 0 auto 17px;
+}
+#customers-testimonials.owl-carousel .owl-dots .owl-dot.active span,
+#customers-testimonials.owl-carousel .owl-dots .owl-dot:hover span {
+	background: #3190E7;
+	transform: translate3d(0px, -50%, 0px) scale(0.7);
+}
+#customers-testimonials.owl-carousel .owl-dots{
+display: inline-block;
+width: 100%;
+text-align: center;
+}
+#customers-testimonials.owl-carousel .owl-dots .owl-dot{
+display: inline-block;
+}
+#customers-testimonials.owl-carousel .owl-dots .owl-dot span {
+	background: #3190E7;
+	display: inline-block;
+	height: 20px;
+	margin: 0 2px 5px;
+	transform: translate3d(0px, -50%, 0px) scale(0.3);
+	transform-origin: 50% 50% 0;
+	transition: all 250ms ease-out 0s;
+	width: 20px;
 }
