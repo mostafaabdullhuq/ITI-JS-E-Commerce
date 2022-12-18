@@ -1,4 +1,7 @@
 @import url("./style.css");
+body{
+    overflow-x: hidden;
+}
 .product-item .price , .title {
     text-align: center;
 }
@@ -30,6 +33,17 @@ input:hover{
     border-radius: 10px;
     border-color: var(--ltn__secondary-color);
     background-color: var(--ltn__secondary-color);
+}
+.left .menu .menu-item:hover,
+.left .menu .menu-item.is-active{
+  color: var(--ltn__secondary-color);
+  border-right: 5px solid var(--ltn__secondary-color);
+}
+@media (min-width: 500px) and (max-width:15px) {
+    .left{
+        position: fixed;
+        max-width: 200px;
+    }
   }
 
 /* @media (max-width:768px) {
