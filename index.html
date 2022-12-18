@@ -11,6 +11,7 @@
         <!-- include fontawesome css file from node modules -->
         <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css" />
         <!-- include css files -->
+        <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
         <link rel="stylesheet" href="./node_modules/@splidejs/splide/dist/css/splide.min.css" />
         <link rel="stylesheet" href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
         <link rel="stylesheet" href="./css/style.css" />
@@ -100,41 +101,6 @@
             </div>
         </div>
 
-        <!-- carousel -->
-        <!-- <div class="container-fluid p-0">
-  <section class="home">
-   <div id="carousel" class="carousel slide" data-ride="carousel">
-   <div class="carousel-controls">
-     <ol class="carousel-indicators">
-       <li data-target="#carousel" data-slide-to="0" class="active" style="background-image:url('https://images.unsplash.com/photo-1574885914529-e157b2664e4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXRodW1ibmFpbHx8NzE0NjcwM3x8ZW58MHx8fHw%3D&dpr=2&auto=format&fit=crop&w=294&q=60')"></li>
-       <li data-target="#carousel" data-slide-to="1" style="background-image:url('https://images.unsplash.com/photo-1583209814683-c023dd293cc6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXRodW1ibmFpbHx8MGxPMFFrdEtzNGN8fGVufDB8fHx8&dpr=2&auto=format&fit=crop&w=126&q=60')"></li>
-       
-     </ol>
-     <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-      <img src="https://images.unsplash.com/photo-1574885914529-e157b2664e4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXRodW1ibmFpbHx8NzE0NjcwM3x8ZW58MHx8fHw%3D&dpr=2&auto=format&fit=crop&w=294&q=60" alt="Prev"> 
-   </a>
-   <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-     <img src="img/right-arrow.svg" alt="Next">
-   </a>
-   </div>
-   <div class="carousel-inner">
-     <div class="carousel-item active" style="background-image:url('https://images.unsplash.com/photo-1574885914529-e157b2664e4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXRodW1ibmFpbHx8NzE0NjcwM3x8ZW58MHx8fHw%3D&dpr=2&auto=format&fit=crop&w=294&q=60')">
-       <div class="container">
-          <h2>ANY THING</h2>
-          <p>Quick description</p>
-       </div>
-     </div>
-     <div class="carousel-item" style="background-image:url('https://images.unsplash.com/photo-1614859386044-8660004c5fd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXRodW1ibmFpbHx8MGxPMFFrdEtzNGN8fGVufDB8fHx8&dpr=2&auto=format&fit=crop&w=294&q=60')">
-       <div class="container">
-         <h2>ANY THING</h2>
-         <p>Quick description</p>
-         </div>
-       </div>
-     </div>
-   </div>
-  </section>
- </div> -->
-
         <!-- mid nav -->
         <div class="container-fluid p-4 border-bottom border-top mt-5 mb-5 mid-nav">
             <div class="row ps-4">
@@ -180,7 +146,7 @@
             </div>
         </div>
 
-        <!-- aaaa thing  -->
+        <!-- Img Slider -->
         <section class="splide" aria-label="Slide Container Example">
             <div class="splide__track">
                 <ul class="splide__list">
@@ -225,9 +191,64 @@
                 </div>
             </div>
         </div>
+      </div>
+    </div>
+    
+    <!-- Feedback -->
+    <section class="testimonials">
+      <div class="container-fluid bg-secondary">
+    <h1 style="text-align: center;" class="fw-bolder fs-2">Customers Feedback</h1>
+          <div class="row">
+            <div class="col-sm-12">
+              <div id="customers-testimonials" class="owl-carousel">
+    
+                <!--TESTIMONIAL 1 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <span class="fs-2 fw-bold">Mostafa</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+                  </div>
+                </div>
+                <!--END OF TESTIMONIAL 1 -->
+                <!--TESTIMONIAL 2 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <span>Sara</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+                  </div>
+                </div>
+                <!--END OF TESTIMONIAL 2 -->
+                <!--TESTIMONIAL 3 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <span>Hagar</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>                    <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+                  </div>
+                </div>
+                <!--END OF TESTIMONIAL 3 --> 
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+            
 
-        <!-- Footer -->
-        <!-- Footer (Z)-->
+    <!-- Footer -->
+                                      
         <footer class="bd-footer">
             <div class="container py-5 pe-5">
                 <div class="row">
@@ -271,23 +292,63 @@
             </div>
         </footer>
 
-        <!-- include jquery file -->
-        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-        <!-- include bootstrap js file from node modules -->
-        <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- include javascript files -->
-        <script src="./js/script.js"></script>
-        <!-- splide -->
-        <script src="./node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
-        <script>
-            $(function () {
-                var splide = new Splide(".splide");
-                splide.mount();
-            });
-        </script>
+    <!-- include jquery file -->
+    <!-- <link rel="stylesheet" href="./node_modules/owl.carousel/dist/owl.carousel.min.js"> -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+<script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script>
+    jQuery(document).ready(function($) {
+      "use strict";
+      //  TESTIMONIALS CAROUSEL HOOK
+      $('#customers-testimonials').owlCarousel({
+          loop: true,
+          center: true,
+          items: 3,
+          margin: 0,
+          autoplay: true,
+          dots:true,
+          autoplayTimeout: 8500,
+          smartSpeed: 450,
+          responsive: {
+            0: {
+              items: 1
+            },
+            768: {
+              items: 2
+            },
+            1170: {
+              items: 3
+            }
+          }
+      });
+    });
+    $(document).ready(function(){
+  $('.owl-carousel').owlCarousel();
+});
+    </script>
+    <!-- include bootstrap js file from node modules -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- include javascript files -->
+    <script src="./js/script.js"></script>
+    <!-- splide -->
+    <script src="./node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
+    <script>
+      $(function () {
+        var splide = new Splide(".splide");
+        splide.mount();
+      });
 
-        <!-- <script>
-            new Splide( '.splide' ).mount();
-          </script> -->
-    </body>
+      $(function () {
+        var splide = new Splide( '.splide1', {
+  type   : 'loop',
+  padding: '5rem',
+} );
+
+splide.mount();
+      });
+    </script>
+
+   
+  </body>
 </html>
