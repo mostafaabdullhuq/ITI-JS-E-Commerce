@@ -42,11 +42,13 @@ input:hover{
 }
 .card:hover{
     border-width: 3px;
-    height:400px;
-    border-radius: 10px;
+    height:310px;
     border-color: var(--ltn__secondary-color);
     background-color: var(--ltn__secondary-color);
 }
+/* .img-fluid:hover{
+    height: 45px;
+} */
 .left .menu .menu-item:hover,
 .left .menu .menu-item.is-active{
   color: var(--ltn__secondary-color);
