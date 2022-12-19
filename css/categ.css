@@ -49,7 +49,7 @@ input:hover{
     border-color: var(--ltn__secondary-color);
     background-color: var(--ltn__secondary-color);
     animation: scale 0.3s linear 1;
-    -webkit-animation: scale 0.3s linear 1;
+    -webkit-animation: scale 1s linear 1;
 }
 i:hover {
     color: var(--ltn__secondary-color-2) !important;
@@ -80,15 +80,15 @@ i:hover {
   color: var(--ltn__secondary-color);
   border-right: 5px solid var(--ltn__secondary-color);
 }
-@media (max-width: 800px){
+/* @media (max-width: 800px){
     .menu-toggle{
         display:block;
     }
     .left{
-        /* position: fixed; */
+        position: fixed;
         width: 200px;
     }
-  }
+  } */
 /* @media (min-width: 700px){
     .menu-toggle{
         display: block;
