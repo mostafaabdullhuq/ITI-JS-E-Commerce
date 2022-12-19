@@ -16,13 +16,13 @@ body {
     font-family: var(--ltn-font-family);
 }
 
-button {
+.btn {
     background-color: black;
     color: white;
     font-weight: bolder;
 }
 
-button:hover{
+.btn:hover{
     background-color: var(--ltn__secondary-color);
 }
 
@@ -54,6 +54,33 @@ i:hover {
         -o-transform: scale(1.3);
     }
 }
-
-
+p{
+    word-break: break-all;
+    white-space: pre-line;
+}
+.desc{
+    background-color: var(--border-color-8);
+}
+.accordion-button{
+    background-color: var(--border-color-8);
+    border: none;
+}
+.accordion-button:hover{
+    background-color: var(--ltn__secondary-color);
+    border: black;
+}
+.accordion-body{
+    word-break: break-all;
+    white-space: pre-line;
+}
+.accordion{
+    width: 77%;
+}
+.accordion h5{
+    color: black;
+}
+/* h5{
+    word-break: break-all;
+    white-space: pre-line;
+} */
 
