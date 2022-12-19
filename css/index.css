@@ -29,12 +29,27 @@
 /* form */
 .btn-form{
     background-color: var(--border-color-4);
-    margin-right: 20%;
     color: aliceblue;
 }
 .btn-form:hover{
     border: 1px solid black;
 }
+.email,.sub{
+	width:220px;
+	 height: 35px;
+}
+@media(max-width: 770px){
+	.email,.sub{
+		width: 456px;
+	}
+	.btn-form{
+	   width: 300px;
+	}
+	.social{
+		text-align: center;
+	}
+}
+
 /* mid-nav */
 .mid-nav{
     background-color: rgb(245, 244, 243);
