@@ -37,6 +37,16 @@
 .email,.sub{
 	width:220px;
 	 height: 35px;
+	 box-shadow: inset 0px 0px 5px rgba(22, 21, 21, 0.2);
+	 border: 0;
+	 border-radius: 3px;
+	 padding-left: 10px;
+}
+.msg{
+	box-shadow: inset 0px 0px 5px rgba(22, 21, 21, 0.2);
+	border: 0;
+	border-radius: 3px;
+	padding-top: 5px;
 }
 @media(max-width: 770px){
 	.email,.sub{
