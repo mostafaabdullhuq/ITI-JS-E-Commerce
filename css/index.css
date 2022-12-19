@@ -110,7 +110,7 @@ li{
 }
 #customers-testimonials .item {
 	text-align: center;
-	padding: 50px;
+	padding: 10px;
 		margin-bottom:80px;
 	opacity: .2;
 	-webkit-transform: scale3d(0.8, 0.8, 1);
@@ -206,3 +206,8 @@ display: inline-block;
 .carousel-caption .btn {
 	padding:10px;
 }}
+/* newest arrivals */
+
+.bb btn:hover{
+	color: #3190E7;
+}
