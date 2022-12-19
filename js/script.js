@@ -246,7 +246,7 @@ export class Order {
 }
 
 // class that represents user cart
-class Cart {
+export class Cart {
     constructor() {
         this.cartItems = [];
     }
@@ -279,7 +279,7 @@ class Cart {
 }
 
 // class that represents one product
-class Product {
+export class Product {
     constructor(id, name, price, img, description) {
         this.id = id;
         this.name = name;
