@@ -48,7 +48,7 @@
 	border-radius: 3px;
 	padding-top: 5px;
 }
-@media(max-width: 770px){
+@media(max-width: 550px){
 	.email,.sub{
 		width: 456px;
 	}
