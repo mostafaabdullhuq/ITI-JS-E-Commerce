@@ -16,6 +16,9 @@
         <link rel="stylesheet" href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
         <link rel="stylesheet" href="./css/style.css" />
         <link rel="stylesheet" href="./css/index.css" />
+        <!--for slider -->
+        <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
         <title>E-Commerce</title>
     </head>
     <body>
@@ -102,39 +105,55 @@
         </div>
 
 
-        <!-- Img Slider -->
-        <section class="splide" aria-label="Slide Container Example">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide">
-                        <div class="splide__slide__container">
-                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1699&q=80" />
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="splide__slide__container">
-                            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" />
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="splide__slide__container">
-                            <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80" />
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="splide__slide__container">
-                            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" />
-                        </div>
-                    </li>
-                </ul>
+<!-- Slider -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="background-color: rgb(197, 135, 135);"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" style="background-color: rgb(197, 135, 135);"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3" style="background-color: rgb(197, 135, 135);"></button>
             </div>
-        </section>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./images/slider-home-2.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption">
+                    <h2 class="animated bounceInRight" style="animation-delay: 1s">New product</h2>
+                    <h3 class="animated bounceInLeft" style="animation-delay: 2s">Lorem ipsum dolor sit amet.</h3>
+                    <a href="#" class="btn animated bounceInRight" style="animation-delay: 3s">Shop Now</a>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img src="./images/slider-home-3.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption">
+                    <h2 class="animated bounceInRight" style="animation-delay: 1s">New Product</h2>
+                    <h3 class="animated bounceInLeft" style="animation-delay: 2s">Lorem ipsum dolor sit amet.</h3>
+                    <a href="#" class="btn animated bounceInRight" style="animation-delay: 3s">Shop Now</a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./images/slider-home.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption">
+                    <h2 class="animated bounceInRight" style="animation-delay: 1s">New product</h2>
+                    <h3 class="animated bounceInLeft" style="animation-delay: 2s">Lorem ipsum dolor sit amet.</h3>
+                    <a href="#" class="btn animated bounceInRight" style="animation-delay: 3s">Shop Now</a>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
 
         <!-- mid nav -->
         <div class="container-fluid p-4 border-bottom border-top mt-5 mb-5 mid-nav">
             <div class="row ps-4">
-                <div class="col-md-4 mid-small">
-                    <div class="container ps-4">
+                <div class="col-md-4 mid-small ">
+                    <div class="container">
                         <div class="row">
                             <div class="col-lg-2 col-sm-4">
                                 <a class="text-dark fs-1"> <i class="fa-solid fa-truck-fast"></i></a>
@@ -159,9 +178,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="container ps-4">
-                        <div class="row">
+                <div class="col-md-4 ">
+                    <div class="container">
+                        <div class="row ">
                             <div class="col-lg-2 col-sm-4">
                                 <a class="text-dark fs-1"><i class="fa-solid fa-circle-dollar-to-slot"></i></a>
                             </div>
@@ -177,20 +196,20 @@
 
 
         <!-- Newest Arrivals -->
-        <div class="container mb-5" style="text-align: center;">
-            <h2 class="fw-bold">Newest Arrivals</h2>
-            <div class="row d-inline col-sm-12-justify-content-center">
-                <span class="border border-top-0 fs-4 rounded-pill ms-5" >All</span>
-                <span class="border border-start-0 fs-5 rounded-pill">Categoray 1</span>
-                <span class="border border-start-0 rounded-pill fs-5">Categoray 2</span>
-                <span class="border border-start-0 rounded-pill fs-5">Categoray 3</span>
-                <span class="border border-start-0 rounded-pill fs-5">Categoray 4</span>
-            </div>
+        <div class="container mb-3" style="text-align: center;">
+            <h2 class="fw-bold pb-2">Newest Arrivals</h2>
+            <div class="btn-group" >
+                <a class="btn btn-secondary ms-5 pe-3 me-2"  href="#" role="button">All</a>
+                <a class="btn btn-secondary me-2" href="#" role="button">category 1</a>
+                <a class="btn btn-secondary me-2" href="#" role="button">Category 1</a>
+                <a class="btn btn-secondary me-2" href="#" role="button">Category 2</a>
+                <a class="btn btn-secondary me-2" href="#" role="button">Category 3</a>
+                <a class="btn btn-secondary me-2" href="#" role="button">Category 4</a>
+        </div>
             <div class="row ps-5 justify-content-center pt-4" >
-                <!-- <div class="col-12 col-sm-6 col-md-6 mb-4 col-lg-4 pb-4 pe-3"> -->
                 <div class="product-item" style="width: 14rem;">
                     <a href="#" class="card product-img">
-                        <img src="..." alt="Image" class="img-fluid" style="height: 200px; width: 13rem;">
+                        <img src="https://preview.colorlib.com/theme/malefashion/img/banner/banner-2.jpg.webp" alt="Image" class="img-fluid" style="height: 200px; width: 13rem;">
                     </a>
                     <h3 class="title">
                         Product
@@ -206,7 +225,7 @@
                 </div>
                 <div class="product-item" style="width: 14rem;">
                     <a href="#" class="card product-img">
-                        <img src="..." alt="Image" class="img-fluid" style="height: 200px; width: 13rem;">
+                        <img src="https://preview.colorlib.com/theme/malefashion/img/banner/banner-2.jpg.webp" alt="Image" class="img-fluid" style="height: 200px; width: 13rem;">
                     </a>
                     <h3 class="title">
                         Product
@@ -222,7 +241,7 @@
                 </div>
                 <div class="product-item" style="width: 14rem;">
                     <a href="#" class="card product-img">
-                        <img src="..." alt="Image" class="img-fluid" style="height: 200px; width: 13rem;">
+                        <img src="https://preview.colorlib.com/theme/malefashion/img/banner/banner-2.jpg.webp" alt="Image" class="img-fluid" style="height: 200px; width: 13rem;">
                     </a>
                     <h3 class="title">
                         Product
@@ -240,7 +259,7 @@
             <div class="row ps-5 justify-content-center pt-4" >
             <div class="product-item" style="width: 14rem;">
                 <a href="#" class="card product-img">
-                    <img src="..." alt="Image" class="img-fluid" style="height: 200px; width: 13rem;">
+                    <img src="https://preview.colorlib.com/theme/malefashion/img/banner/banner-2.jpg.webp" alt="Image" class="img-fluid" style="height: 200px; width: 13rem;">
                 </a>
                 <h3 class="title">
                     Product
@@ -256,7 +275,7 @@
             </div>
             <div class="product-item" style="width: 14rem;">
                 <a href="#" class="card product-img">
-                    <img src="..." alt="Image" class="img-fluid" style="height: 200px; width: 13rem;">
+                    <img src="https://preview.colorlib.com/theme/malefashion/img/banner/banner-2.jpg.webp" alt="Image" class="img-fluid" style="height: 200px; width: 13rem;">
                 </a>
                 <h3 class="title">
                     Product
@@ -272,7 +291,7 @@
             </div>
             <div class="product-item" style="width: 14rem;">
                 <a href="#" class="card product-img">
-                    <img src="..." alt="Image" class="img-fluid" style="height: 200px; width: 13rem;">
+                    <img src="https://preview.colorlib.com/theme/malefashion/img/banner/banner-2.jpg.webp" alt="Image" class="img-fluid" style="height: 200px; width: 13rem;">
                 </a>
                 <h3 class="title">
                     Product
@@ -291,20 +310,16 @@
           
 
 
-
-       
-
         <!-- Feedback -->
         <div class="container-fluid feed pt-2">
       <h1 style="text-align: center;" class="fw-bolder fs-2 ">Customers Feedback</h1>
             <div class="row">
               <div class="col-sm-12">
                 <div id="customers-testimonials" class="owl-carousel" >
-      
-                  <!--TESTIMONIAL 1 -->
-                  <div class="item">
+
+                  <div class="item ">
                     <div class="shadow-effect">
-                      <span class="fs-2 fw-bold">Mostafa</span>
+                      <span class="fs-2 fw-bold pe-5">Mostafa</span>
                       <i class="fa-solid fa-star"></i>
                       <i class="fa-solid fa-star"></i>
                       <i class="fa-solid fa-star"></i>
@@ -313,11 +328,10 @@
                       <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
                     </div>
                   </div>
-                  <!--END OF TESTIMONIAL 1 -->
-                  <!--TESTIMONIAL 2 -->
+                 
                   <div class="item">
                     <div class="shadow-effect">
-                      <span>Sara</span>
+                      <span class="fs-2 fw-bold pe-5">Sara</span>
                       <i class="fa-solid fa-star"></i>
                       <i class="fa-solid fa-star"></i>
                       <i class="fa-solid fa-star"></i>
@@ -326,19 +340,42 @@
                       <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
                     </div>
                   </div>
-                  <!--END OF TESTIMONIAL 2 -->
-                  <!--TESTIMONIAL 3 -->
+                  
                   <div class="item">
                     <div class="shadow-effect">
-                      <span>Hagar</span>
+                      <span class="fs-2 fw-bold pe-5">Hagar</span>
                       <i class="fa-solid fa-star"></i>
                       <i class="fa-solid fa-star"></i>
                       <i class="fa-solid fa-star"></i>
                       <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>                    <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+                      <i class="fa-solid fa-star"></i> 
+                        <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
                     </div>
                   </div>
-                  <!--END OF TESTIMONIAL 3 --> 
+                 
+                   <div class="item">
+                    <div class="shadow-effect">
+                      <span class="fs-2 fw-bold pe-5">Mohammed</span>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>                    
+                      <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+                    </div>
+                  </div>
+          
+                   <div class="item">
+                    <div class="shadow-effect">
+                      <span class="fs-2 fw-bold pe-5">Zienab</span>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>                   
+                       <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -351,7 +388,7 @@
                     <form action="">
                         <h2 class="fw-bold mb-4" style="text-align: center">Contact us</h2>
                         <input type="email" placeholder="Email Address" class="me-3 mb-3" />
-                        <input type="text" placeholder="Subject" class="mb-3 ms-3" /><br />
+                        <input type="text" placeholder="Subject" style="margin-left:2% ;" /><br />
                         <textarea name="message" id="msg" cols="50" rows="10" placeholder="Message"></textarea><br />
                         <input type="submit" value="Send Message" class="btn rounded-0 p-2 btn-form fs-6 me-5" height="50px" />
                         <a href="#" class="text-dark fs-4 pe-3"><i class="fa-brands fa-facebook icon ms-5"></i></a>
@@ -370,7 +407,7 @@
 
     <!-- Footer -->
                                       
-        <footer class="bd-footer">
+        <footer class="bd-footer" id="footer">
             <div class="container py-5">
                 <div class="row foot ps-4">
                     <div class="col-lg-4 col-md-6 col-sm-12-justify-content-center offset-lg-1 mb-4">
@@ -407,11 +444,13 @@
                             <li><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Track Order</a></li>
                         </ul>
                     </div>
-                    <hr style="width: 900px" />
+                    <hr style="width: 900px; position: relative; right: 2%;" />
                     <div class="text-dark fw-bold fs-5" style="text-align: center">Copyright © 2022-ITI Group 2</div>
                 </div>
             </div>
         </footer>
+
+
 
     <!-- include jquery file -->
     <!-- <link rel="stylesheet" href="./node_modules/owl.carousel/dist/owl.carousel.min.js"> -->

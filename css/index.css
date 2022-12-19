@@ -37,7 +37,7 @@
 }
 /* mid-nav */
 .mid-nav{
-    background-color: var(--nude);
+    background-color: rgb(245, 244, 243);
 }
 @media(max-width: 770px){
     .mid-small{
@@ -80,7 +80,7 @@ li{
 
 /* feedback */
 .feed{
-	background-color: var(--ltn__color-3);
+	background-color: rgb(206, 211, 223);
 }
 .shadow-effect {
 	background: #fff;
@@ -110,7 +110,7 @@ li{
 }
 #customers-testimonials .item {
 	text-align: center;
-	padding: 50px;
+	padding: 10px;
 		margin-bottom:80px;
 	opacity: .2;
 	-webkit-transform: scale3d(0.8, 0.8, 1);
@@ -151,4 +151,77 @@ display: inline-block;
 	transform-origin: 50% 50% 0;
 	transition: all 250ms ease-out 0s;
 	width: 20px;
+}
+
+/*slider */
+.carousel-caption{
+    padding-bottom: 250px;
+    text-align: left;
+    left: 13%;
+	color: rgb(136, 134, 134);
+}
+.carousel-caption h2 {
+	font-size: 50px;
+	text-transform: uppercase;
+	font-family: 'Alfa Slab One', cursive;
+}
+.carousel-caption .btn {
+	display: inline-block;
+	margin-top: 15px;
+	background-color: var(--border-color-4);
+    color: aliceblue;
+	border-radius: 0;
+	padding-top:20px;
+	padding-bottom: 20px;
+	padding-right:30px;
+	padding-left: 30px;
+	font-weight: bold;
+	font-size: 20px;
+}
+.carousel-caption .btn:hover{
+    border: 1px solid black;
+	background-color: inherit;
+	color: black;
+	text-decoration: none;
+}
+.carousel-control-prev-icon,.carousel-control-next-icon{
+  background-color: black;
+  border-radius: 50%;
+  padding-top: 20px;
+  padding-bottom:20px;
+  opacity: 0.2;
+  box-shadow: 0px 0px 5px 5px rgb(0, 0, 0);
+}
+
+@media (max-width:1100px){
+    .carousel-caption {
+	padding-bottom: 50px;
+}
+    .carousel-caption h2 {
+	font-size: 30px;
+}
+    .carousel-caption h3 {
+	font-size: 20px;
+}
+.carousel-caption .btn {
+	padding:10px;
+}}
+@media (max-width:775px){
+    .carousel-caption {
+	padding-bottom: 50px;
+}
+    .carousel-caption h2 {
+	font-size: 20px;
+}
+    .carousel-caption h3 {
+	font-size: 15px;
+}
+.carousel-caption .btn {
+	padding:10px;
+}}
+
+/* newest arrivals */
+
+.bb btn:hover{
+	color: #3190E7;
 }
