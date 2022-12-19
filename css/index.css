@@ -246,7 +246,21 @@ display: inline-block;
 }}
 
 /* newest arrivals */
-
+.btn-new{
+	width: 110px;
+	margin-bottom: 3px;
+	border: 1px solid gray;
+}
+@media (max-width:576px){
+	.btn-new{
+		margin-bottom: 8px;
+		border: 1px solid gray;
+		width: 100%;
+	}
+	.pic{
+		margin-left: 12%;
+	}
+}
 a:link {text-decoration:none}
 .view {
 	transform: translate(0,0px);
