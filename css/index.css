@@ -259,6 +259,9 @@ li {
 	box-shadow: inset 0px 0px 20px rgba(22, 21, 21, 0.2);
 	font-weight: bold;
 }
+.btn:hover{
+	color: rgb(233, 150, 150);
+}
 @media(min-width:766){
 	.btn-new {
 		width: 130px;
