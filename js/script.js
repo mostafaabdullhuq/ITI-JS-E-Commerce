@@ -48,24 +48,6 @@ export var isPassValid = (passWord) => {
     return [false, "Please enter a password."];
 };
 
-// check for username if less than 8 characters
-export var isUserNameValid = (userName) => {
-    // check if username is true and not empty
-    return userName
-        ? // if condition met, check if username have whitespaces.
-          userName.search(/\s/) >= 0
-            ? // if condition met, return false
-              [false, "Username cannot have whitespace."]
-            : // if condition doesn't met, check for username length
-            userName.length >= 8 && userName.length <= 16
-            ? // if username length is between 8 and 16 return true
-              [true, ""]
-            : // if username length doesn't met the requirements, return false
-              [false, "Username must be 8 to 16 characters."]
-        : // if username is empty or false
-          [false, "Please enter a username."];
-};
-
 // check for email validation
 export var isEmailValid = (emailAddress) => {
     // check if email address is true and not empty
@@ -222,7 +204,7 @@ export var ecommerceUsers = new Users();
 
 // class that represents one user only
 export class User {
-    constructor(id, firstName, lastName, emailAddress, userName, passWord, country, city, shippingAddr, phoneNumber) {
+    constructor(id, firstName, lastName, emailAddress, passWord, country, city, shippingAddr, phoneNumber) {
         this.id = id;
         this.emailAddress = emailAddress;
         this.firstName = firstName;
@@ -231,7 +213,6 @@ export class User {
         this.city = city;
         this.shippingAddr = shippingAddr;
         this.phoneNumber = phoneNumber;
-        this.userName = userName;
         this.passWord = passWord;
         this.ordersList = [];
         this.cartItems = [];
