@@ -14,7 +14,7 @@ $(function(){
                   class="img-fluid"
                   style="height: 300px"
                 />
-                
+                <h3 class="view">Quick View</h3>
               </a>
               <h3 class="title">${product.title}</h3>
               <div class="price">
@@ -36,7 +36,7 @@ $(function(){
     });
 
 });
-//<h3 class="view">Quick View</h3>
+//
 $(function(){
     fetch("https://fakestoreapi.com/products/categories")
     .then(response=>response.json())
