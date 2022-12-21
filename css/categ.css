@@ -43,7 +43,7 @@ input:hover{
     -webkit-animation: scale 0.3s linear 1;
     
 }
-.card:hover{
+/* .card:hover{
     border-width: 3px;
     height:310px;
     border-color: var(--ltn__secondary-color);
@@ -55,7 +55,7 @@ i:hover {
     color: var(--ltn__secondary-color-2) !important;
     animation: scale 0.3s linear 1;
     -webkit-animation: scale 0.3s linear 1;
-}
+} */
 @keyframes scale {
     0%,
     100% {
@@ -80,6 +80,23 @@ i:hover {
   color: var(--ltn__secondary-color);
   border-right: 5px solid var(--ltn__secondary-color);
 }
+/* .view {
+    overflow: visible;
+    transform: translate(0, 0px);
+    background-color: var(--border-color-4);
+    border-radius: 2px;
+    display: none;
+    direction: nounderline;
+    color: #ececec;
+    margin-bottom: 0;
+}
+.product-img img:hover {
+    opacity: 0.4;
+}
+.product-img:hover .view {
+    opacity: 1;
+    display: block;
+} */
 /* @media (max-width: 800px){
     .menu-toggle{
         display:block;
