@@ -67,6 +67,7 @@ $(function(){
 
 
 
+
     // fixing nav in scroll
     window.addEventListener("scroll", function () {
         if (window.scrollY > 100) {
