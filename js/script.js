@@ -71,7 +71,7 @@ export class Users {
         this.usersList = usersList;
         // if there's no users list with the same name in the local storage
         !localStorage.getItem(this.#keyName)
-            ? // add the users list to the local storage
+            ? // addس the users list to the local storage
               this.syncUpload
             : // if there's already a users list in the local storage, sync it with the current one
               this.syncDownload;
@@ -114,9 +114,13 @@ export class Users {
             }
         });
 
+        // if user is created successfully
         if (response.isCreated) {
+            // add the user to the users list
             this.usersList.push(userData);
-            localStorage.setItem(this.#keyName, JSON.stringify(this.usersList));
+
+            // update the localstorage
+            this.syncUpload;
         }
         // return the response object
         return response;
