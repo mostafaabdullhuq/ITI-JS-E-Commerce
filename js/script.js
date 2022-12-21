@@ -158,13 +158,63 @@ export class Users {
     //! User methods
 
     // a method that returns specific user orders count
-    userOrdersCount(user) {
+    ordersCount(user) {
         return user.ordersList.length;
     }
 
     // a method that returns the list of orders for specific user
-    userOrdersList(user) {
+    ordersList(user) {
         return user.ordersList;
+    }
+
+    // method to update the cart of the user
+    updateCart(user, itemsCount, cartSubtotal, cartProducts) {
+        // update the number of items, price of total items, the list of products in user cart
+        user.cart.prodsCount = itemsCount;
+        user.cart.prodsPrice = cartSubtotal;
+        user.cart.prodsList = cartProducts;
+        // update the user cart in localstorage
+        this.syncUpload;
+    }
+
+    // method to add order to user orders list
+    addOrder(user, order) {
+        // add the order to the user orders list
+        user.ordersList.push(order);
+        // update the user orders list in localstorage
+        this.syncUpload;
+    }
+
+    // update user profile info
+    updateProfile(user, newDetails) {
+        // loop through the keys of the new details object
+        Object.keys(newDetails).forEach((key) => {
+            // for each key in new details object, update the corresponding key in user with the value of this key
+            user[key] = newDetails[key];
+        });
+        // update the user details in localstorage
+        this.syncUpload;
+    }
+
+    changePassword(user, newPass) {
+        // check if password is valid and meet the requirements
+        let passValidation = isPassValid(newPass);
+
+        // if password is valid and met the requirements
+        if (passValidation[0]) {
+            // update the user password
+            user.passWord = newPass;
+
+            // update the localstorage
+            this.syncUpload;
+
+            return [true, user];
+        }
+
+        // if password is not valid or doesn't meet the requirements
+        else {
+            return passValidation;
+        }
     }
 }
 
