@@ -312,3 +312,24 @@ p {
 .shadow-effect {
     padding: 50px 20px !important;
 }
+
+/* top button */
+#topBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    color: rgb(87, 85, 85);
+    cursor: pointer;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius: 4px;
+    opacity: 0.7;
+  }
+  #topBtn:hover{
+   opacity: 1;
+  }
