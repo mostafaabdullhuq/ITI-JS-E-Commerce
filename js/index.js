@@ -24,17 +24,10 @@ $(function () {
             <div class="product-item" style="height:470px;">
             <a href="#" class="card product-img">
             <img src="${product.image}" alt="Image" class="img-fluid" style="height: 300px; width: 22rem" />
-<<<<<<< HEAD
             <h3 class="view py-2">Quick View</h3>
         </a>
         <h5 class="title mt-2">${product.title}</h5>
         <div class="price">
-=======
-            <h3 class="view">Quick View</h3>
-             </a>
-             <h5 class="title mt-2">${product.title}</h5>
-            <div class="price">
->>>>>>> c5f7f74d8531bae56488562cd568bd97979e5127
             <span class="h4">$${product.price}</span>
             ${'<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}
         </div>
@@ -50,30 +43,24 @@ $(function () {
             console.log(e);
         });
 
-// fetch Newest arrival 
-$(function(){
-    fetch("https://fakestoreapi.com/products/categories")
-    .then(response=>response.json())
-    .then(categories=>{
-        let categs="";
-        categories.forEach(category=>{
-            categs+=
-            `
+    // fetch Newest arrival
+    $(function () {
+        fetch("https://fakestoreapi.com/products/categories")
+            .then((response) => response.json())
+            .then((categories) => {
+                let categs = "";
+                categories.forEach((category) => {
+                    categs += `
             <a class="btn btn-new" href="#" role="button" style="background-color: rgb(237, 233, 233)">${category}</a>
             `;
-        });
-        $("#categ").append(categs);
-    })
-    .catch(e=>{
-        console.log("ERROR");
-        console.log(e);
+                });
+                $("#categ").append(categs);
+            })
+            .catch((e) => {
+                console.log("ERROR");
+                console.log(e);
+            });
     });
-})
-
-
-
-
-
 
     // fixing nav in scroll
     window.addEventListener("scroll", function () {
@@ -117,22 +104,22 @@ $(function(){
     $(".owl-carousel").owlCarousel();
 });
 // fetch catecgories to products button in nav
-$(function(){
+$(function () {
     fetch("https://fakestoreapi.com/products/categories")
-    .then((res) => res.json())
-    .then((categories) => {
-        let categorylnk = "";
-        categories.forEach((category) => {
-            categorylnk += `
+        .then((res) => res.json())
+        .then((categories) => {
+            let categorylnk = "";
+            categories.forEach((category) => {
+                categorylnk += `
             <li>
             <a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">${category}</a>
             </li>
             `;
-              });
+            });
             $("#cat-ul").append(categorylnk);
         })
         .catch((e) => {
             console.log("some error happend");
             console.log(e);
-            });
+        });
 });
