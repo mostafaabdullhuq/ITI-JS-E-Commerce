@@ -37,3 +37,32 @@ $(function(){
 
 });
 //<h3 class="view">Quick View</h3>
+$(function(){
+    fetch("https://fakestoreapi.com/products/categories")
+    .then(response=>response.json())
+    .then(categories=>{
+        let categs="";
+        categories.forEach(category=>{
+            categs+=
+            `
+            <li class="menu-item">
+            <div class="input-group mb-3">
+              <input
+                class="form-check-input ms-3 pb-4 pe-4"
+                type="checkbox"
+                id="check1"
+                name="Category1"
+                value="Category1"
+              />
+              <p class="h5 text-align-center ms-2 mt-1">${category}</p>
+            </div>
+          </li>
+            `;
+        });
+        $("#categers").append(categs);
+    })
+    .catch(e=>{
+        console.log("ERROR");
+        console.log(e);
+    });
+});
