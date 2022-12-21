@@ -65,34 +65,33 @@ export var isEmailValid = (emailAddress) => {
 // class that contains alll users operations
 export class Users {
     // private property
-    #usersName = "eCommerceUsers";
+    #keyName = "eCommerceUsers";
     constructor(usersList = []) {
         // users list
         this.usersList = usersList;
         // if there's no users list with the same name in the local storage
-        !localStorage.getItem(this.#usersName)
+        !localStorage.getItem(this.#keyName)
             ? // add the users list to the local storage
               this.syncUpload
             : // if there's already a users list in the local storage, sync it with the current one
               this.syncDownload;
     }
     //! Users methods
-    /*
-        a method to create a new user, returns an object contains boolean value represents the state of creation 
-        and a text value contains the error if the state is false
-    */
 
     // syncs the localstorage with the current users list
     get syncUpload() {
-        localStorage.setItem(this.#usersName, JSON.stringify(this.usersList));
+        localStorage.setItem(this.#keyName, JSON.stringify(this.usersList));
     }
 
     // syncs the current users list with the local storage
     get syncDownload() {
-        this.usersList = JSON.parse(localStorage.getItem(this.#usersName));
+        this.usersList = JSON.parse(localStorage.getItem(this.#keyName));
     }
 
-    // a method to create a new user
+    /*
+        a method to create a new user, returns an object contains boolean value represents the state of creation 
+        and a text value contains the error if the state is false
+    */
     createAccount(userData) {
         // initialize the return response object
         let response = {
@@ -117,7 +116,7 @@ export class Users {
 
         if (response.isCreated) {
             this.usersList.push(userData);
-            localStorage.setItem(this.#usersName, JSON.stringify(this.usersList));
+            localStorage.setItem(this.#keyName, JSON.stringify(this.usersList));
         }
         // return the response object
         return response;
@@ -134,29 +133,17 @@ export class Users {
         });
     }
 
-    // method to sync user orders changes
-    syncUsersData(userID, newOrdersList) {
-        // loop on each user in users list
-        this.usersList.forEach((user) => {
-            // if the user id is the same as the given user id
-            if (user.id == userID) {
-                // update the list of orders for the given user
-                user.ordersList = newOrdersList;
-            }
-        });
-
-        // sync with the local storage
-        this.syncUpload;
-    }
-    validateLoginCookies(userID, userName) {
-        return this.usersList.find((user) => user.id == userID && user.userName == userName);
-    }
+    // method to logout of account
     logOut(...cookiesNames) {
         // set cookies value to 0 and 0 and expire time to 0 to clear it
 
         cookiesNames.map((cookie) => {
             setCookie(cookie, 0, 0);
         });
+    }
+
+    validateLoginCookies(userID, userName) {
+        return this.usersList.find((user) => user.id == userID && user.userName == userName);
     }
 
     // a method that returns the count of users in this users object
@@ -175,98 +162,41 @@ export class Users {
     userOrdersList(user) {
         return user.ordersList;
     }
-
-    // method to add new order to specific user orders list
-    addOrder(user, order) {
-        // set an id to the order
-        order.id = this.userOrdersCount(user) + 1;
-        // add the order to the user orders list
-        user.ordersList.push(order);
-        // replace the user new orders List with the old order list
-        this.syncUsersData(user.id, user.ordersList);
-
-        return order;
-    }
-
-    // method to delete specific user order
-    deleteOrder(user, orderID) {
-        user.ordersList.forEach((order, index) => {
-            if (order.id == orderID) {
-                user.ordersList.splice(index, 1);
-            }
-        });
-        // replace the user new orders with the old orders
-        this.syncUsersData(user.id, user.ordersList);
-    }
 }
-// create new Users Object to store all website users
-export var ecommerceUsers = new Users();
 
 // class that represents one user only
 export class User {
     constructor(id, firstName, lastName, emailAddress, passWord, country, city, shippingAddr, phoneNumber) {
         this.id = id;
-        this.emailAddress = emailAddress;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.emailAddress = emailAddress;
+        this.passWord = passWord;
+        this.phoneNumber = phoneNumber;
+        this.shippingAddr = shippingAddr;
         this.country = country;
         this.city = city;
-        this.shippingAddr = shippingAddr;
-        this.phoneNumber = phoneNumber;
-        this.passWord = passWord;
+        this.cookieToken = cookieToken;
         this.ordersList = [];
-        this.cartItems = [];
+        this.cart = {
+            prodsCount: 0,
+            prodsPrice: 0,
+            prodsList: [],
+        };
     }
 }
+
 // order class
 export class Order {
-    constructor(prods) {
-        this.id = false;
-        this.prods = prods;
-    }
-}
-
-// class that represents user cart
-export class Cart {
-    constructor() {
-        this.cartItems = [];
-    }
-    get cartItemsCount() {
-        return this.cartItems.length;
-    }
-    get cartItemsList() {
-        return this.cartItems;
-    }
-    addCartItem(cartItem) {
-        this.cartItems.push(cartItem);
-    }
-    deleteCartItem(cartItemID) {
-        this.cartItems.forEach((cartItem, index) => {
-            if (cartItem.id == cartItemID) {
-                this.cartItems.splice(index, 1);
-            }
-        });
-    }
-    clearCart() {
-        this.cartItems = [];
-    }
-    getCartTotal() {
-        let total = 0;
-        this.cartItems.forEach((cartItem) => {
-            total += cartItem.totalPrice;
-        });
-        return total;
-    }
-}
-
-// class that represents one product
-export class Product {
-    constructor(id, name, price, img, description) {
+    constructor(id, prodsCount, prodsPrice, shippingPrice, totalPrice, prodsList) {
         this.id = id;
-        this.name = name;
-        this.price = price;
-        this.img = img;
-        this.description = description;
-        this.rating = 0;
+        this.prodsCount = prodsCount;
+        this.prodsPrice = prodsPrice;
+        this.shippingPrice = shippingPrice;
+        this.totalPrice = totalPrice;
+        this.prodsList = prodsList;
     }
 }
+
+// create new Users Object to store all website users
+export var ecommerceUsers = new Users();
