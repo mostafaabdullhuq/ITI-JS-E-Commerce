@@ -84,3 +84,24 @@ $(function () {
 
     $(".owl-carousel").owlCarousel();
 });
+
+$(function(){
+    fetch("https://fakestoreapi.com/products/categories")
+    .then((res) => res.json())
+    .then((categories) => {
+        let categorylnk = "";
+        categories.forEach((category) => {
+            categorylnk += `
+            <li>
+            <a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">${category}</a>
+            </li>
+            `;
+              });
+            $("#cat-ul").append(categorylnk);
+        })
+        .catch((e) => {
+            console.log("some error happend");
+            console.log(e);
+            });
+
+});
