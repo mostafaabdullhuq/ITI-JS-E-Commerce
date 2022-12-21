@@ -24,7 +24,7 @@ $(function () {
     <div class="product-item" style="height:470px;">
         <a href="#" class="card product-img">
             <img src="${product.image}" alt="Image" class="img-fluid" style="height: 300px; width: 22rem" />
-            <h3 class="view">Quick View</h3>
+            <h3 class="view py-2">Quick View</h3>
         </a>
         <h5 class="title mt-2">${product.title}</h5>
         <div class="price">
