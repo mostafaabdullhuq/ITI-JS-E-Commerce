@@ -84,8 +84,3 @@ $(function () {
 
     $(".owl-carousel").owlCarousel();
 });
-
-// hi sara, here?
-//hi zozo I am here baby how u doin
-// i'm fine yama love youuuuuu <3
-///ya lahwaaaay i love u too ya gd3 :)
