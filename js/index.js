@@ -84,3 +84,23 @@ $(function () {
 
     $(".owl-carousel").owlCarousel();
 });
+// fetch Newest arrival 
+//fetching all categories
+$(function(){
+    fetch("https://fakestoreapi.com/products/categories")
+    .then(response=>response.json())
+    .then(categories=>{
+        let categs="";
+        categories.forEach(category=>{
+            categs+=
+            `
+            <a class="btn btn-new" href="#" role="button" style="background-color: rgb(237, 233, 233)">${category}</a>
+            `;
+        });
+        $("#categ").append(categs);
+    })
+    .catch(e=>{
+        console.log("ERROR");
+        console.log(e);
+    });
+});

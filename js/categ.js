@@ -73,7 +73,7 @@ ckeck.addEventListener("click",getSpecificCatogry());
 
  function getSpecificCatogry(){
     
-    fetch("https://fakestoreapi.com/products?limit=2")
+    fetch("https://fakestoreapi.com/products?")
     .then(res=>res.json())
     .then(products=>{
         let prods="";
