@@ -20,7 +20,7 @@ $(function () {
                  * ${'<i class="fa-solid fa-star"></i>'.repeat(Math.round(product.rating.rate))} ==> get the rating of the product from the api, then round it to the closest fixed number, then generate stars based on the number of rating
                  */
                 prodsCards += `
-        <div class="col-lg-3 col-sm-6 prod" data-prod-id="${product.id}" data-prod-category="${product.category}">
+    <div class="col-lg-3 col-sm-6 prod" data-prod-id="${product.id}" data-prod-category="${product.category}">
             <div class="product-item" style="height:470px;">
             <a href="#" class="card product-img">
             <img src="${product.image}" alt="Image" class="img-fluid" style="height: 300px; width: 22rem" />
@@ -64,13 +64,7 @@ $(function(){
 });
 
 
-
-
-
-
-
-
-    // fixing nav in scroll
+// fixing nav in scroll
     window.addEventListener("scroll", function () {
         if (window.scrollY > 100) {
             document.getElementById("navbar_top").classList.add("fixed-top");
