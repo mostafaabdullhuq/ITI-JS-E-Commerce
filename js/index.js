@@ -108,7 +108,6 @@ $(function(){
 
     $(".owl-carousel").owlCarousel();
 });
-<<<<<<< HEAD
 // fetch catecgories to products button in nav
 $(function(){
     fetch("https://fakestoreapi.com/products/categories")
@@ -129,7 +128,3 @@ $(function(){
             console.log(e);
             });
 });
-=======
-
-
->>>>>>> 41cb455d1021d0cea23b8f829b547087e821240d
