@@ -11,7 +11,6 @@ $(function () {
             // loop over each product in products
             products.forEach((product) => {
                 // add the current product to the products
-
                 /*
                  * data-prod-id="${product.id}" ==> adds product custom attribute to store the product id provided by the api
                  * data-prod-category ==>"${product.category}" => adds product custom attribute to store the product category provided by the api
