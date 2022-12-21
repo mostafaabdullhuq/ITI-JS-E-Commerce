@@ -80,7 +80,7 @@ i:hover {
   color: var(--ltn__secondary-color);
   border-right: 5px solid var(--ltn__secondary-color);
 }
-/* .view {
+.view {
     overflow: visible;
     transform: translate(0, 0px);
     background-color: var(--border-color-4);
@@ -89,6 +89,9 @@ i:hover {
     direction: nounderline;
     color: #ececec;
     margin-bottom: 0;
+    text-align: center;
+    text-decoration:underline;
+
 }
 .product-img img:hover {
     opacity: 0.4;
@@ -96,7 +99,7 @@ i:hover {
 .product-img:hover .view {
     opacity: 1;
     display: block;
-} */
+}
 /* @media (max-width: 800px){
     .menu-toggle{
         display:block;
