@@ -20,14 +20,14 @@ $(function () {
                  * ${'<i class="fa-solid fa-star"></i>'.repeat(Math.round(product.rating.rate))} ==> get the rating of the product from the api, then round it to the closest fixed number, then generate stars based on the number of rating
                  */
                 prodsCards += `
-<div class="col-lg-3 col-sm-6 prod" data-prod-id="${product.id}" data-prod-category="${product.category}">
-    <div class="product-item" style="height:470px;">
-        <a href="#" class="card product-img">
+        <div class="col-lg-3 col-sm-6 prod" data-prod-id="${product.id}" data-prod-category="${product.category}">
+            <div class="product-item" style="height:470px;">
+            <a href="#" class="card product-img">
             <img src="${product.image}" alt="Image" class="img-fluid" style="height: 300px; width: 22rem" />
             <h3 class="view">Quick View</h3>
-        </a>
-        <h5 class="title mt-2">${product.title}</h5>
-        <div class="price">
+             </a>
+             <h5 class="title mt-2">${product.title}</h5>
+            <div class="price">
             <span class="h4">$${product.price}</span>
             ${'<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}
         </div>
@@ -42,6 +42,30 @@ $(function () {
             console.log("some error happend");
             console.log(e);
         });
+
+// fetch Newest arrival 
+$(function(){
+    fetch("https://fakestoreapi.com/products/categories")
+    .then(response=>response.json())
+    .then(categories=>{
+        let categs="";
+        categories.forEach(category=>{
+            categs+=
+            `
+            <a class="btn btn-new" href="#" role="button" style="background-color: rgb(237, 233, 233)">${category}</a>
+            `;
+        });
+        $("#categ").append(categs);
+    })
+    .catch(e=>{
+        console.log("ERROR");
+        console.log(e);
+    });
+})
+
+
+
+
 
     // fixing nav in scroll
     window.addEventListener("scroll", function () {
@@ -84,3 +108,5 @@ $(function () {
 
     $(".owl-carousel").owlCarousel();
 });
+
+
