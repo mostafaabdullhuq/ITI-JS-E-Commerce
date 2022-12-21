@@ -52,7 +52,7 @@ $(function(){
         categories.forEach(category=>{
             categs+=
             `
-            <a class="btn btn-new" href="#" role="button" style="background-color: rgb(237, 233, 233)">${category}</a>
+            <a class="btn btn-new pt-3" href="#" role="button" style="background-color: rgb(237, 233, 233)">${category}</a>
             `;
         });
         $("#categ").append(categs);
@@ -61,7 +61,9 @@ $(function(){
         console.log("ERROR");
         console.log(e);
     });
-})
+});
+
+
 
 
 
