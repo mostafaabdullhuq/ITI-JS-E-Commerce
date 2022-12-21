@@ -1,5 +1,5 @@
 // when window loads
-$(function () {
+$(function () {      
     // fetch only 9 products from api
     fetch("https://fakestoreapi.com/products?limit=8")
         // when promise complete , return the response converted to json
@@ -84,7 +84,7 @@ $(function () {
 
     $(".owl-carousel").owlCarousel();
 });
-
+// fetch catecgories to products button in nav
 $(function(){
     fetch("https://fakestoreapi.com/products/categories")
     .then((res) => res.json())
@@ -103,5 +103,4 @@ $(function(){
             console.log("some error happend");
             console.log(e);
             });
-
 });
