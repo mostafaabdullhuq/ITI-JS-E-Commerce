@@ -1,0 +1,21 @@
+@import url("../style.css");
+
+.btn {
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+}
+
+.btn:hover{
+    background-color: var(--ltn__secondary-color);
+}
+
+i {
+    color: var(--ltn__primary-color) !important;
+}
+
+i:hover {
+    color: var(--ltn__secondary-color-2) !important;
+    animation: scale 0.3s linear 1;
+    -webkit-animation: scale 0.3s linear 1;
+}

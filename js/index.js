@@ -21,15 +21,15 @@ $(function () {
                  */
                 prodsCards += `
 <div class="col-lg-3 col-sm-6 prod" data-prod-id="${product.id}" data-prod-category="${product.category}">
-    <div class="product-item" style="width: 14rem">
+    <div class="product-item" style="height:470px;">
         <a href="#" class="card product-img">
-            <img src="${product.image}" alt="Image" class="img-fluid" style="height: 200px; width: 13rem" />
+            <img src="${product.image}" alt="Image" class="img-fluid" style="height: 300px; width: 22rem" />
             <h3 class="view">Quick View</h3>
         </a>
-        <h3 class="title">${product.title}</h3>
+        <h5 class="title mt-2">${product.title}</h5>
         <div class="price">
-            <span class="h6">$${product.price}</span>
-            ${'<i class="fa-solid fa-star"></i>'.repeat(Math.round(product.rating.rate))}
+            <span class="h4">$${product.price}</span>
+            ${'<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}
         </div>
     </div>
 </div>

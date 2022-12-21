@@ -1,233 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- include bootstrap css file from node modules -->
-        <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-        <!-- include fontawesome css file from node modules -->
-        <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css" />
-        <!-- include css files -->
-        <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
-        <link rel="stylesheet" href="./node_modules/@splidejs/splide/dist/css/splide.min.css" />
-        <link rel="stylesheet" href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
-        <link rel="stylesheet" href="./css/style.css" />
-        <link rel="stylesheet" href="./css/index.css" />
-        <!--for slider -->
-        <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet" />
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet" />
-        <title>E-Commerce</title>
-    </head>
-    <body>
-        <!-- head Navbar -->
-        <div class="container-fluid pt-3 pb-3 border border-bottom">
-            <div class="row">
-                <div class="col col-sm-2">
-                    <a href="#"><img style="width: 100px; height: 50px" src="./Hagar_logo.svg.png" alt="" /></a>
-                </div>
-                <div class="col col-sm-8">
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2 border border-0 border-bottom rounded-0" type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn" type="submit">
-                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-                                />
-                            </svg>
-                        </button>
-                    </form>
-                </div>
-                <div class="col col-sm-2 d-flex justify-content-end">
-                    <a class="me-3" href="./docs/profile.html">
-                        <svg class="icon1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-                            <path
-                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"
-                            />
-                        </svg>
-                    </a>
-                    <a class="ms-3" href="./docs/cart.html"
-                        ><svg class="icon1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                            <path
-                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                            />
-                        </svg>
-                    </a>
-                    <a href="#"> <input class="cart-btn" type="button" value="0" /></a>
-                </div>
-            </div>
+    <!-- include bootstrap css file from node modules -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <!-- include fontawesome css file from node modules -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/font-awesome/css/font-awesome.min.css"
+    />
+    <!-- include css files -->
+    <link
+      rel="stylesheet"
+      href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/@splidejs/splide/dist/css/splide.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <!--for slider -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css"
+      rel="stylesheet"
+    />
+    <title>E-Commerce</title>
+  </head>
+  <body>
+    <!-- head Navbar -->
+    <div class="container-fluid pt-3 pb-3 border border-bottom">
+      <div class="row">
+        <div class="col col-sm-2">
+          <a href="#"
+            ><img
+              style="width: 100px; height: 50px"
+              src="./Hagar_logo.svg.png"
+              alt=""
+          /></a>
         </div>
-
-        <!-- Navbar -->
-        <div class="container-fluid border-bottom second-nav">
-            <div class="row">
-                <nav id="navbar_top" class="navbar navbar-expand-md fw-bold pt-1 pb-1">
-                    <div>
-                        <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavDropdown"
-                            aria-controls="navbarNavDropdown"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                        >
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse justify-content-around nav-active" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item me-4">
-                                <a class="nav-link active text-dark me-4" aria-current="page" href="#">HOME</a>
-                            </li>
-                            <li class="nav-item dropdown me-4">
-                                <a class="nav-link dropdown-toggle text-dark me-4" href="./docs/categ.html" data-bs-toggle="dropdown" aria-expanded="false"> PRODUCTS </a>
-                                <ul class="dropdown-menu p-4">
-                                    <li><a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 1</a></li>
-                                    <li><a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 2</a></li>
-                                    <li><a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 3</a></li>
-                                    <li><a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 4</a></li>
-                                    <li><a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 5</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item me-4">
-                                <a class="nav-link text-dark me-4" href="#footer">ABOUT</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="#contact">CONTACT</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-
-        <!-- Slider -->
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button
-                    type="button"
-                    data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide-to="0"
-                    class="active"
-                    aria-current="true"
-                    aria-label="Slide 1"
-                    style="background-color: rgb(197, 135, 135)"
-                ></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" style="background-color: rgb(197, 135, 135)"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3" style="background-color: rgb(197, 135, 135)"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./images/slider-home-2.jpg" class="d-block w-100" alt="..." />
-                    <div class="carousel-caption">
-                        <h2 class="animated bounceInRight" style="animation-delay: 1s">New product</h2>
-                        <h3 class="animated bounceInLeft" style="animation-delay: 2s">Lorem ipsum dolor sit amet.</h3>
-                        <a href="#" class="btn animated bounceInRight" style="animation-delay: 3s">Shop Now</a>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <img src="./images/slider-home-3.jpg" class="d-block w-100" alt="..." />
-                    <div class="carousel-caption">
-                        <h2 class="animated bounceInRight" style="animation-delay: 1s">New Product</h2>
-                        <h3 class="animated bounceInLeft" style="animation-delay: 2s">Lorem ipsum dolor sit amet.</h3>
-                        <a href="#" class="btn animated bounceInRight" style="animation-delay: 3s">Shop Now</a>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="./images/slider-home.jpg" class="d-block w-100" alt="..." />
-                    <div class="carousel-caption">
-                        <h2 class="animated bounceInRight" style="animation-delay: 1s">New product</h2>
-                        <h3 class="animated bounceInLeft" style="animation-delay: 2s">Lorem ipsum dolor sit amet.</h3>
-                        <a href="#" class="btn animated bounceInRight" style="animation-delay: 3s">Shop Now</a>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+        <div class="col col-sm-8">
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2 border border-0 border-bottom rounded-0"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn" type="submit">
+              <svg
+                class="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-search"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                />
+              </svg>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+          </form>
+        </div>
+        <div class="col col-sm-2 d-flex justify-content-end">
+          <a class="me-3" href="./docs/profile.html">
+            <svg
+              class="icon1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              fill="currentColor"
+              class="bi bi-person"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"
+              />
+            </svg>
+          </a>
+          <a class="ms-3" href="./docs/cart.html"
+            ><svg
+              class="icon1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              fill="currentColor"
+              class="bi bi-cart"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+              />
+            </svg>
+          </a>
+          <a href="#"> <input class="cart-btn" type="button" value="0" /></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="container-fluid border-bottom second-nav">
+      <div class="row">
+        <nav id="navbar_top" class="navbar navbar-expand-md fw-bold pt-1 pb-1">
+          <div>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
             </button>
+          </div>
+          <div
+            class="collapse navbar-collapse justify-content-around nav-active"
+            id="navbarNavDropdown"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item me-4">
+                <a
+                  class="nav-link active text-dark me-4"
+                  aria-current="page"
+                  href="#"
+                  >HOME</a
+                >
+              </li>
+              <li class="nav-item dropdown me-4">
+                <a
+                  class="nav-link dropdown-toggle text-dark me-4"
+                  href="./docs/categ.html"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  PRODUCTS
+                </a>
+                <ul class="dropdown-menu p-4">
+                  <li>
+                    <a
+                      class="dropdown-item border-bottom text-muted pb-1"
+                      href="./docs/categ.html"
+                      >Category 1</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item border-bottom text-muted pb-1"
+                      href="./docs/categ.html"
+                      >Category 2</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item border-bottom text-muted pb-1"
+                      href="./docs/categ.html"
+                      >Category 3</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item border-bottom text-muted pb-1"
+                      href="./docs/categ.html"
+                      >Category 4</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item border-bottom text-muted pb-1"
+                      href="./docs/categ.html"
+                      >Category 5</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item me-4">
+                <a class="nav-link text-dark me-4" href="#footer">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="#contact">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Slider -->
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+          style="background-color: rgb(197, 135, 135)"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+          style="background-color: rgb(197, 135, 135)"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+          style="background-color: rgb(197, 135, 135)"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="./images/84770f_bb57e5518bbd43e8870325b93c908cee_mv2.webp"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="carousel-caption">
+            <h2 class="animated bounceInRight" style="animation-delay: 1s">
+              New product
+            </h2>
+            <h3 class="animated bounceInLeft" style="animation-delay: 2s">
+              Lorem ipsum dolor sit amet.
+            </h3>
+            <a
+              href="#"
+              class="btn animated bounceInRight"
+              style="animation-delay: 3s"
+              >Shop Now</a
+            >
+          </div>
         </div>
 
-        <!-- mid nav -->
-        <div class="container-fluid p-4 border-bottom border-top mt-5 mb-5 mid-nav" style="display: flex; justify-content: space-around">
-            <div class="row ps-4" style="width: 90%">
-                <div class="col-md-4 mid-small">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-2 col-sm-4">
-                                <a class="text-dark fs-1"> <i class="fa-solid fa-truck-fast"></i></a>
-                            </div>
-                            <div class="col-lg-10 col-sm-8">
-                                <h4>Free Shipping</h4>
-                                <p>Free shipping on orders over $99.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mid-small">
-                    <div class="container ps-3">
-                        <div class="row">
-                            <div class="col-lg-2 col-sm-4">
-                                <a class="text-dark fs-1"> <i class="fa-solid fa-headset"></i></a>
-                            </div>
-                            <div class="col-lg-10 col-sm-8">
-                                <h4>Customer Support</h4>
-                                <p>Quick customer support guarantee.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-2 col-sm-4">
-                                <a class="text-dark fs-1"><i class="fa-solid fa-circle-dollar-to-slot"></i></a>
-                            </div>
-                            <div class="col-lg-10 col-sm-8">
-                                <h4>Money Back</h4>
-                                <p>15 days money back guarantee.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="carousel-item">
+          <img
+            src="./images/84770f_ca183cbde2e54902bb15671ac5b117dd_mv2.webp"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="carousel-caption">
+            <h2 class="animated bounceInRight" style="animation-delay: 1s">
+              New Product
+            </h2>
+            <h3 class="animated bounceInLeft" style="animation-delay: 2s">
+              Lorem ipsum dolor sit amet.
+            </h3>
+            <a
+              href="#"
+              class="btn animated bounceInRight"
+              style="animation-delay: 3s"
+              >Shop Now</a
+            >
+          </div>
         </div>
+        <div class="carousel-item">
+          <img src="./images/slider-home-2.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption">
+            <h2 class="animated bounceInRight" style="animation-delay: 1s">
+              New product
+            </h2>
+            <h3 class="animated bounceInLeft" style="animation-delay: 2s">
+              Lorem ipsum dolor sit amet.
+            </h3>
+            <a
+              href="#"
+              class="btn animated bounceInRight"
+              style="animation-delay: 3s"
+              >Shop Now</a
+            >
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
 
-        <!-- Newest Arrivals -->
-        <div class="container mb-4" style="text-align: center; width: 80%">
-            <h2 class="fw-bold pb-2">Newest Arrivals</h2>
+    <!-- mid nav -->
+    <div
+      class="container-fluid p-4 border-bottom border-top mt-5 mb-5 mid-nav"
+      style="display: flex; justify-content: space-around"
+    >
+      <div class="row ps-4" style="width: 90%">
+        <div class="col-md-4 mid-small">
+          <div class="container">
             <div class="row">
-                <div class="col-md-2 col-sm-4">
-                    <a class="btn btn-new text-dark" href="#" role="button" style="background-color: rgb(237, 233, 233)">All</a>
-                </div>
-                <div class="col-md-2 col-sm-4">
-                    <a class="btn btn-new text-dark" href="#" role="button" style="background-color: rgb(237, 233, 233)">category 1</a>
-                </div>
-                <div class="col-md-2 col-sm-4">
-                    <a class="btn btn-new text-dark" href="#" role="button" style="background-color: rgb(237, 233, 233)">Category 2</a>
-                </div>
-                <div class="col-md-2 col-sm-4">
-                    <a class="btn-new btn text-dark" href="#" role="button" style="background-color: rgb(237, 233, 233)">Category 3</a>
-                </div>
-                <div class="col-md-2 col-sm-4">
-                    <a class="btn-new btn text-dark" href="#" role="button" style="background-color: rgb(237, 233, 233)">Category 4</a>
-                </div>
-                <div class="col-md-2 col-sm-4">
-                    <a class="btn-new btn text-dark" href="#" role="button" style="background-color: rgb(237, 233, 233)">Category 5</a>
-                </div>
+              <div class="col-lg-2 col-sm-4">
+                <a class="text-dark fs-1">
+                  <i class="fa-solid fa-truck-fast"></i
+                ></a>
+              </div>
+              <div class="col-lg-10 col-sm-8">
+                <h4>Free Shipping</h4>
+                <p>Free shipping on orders over $99.</p>
+              </div>
             </div>
-            <!-- newest arrival products container -->
-            <div class="row pt-4 pic ps-4" id="prods-container">
-                <!-- for testing purposes only -->
-                <!-- <div class="col-lg-3 col-sm-6">
+          </div>
+        </div>
+        <div class="col-md-4 mid-small">
+          <div class="container ps-3">
+            <div class="row">
+              <div class="col-lg-2 col-sm-4">
+                <a class="text-dark fs-1">
+                  <i class="fa-solid fa-headset"></i
+                ></a>
+              </div>
+              <div class="col-lg-10 col-sm-8">
+                <h4>Customer Support</h4>
+                <p>Quick customer support guarantee.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-2 col-sm-4">
+                <a class="text-dark fs-1"
+                  ><i class="fa-solid fa-circle-dollar-to-slot"></i
+                ></a>
+              </div>
+              <div class="col-lg-10 col-sm-8">
+                <h4>Money Back</h4>
+                <p>15 days money back guarantee.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newest Arrivals -->
+    <div class="container mb-4" style="text-align: center; width: 80%">
+      <h2 class="fw-bold pb-2">Newest Arrivals</h2>
+      <div class="row btn-row" style="display: flex; justify-content: center;">
+          <a
+            class="btn btn-new"
+            href="#"
+            role="button"
+            style="background-color: rgb(237, 233, 233)"
+            active
+            >All</a
+          >
+          <a
+            class="btn btn-new "
+            href="#"
+            role="button"
+            style="background-color: rgb(237, 233, 233)"
+            >Category 1</a
+          >
+          <a
+            class="btn btn-new"
+            href="#"
+            role="button"
+            style="background-color: rgb(237, 233, 233)"
+            >Category 2</a
+          >
+          <a
+            class="btn-new btn"
+            href="#"
+            role="button"
+            style="background-color: rgb(237, 233, 233)"
+            >Category 3</a
+          >
+          <a
+            class="btn-new btn"
+            href="#"
+            role="button"
+            style="background-color: rgb(237, 233, 233)"
+            >Category 4</a
+          >
+          <a
+            class="btn-new btn"
+            href="#"
+            role="button"
+            style="background-color: rgb(237, 233, 233)"
+            >Category 5</a
+          >
+      </div>
+      <!-- newest arrival products container -->
+      <div class="row pt-4 pic ps-4" id="prods-container">
+        <!-- for testing purposes only -->
+        <!-- <div class="col-lg-3 col-sm-6">
             <div class="product-item" style="width: 14rem">
                 <a href="#" class="card product-img">
                     <img src="https://preview.colorlib.com/theme/malefashion/img/banner/banner-2.jpg.webp" alt="Image" class="img-fluid" style="height: 200px; width: 13rem" />
@@ -363,190 +558,349 @@
                 </div>
             </div>
         </div> -->
+      </div>
+    </div>
+
+    <!-- Feedback -->
+    <div class="container-fluid feed pt-2">
+      <h1 style="text-align: center" class="fw-bolder fs-2">
+        Customers Feedback
+      </h1>
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="customers-testimonials" class="owl-carousel">
+            <!--TESTIMONIAL 1 -->
+            <div class="item">
+              <div class="shadow-effect">
+                <span class="fs-2 fw-bold pe-5">Mostafa</span>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <p>
+                  Dramatically maintain clicks-and-mortar solutions without
+                  functional solutions. Completely synergize resource taxing
+                  relationships via premier niche markets. Professionally
+                  cultivate.
+                </p>
+              </div>
             </div>
+            <!--END OF TESTIMONIAL 1 -->
+            <!--TESTIMONIAL 2 -->
+            <div class="item">
+              <div class="shadow-effect">
+                <span class="fs-2 fw-bold pe-5">Sara</span>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <p>
+                  Dramatically maintain clicks-and-mortar solutions without
+                  functional solutions. Completely synergize resource taxing
+                  relationships via premier niche markets. Professionally
+                  cultivate.
+                </p>
+              </div>
+            </div>
+            <!--END OF TESTIMONIAL 2 -->
+            <!--TESTIMONIAL 3 -->
+            <div class="item">
+              <div class="shadow-effect">
+                <span class="fs-2 fw-bold pe-5">Hagar</span>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <p>
+                  Dramatically maintain clicks-and-mortar solutions without
+                  functional solutions. Completely synergize resource taxing
+                  relationships via premier niche markets. Professionally
+                  cultivate.
+                </p>
+              </div>
+            </div>
+            <!--END OF TESTIMONIAL 3 -->
+            <!--TESTIMONIAL 4 -->
+            <div class="item">
+              <div class="shadow-effect">
+                <span class="fs-2 fw-bold pe-5">Mohammed</span>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <p>
+                  Dramatically maintain clicks-and-mortar solutions without
+                  functional solutions. Completely synergize resource taxing
+                  relationships via premier niche markets. Professionally
+                  cultivate.
+                </p>
+              </div>
+            </div>
+            <!--END OF TESTIMONIAL 4-->
+            <!--TESTIMONIAL 5 -->
+            <div class="item">
+              <div class="shadow-effect">
+                <span class="fs-2 fw-bold pe-5">Zienab</span>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <p>
+                  Dramatically maintain clicks-and-mortar solutions without
+                  functional solutions. Completely synergize resource taxing
+                  relationships via premier niche markets. Professionally
+                  cultivate.
+                </p>
+              </div>
+            </div>
+            <!--END OF TESTIMONIAL 5 -->
+          </div>
         </div>
-
-        <!-- Feedback -->
-        <div class="container-fluid feed pt-2">
-            <h1 style="text-align: center" class="fw-bolder fs-2">Customers Feedback</h1>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div id="customers-testimonials" class="owl-carousel">
-                        <!--TESTIMONIAL 1 -->
-                        <div class="item">
-                            <div class="shadow-effect">
-                                <span class="fs-2 fw-bold pe-5">Mostafa</span>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <p>
-                                    Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
-                                    Professionally cultivate.
-                                </p>
-                            </div>
-                        </div>
-                        <!--END OF TESTIMONIAL 1 -->
-                        <!--TESTIMONIAL 2 -->
-                        <div class="item">
-                            <div class="shadow-effect">
-                                <span class="fs-2 fw-bold pe-5">Sara</span>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <p>
-                                    Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
-                                    Professionally cultivate.
-                                </p>
-                            </div>
-                        </div>
-                        <!--END OF TESTIMONIAL 2 -->
-                        <!--TESTIMONIAL 3 -->
-                        <div class="item">
-                            <div class="shadow-effect">
-                                <span class="fs-2 fw-bold pe-5">Hagar</span>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <p>
-                                    Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
-                                    Professionally cultivate.
-                                </p>
-                            </div>
-                        </div>
-                        <!--END OF TESTIMONIAL 3 -->
-                        <!--TESTIMONIAL 4 -->
-                        <div class="item">
-                            <div class="shadow-effect">
-                                <span class="fs-2 fw-bold pe-5">Mohammed</span>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <p>
-                                    Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
-                                    Professionally cultivate.
-                                </p>
-                            </div>
-                        </div>
-                        <!--END OF TESTIMONIAL 4-->
-                        <!--TESTIMONIAL 5 -->
-                        <div class="item">
-                            <div class="shadow-effect">
-                                <span class="fs-2 fw-bold pe-5">Zienab</span>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <p>
-                                    Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
-                                    Professionally cultivate.
-                                </p>
-                            </div>
-                        </div>
-                        <!--END OF TESTIMONIAL 5 -->
-                    </div>
-                </div>
+      </div>
+    </div>
+    <!-- form -->
+    <div
+      class="container mt-3 mb-3"
+      id="contact"
+      style="display: flex; justify-content: center"
+    >
+      <div class="row">
+        <div class="col-lg-12">
+          <form action="">
+            <h2 class="fw-bold mb-4" style="text-align: center">Contact us</h2>
+            <div class="row d-flex justify-content-center">
+              <div class="col-sm-6">
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  class="email mb-3"
+                />
+              </div>
+              <div class="col-sm-6">
+                <input type="text" placeholder="Subject" class="sub mb-3" />
+              </div>
             </div>
+            <div
+              class="row"
+              style="
+                padding-left: 2.5%;
+                padding-right: 2.5%;
+                padding-bottom: 3%;
+              "
+            >
+              <textarea
+                name="message"
+                id="msg"
+                rows="10"
+                placeholder="Message"
+                class="msg"
+              ></textarea
+              ><br />
+            </div>
+            <div class="row social">
+              <div class="col-sm-6">
+                <input
+                  type="submit"
+                  value="Send Message"
+                  class="btn rounded-0 p-2 btn-form fs-6"
+                  height="50px"
+                />
+              </div>
+              <div class="col-sm-6 ps-4">
+                <div class="container ps-4">
+                  <a
+                    href="http://127.0.0.1:5500/index.html#"
+                    class="text-dark pe-3 fs-4"
+                    ><i class="fa-brands fa-facebook"></i
+                  ></a>
+                  <a
+                    href="http://127.0.0.1:5500/index.html#"
+                    class="text-dark pe-3 fs-4"
+                    ><i class="fa-brands fa-twitter"></i
+                  ></a>
+                  <a
+                    href="http://127.0.0.1:5500/index.html#"
+                    class="text-dark pe-3 fs-4"
+                    ><i class="fa-brands fa-instagram"></i
+                  ></a>
+                  <a
+                    href="http://127.0.0.1:5500/index.html#"
+                    class="text-dark fs-4"
+                    ><i class="fa-solid fa-w"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
-        <!-- form -->
-        <div class="container mt-3 mb-3" id="contact" style="display: flex; justify-content: center">
-            <div class="row">
-                <div class="col-lg-12">
-                    <form action="">
-                        <h2 class="fw-bold mb-4" style="text-align: center">Contact us</h2>
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-sm-6">
-                                <input type="email" placeholder="Email Address" class="email mb-3" />
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="text" placeholder="Subject" class="sub mb-3" />
-                            </div>
-                        </div>
-                        <div class="row" style="padding-left: 2.5%; padding-right: 2.5%; padding-bottom: 3%">
-                            <textarea name="message" id="msg" rows="10" placeholder="Message" class="msg"></textarea><br />
-                        </div>
-                        <div class="row social">
-                            <div class="col-sm-6">
-                                <input type="submit" value="Send Message" class="btn rounded-0 p-2 btn-form fs-6" height="50px" />
-                            </div>
-                            <div class="col-sm-6 ps-4">
-                                <div class="container ps-4">
-                                    <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-brands fa-facebook"></i></a>
-                                    <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-brands fa-twitter"></i></a>
-                                    <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-brands fa-instagram"></i></a>
-                                    <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-4"><i class="fa-solid fa-w"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="bd-footer" id="footer">
+      <div class="container py-5">
+        <div class="row foot ps-4">
+          <div
+            class="col-lg-4 col-md-6 col-sm-12-justify-content-center offset-lg-1 mb-4"
+          >
+            <h2 class="text-dark fw-bolder">Contact Us</h2>
+            <ul type="none">
+              <li>
+                <span class="fw-bold">Phone Number:</span>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >+11111111111</a
+                >
+              </li>
+              <li>
+                <span class="fw-bold">Email:</span
+                ><a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                >
+                  group2@gmail.com</a
+                >
+              </li>
+              <li>
+                <span class="fw-bold">Address:</span
+                ><a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >123 Alexandria</a
+                >
+              </li>
+            </ul>
+            <div class="container ps-3 pt-2">
+              <a
+                href="http://127.0.0.1:5500/index.html#"
+                class="text-dark pe-3 fs-4"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a
+                href="http://127.0.0.1:5500/index.html#"
+                class="text-dark pe-3 fs-4"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a
+                href="http://127.0.0.1:5500/index.html#"
+                class="text-dark pe-3 fs-4"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a
+                href="http://127.0.0.1:5500/index.html#"
+                class="text-dark pe-3 fs-4"
+                ><i class="fa-solid fa-w"></i
+              ></a>
             </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h2 class="text-dark fw-bolder">Need Help?</h2>
+            <ul type="none">
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Payment Methods</a
+                >
+              </li>
+              <a
+                href="http://127.0.0.1:5500/index.html#"
+                class="text-dark fs-6"
+              >
+              </a>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                ></a
+                ><a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Money Back Gurantee</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Customer Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Terms &amp; Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 text-white">
+            <h2 class="text-dark fw-bolder">Navigate</h2>
+            <ul type="none">
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >My Orders</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >My Account</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Products
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Change Password
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Track Order</a
+                >
+              </li>
+            </ul>
+          </div>
+          <hr style="width: 900px; position: relative; right: 2%" />
+          <div class="text-dark fw-bold fs-5" style="text-align: center">
+            Copyright © 2022-ITI Group 2
+          </div>
         </div>
+      </div>
+    </footer>
 
-        <!-- Footer -->
-
-        <footer class="bd-footer" id="footer">
-            <div class="container py-5">
-                <div class="row foot ps-4">
-                    <div class="col-lg-4 col-md-6 col-sm-12-justify-content-center offset-lg-1 mb-4">
-                        <h2 class="text-dark fw-bolder">Contact Us</h2>
-                        <ul type="none">
-                            <li><span class="fw-bold">Phone Number:</span> <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">+11111111111</a></li>
-                            <li><span class="fw-bold">Email:</span><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6"> group2@gmail.com</a></li>
-                            <li><span class="fw-bold">Address:</span><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">123 Alexandria</a></li>
-                        </ul>
-                        <div class="container ps-3 pt-2">
-                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-solid fa-w"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <h2 class="text-dark fw-bolder">Need Help?</h2>
-                        <ul type="none">
-                            <li><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Payment Methods</a></li>
-                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6"> </a>
-                            <li><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6"></a><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Money Back Gurantee</a></li>
-                            <li><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Customer Service</a></li>
-                            <li><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Terms &amp; Conditions</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 text-white">
-                        <h2 class="text-dark fw-bolder">Navigate</h2>
-                        <ul type="none">
-                            <li><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">My Orders</a></li>
-                            <li><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">My Account</a></li>
-                            <li><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Products </a></li>
-                            <li><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Change Password </a></li>
-                            <li><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Track Order</a></li>
-                        </ul>
-                    </div>
-                    <hr style="width: 900px; position: relative; right: 2%" />
-                    <div class="text-dark fw-bold fs-5" style="text-align: center">Copyright © 2022-ITI Group 2</div>
-                </div>
-            </div>
-        </footer>
-
-        <!-- include jquery file -->
-        <!-- <link rel="stylesheet" href="./node_modules/owl.carousel/dist/owl.carousel.min.js"> -->
-        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-        <script src="/node_modules/jquery/dist/jquery.js"></script>
-        <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
-        <!-- include bootstrap js file from node modules -->
-        <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- include javascript files -->
-        <!-- <script src="./js/script.js"></script> -->
-        <!-- splide -->
-        <script src="./node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
-        <script src="./js/index.js"></script>
-    </body>
+    <!-- include jquery file -->
+    <!-- <link rel="stylesheet" href="./node_modules/owl.carousel/dist/owl.carousel.min.js"> -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+    <!-- include bootstrap js file from node modules -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- include javascript files -->
+    <!-- <script src="./js/script.js"></script> -->
+    <!-- splide -->
+    <!-- <script src="./node_modules/@splidejs/splide/dist/js/splide.min.js"></script> -->
+    <script src="./js/index.js"></script>
+  </body>
 </html>
