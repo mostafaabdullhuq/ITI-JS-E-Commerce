@@ -283,7 +283,7 @@ export class Users {
                     quantity: 1,
                 }
             ])
-        */
+    */
 
     updateCart(user, itemsCount, cartSubtotal, cartProducts) {
         // update the number of items, price of total items, the list of products in user cart
@@ -349,7 +349,7 @@ export class Users {
                 - first element is boolean value indicates if the password is valid or not
                 - second element is the user object if the password is valid, otherwise it's the error message
 
-            */
+    */
 
     changePassword(user, newPass) {
         // check if password is valid and meet the requirements
