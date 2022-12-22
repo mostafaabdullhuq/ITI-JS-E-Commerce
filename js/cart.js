@@ -24,7 +24,7 @@ if (user) {
                 prodsHTML += `
                         <!-- product -->
                         <div class="prod row py-4 align-items-center justify-content-between" data-prod-id="${prod.id}">
-                            <!--? product image and title -->
+                            <!--? product image /and title -->
                             <div class="prod-info col d-flex flex-column m-md-0 m-auto mb-3 mb-md-0 ms-xl-4">
                                 <div
                                     style="
