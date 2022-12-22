@@ -1,3 +1,5 @@
+import { setCookie, getCookie, deleteCookie, isPassValid, isEmailValid, User, Order, ecommerceUsers } from "./script.js";
+
 // when window loads
 $(function () {
     // fetch only 9 products from api
