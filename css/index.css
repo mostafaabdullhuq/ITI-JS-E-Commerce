@@ -27,12 +27,21 @@
 }
 
 /* form */
-.btn-form {
+.social .btn-form {
     background-color: var(--border-color-4);
     color: aliceblue;
 }
-.btn-form:hover {
+.social .btn-form:hover {
     border: 1px solid black;
+    color: black;
+}
+.signup .btn-login:hover{
+    border: 1px solid black;
+    color: black;
+}
+.signin .btn-login:hover{
+    border: 1px solid black;
+    color: black;
 }
 .email,
 .sub {
