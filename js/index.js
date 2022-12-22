@@ -26,9 +26,9 @@ $(function () {
             <div class="product-item mb-4" style="height:500px;">
             <a href="#" class="card product-img">
             <img src="${product.image}" alt="Image" class="img-fluid" style="height: 400px; width:100%" />
-            <p class="view">Quick view</p>
+            <p class="view" onclick="function()">Quick view</p>
             </a>
-        <h5 class="title mt-2 text-dark">${product.title}</h5>
+        <h5 class="title mt-2">${product.title}</h5>
         <div class="price">
             <span class="h4">$${product.price}</span>
             ${'<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}
