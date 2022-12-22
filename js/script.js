@@ -67,11 +67,10 @@ export class Users {
     // private property
     #keyName = "eCommerceUsers";
     constructor(usersList = []) {
-        // users list
         this.usersList = usersList;
         // if there's no users list with the same name in the local storage
         !localStorage.getItem(this.#keyName)
-            ? // addس the users list to the local storage
+            ? // add the users list to the local storage
               this.syncUpload
             : // if there's already a users list in the local storage, sync it with the current one
               this.syncDownload;
@@ -89,9 +88,26 @@ export class Users {
     }
 
     /*
-        a method to create a new user, returns an object contains boolean value represents the state of creation 
-        and a text value contains the error if the state is false
+        [DESC]
+            a method to create a new user in Users list
+
+        [Arguments]
+            userData: an object of type User contains the user data
+        EX: 
+            Users.createAccount(new User(firstName="John", lastName="Maxi", emailAddress="johnmaxi@gmail.com", passWord="John@12345", country="United States", city="New York", shippingAddr="1234 X Street Build 2", phoneNumber="+1234567891"))
+
+        [Return]
+            object of two keys
+                isCreated: boolean value indicates if the user is created or not
+                error: string value contains the error message if the user is not created
+        EX: 
+            {
+                isCreated: true,
+                error: ""
+            }
+
     */
+
     createAccount(userData) {
         // initialize the return response object
         let response = {
@@ -126,52 +142,224 @@ export class Users {
         return response;
     }
 
-    // a method to check for username and password at login
-    loginAccount(userName, passWord) {
-        /*
-        find if there's a user with the same username and password in the users list
-        if there's a user return the user, if user not found return false
-        */
+    /*
+        [DESC]
+            a method to login to account with email and password
+
+        [Arguments]
+            - emailAddress: user email address
+            - passWord: user password
+        EX: 
+            Users.loginAccount(emailAddress="johnmaxi@gmail.com", passWord="John@12345")
+
+        [Return]
+            - object of type user if the user is found
+            - false if the user is not found
+    */
+
+    loginAccount(emailAddress, passWord) {
         return this.usersList.find((user) => {
-            return user.userName.toLowerCase() === userName.toLowerCase() && user.passWord === passWord;
+            return user.emailAddress.toLowerCase() === emailAddress.toLowerCase() && user.passWord === passWord;
         });
     }
 
-    // method to logout of account
-    logOut(...cookiesNames) {
-        // set cookies value to 0 and 0 and expire time to 0 to clear it
+    /*
+        [DESC]
+            a method to logout from user account and reset cookies
+    */
 
+    logOut() {
+        cookiesNames = ["user_id", "user_token"];
+        // set cookies value to 0 and 0 and expire time to 0 to clear it
         cookiesNames.map((cookie) => {
             setCookie(cookie, 0, 0);
         });
     }
 
-    validateLoginCookies(userID, userName) {
-        return this.usersList.find((user) => user.id == userID && user.userName == userName);
-    }
+    /*
+        [DESC]
+            a method to validate the user cookie token with the user id
+            gets the values of user id and user token from the cookies and search for a match in the users list
 
-    // a method that returns the count of users in this users object
-    get usersCount() {
-        return this.usersList.length;
+        [Return]
+            - object of type user if the cookie is valid
+            - false if the cookie is not valid
+    */
+    validateLoginCookies() {
+        let userID = getCookie("user_id"),
+            userToken = getCookie("user_token");
+        if (userID && userToken) {
+            return this.usersList.find((user) => user.id == userID && user.cookieToken == userToken);
+        }
+
+        return false;
     }
 
     //! User methods
 
-    // a method that returns specific user orders count
-    userOrdersCount(user) {
+    /*
+        [DESC]
+            a method to get the number of orders for specific user
+
+        [Arguments]
+            - user: object of type user
+        EX:
+            Users.ordersCount(user)
+        
+        [Return]
+        - number of orders for the user given
+    */
+    ordersCount(user) {
         return user.ordersList.length;
     }
 
-    // a method that returns the list of orders for specific user
-    userOrdersList(user) {
+    /*
+        [DESC]
+            a method get a list of orders for specific user
+
+        [Arguments]
+            - user: object of type user
+        EX:
+            Users.ordersList(user)
+        
+        [Return]
+        - an array of objects of type order
+    */
+    ordersList(user) {
         return user.ordersList;
+    }
+    /*
+        [DESC]
+            a method to update user cart
+
+        [Arguments]
+            - user: object of type user
+            - itemsCount: number of items in the cart
+            - cartSubtotal: price of total items in the cart
+            - cartProducts: array of objects of type product contains the products in the cart
+        EX:
+            Users.UpdateCart(user, itemsCount = 10, cartSubtotal = 2000, cartProducts = [
+                {
+                    id: 1,
+                    name: "Product 1",
+                    price: 1000,
+                    img: "product1.jpg",
+                    quantity: 2,
+                },
+                {
+                    id: 2,
+                    name: "Product 2",
+                    price: 1000,
+                    img: "product2.jpg",
+                    quantity: 1,
+                }
+            ])
+    */
+
+    updateCart(user, cartProducts) {
+        // update the number of items, price of total items, the list of products in user cart
+
+        // calculate the new items count and subtotal price
+        let itemsCount = 0,
+            cartSubtotal = 0;
+        cartProducts.forEach((prod) => {
+            itemsCount += prod.qty;
+            cartSubtotal += prod.price * prod.qty;
+        });
+
+        // update the cart values
+        user.cart.prodsCount = itemsCount;
+        user.cart.prodsPrice = cartSubtotal;
+        user.cart.prodsList = cartProducts;
+        // update the user cart in localstorage
+        this.syncUpload;
+
+        return user.cart;
+    }
+
+    /*
+        [DESC]
+            a method to add order to user orders list
+
+        [Arguments]
+            - user: object of type user
+            - order: object of type order
+    */
+
+    addOrder(user, order) {
+        // add the order to the user orders list
+        user.ordersList.push(order);
+        // update the user orders list in localstorage
+        this.syncUpload;
+    }
+
+    /*
+        [DESC]
+            a method to update user info
+
+        [Arguments]
+            - user: object of type user
+            - newDetails: object contains the new details to be updated
+        EX:
+            Users.updateProfile(user, newDetails = {
+                firstName: "John",
+                lastName: "Maxi",
+                emailAddress: "johnmaxi@gmail.com"
+            })
+    */
+    updateProfile(user, newDetails) {
+        // loop through the keys of the new details object
+        Object.keys(newDetails).forEach((key) => {
+            // for each key in new details object, update the corresponding key in user with the value of this key
+            user[key] = newDetails[key];
+        });
+        // update the user details in localstorage
+        this.syncUpload;
+    }
+
+    /*
+        [DESC]
+            a method to change user password
+
+        [Arguments]
+            - user: object of type user
+            - newPass: user new password
+        EX:
+            Users.changePassword(user, newPass="JohnMaxi@13512")
+        
+        [Return]
+            - array of two elements
+                - first element is boolean value indicates if the password is valid or not
+                - second element is the user object if the password is valid, otherwise it's the error message
+
+    */
+
+    changePassword(user, newPass) {
+        // check if password is valid and meet the requirements
+        let passValidation = isPassValid(newPass);
+
+        // if password is valid and met the requirements
+        if (passValidation[0]) {
+            // update the user password
+            user.passWord = newPass;
+
+            // update the localstorage
+            this.syncUpload;
+
+            return [true, user];
+        }
+
+        // if password is not valid or doesn't meet the requirements
+        else {
+            return passValidation;
+        }
     }
 }
 
 // class that represents one user only
 export class User {
-    constructor(id, firstName, lastName, emailAddress, passWord, country, city, shippingAddr, phoneNumber) {
-        this.id = id;
+    constructor(firstName, lastName, emailAddress, passWord, country, city, shippingAddr, phoneNumber) {
+        this.id = ecommerceUsers.usersList.length + 1;
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
@@ -180,7 +368,7 @@ export class User {
         this.shippingAddr = shippingAddr;
         this.country = country;
         this.city = city;
-        this.cookieToken = cookieToken;
+        this.cookieToken = "Z3JvdXAyQGl0aS5nb3YuZWc6QWRtaW5AMTIzNA==";
         this.ordersList = [];
         this.cart = {
             prodsCount: 0,
@@ -192,8 +380,8 @@ export class User {
 
 // order class
 export class Order {
-    constructor(id, prodsCount, prodsPrice, shippingPrice, totalPrice, prodsList) {
-        this.id = id;
+    constructor(user, prodsCount, prodsPrice, shippingPrice, totalPrice, prodsList) {
+        this.id = user.ordersList.length + 1;
         this.prodsCount = prodsCount;
         this.prodsPrice = prodsPrice;
         this.shippingPrice = shippingPrice;
@@ -204,3 +392,51 @@ export class Order {
 
 // create new Users Object to store all website users
 export var ecommerceUsers = new Users();
+
+//!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
+
+// initialize user object
+let user = new User("Group", "2", "group2@iti.gov.eg", "Admin@1234", "Egypt", "Alexandria", "Lorem ipsum 24 Bld 2", "+201203215478");
+
+// create account from user object
+ecommerceUsers.createAccount(user);
+
+// if user not logged in
+if (!ecommerceUsers.validateLoginCookies()) {
+    // set the user cookies to login
+    setCookie("user_id", user.id);
+    setCookie("user_token", user.cookieToken);
+}
+
+// add items to user cart
+ecommerceUsers.updateCart(user, [
+    {
+        id: 1,
+        title: "lorem ipsum datae alla",
+        price: 100,
+        qty: 1,
+        image: "https://images.unsplash.com/photo-1570831739435-6601aa3fa4fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1452&q=80",
+    },
+    {
+        id: 2,
+        title: "Product 2",
+        price: 200,
+        qty: 2,
+        image: "https://images.unsplash.com/photo-1555487505-8603a1a69755?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
+    },
+    {
+        id: 3,
+        title: "Product 3",
+        price: 300,
+        qty: 3,
+        image: "https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+    },
+    {
+        id: 4,
+        title: "Product 4",
+        price: 400,
+        qty: 4,
+        image: "https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+    },
+]);
+//!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING

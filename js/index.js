@@ -1,3 +1,5 @@
+import { setCookie, getCookie, deleteCookie, isPassValid, isEmailValid, User, Order, ecommerceUsers } from "./script.js";
+
 // when window loads
 $(function () {
     // fetch only 9 products from api
@@ -51,16 +53,41 @@ $(function () {
                 let categs = "";
                 categories.forEach((category) => {
                     categs += `
-            <a class="btn btn-new" href="#" role="button" style="background-color: rgb(237, 233, 233)">${category}</a>
+            <a class="btn index-categ-button btn-new" role="button" style="background-color: rgb(237, 233, 233)" data-category="${category}">${category}</a>
             `;
                 });
                 $("#categ").append(categs);
+
+                // select all categories button and loop on them
+                document.querySelectorAll(".index-categ-button").forEach((button) => {
+                    // when any category button is clicked, do this function
+                    button.addEventListener("click", function () {
+                        // get the category of the clicked button from the attribute
+                        let category = this.getAttribute("data-category"),
+                            products = document.querySelectorAll(".prod");
+                        if (category === "all") {
+                            products.forEach((product) => {
+                                product.style.display = "block";
+                            });
+                        } else {
+                            products.forEach((product) => {
+                                if (product.getAttribute("data-prod-category") === category) {
+                                    product.style.display = "block";
+                                } else {
+                                    product.style.display = "none";
+                                }
+                            });
+                        }
+                    });
+                });
             })
             .catch((e) => {
                 console.log("ERROR");
                 console.log(e);
             });
     });
+    //     var categ2 = "";
+    //    button.addEventListener(()=>categ2=category)
 
     // fixing nav in scroll
     window.addEventListener("scroll", function () {
@@ -68,7 +95,7 @@ $(function () {
             document.getElementById("navbar_top").classList.add("fixed-top");
             document.getElementById("navbar_top").style.backgroundColor = "white";
             document.getElementById("navbar_top").style.boxShadow = "2px 10px 4px rgb(133, 132, 132)";
-            navbar_height = document.querySelector(".navbar").offsetHeight;
+            let navbar_height = document.querySelector(".navbar").offsetHeight;
             document.body.style.paddingTop = navbar_height + "px";
         } else {
             document.getElementById("navbar_top").classList.remove("fixed-top");
@@ -123,3 +150,21 @@ $(function () {
             console.log(e);
         });
 });
+
+// go top button
+let mybutton = document.getElementById("topBtn");
+window.onscroll = function () {
+    scrollFunction();
+};
+function scrollFunction() {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+mybutton.onclick = function () {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+};
