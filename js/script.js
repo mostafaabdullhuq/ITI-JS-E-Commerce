@@ -166,14 +166,10 @@ export class Users {
     /*
         [DESC]
             a method to logout from user account and reset cookies
-
-        [Arguments]
-            - cookiesNames: cookies names to be reset
-        EX: 
-            Users.logout("user_id","user_token")
     */
 
-    logOut(...cookiesNames) {
+    logOut() {
+        cookiesNames = ["user_id", "user_token"];
         // set cookies value to 0 and 0 and expire time to 0 to clear it
         cookiesNames.map((cookie) => {
             setCookie(cookie, 0, 0);
@@ -192,7 +188,12 @@ export class Users {
     validateLoginCookies() {
         let userID = getCookie("user_id"),
             userToken = getCookie("user_token");
-        return this.usersList.find((user) => user.id == userID && user.cookieToken == userToken);
+
+        if (userID && userToken) {
+            return this.usersList.find((user) => user.id == userID && user.cookieToken == userToken);
+        }
+
+        return false;
     }
 
     /*
