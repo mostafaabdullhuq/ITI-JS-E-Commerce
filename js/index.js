@@ -53,7 +53,7 @@ $(function () {
                 let categs = "";
                 categories.forEach((category) => {
                     categs += `
-            <a class="btn index-categ-button btn-new" role="button" style="background-color: rgb(237, 233, 233)" data-category="${category}">${category}</a>
+            <a class="btn btn-new index-categ-button" role="button" data-category="${category}">${category}</a>
             `;
                 });
                 $("#categ").append(categs);
