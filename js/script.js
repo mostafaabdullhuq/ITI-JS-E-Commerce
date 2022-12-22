@@ -67,11 +67,10 @@ export class Users {
     // private property
     #keyName = "eCommerceUsers";
     constructor(usersList = []) {
-        // users list
         this.usersList = usersList;
         // if there's no users list with the same name in the local storage
         !localStorage.getItem(this.#keyName)
-            ? // addس the users list to the local storage
+            ? // add the users list to the local storage
               this.syncUpload
             : // if there's already a users list in the local storage, sync it with the current one
               this.syncDownload;
@@ -89,9 +88,26 @@ export class Users {
     }
 
     /*
-        a method to create a new user, returns an object contains boolean value represents the state of creation 
-        and a text value contains the error if the state is false
+        [DESC]
+            a method to create a new user in Users list
+
+        [Arguments]
+            userData: an object of type User contains the user data
+        EX: 
+            Users.createAccount(new User(firstName="John", lastName="Maxi", emailAddress="johnmaxi@gmail.com", passWord="John@12345", country="United States", city="New York", shippingAddr="1234 X Street Build 2", phoneNumber="+1234567891"))
+
+        [Return]
+            object of two keys
+                isCreated: boolean value indicates if the user is created or not
+                error: string value contains the error message if the user is not created
+        EX: 
+            {
+                isCreated: true,
+                error: ""
+            }
+
     */
+
     createAccount(userData) {
         // initialize the return response object
         let response = {
@@ -126,52 +142,241 @@ export class Users {
         return response;
     }
 
-    // a method to check for username and password at login
-    loginAccount(userName, passWord) {
-        /*
-        find if there's a user with the same username and password in the users list
-        if there's a user return the user, if user not found return false
-        */
+    /*
+        [DESC]
+            a method to login to account with email and password
+
+        [Arguments]
+            - emailAddress: user email address
+            - passWord: user password
+        EX: 
+            Users.loginAccount(emailAddress="johnmaxi@gmail.com", passWord="John@12345")
+
+        [Return]
+            - object of type user if the user is found
+            - false if the user is not found
+    */
+
+    loginAccount(emailAddress, passWord) {
         return this.usersList.find((user) => {
-            return user.userName.toLowerCase() === userName.toLowerCase() && user.passWord === passWord;
+            return user.emailAddress.toLowerCase() === emailAddress.toLowerCase() && user.passWord === passWord;
         });
     }
 
-    // method to logout of account
+    /*
+        [DESC]
+            a method to logout from user account and reset cookies
+
+        [Arguments]
+            - cookiesNames: cookies names to be reset
+        EX: 
+            Users.logout("user_id","user_token")
+    */
+
     logOut(...cookiesNames) {
         // set cookies value to 0 and 0 and expire time to 0 to clear it
-
         cookiesNames.map((cookie) => {
             setCookie(cookie, 0, 0);
         });
     }
 
-    validateLoginCookies(userID, userName) {
-        return this.usersList.find((user) => user.id == userID && user.userName == userName);
+    /*
+        [DESC]
+            a method to validate the user cookie token with the user id
+            gets the values of user id and user token from the cookies and search for a match in the users list
+
+        [Return]
+            - object of type user if the cookie is valid
+            - false if the cookie is not valid
+    */
+    validateLoginCookies() {
+        let userID = getCookie("user_id"),
+            userToken = getCookie("user_token");
+        return this.usersList.find((user) => user.id == userID && user.cookieToken == userToken);
     }
 
-    // a method that returns the count of users in this users object
-    get usersCount() {
-        return this.usersList.length;
+    /*
+        [DESC]
+            a method to generate id for the user based on the number of users in the users array
+
+        [Return]
+            - an id number
+    */
+    generateUserID() {
+        return this.usersList.length + 1;
     }
 
     //! User methods
 
-    // a method that returns specific user orders count
-    userOrdersCount(user) {
+    /*
+        [DESC]
+            a method to get the number of orders for specific user
+
+        [Arguments]
+            - user: object of type user
+        EX:
+            Users.ordersCount(user)
+        
+        [Return]
+        - number of orders for the user given
+    */
+    ordersCount(user) {
         return user.ordersList.length;
     }
 
-    // a method that returns the list of orders for specific user
-    userOrdersList(user) {
+    /*
+        [DESC]
+            a method to generate id for new orders
+
+        [Arguments]
+            - user: object of type user
+        EX:
+            Users.generateOrderID(user)
+        
+        [Return]
+        - an id number for the order
+    */
+
+    generateOrderID(user) {
+        return user.ordersList.length + 1;
+    }
+
+    /*
+        [DESC]
+            a method get a list of orders for specific user
+
+        [Arguments]
+            - user: object of type user
+        EX:
+            Users.ordersList(user)
+        
+        [Return]
+        - an array of objects of type order
+    */
+    ordersList(user) {
         return user.ordersList;
+    }
+
+    /*
+        [DESC]
+            a method to update user cart
+
+        [Arguments]
+            - user: object of type user
+            - itemsCount: number of items in the cart
+            - cartSubtotal: price of total items in the cart
+            - cartProducts: array of objects of type product contains the products in the cart
+        EX:
+            Users.UpdateCart(user, itemsCount = 10, cartSubtotal = 2000, cartProducts = [
+                {
+                    id: 1,
+                    name: "Product 1",
+                    price: 1000,
+                    img: "product1.jpg",
+                    quantity: 2,
+                },
+                {
+                    id: 2,
+                    name: "Product 2",
+                    price: 1000,
+                    img: "product2.jpg",
+                    quantity: 1,
+                }
+            ])
+        */
+
+    updateCart(user, itemsCount, cartSubtotal, cartProducts) {
+        // update the number of items, price of total items, the list of products in user cart
+        user.cart.prodsCount = itemsCount;
+        user.cart.prodsPrice = cartSubtotal;
+        user.cart.prodsList = cartProducts;
+        // update the user cart in localstorage
+        this.syncUpload;
+    }
+
+    /*
+        [DESC]
+            a method to add order to user orders list
+
+        [Arguments]
+            - user: object of type user
+            - order: object of type order
+    */
+
+    addOrder(user, order) {
+        // add the order to the user orders list
+        user.ordersList.push(order);
+        // update the user orders list in localstorage
+        this.syncUpload;
+    }
+
+    /*
+        [DESC]
+            a method to update user info
+
+        [Arguments]
+            - user: object of type user
+            - newDetails: object contains the new details to be updated
+        EX:
+            Users.updateProfile(user, newDetails = {
+                firstName: "John",
+                lastName: "Maxi",
+                emailAddress: "johnmaxi@gmail.com"
+            })
+    */
+    updateProfile(user, newDetails) {
+        // loop through the keys of the new details object
+        Object.keys(newDetails).forEach((key) => {
+            // for each key in new details object, update the corresponding key in user with the value of this key
+            user[key] = newDetails[key];
+        });
+        // update the user details in localstorage
+        this.syncUpload;
+    }
+
+    /*
+        [DESC]
+            a method to change user password
+
+        [Arguments]
+            - user: object of type user
+            - newPass: user new password
+        EX:
+            Users.changePassword(user, newPass="JohnMaxi@13512")
+        
+        [Return]
+            - array of two elements
+                - first element is boolean value indicates if the password is valid or not
+                - second element is the user object if the password is valid, otherwise it's the error message
+
+            */
+
+    changePassword(user, newPass) {
+        // check if password is valid and meet the requirements
+        let passValidation = isPassValid(newPass);
+
+        // if password is valid and met the requirements
+        if (passValidation[0]) {
+            // update the user password
+            user.passWord = newPass;
+
+            // update the localstorage
+            this.syncUpload;
+
+            return [true, user];
+        }
+
+        // if password is not valid or doesn't meet the requirements
+        else {
+            return passValidation;
+        }
     }
 }
 
 // class that represents one user only
 export class User {
-    constructor(id, firstName, lastName, emailAddress, passWord, country, city, shippingAddr, phoneNumber) {
-        this.id = id;
+    constructor(firstName, lastName, emailAddress, passWord, country, city, shippingAddr, phoneNumber) {
+        this.id = Users.generateUserID();
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
@@ -192,8 +397,8 @@ export class User {
 
 // order class
 export class Order {
-    constructor(id, prodsCount, prodsPrice, shippingPrice, totalPrice, prodsList) {
-        this.id = id;
+    constructor(user, prodsCount, prodsPrice, shippingPrice, totalPrice, prodsList) {
+        this.id = Users.generateOrderID(user);
         this.prodsCount = prodsCount;
         this.prodsPrice = prodsPrice;
         this.shippingPrice = shippingPrice;
