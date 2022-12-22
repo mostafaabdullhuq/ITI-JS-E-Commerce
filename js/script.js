@@ -79,6 +79,7 @@ export class Users {
 
     // syncs the localstorage with the current users list
     get syncUpload() {
+        console.log("here");
         localStorage.setItem(this.#keyName, JSON.stringify(this.usersList));
     }
 
@@ -196,17 +197,6 @@ export class Users {
         return false;
     }
 
-    /*
-        [DESC]
-            a method to generate id for the user based on the number of users in the users array
-
-        [Return]
-            - an id number
-    */
-    generateUserID() {
-        return this.usersList.length + 1;
-    }
-
     //! User methods
 
     /*
@@ -223,23 +213,6 @@ export class Users {
     */
     ordersCount(user) {
         return user.ordersList.length;
-    }
-
-    /*
-        [DESC]
-            a method to generate id for new orders
-
-        [Arguments]
-            - user: object of type user
-        EX:
-            Users.generateOrderID(user)
-        
-        [Return]
-        - an id number for the order
-    */
-
-    generateOrderID(user) {
-        return user.ordersList.length + 1;
     }
 
     /*
@@ -285,13 +258,25 @@ export class Users {
             ])
     */
 
-    updateCart(user, itemsCount, cartSubtotal, cartProducts) {
+    updateCart(user, cartProducts) {
         // update the number of items, price of total items, the list of products in user cart
+
+        // calculate the new items count and subtotal price
+        let itemsCount = 0,
+            cartSubtotal = 0;
+        cartProducts.forEach((prod) => {
+            itemsCount += prod.qty;
+            cartSubtotal += prod.price * prod.qty;
+        });
+
+        // update the cart values
         user.cart.prodsCount = itemsCount;
         user.cart.prodsPrice = cartSubtotal;
         user.cart.prodsList = cartProducts;
         // update the user cart in localstorage
         this.syncUpload;
+
+        return user.cart;
     }
 
     /*
@@ -376,7 +361,7 @@ export class Users {
 // class that represents one user only
 export class User {
     constructor(firstName, lastName, emailAddress, passWord, country, city, shippingAddr, phoneNumber) {
-        this.id = Users.generateUserID();
+        this.id = ecommerceUsers.usersList.length + 1;
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
@@ -385,7 +370,7 @@ export class User {
         this.shippingAddr = shippingAddr;
         this.country = country;
         this.city = city;
-        this.cookieToken = cookieToken;
+        this.cookieToken = "xyz123456789";
         this.ordersList = [];
         this.cart = {
             prodsCount: 0,
@@ -398,7 +383,7 @@ export class User {
 // order class
 export class Order {
     constructor(user, prodsCount, prodsPrice, shippingPrice, totalPrice, prodsList) {
-        this.id = Users.generateOrderID(user);
+        this.id = user.ordersList.length + 1;
         this.prodsCount = prodsCount;
         this.prodsPrice = prodsPrice;
         this.shippingPrice = shippingPrice;
@@ -409,3 +394,6 @@ export class Order {
 
 // create new Users Object to store all website users
 export var ecommerceUsers = new Users();
+
+//!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
+ecommerceUsers.createAccount(new User("Group", "2", "group2@iti.gov.eg", "Admin@1234", "Egypt", "Alexandria", "Lorem ipsum 24 Bld 2", "+201203215478"));
