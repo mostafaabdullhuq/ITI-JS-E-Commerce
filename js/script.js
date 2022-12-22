@@ -256,7 +256,6 @@ export class Users {
     ordersList(user) {
         return user.ordersList;
     }
-
     /*
         [DESC]
             a method to update user cart

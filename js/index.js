@@ -1,5 +1,3 @@
-const { Button } = require("bootstrap");
-
 // when window loads
 $(function () {
     // fetch only 9 products from api
@@ -44,7 +42,6 @@ $(function () {
             console.log("some error happend");
             console.log(e);
         });
-       
 
     // fetch Newest arrival
     $(function () {
@@ -64,13 +61,9 @@ $(function () {
                 console.log("ERROR");
                 console.log(e);
             });
-          
     });
-//     var categ2 = "";
-//    button.addEventListener(()=>categ2=category)
-
-    
-        
+    //     var categ2 = "";
+    //    button.addEventListener(()=>categ2=category)
 
     // fixing nav in scroll
     window.addEventListener("scroll", function () {
@@ -136,15 +129,17 @@ $(function () {
 
 // go top button
 let mybutton = document.getElementById("topBtn");
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () {
+    scrollFunction();
+};
 function scrollFunction() {
-  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
 }
 function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
