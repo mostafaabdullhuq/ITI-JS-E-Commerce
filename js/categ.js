@@ -1,3 +1,23 @@
+//fetching categories in navbar
+$(function(){
+    fetch("https://fakestoreapi.com/products/categories")
+    .then(res=>res.json())
+    .then(categories=>{
+        let categs="";
+        categories.forEach(category=>{
+           categs+=
+           `<li>
+           <a class="dropdown-item border-bottom text-muted pb-1" href="categ.html">${category}</a>
+           </li>
+           `
+        });
+        $("#prodNav").append(categs);
+    })
+    .catch(e=>{
+        console.log("Error");
+        console.log(e);
+    });
+});
 //fetching all categories
 $(function(){
     fetch("https://fakestoreapi.com/products/categories")
@@ -73,7 +93,7 @@ ckeck.addEventListener("click",getSpecificCatogry());
 
  function getSpecificCatogry(){
     
-    fetch("https://fakestoreapi.com/products?limit=2")
+    fetch("https://fakestoreapi.com/products?")
     .then(res=>res.json())
     .then(products=>{
         let prods="";

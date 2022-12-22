@@ -23,11 +23,11 @@ $(function () {
                  */
                 prodsCards += `
         <div class="col-lg-3 col-sm-6 prod" data-prod-id="${product.id}" data-prod-category="${product.category}">
-            <div class="product-item" style="height:470px;">
+            <div class="product-item mb-4" style="height:500px;">
             <a href="#" class="card product-img">
-            <img src="${product.image}" alt="Image" class="img-fluid" style="height: 300px; width: 22rem" />
-            <h3 class="view py-2">Quick View</h3>
-        </a>
+            <img src="${product.image}" alt="Image" class="img-fluid" style="height: 400px; width:100%" />
+            <p class="view">Quick view</p>
+            </a>
         <h5 class="title mt-2">${product.title}</h5>
         <div class="price">
             <span class="h4">$${product.price}</span>
@@ -53,7 +53,7 @@ $(function () {
                 let categs = "";
                 categories.forEach((category) => {
                     categs += `
-            <a class="btn index-categ-button btn-new" role="button" style="background-color: rgb(237, 233, 233)" data-category="${category}">${category}</a>
+            <a class="btn btn-new index-categ-button" role="button" data-category="${category}">${category}</a>
             `;
                 });
                 $("#categ").append(categs);
