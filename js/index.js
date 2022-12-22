@@ -62,8 +62,6 @@ $(function () {
                 console.log(e);
             });
     });
-    //     var categ2 = "";
-    //    button.addEventListener(()=>categ2=category)
 
     // fixing nav in scroll
     window.addEventListener("scroll", function () {
