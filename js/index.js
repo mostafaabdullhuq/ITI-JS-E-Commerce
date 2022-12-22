@@ -73,7 +73,7 @@ $(function () {
             document.getElementById("navbar_top").classList.add("fixed-top");
             document.getElementById("navbar_top").style.backgroundColor = "white";
             document.getElementById("navbar_top").style.boxShadow = "2px 10px 4px rgb(133, 132, 132)";
-            navbar_height = document.querySelector(".navbar").offsetHeight;
+            let navbar_height = document.querySelector(".navbar").offsetHeight;
             document.body.style.paddingTop = navbar_height + "px";
         } else {
             document.getElementById("navbar_top").classList.remove("fixed-top");
@@ -141,7 +141,8 @@ function scrollFunction() {
         mybutton.style.display = "none";
     }
 }
-function topFunction() {
+
+mybutton.onclick = function () {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-}
+};
