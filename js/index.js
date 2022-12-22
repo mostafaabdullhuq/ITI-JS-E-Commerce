@@ -50,14 +50,36 @@ $(function () {
         fetch("https://fakestoreapi.com/products/categories")
             .then((response) => response.json())
             .then((categories) => {
-                console.log(categories);
                 let categs = "";
                 categories.forEach((category) => {
                     categs += `
-            <a class="btn btn-new" href="#" role="button" style="background-color: rgb(237, 233, 233)">${category}</a>
+            <a class="btn index-categ-button btn-new" role="button" style="background-color: rgb(237, 233, 233)" data-category="${category}">${category}</a>
             `;
                 });
                 $("#categ").append(categs);
+
+                // select all categories button and loop on them
+                document.querySelectorAll(".index-categ-button").forEach((button) => {
+                    // when any category button is clicked, do this function
+                    button.addEventListener("click", function () {
+                        // get the category of the clicked button from the attribute
+                        let category = this.getAttribute("data-category"),
+                            products = document.querySelectorAll(".prod");
+                        if (category === "all") {
+                            products.forEach((product) => {
+                                product.style.display = "block";
+                            });
+                        } else {
+                            products.forEach((product) => {
+                                if (product.getAttribute("data-prod-category") === category) {
+                                    product.style.display = "block";
+                                } else {
+                                    product.style.display = "none";
+                                }
+                            });
+                        }
+                    });
+                });
             })
             .catch((e) => {
                 console.log("ERROR");
