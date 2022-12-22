@@ -152,6 +152,18 @@ if (user) {
         });
     });
 
+    $(".checkout-button").on("click", function () {
+        let prods = userCart.prodsList;
+
+        if (prods.length > 0) {
+            window.location.href = "./../docs/checkout.html";
+        }
+    });
+
+    $(".continue-shopping-button").on("click", function () {
+        window.location.href = "./../docs/categ.html";
+    });
+
     function updateCartRight() {
         // update right section items count and subtotal
         $(".cart-items-count").text(userCart.prodsCount ?? 0);
