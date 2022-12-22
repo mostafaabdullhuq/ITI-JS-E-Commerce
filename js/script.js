@@ -188,23 +188,11 @@ export class Users {
     validateLoginCookies() {
         let userID = getCookie("user_id"),
             userToken = getCookie("user_token");
-
         if (userID && userToken) {
             return this.usersList.find((user) => user.id == userID && user.cookieToken == userToken);
         }
 
         return false;
-    }
-
-    /*
-        [DESC]
-            a method to generate id for the user based on the number of users in the users array
-
-        [Return]
-            - an id number
-    */
-    generateUserID() {
-        return this.usersList.length + 1;
     }
 
     //! User methods
@@ -223,23 +211,6 @@ export class Users {
     */
     ordersCount(user) {
         return user.ordersList.length;
-    }
-
-    /*
-        [DESC]
-            a method to generate id for new orders
-
-        [Arguments]
-            - user: object of type user
-        EX:
-            Users.generateOrderID(user)
-        
-        [Return]
-        - an id number for the order
-    */
-
-    generateOrderID(user) {
-        return user.ordersList.length + 1;
     }
 
     /*
@@ -285,13 +256,25 @@ export class Users {
             ])
     */
 
-    updateCart(user, itemsCount, cartSubtotal, cartProducts) {
+    updateCart(user, cartProducts) {
         // update the number of items, price of total items, the list of products in user cart
+
+        // calculate the new items count and subtotal price
+        let itemsCount = 0,
+            cartSubtotal = 0;
+        cartProducts.forEach((prod) => {
+            itemsCount += prod.qty;
+            cartSubtotal += prod.price * prod.qty;
+        });
+
+        // update the cart values
         user.cart.prodsCount = itemsCount;
         user.cart.prodsPrice = cartSubtotal;
         user.cart.prodsList = cartProducts;
         // update the user cart in localstorage
         this.syncUpload;
+
+        return user.cart;
     }
 
     /*
@@ -376,7 +359,7 @@ export class Users {
 // class that represents one user only
 export class User {
     constructor(firstName, lastName, emailAddress, passWord, country, city, shippingAddr, phoneNumber) {
-        this.id = Users.generateUserID();
+        this.id = ecommerceUsers.usersList.length + 1;
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
@@ -385,7 +368,7 @@ export class User {
         this.shippingAddr = shippingAddr;
         this.country = country;
         this.city = city;
-        this.cookieToken = cookieToken;
+        this.cookieToken = "Z3JvdXAyQGl0aS5nb3YuZWc6QWRtaW5AMTIzNA==";
         this.ordersList = [];
         this.cart = {
             prodsCount: 0,
@@ -398,7 +381,7 @@ export class User {
 // order class
 export class Order {
     constructor(user, prodsCount, prodsPrice, shippingPrice, totalPrice, prodsList) {
-        this.id = Users.generateOrderID(user);
+        this.id = user.ordersList.length + 1;
         this.prodsCount = prodsCount;
         this.prodsPrice = prodsPrice;
         this.shippingPrice = shippingPrice;
@@ -409,3 +392,51 @@ export class Order {
 
 // create new Users Object to store all website users
 export var ecommerceUsers = new Users();
+
+//!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
+
+// initialize user object
+let user = new User("Group", "2", "group2@iti.gov.eg", "Admin@1234", "Egypt", "Alexandria", "Lorem ipsum 24 Bld 2", "+201203215478");
+
+// create account from user object
+ecommerceUsers.createAccount(user);
+
+// if user not logged in
+if (!ecommerceUsers.validateLoginCookies()) {
+    // set the user cookies to login
+    setCookie("user_id", user.id);
+    setCookie("user_token", user.cookieToken);
+}
+
+// add items to user cart
+ecommerceUsers.updateCart(user, [
+    {
+        id: 1,
+        title: "lorem ipsum datae alla",
+        price: 100,
+        qty: 1,
+        image: "https://images.unsplash.com/photo-1570831739435-6601aa3fa4fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1452&q=80",
+    },
+    {
+        id: 2,
+        title: "Product 2",
+        price: 200,
+        qty: 2,
+        image: "https://images.unsplash.com/photo-1555487505-8603a1a69755?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
+    },
+    {
+        id: 3,
+        title: "Product 3",
+        price: 300,
+        qty: 3,
+        image: "https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+    },
+    {
+        id: 4,
+        title: "Product 4",
+        price: 400,
+        qty: 4,
+        image: "https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+    },
+]);
+//!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
