@@ -21,8 +21,9 @@
     border: 0;
     background-color: var(--ltn__secondary-color);
     position: relative;
-    right: 25%;
+    right:5%;
     bottom: 15%;
+    padding-left: 3px;
 }
 
 /* form */
