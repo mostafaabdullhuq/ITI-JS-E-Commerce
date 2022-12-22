@@ -251,21 +251,25 @@ li {
 
 /* newest arrivals */
 .btn-new {
-    width: 160px;
+    width: 17%;
     margin-bottom: 3px;
     margin-left: 5px;
     box-shadow: inset 0px 0px 20px rgba(22, 21, 21, 0.2);
     font-weight: bold;
 }
 .btn:hover {
-    color: rgb(233, 150, 150);
+    color: rgb(255, 255, 255);
+    background-color: black;
 }
-@media (min-width: 766) {
+@media (max-width: 1200px) {
     .btn-new {
-        width: 130px;
+       width: 30%;
     }
-    .btn-row {
-        margin-left: 10%;
+}
+@media (max-width: 806px) {
+    .btn-new {
+        margin-bottom: 10px;
+        width: 40%;
     }
 }
 @media (max-width: 576px) {
@@ -274,22 +278,22 @@ li {
         width: 100%;
     }
 }
-@media (min-width: 766px) {
-    .btn-new {
-        margin-bottom: 10px;
-    }
-}
+
 a:link {
     text-decoration: none;
 }
 .view {
     transform: translate(0, 0px);
-    background-color: var(--border-color-4);
     border-radius: 2px;
+    background-color: #363535;
     display: none;
     direction: nounderline;
-    color: #ececec;
+    color: #ffffff;
     margin-bottom: 0;
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+    font-size: 25px;
 }
 .product-item {
     border-radius: 5px;
@@ -320,7 +324,7 @@ p {
     bottom: 20px;
     right: 30px;
     z-index: 99;
-    font-size: 20px;
+    font-size: 30px;
     border: none;
     outline: none;
     color: rgb(87, 85, 85);
@@ -329,7 +333,10 @@ p {
     padding-right: 6px;
     border-radius: 4px;
     opacity: 0.7;
+    background-color: inherit;
   }
   #topBtn:hover{
    opacity: 1;
   }
+
+  
