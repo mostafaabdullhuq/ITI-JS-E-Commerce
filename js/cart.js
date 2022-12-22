@@ -3,8 +3,11 @@ import { setCookie, getCookie, deleteCookie, isPassValid, isEmailValid, User, Or
 // check if user logged in
 let user = ecommerceUsers.validateLoginCookies();
 
+console.log(ecommerceUsers);
+console.log(user);
+
 // if logged in
-if (!user) {
+if (user) {
     // this.cart = {
     //     prodsCount: 0,
     //     prodsPrice: 0,

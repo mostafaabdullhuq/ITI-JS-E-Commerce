@@ -189,7 +189,6 @@ export class Users {
     validateLoginCookies() {
         let userID = getCookie("user_id"),
             userToken = getCookie("user_token");
-
         if (userID && userToken) {
             return this.usersList.find((user) => user.id == userID && user.cookieToken == userToken);
         }
@@ -370,7 +369,7 @@ export class User {
         this.shippingAddr = shippingAddr;
         this.country = country;
         this.city = city;
-        this.cookieToken = "xyz123456789";
+        this.cookieToken = "Z3JvdXAyQGl0aS5nb3YuZWc6QWRtaW5AMTIzNA==";
         this.ordersList = [];
         this.cart = {
             prodsCount: 0,
@@ -396,4 +395,12 @@ export class Order {
 export var ecommerceUsers = new Users();
 
 //!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
+
+// create account
 ecommerceUsers.createAccount(new User("Group", "2", "group2@iti.gov.eg", "Admin@1234", "Egypt", "Alexandria", "Lorem ipsum 24 Bld 2", "+201203215478"));
+
+// set the user cookies to login
+setCookie("user_id", "1");
+setCookie("user_token", "Z3JvdXAyQGl0aS5nb3YuZWc6QWRtaW5AMTIzNA==");
+
+//!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
