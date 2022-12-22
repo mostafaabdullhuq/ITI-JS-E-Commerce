@@ -1,3 +1,5 @@
+import { setCookie, getCookie, deleteCookie, isPassValid, isEmailValid, User, Order, ecommerceUsers } from "./script.js";
+
 // when window loads
 $(function () {
     // fetch only 9 products from api
@@ -21,11 +23,11 @@ $(function () {
                  */
                 prodsCards += `
         <div class="col-lg-3 col-sm-6 prod" data-prod-id="${product.id}" data-prod-category="${product.category}">
-            <div class="product-item" style="height:470px;">
+            <div class="product-item mb-4" style="height:500px;">
             <a href="#" class="card product-img">
-            <img src="${product.image}" alt="Image" class="img-fluid" style="height: 300px; width: 22rem" />
-            <h3 class="view py-2">Quick View</h3>
-        </a>
+            <img src="${product.image}" alt="Image" class="img-fluid" style="height: 400px; width:100%" />
+            <p class="view">Quick view</p>
+            </a>
         <h5 class="title mt-2">${product.title}</h5>
         <div class="price">
             <span class="h4">$${product.price}</span>
@@ -48,14 +50,36 @@ $(function () {
         fetch("https://fakestoreapi.com/products/categories")
             .then((response) => response.json())
             .then((categories) => {
-                console.log(categories);
                 let categs = "";
                 categories.forEach((category) => {
                     categs += `
-            <a class="btn btn-new" href="#" role="button" style="background-color: rgb(237, 233, 233)">${category}</a>
+            <a class="btn btn-new index-categ-button" role="button" data-category="${category}">${category}</a>
             `;
                 });
                 $("#categ").append(categs);
+
+                // select all categories button and loop on them
+                document.querySelectorAll(".index-categ-button").forEach((button) => {
+                    // when any category button is clicked, do this function
+                    button.addEventListener("click", function () {
+                        // get the category of the clicked button from the attribute
+                        let category = this.getAttribute("data-category"),
+                            products = document.querySelectorAll(".prod");
+                        if (category === "all") {
+                            products.forEach((product) => {
+                                product.style.display = "block";
+                            });
+                        } else {
+                            products.forEach((product) => {
+                                if (product.getAttribute("data-prod-category") === category) {
+                                    product.style.display = "block";
+                                } else {
+                                    product.style.display = "none";
+                                }
+                            });
+                        }
+                    });
+                });
             })
             .catch((e) => {
                 console.log("ERROR");
@@ -69,7 +93,7 @@ $(function () {
             document.getElementById("navbar_top").classList.add("fixed-top");
             document.getElementById("navbar_top").style.backgroundColor = "white";
             document.getElementById("navbar_top").style.boxShadow = "2px 10px 4px rgb(133, 132, 132)";
-            navbar_height = document.querySelector(".navbar").offsetHeight;
+            let navbar_height = document.querySelector(".navbar").offsetHeight;
             document.body.style.paddingTop = navbar_height + "px";
         } else {
             document.getElementById("navbar_top").classList.remove("fixed-top");
@@ -137,7 +161,8 @@ function scrollFunction() {
         mybutton.style.display = "none";
     }
 }
-function topFunction() {
+
+mybutton.onclick = function () {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-}
+};
