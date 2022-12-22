@@ -3,54 +3,11 @@ import { setCookie, getCookie, deleteCookie, isPassValid, isEmailValid, User, Or
 // check if user logged in
 let user = ecommerceUsers.validateLoginCookies();
 
-console.log(ecommerceUsers);
-console.log(user);
-
+console.log(document.cookie);
 // if logged in
 if (user) {
-    // this.cart = {
-    //     prodsCount: 0,
-    //     prodsPrice: 0,
-    //     prodsList: [],
-    // };
-
     // get user cart
-    // let userCart = user.cart;
-    let userCart = {
-        prodsCount: 10,
-        prodsPrice: 3000,
-        prodsList: [
-            {
-                id: 1,
-                title: "lorem ipsum datae alla",
-                price: 100,
-                qty: 1,
-                image: "https://images.unsplash.com/photo-1570831739435-6601aa3fa4fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1452&q=80",
-            },
-            {
-                id: 2,
-                title: "Product 2",
-                price: 200,
-                qty: 2,
-                image: "https://images.unsplash.com/photo-1555487505-8603a1a69755?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
-            },
-            {
-                id: 3,
-                title: "Product 3",
-                price: 300,
-                qty: 3,
-                image: "https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
-            },
-            {
-                id: 4,
-                title: "Product 4",
-                price: 400,
-                qty: 4,
-                image: "https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
-            },
-        ],
-    };
-    console.log(userCart.prodsCount);
+    let userCart = user.cart;
     // when window loads
     $(() => {
         // get products from cart
