@@ -1,3 +1,5 @@
+const { Button } = require("bootstrap");
+
 // when window loads
 $(function () {
     // fetch only 9 products from api
@@ -42,12 +44,14 @@ $(function () {
             console.log("some error happend");
             console.log(e);
         });
+       
 
     // fetch Newest arrival
     $(function () {
         fetch("https://fakestoreapi.com/products/categories")
             .then((response) => response.json())
             .then((categories) => {
+                console.log(categories);
                 let categs = "";
                 categories.forEach((category) => {
                     categs += `
@@ -60,7 +64,13 @@ $(function () {
                 console.log("ERROR");
                 console.log(e);
             });
+          
     });
+//     var categ2 = "";
+//    button.addEventListener(()=>categ2=category)
+
+    
+        
 
     // fixing nav in scroll
     window.addEventListener("scroll", function () {
