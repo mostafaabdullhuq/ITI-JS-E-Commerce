@@ -19,6 +19,9 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet" />
         <!-- <link rel="stylesheet" href="./css/style.css" /> -->
         <link rel="stylesheet" href="./css/index.css" />
+           <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+            <link rel="stylesheet" href="./css/modal/signIn.css"> 
         <title>E-Commerce</title>
     </head>
     <body>
@@ -50,7 +53,7 @@
                     </a>
                     <ul class="dropdown-menu p-2" style="text-align: center">
                         <li class="border-bottom mb-1 pb-1">
-                            <a class="icon1" href="#"> Login </a>
+                            <a class="icon1" data-bs-toggle="modal" href="#exampleModalToggle2" > Sign In </a>
                         </li>
                         <li>
                             <a class="icon1" href="./docs/profile.html"> Sign up </a>
@@ -410,7 +413,47 @@
                 </div>
             </div>
         </footer>
+
+<!-- scroll top button -->
         <button id="topBtn" title="Go to top"><i class="fa-solid fa-angles-up"></i></button>
+<!-- sign in popup -->
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="container">
+            <div class="row">
+                <div class="card border-0 shadow rounded-3 my-5">
+                  <div class="card-body p-4 p-sm-5">
+                    <h5 class="card-title text-center mb-5 fw-bolder fs-5 title">Sign In</h5>
+                    <form>
+                      <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                      </div>
+        
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                        <label class="form-check-label" for="rememberPasswordCheck">
+                          Remember password
+                        </label>
+                      </div>
+                      <div class="d-grid">
+                        <button class="btn btn-form btn-login text-uppercase fw-bold" type="submit">Sign
+                          in</button>
+                      </div>
+                      
+                    </form>
+                  </div>
+                </div>
+            </div>
+          </div>
+      </div> 
+    </div>
+  </div>
 
         <!-- include jquery file -->
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
