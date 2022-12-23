@@ -1,13 +1,12 @@
 @import url("../style.css");
 
-.btn {
+.btn2 {
     background-color: black;
     color: white;
     font-weight: bolder;
 }
-
 .btn:hover{
-    background-color: var(--ltn__secondary-color);
+    background-color: var(--ltn__secondary-color) !important;
 }
 
 i {

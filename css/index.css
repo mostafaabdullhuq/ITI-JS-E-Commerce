@@ -266,6 +266,7 @@ li {
     margin-left: 5px;
     box-shadow: inset 0px 0px 20px rgba(22, 21, 21, 0.2);
     font-weight: bold;
+   
     
 }
 .btn:hover {
@@ -296,7 +297,6 @@ a:link {
 }
 .view {
     transform: translate(0, 0px);
-    border-radius: 2px;
     background-color: #363535;
     display: none;
     direction: nounderline;
@@ -307,9 +307,9 @@ a:link {
     width: 100%;
     font-size: 25px;
 }
-.product-item {
+/* .product-item {
     border-radius: 5px;
-}
+} */
 .product-img {
     box-shadow: inset 0px 0px 20px rgba(22, 21, 21, 0.2);
 }
@@ -343,7 +343,6 @@ p {
     cursor: pointer;
     padding-left: 6px;
     padding-right: 6px;
-    border-radius: 4px;
     opacity: 0.7;
     background-color: inherit;
   }

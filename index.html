@@ -212,10 +212,10 @@
         <div class="container mb-4" style="text-align: center; width: 80%">
             <h2 class="fw-bold pb-2">Newest Arrivals</h2>
             <div class="row btn-row" id="categ" style="display: flex; justify-content: center">
-                <a class="btn btn-new index-categ-button" role="button" id="categId" data-category="all" active>All</a>
+                <a class="btn btn-new index-categ-button  rounded-0" role="button" id="categId" data-category="all" active>All</a>
             </div>
             <!-- newest arrival products container -->
-      <div class="row pt-4 pic ps-4" id="prods-container">
+      <div class="row pt-4 pic ps-4 rounded-0" id="prods-container">
                
             </div>
         </div>
@@ -474,8 +474,7 @@
                       
                     </div>
                     <div class="d-grid signup">
-                      <button class="btn btn-form btn-login text-uppercase fw-bold mt-5" type="submit">Sign
-                        up</button>
+                      <button class="btn btn-form btn-login text-uppercase fw-bold mt-5" type="submit">Sign up</button>
                     </div>
                 </div>
             </div>
@@ -483,6 +482,41 @@
       </div> 
     </div>
   </div>
+
+  <!-- Quick View PopUp -->
+  <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle2" role="button">Open first modal</a>
+
+
+  <div id="exampleModalToggle2" class="modal modal-dialog modal-dialog-centered" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Product name</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body row">
+            <img class="col-6 img-thumbnail" style=" max-width: 50%" src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142" alt="" srcset="">
+            <div class="col-6 mt-3">
+                <h3 class="">Price : $1000</h3>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+        </div>
+        <div class="modal-footer">        
+          <div class="d-flex justify-content-center">
+            <i class="fs-4 fa-solid fa-minus border border-2 p-1"></i>
+            <input type="text" class=" text-center fw-bold fs-4 w-25" value="1" />
+            <i class=" fs-4 fa-solid fa-plus border border-2 p-1"></i>
+            <button class="btn btn2 ms-3 text-center p-2">Add to cart</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
         <!-- include jquery file -->
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
