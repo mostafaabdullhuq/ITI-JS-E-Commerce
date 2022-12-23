@@ -1,5 +1,7 @@
-@import url("../style.css");
-
+/* @import url("../style.css");
+body{
+    background-color: blueviolet;
+}
 .btn2 {
     background-color: black;
     color: white;
