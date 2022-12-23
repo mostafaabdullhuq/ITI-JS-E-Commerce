@@ -19,9 +19,10 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet" />
         <!-- <link rel="stylesheet" href="./css/style.css" /> -->
         <link rel="stylesheet" href="./css/index.css" />
-           <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-            <link rel="stylesheet" href="./css/modal/signIn.css"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="./css/modal/signIn.css" />
+        <link rel="stylesheet" href="./css/modal/product_modal.css" />
         <title>E-Commerce</title>
     </head>
     <body>
@@ -53,7 +54,7 @@
                     </a>
                     <ul class="dropdown-menu p-2" style="text-align: center">
                         <li class="border-bottom mb-1 pb-1">
-                            <a class="icon1" data-bs-toggle="modal" href="#exampleModalToggle2" > Sign In </a>
+                            <a class="icon1" data-bs-toggle="modal" href="#exampleModalToggle2"> Sign In </a>
                         </li>
                         <li>
                             <a class="icon1" data-bs-toggle="modal" href="#exampleModalToggle3"> Sign up </a>
@@ -67,7 +68,7 @@
                             />
                         </svg>
                     </a>
-                        <p class="cart-btn text-light cart-items-count">0</p>
+                    <p class="cart-btn text-light cart-items-count">0</p>
                 </div>
             </div>
         </div>
@@ -96,8 +97,7 @@
                             </li>
                             <li class="nav-item dropdown me-4">
                                 <a class="nav-link dropdown-toggle text-dark me-4" href="./docs/categ.html" data-bs-toggle="dropdown" aria-expanded="false"> PRODUCTS </a>
-                                <ul class="dropdown-menu p-4" id="cat-ul">
-                                </ul>
+                                <ul class="dropdown-menu p-4" id="cat-ul"></ul>
                             </li>
                             <li class="nav-item me-4">
                                 <a class="nav-link text-dark me-4" href="#footer">ABOUT</a>
@@ -212,12 +212,10 @@
         <div class="container mb-4" style="text-align: center; width: 80%">
             <h2 class="fw-bold pb-2">Newest Arrivals</h2>
             <div class="row btn-row" id="categ" style="display: flex; justify-content: center">
-                <a class="btn btn-new index-categ-button  rounded-0" role="button" id="categId" data-category="all" active>All</a>
+                <a class="btn btn-new index-categ-button rounded-0" role="button" id="categId" data-category="all" active>All</a>
             </div>
             <!-- newest arrival products container -->
-      <div class="row pt-4 pic ps-4 rounded-0" id="prods-container">
-               
-            </div>
+            <div class="row pt-4 pic ps-4 rounded-0" id="prods-container"></div>
         </div>
 
         <!-- Feedback -->
@@ -329,7 +327,7 @@
                         </div>
                         <div class="row social">
                             <div class="col-sm-6">
-                                <input type="submit" value="Send Message" class="btn btn-form rounded-0 p-2  fs-6" height="50px" />
+                                <input type="submit" value="Send Message" class="btn btn-form rounded-0 p-2 fs-6" height="50px" />
                             </div>
                             <div class="col-sm-6 ps-4">
                                 <div class="container ps-4">
@@ -409,114 +407,116 @@
             </div>
         </footer>
 
-<!-- scroll top button -->
+        <!-- scroll top button -->
         <button id="topBtn" title="Go to top"><i class="fa-solid fa-angles-up"></i></button>
-<!-- sign in popup -->
-<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="container">
-            <div class="row">
-                <div class="card border-0 shadow rounded-3 my-5">
-                  <div class="card-body p-4 p-sm-5">
-                    <h5 class="card-title text-center mb-5 fw-bolder fs-5 title">Sign In</h5>
-                    <form>
-                      <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Email address</label>
-                      </div>
-                      <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                        <label for="floatingPassword">Password</label>
-                      </div>
-        
-                      <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
-                        <label class="form-check-label" for="rememberPasswordCheck">
-                          Remember password
-                        </label>
-                      </div>
-                      <div class="d-grid signin">
-                        <button class="btn btn-form btn-login text-uppercase fw-bold" type="submit">Sign
-                          in</button>
-                      </div>
-                      
-                    </form>
-                  </div>
-                </div>
-            </div>
-          </div>
-      </div> 
-    </div>
-  </div>
-<!-- sign up popup -->
-<div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="container">
-            <div class="row">
-                <div class="card border-0 shadow rounded-3 my-5">
-                  <div class="card-body p-4 p-sm-5">
-                    <h5 class="card-title text-center mb-5 fw-bolder fs-5 title">Sign Up</h5>
-                    <div class="row mt-2">
-                      <div class="col-6"><label class="labels">First Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
-                      <div class="col-6"><label class="labels">Last Name</label><input type="text" class="form-control" value="" placeholder="last name"></div>
-                    </div>
-                    <div class="row mt-3">
-                      <div class="col-md-12"><label class="labels">Email</label><input type="email" class="form-control" placeholder="enter email" value=""></div>
-                      <div class="col-md-12"><label class="labels">Password</label><input type="password" class="form-control" placeholder="new password" value=""></div>
-                      <div class="col-md-12"><label class="labels">Confirm Password</label><input type="password" class="form-control" placeholder="confirm password" value=""></div>
-                      <div class="col-md-12"><label class="labels">Shipping Address</label><input type="text" class="form-control" placeholder="enter your address" value=""></div>
-                      <div class="row mt-3">
-                        <div class="col-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
-                        <div class="col-6"><label class="labels">City</label><input type="text" class="form-control" value="" placeholder="city"></div>
-                      </div>
-                      
-                    </div>
-                    <div class="d-grid signup">
-                      <button class="btn btn-form btn-login text-uppercase fw-bold mt-5" type="submit">Sign up</button>
+        <!-- sign in popup -->
+        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="card border-0 shadow rounded-3 my-5">
+                                <div class="card-body p-4 p-sm-5">
+                                    <h5 class="card-title text-center mb-5 fw-bolder fs-5 title">Sign In</h5>
+                                    <form>
+                                        <div class="form-floating mb-3">
+                                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                                            <label for="floatingInput">Email address</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+                                            <label for="floatingPassword">Password</label>
+                                        </div>
+
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck" />
+                                            <label class="form-check-label" for="rememberPasswordCheck"> Remember password </label>
+                                        </div>
+                                        <div class="d-grid signin">
+                                            <button class="btn btn-form btn-login text-uppercase fw-bold" type="submit">Sign in</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-          </div>
-      </div> 
-    </div>
-  </div>
-
-  <!-- Quick View PopUp -->
-  <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle2" role="button">Open first modal</a>
-
-
-  <div id="exampleModalToggle2" class="modal modal-dialog modal-dialog-centered" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Product name</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body row">
-            <img class="col-6 img-thumbnail" style=" max-width: 50%" src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142" alt="" srcset="">
-            <div class="col-6 mt-3">
-                <h3 class="">Price : $1000</h3>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+        <!-- sign up popup -->
+        <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="card border-0 shadow rounded-3 my-5">
+                                <div class="card-body p-4 p-sm-5">
+                                    <h5 class="card-title text-center mb-5 fw-bolder fs-5 title">Sign Up</h5>
+                                    <div class="row mt-2">
+                                        <div class="col-6"><label class="labels">First Name</label><input type="text" class="form-control" placeholder="first name" value="" /></div>
+                                        <div class="col-6"><label class="labels">Last Name</label><input type="text" class="form-control" value="" placeholder="last name" /></div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-md-12"><label class="labels">Email</label><input type="email" class="form-control" placeholder="enter email" value="" /></div>
+                                        <div class="col-md-12"><label class="labels">Password</label><input type="password" class="form-control" placeholder="new password" value="" /></div>
+                                        <div class="col-md-12">
+                                            <label class="labels">Confirm Password</label><input type="password" class="form-control" placeholder="confirm password" value="" />
+                                        </div>
+                                        <div class="col-md-12"><label class="labels">Shipping Address</label><input type="text" class="form-control" placeholder="enter your address" value="" /></div>
+                                        <div class="row mt-3">
+                                            <div class="col-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value="" /></div>
+                                            <div class="col-6"><label class="labels">City</label><input type="text" class="form-control" value="" placeholder="city" /></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-grid signup">
+                                        <button class="btn btn-form btn-login text-uppercase fw-bold mt-5" type="submit">Sign up</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="modal-footer">        
-          <div class="d-flex justify-content-center">
-            <i class="fs-4 fa-solid fa-minus border border-2 p-1"></i>
-            <input type="text" class=" text-center fw-bold fs-4 w-25" value="1" />
-            <i class=" fs-4 fa-solid fa-plus border border-2 p-1"></i>
-            <button class="btn btn2 ms-3 text-center p-2">Add to cart</button>
-        </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
+        <!-- Quick View PopUp -->
+
+        <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Product name</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body row">
+                        <img
+                            class="col-6 img-thumbnail modal-img"
+                            style="max-width: 50%"
+                            src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142"
+                            alt=""
+                            srcset=""
+                        />
+                        <div class="col-6 mt-3">
+                            <h3 class="modal-price">$1000</h3>
+                            <div class="modal-rating"></div>
+                            <!-- <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i> -->
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex justify-content-center">
+                            <i class="fs-4 fa-solid fa-minus border border-2 p-1"></i>
+                            <input type="text" class="text-center fw-bold fs-4 w-25" value="1" />
+                            <i class="fs-4 fa-solid fa-plus border border-2 p-1"></i>
+                            <button class="btn btn2 ms-3 text-center p-2">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- include jquery file -->
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
