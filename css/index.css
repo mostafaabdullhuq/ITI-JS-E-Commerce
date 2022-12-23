@@ -21,17 +21,27 @@
     border: 0;
     background-color: var(--ltn__secondary-color);
     position: relative;
-    right: 25%;
+    right:5%;
     bottom: 15%;
+    padding-left: 3px;
 }
 
 /* form */
-.btn-form {
+.social .btn-form {
     background-color: var(--border-color-4);
     color: aliceblue;
 }
-.btn-form:hover {
+.social .btn-form:hover {
     border: 1px solid black;
+    color: black;
+}
+.signup .btn-login:hover{
+    border: 1px solid black;
+    color: black;
+}
+.signin .btn-login:hover{
+    border: 1px solid black;
+    color: black;
 }
 .email,
 .sub {

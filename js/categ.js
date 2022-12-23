@@ -1,5 +1,6 @@
-//fetching categories in navbar
+
 $(function(){
+    //fetching categories in navbar
     fetch("https://fakestoreapi.com/products/categories")
     .then(res=>res.json())
     .then(categories=>{
@@ -17,9 +18,8 @@ $(function(){
         console.log("Error");
         console.log(e);
     });
-});
-//fetching all categories
-$(function(){
+
+    //fetching all categories
     fetch("https://fakestoreapi.com/products/categories")
     .then(response=>response.json())
     .then(categories=>{
@@ -47,9 +47,8 @@ $(function(){
         console.log("ERROR");
         console.log(e);
     });
-});
-//fetching all products
-$(function(){
+
+    //fetching all products
     fetch("https://fakestoreapi.com/products?")
     .then(response=>response.json())
     .then(products=>{
@@ -85,9 +84,8 @@ $(function(){
         console.log("some error happend");
         console.log(e);
     });
-
 });
-//////
+
 let ckeck=document.getElementById("#check");
 ckeck.addEventListener("click",getSpecificCatogry());
 
