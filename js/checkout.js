@@ -2,7 +2,7 @@ import { setCookie, getCookie, deleteCookie, isPassValid, isEmailValid, User, Or
 
 // load the country phone dropdown
 var input = document.querySelector("#phone");
-intlTelInput(input, {
+let phoneDropdown = intlTelInput(input, {
     initialCountry: "auto",
     nationalMode: true,
     // get user ip and automatically change country code
@@ -33,6 +33,30 @@ if (user) {
         }
         // if products in cart
         else {
+            let fullNameInput = $("#checkout-full-name"),
+                addressInput = $("#checkout-address"),
+                countrySelect = $("select.country-select"),
+                cityInput = $("#checkout-city"),
+                phoneInput = $("#phone");
+            // fill the shipping details inputs
+            if (user.firstName && user.lastName) {
+                fullNameInput.val(`${user.firstName} ${user.lastName}`);
+            }
+            if (user.shippingAddr) {
+                addressInput.val(user.shippingAddr);
+            }
+            if (user.country) {
+                countrySelect.val(user.country);
+            }
+            if (user.city) {
+                cityInput.val(user.city);
+            }
+            if (user.phoneNumber) {
+                phoneDropdown.promise.then(function () {
+                    phoneDropdown.setNumber(user.phoneNumber);
+                });
+            }
+
             let prodsHTML = "";
             prods.forEach((prod) => {
                 let prodQtyShapeClass = prod.qty > 1 ? "fa-minus" : "fa-trash-can";
@@ -67,7 +91,6 @@ if (user) {
             // if quantity is 1
             if (prodQty == 1) {
                 // remove product from html
-                console.log($(this).parents(".prod"));
                 $(this)
                     .parents(".prod")
                     .fadeOut(100, function () {
@@ -116,6 +139,10 @@ if (user) {
                     prodId = $(this).attr("data-prod-id");
                     prodQty = $(this).val() == 0 ? 1 : $(this).val();
                 }
+                // if the quantity is more than 999, max it to 999
+                if (+prodQty > 999) prodQty = 999;
+                // if the quantity is less than 1, min it to 1
+                else if (+prodQty < 1) prodQty = 1;
 
                 // change the quantity of the product in the cart and get the product price
                 prods.forEach((prod) => {
@@ -124,12 +151,6 @@ if (user) {
                         prodPrice = prod.price;
                     }
                 });
-
-                // if the quantity is more than 999, max it to 999
-                if (+prodQty > 999) prodQty = 999;
-                // if the quantity is less than 1, min it to 1
-                else if (+prodQty < 1) prodQty = 1;
-
                 // if the quantity is more than 1, change the trash can icon to minus icon
                 if (prodQty > 1) {
                     $(this).siblings(".prod-qty-remove").removeClass("fa-trash-can").addClass("fa-minus");
@@ -161,16 +182,32 @@ if (user) {
         });
     });
 
-    $(".checkout-button").on("click", function () {
-        let prods = userCart.prodsList;
+    // when checkout form submitted
+    $("#shipping-dt-form").on("submit", function (e) {
+        e.preventDefault();
 
-        if (prods.length > 0) {
-            window.location.href = "./../docs/checkout.html";
+        // check if all inputs have values and if there's products in cart
+        let inputsHaveValues = [$("#checkout-full-name"), $("#checkout-address"), $("select.country-select"), $("#checkout-city"), $("#phone")].every(function (item) {
+            return item.val();
+        });
+        if (inputsHaveValues && user.cart.prodsList.length !== 0) {
+            let order = new Order(user, user.cart.prodsCount, user.cart.prodsPrice, 0, user.cart.prodsPrice, user.cart.prodsList);
+            // add order to user
+            ecommerceUsers.addOrder(user, order);
+
+            // clear user cart
+            ecommerceUsers.updateCart(user, []);
+
+            // show the order success modal
+            $("#order-id-confirmation").text(`#${order.id}`);
+            $("#orderSuccessModal").fadeIn();
+
+            // when order success modal ok click, redirect to home page
+            $(".order-success-ok").on("click", function () {
+                $("#orderSuccessModal").fadeOut();
+                window.location.href = "./../index.html";
+            });
         }
-    });
-
-    $(".continue-shopping-button").on("click", function () {
-        window.location.href = "./../docs/categ.html";
     });
 
     function updateCartRight() {
@@ -186,91 +223,3 @@ else {
     // redirect to login page
     window.location.href = "./../index.html";
 }
-
-/*
-
-
-
-                        <!-- product -->
-                        <div class="list-group-item col list-group-item-action prod d-flex flex-row align-items-center py-3 px-3">
-                            <!--? product title -->
-                            <div class="prod-name fs-5 col-lg-8 col-6">Lorem ipsum, dolor sit amet consectetur</div>
-                            <!--? product quantity -->
-                            <div class="prod-qty col d-flex justify-content-between px-3">
-                                <!-- if checkout has more than 1 item of that product -->
-                                <!-- <i class="prod-qty-add fs-3 col-2 fa-solid fa-minus"></i> -->
-                                <!-- if checkout has only 1 item of that product -->
-                                <i class="prod-qty-add fs-5 col-2 fa-solid fa-trash-can text-start"></i>
-                                <input type="text" class="text-center fs-5 prod-qty-value col-6 p-0" value="1" />
-                                <i class="prod-qty-remove fs-5 col-2 fa-solid fa-plus text-end"></i>
-                            </div>
-                            <!--? product price -->
-                            <div class="prod-price col fs-5 text-end">$5000</div>
-                        </div>
-                        <!-- product -->
-                        <div class="list-group-item col list-group-item-action prod d-flex flex-row align-items-center py-3 px-3">
-                            <!--? product title -->
-                            <div class="prod-name fs-5 col-lg-8 col-6">Lorem ipsum, dolor sit amet consectetur</div>
-                            <!--? product quantity -->
-                            <div class="prod-qty col d-flex justify-content-between px-3">
-                                <!-- if checkout has more than 1 item of that product -->
-                                <!-- <i class="prod-qty-add fs-3 col-2 fa-solid fa-minus"></i> -->
-                                <!-- if checkout has only 1 item of that product -->
-                                <i class="prod-qty-add fs-5 col-2 fa-solid fa-trash-can text-start"></i>
-                                <input type="text" class="text-center fs-5 prod-qty-value col-6 p-0" value="1" />
-                                <i class="prod-qty-remove fs-5 col-2 fa-solid fa-plus text-end"></i>
-                            </div>
-                            <!--? product price -->
-                            <div class="prod-price col fs-5 text-end">$5000</div>
-                        </div>
-                        <!-- product -->
-                        <div class="list-group-item col list-group-item-action prod d-flex flex-row align-items-center py-3 px-3">
-                            <!--? product title -->
-                            <div class="prod-name fs-5 col-lg-8 col-6">Lorem ipsum, dolor sit amet consectetur</div>
-                            <!--? product quantity -->
-                            <div class="prod-qty col d-flex justify-content-between px-3">
-                                <!-- if checkout has more than 1 item of that product -->
-                                <!-- <i class="prod-qty-add fs-3 col-2 fa-solid fa-minus"></i> -->
-                                <!-- if checkout has only 1 item of that product -->
-                                <i class="prod-qty-add fs-5 col-2 fa-solid fa-trash-can text-start"></i>
-                                <input type="text" class="text-center fs-5 prod-qty-value col-6 p-0" value="1" />
-                                <i class="prod-qty-remove fs-5 col-2 fa-solid fa-plus text-end"></i>
-                            </div>
-                            <!--? product price -->
-                            <div class="prod-price col fs-5 text-end">$5000</div>
-                        </div>
-                        <!-- product -->
-                        <div class="list-group-item col list-group-item-action prod d-flex flex-row align-items-center py-3 px-3">
-                            <!--? product title -->
-                            <div class="prod-name fs-5 col-lg-8 col-6">Lorem ipsum, dolor sit amet consectetur</div>
-                            <!--? product quantity -->
-                            <div class="prod-qty col d-flex justify-content-between px-3">
-                                <!-- if checkout has more than 1 item of that product -->
-                                <!-- <i class="prod-qty-add fs-3 col-2 fa-solid fa-minus"></i> -->
-                                <!-- if checkout has only 1 item of that product -->
-                                <i class="prod-qty-add fs-5 col-2 fa-solid fa-trash-can text-start"></i>
-                                <input type="text" class="text-center fs-5 prod-qty-value col-6 p-0" value="1" />
-                                <i class="prod-qty-remove fs-5 col-2 fa-solid fa-plus text-end"></i>
-                            </div>
-                            <!--? product price -->
-                            <div class="prod-price col fs-5 text-end">$5000</div>
-                        </div>
-                        <!-- product -->
-                        <div class="list-group-item col list-group-item-action prod d-flex flex-row align-items-center py-3 px-3">
-                            <!--? product title -->
-                            <div class="prod-name fs-5 col-lg-8 col-6">Lorem ipsum, dolor sit amet consectetur</div>
-                            <!--? product quantity -->
-                            <div class="prod-qty col d-flex justify-content-between px-3">
-                                <!-- if checkout has more than 1 item of that product -->
-                                <!-- <i class="prod-qty-add fs-3 col-2 fa-solid fa-minus"></i> -->
-                                <!-- if checkout has only 1 item of that product -->
-                                <i class="prod-qty-add fs-5 col-2 fa-solid fa-trash-can text-start"></i>
-                                <input type="text" class="text-center fs-5 prod-qty-value col-6 p-0" value="1" />
-                                <i class="prod-qty-remove fs-5 col-2 fa-solid fa-plus text-end"></i>
-                            </div>
-                            <!--? product price -->
-                            <div class="prod-price col fs-5 text-end">$5000</div>
-                        </div>
-
-
-                        */

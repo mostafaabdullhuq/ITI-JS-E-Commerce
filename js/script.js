@@ -396,7 +396,7 @@ export var ecommerceUsers = new Users();
 //!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
 
 // initialize user object
-let user = new User("Group", "2", "group2@iti.gov.eg", "Admin@1234", "Egypt", "Alexandria", "Lorem ipsum 24 Bld 2", "+201203215478");
+let user = new User("Group", "Two", "group2@iti.gov.eg", "Admin@1234", "Egypt", "Alexandria", "Lorem ipsum 24 Bld 2", "+101203215478");
 
 // create account from user object
 ecommerceUsers.createAccount(user);

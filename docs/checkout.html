@@ -12,7 +12,9 @@
         <link rel="stylesheet" href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
         <link rel="stylesheet" href="./../node_modules/intl-tel-input/build/css/intlTelInput.min.css" />
         <link rel="stylesheet" href="./../css/index.css" />
+        <link rel="stylesheet" href="./../css/modal/orderSuccess.css" />
         <link rel="stylesheet" href="./../css/checkout.css" />
+
         <title>Checkout</title>
     </head>
     <body>
@@ -373,7 +375,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <input id="phone" type="text" pattern="^[\d]{5,16}$" class="form-control rounded-0 py-3" placeholder="Phone Number" required />
+                            <input id="phone" type="text" pattern="^\+?[\d]{5,16}$" class="form-control rounded-0 py-3" placeholder="Phone Number" required />
                         </div>
                     </form>
                 </div>
@@ -410,7 +412,7 @@
                             </div>
                             <!-- checkout button -->
                             <div class="checkout-btn d-flex flex-column justify-content-center mt-3 px-xl-5 px-lg-3">
-                                <button class="btn confirm-button rounded-0 py-4 px-2 mb-3 text-uppercase">Confirm Order</button>
+                                <button class="btn confirm-button rounded-0 py-4 px-2 mb-3 text-uppercase" form="shipping-dt-form">Confirm Order</button>
                                 <button class="btn back-to-cart-button rounded-0 text-uppercase px-0 py-0"><a class="px-2 py-4 d-block" href="./cart.html">Back to Cart</a></button>
                             </div>
                         </div>
@@ -480,6 +482,27 @@
                 </div>
             </div>
         </footer>
+
+        <div id="orderSuccessModal" class="modal">
+            <div class="modal-dialog modal-confirm rounded-0">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-thumbs-up text-white"></i>
+                        </div>
+                        <h4 class="modal-title w-100 fs-2">Thanks for your order!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="text-center fs-5 fw-light order-thanks">Thanks for placing your order <span id="order-id-confirmation">0</span></h5>
+                        <h6 class="text-center fw-light fs-5 shipping-info">We will send you a ntification within 3 days when it ships</h6>
+                    </div>
+                    <div class="modal-footer d-block">
+                        <button class="btn btn-success btn-block order-success-ok px-5 rounded-0" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- include jquery file -->
         <script src="./../node_modules/jquery/dist/jquery.min.js"></script>
         <script src="./../node_modules/jquery/dist/jquery.js"></script>
