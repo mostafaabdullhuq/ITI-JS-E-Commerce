@@ -1,5 +1,7 @@
-@import url("../style.css");
-
+/* @import url("../style.css");
+body{
+    background-color: blueviolet;
+}
 .btn {
     background-color: black;
     color: white;
@@ -18,4 +20,4 @@ i:hover {
     color: var(--ltn__secondary-color-2) !important;
     animation: scale 0.3s linear 1;
     -webkit-animation: scale 0.3s linear 1;
-}
+} */
