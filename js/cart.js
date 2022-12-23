@@ -111,19 +111,19 @@ if (user) {
                     prodId = $(this).attr("data-prod-id");
                     prodQty = $(this).val() == 0 ? 1 : $(this).val();
                 }
+                // if the quantity is more than 999, max it to 999
+                if (+prodQty > 999) prodQty = 999;
+                // if the quantity is less than 1, min it to 1
+                else if (+prodQty < 1) prodQty = 1;
 
                 // change the quantity of the product in the cart and get the product price
                 prods.forEach((prod) => {
                     if (prod.id == prodId) {
                         prod.qty = +prodQty;
+                        console.log(prodQty);
                         prodPrice = prod.price;
                     }
                 });
-
-                // if the quantity is more than 999, max it to 999
-                if (+prodQty > 999) prodQty = 999;
-                // if the quantity is less than 1, min it to 1
-                else if (+prodQty < 1) prodQty = 1;
 
                 // if the quantity is more than 1, change the trash can icon to minus icon
                 if (prodQty > 1) {
