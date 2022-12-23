@@ -2,7 +2,7 @@ import { setCookie, getCookie, deleteCookie, isPassValid, isEmailValid, User, Or
 
 // when window loads
 $(function () {
-    // fetch only 9 products from api
+    // fetch only 8 products from api
     fetch("https://fakestoreapi.com/products?limit=8")
         // when promise complete , return the response converted to json
         .then((res) => res.json())
@@ -23,12 +23,12 @@ $(function () {
                  */
                 prodsCards += `
         <div class="col-lg-3 col-sm-6 prod" data-prod-id="${product.id}" data-prod-category="${product.category}">
-            <div class="product-item mb-4" style="height:500px;">
-            <a href="#" class="card product-img">
+            <div class="product-item mb-4 " style="height:500px;">
+            <div  style="cursor:pointer;" class="card product-img rounded-0">
             <img src="${product.image}" alt="Image" class="img-fluid" style="height: 400px; width:100%" />
-            <p class="view">Quick view</p>
-            </a>
-        <h5 class="title mt-2 text-dark">${product.title}</h5>
+            <p class="view" data-prod-id="${product.id}" >Quick view</p>
+            </div>
+        <h5 class="title mt-2">${product.title}</h5>
         <div class="price">
             <span class="h4">$${product.price}</span>
             ${'<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}
@@ -39,6 +39,26 @@ $(function () {
             });
             // add products fetched to the dom
             $("#prods-container").append(prodsCards);
+            // Product PopUp
+            document.querySelectorAll("p.view").forEach((p) => {
+                p.addEventListener("click", function () {
+                    let product = $(this).parents(".prod");
+                    let prodImage = product.find("img")[0].getAttribute("src");
+                    let prodTitle = product.find(".title")[0].textContent;
+                    let prodPrice = product.find(".price span")[0].textContent;
+                    let prodStarCount = product.find("i.fa-star").length;
+                    $(".modal-title").text(prodTitle);
+                    $(".modal-price").text(prodPrice);
+                    $(".modal-img").attr("src", prodImage);
+                    $(".modal-rating").html("");
+                    $(".modal-rating").append('<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(prodStarCount)));
+                    $("#quickviewpopup").fadeIn(200, function () {
+                        $(".modal-dialog .btn-close").on("click", function () {
+                            $("#quickviewpopup").fadeOut(200);
+                        });
+                    });
+                });
+            });
         })
         .catch((e) => {
             console.log("some error happend");
@@ -53,7 +73,7 @@ $(function () {
                 let categs = "";
                 categories.forEach((category) => {
                     categs += `
-            <a class="btn btn-new index-categ-button" role="button" data-category="${category}">${category}</a>
+            <a class="btn btn-new index-categ-button rounded-0" role="button" data-category="${category}">${category}</a>
             `;
                 });
                 $("#categ").append(categs);
@@ -128,6 +148,7 @@ $(function () {
 
     $(".owl-carousel").owlCarousel();
 });
+
 // fetch catecgories to products button in nav
 $(function () {
     fetch("https://fakestoreapi.com/products/categories")
