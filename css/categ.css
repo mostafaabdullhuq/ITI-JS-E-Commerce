@@ -136,3 +136,34 @@ i:hover {
     }
     
 }
+/* footer */
+footer {
+    background-color: var(--white-6);
+}
+ul {
+    display: inline;
+    padding: 1;
+}
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a i:hover {
+    color: coral;
+}
+
+hr {
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+li .color {
+    color: brown;
+}
+/* @media (max-width: 767px) {
+    .foot {
+        text-align: center;
+    }
+} */
