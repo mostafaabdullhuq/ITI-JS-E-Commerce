@@ -65,14 +65,6 @@ $(function () {
             console.log(e);
         });
 
-        // products in nav 
-        document.querySelectorAll("").forEach()
-        product = `
-        <a class="nav-link dropdown-toggle text-dark me-4" id="productConv" href="./docs/categ.html" data-bs-toggle="dropdown" aria-expanded="false"> PRODUCTS </a>
-      `
-
-
-
 
     // fetch Newest arrival
     $(function () {
@@ -167,7 +159,7 @@ $(function () {
             categories.forEach((category) => {
                 categorylnk += `
             <li>
-            <a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">${category}</a>
+            <a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html?categ=${category}">${category}</a>
             </li>
             `;
             });
