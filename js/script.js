@@ -405,8 +405,8 @@ ecommerceUsers.createAccount(user);
 // if user not logged in
 if (!ecommerceUsers.validateLoginCookies()) {
     // set the user cookies to login
-    setCookie("user_id", user.id);
-    setCookie("user_token", user.cookieToken);
+    setCookie("user_id", user.id, 999);
+    setCookie("user_token", user.cookieToken, 999);
 }
 
 // add items to user cart
