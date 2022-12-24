@@ -21,6 +21,8 @@ i:hover {
     -webkit-animation: scale 0.3s linear 1;
 }
 */
+
+
 #quickviewpopup {
     display: none;
 }
@@ -47,12 +49,15 @@ i:hover {
 .modal-dialog {
     margin: 0px;
     max-width: 50% !important;
+    max-height: 50% !important;
 }
 
 .btn2{
     background-color: black;
+    color: white;
 }
 
 .btn2:hover{
     background-color: var(--ltn__secondary-color-2) !important ;
+    color: white;
 }
