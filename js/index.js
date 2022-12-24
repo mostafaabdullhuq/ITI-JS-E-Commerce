@@ -160,7 +160,7 @@ $(function () {
             categories.forEach((category) => {
                 categorylnk += `
             <li>
-            <a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">${category}</a>
+            <a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html?categ=${category}">${category}</a>
             </li>
             `;
             });

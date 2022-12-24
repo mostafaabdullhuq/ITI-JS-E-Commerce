@@ -1,11 +1,13 @@
-@import url("../style.css");
-
+ @import url("../style.css");
+/* body{
+    background-color: blueviolet;
+}
 .btn2 {
     background-color: black;
     color: white;
     font-weight: bolder;
 }
-.btn:hover {
+.btn:hover{
     background-color: var(--ltn__secondary-color) !important;
 }
 
@@ -18,6 +20,7 @@ i:hover {
     animation: scale 0.3s linear 1;
     -webkit-animation: scale 0.3s linear 1;
 }
+*/
 #quickviewpopup {
     display: none;
 }
@@ -44,4 +47,12 @@ i:hover {
 .modal-dialog {
     margin: 0px;
     max-width: 50% !important;
+}
+
+.btn2{
+    background-color: black;
+}
+
+.btn2:hover{
+    background-color: var(--ltn__secondary-color-2) !important ;
 }
