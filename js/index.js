@@ -83,6 +83,8 @@ $(function () {
                     // when any category button is clicked, do this function
                     button.addEventListener("click", function () {
                         // get the category of the clicked button from the attribute
+                        $(this).siblings(".index-categ-button").removeClass("active");
+                        $(this).addClass("active");
                         let category = this.getAttribute("data-category"),
                             products = document.querySelectorAll(".prod");
                         if (category === "all") {
