@@ -46,18 +46,6 @@ document.forms[0].onsubmit = function(e){
 
     }
 
-    console.log(firstNameInput)
-    console.log(fnameValid)
-    console.log(emailInput)
-    console.log(emailValid)
-    console.log(oldPassInput)
-    console.log(oldPassValid)
-    console.log(newPassInput)
-    console.log(newPassValid)
-    console.log(cityInput)
-    console.log(cityValid)
-    // console.log()
-    // console.log()
 }
 
 
