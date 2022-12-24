@@ -7,8 +7,6 @@ let emailRe =   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(
 //REGEX for password :  Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
 let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ ; 
 
-// let reTest="sS3aaqq$";
-// console.log(passRe.test(reTest))
 document.forms[0].onsubmit = function(e){
     //get inputs
     let firstNameInput = document.querySelector('[name="firstName"]').value;
@@ -32,22 +30,13 @@ document.forms[0].onsubmit = function(e){
 
 
 
-    //test validations
-    // console.log(fnameValid);
-    // console.log(lnameValid);
-    // console.log(usernameValid);
-    // console.log(emailValid);
-    // console.log(passValid);
-    // console.log(repassValid);
-
     if(fnameValid===false || lnameValid===false || usernameValid===false || emailValid===false || passValid===false || repassValid===false || cityValid===false  || countryValid===false || passInput != repassInput ){
         e.preventDefault();
-        console.log("faild")
+        // console.log("faild")
     }
-    else{
-        console.log("success")
+    // else{
+    //     console.log("success")
 
-    }
+    // }
     
-    // alert(lastNameInput);
 }
