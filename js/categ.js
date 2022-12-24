@@ -26,7 +26,7 @@ $(function () {
                 prods += `
             <div class="col-sm-12 col-md-6 mb-4 col-lg-4 pb-4 pe-3 prod" data-prod-id="${product.id}" data-prod-category="${product.category}">
             <div class="product-item">
-              <a href="#shop-single.html" class="card product-img">
+              <div href="#shop-single.html" class="card product-img rounded-0" style="cursor:pointer;">
                 <img
                   src="${product.image}"
                   alt="Image"
@@ -34,7 +34,7 @@ $(function () {
                   style="height: 300px"
                 />
                 <p class="view" data-prod-id="${product.id}" >Quick view</p>
-              </a>
+              </div>
               <a class="title fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
               <div class="price">
                 <span class="h6 fs-5 fw-bold">$${product.price}</span>
@@ -141,24 +141,24 @@ $(function () {
                 products.forEach((product) => {
                     prods += `
                     <div class="col-sm-12 col-md-6 mb-4 col-lg-4 pb-4 pe-3 prod" data-prod-id="${product.id}" data-prod-category="${product.category}">
-                    <div class="product-item">
-                      <a href="#shop-single.html" class="card product-img">
-                        <img
-                          src="${product.image}"
-                          alt="Image"
-                          class="img-fluid"
-                          style="height: 300px"
-                        />
-                        <h3 class="view">Quick View</h3>
-                      </a>
-                      <a class="title fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
-                      <div class="price">
-                        <span class="h6 fs-5 fw-bold">$${product.price}</span>
-                        ${`<i class="fa-solid fa-star" style="color:var(--ltn__secondary-color-2)"></i>`.repeat(Math.round(product.rating.rate))}
-                        
-                      </div>
-                    </div>
-                </div>
+            <div class="product-item">
+              <div href="#shop-single.html" class="card product-img rounded-0" style="cursor:pointer;">
+                <img
+                  src="${product.image}"
+                  alt="Image"
+                  class="img-fluid"
+                  style="height: 300px"
+                />
+                <p class="view" data-prod-id="${product.id}" >Quick view</p>
+              </div>
+              <a class="title fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
+              <div class="price">
+                <span class="h6 fs-5 fw-bold">$${product.price}</span>
+                ${`<i class="fa-solid fa-star" style="color:var(--ltn__secondary-color-2)"></i>`.repeat(Math.round(product.rating.rate))}
+                
+              </div>
+            </div>
+        </div>
                 `;
                 });
                 
@@ -168,6 +168,26 @@ $(function () {
                 document.querySelectorAll(".title").forEach((link) => {
                 link.addEventListener("click", function () {
                     window.location.href = `./../docs/product-info.html?product_id=${this.getAttribute("data-prod-id")}`;
+                });
+            });
+            // Product PopUp
+            document.querySelectorAll("p.view").forEach((p) => {
+                p.addEventListener("click", function () {
+                    let product = $(this).parents(".prod");
+                    let prodImage = product.find("img")[0].getAttribute("src");
+                    let prodTitle = product.find(".title")[0].textContent;
+                    let prodPrice = product.find(".price span")[0].textContent;
+                    let prodStarCount = product.find("i.fa-star").length;
+                    $(".modal-title").text(prodTitle);
+                    $(".modal-price").text(prodPrice);
+                    $(".modal-img").attr("src", prodImage);
+                    $(".modal-rating").html("");
+                    $(".modal-rating").append('<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(prodStarCount)));
+                    $("#quickviewpopup").fadeIn(200, function () {
+                        $(".modal-dialog .btn-close").on("click", function () {
+                            $("#quickviewpopup").fadeOut(200);
+                        });
+                    });
                 });
             });
             })
