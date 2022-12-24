@@ -56,25 +56,25 @@ $(function () {
             });
 
             // Product PopUp
-            // document.querySelectorAll("p.view").forEach((p) => {
-            //     p.addEventListener("click", function () {
-            //         let product = $(this).parents(".prod");
-            //         let prodImage = product.find("img")[0].getAttribute("src");
-            //         let prodTitle = product.find(".title")[0].textContent;
-            //         let prodPrice = product.find(".price span")[0].textContent;
-            //         let prodStarCount = product.find("i.fa-star").length;
-            //         $(".modal-title").text(prodTitle);
-            //         $(".modal-price").text(prodPrice);
-            //         $(".modal-img").attr("src", prodImage);
-            //         $(".modal-rating").html("");
-            //         $(".modal-rating").append('<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(prodStarCount)));
-            //         $("#quickviewpopup").fadeIn(200, function () {
-            //             $(".modal-dialog .btn-close").on("click", function () {
-            //                 $("#quickviewpopup").fadeOut(200);
-            //             });
-            //         });
-            //     });
-            // });
+            document.querySelectorAll("p.view").forEach((p) => {
+                p.addEventListener("click", function () {
+                    let product = $(this).parents(".prod");
+                    let prodImage = product.find("img")[0].getAttribute("src");
+                    let prodTitle = product.find(".title")[0].textContent;
+                    let prodPrice = product.find(".price span")[0].textContent;
+                    let prodStarCount = product.find("i.fa-star").length;
+                    $(".modal-title").text(prodTitle);
+                    $(".modal-price").text(prodPrice);
+                    $(".modal-img").attr("src", prodImage);
+                    $(".modal-rating").html("");
+                    $(".modal-rating").append('<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(prodStarCount)));
+                    $("#quickviewpopup").fadeIn(200, function () {
+                        $(".modal-dialog .btn-close").on("click", function () {
+                            $("#quickviewpopup").fadeOut(200);
+                        });
+                    });
+                });
+            });
         })
         .catch((e) => {
             console.log("some error happend");
