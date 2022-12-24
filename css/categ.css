@@ -44,19 +44,7 @@ input:hover{
     -webkit-animation: scale 0.3s linear 1;
     
 }
-/* .card:hover{
-    border-width: 3px;
-    height:310px;
-    border-color: var(--ltn__secondary-color);
-    background-color: var(--ltn__secondary-color);
-    animation: scale 0.3s linear 1;
-    -webkit-animation: scale 1s linear 1;
-}
-i:hover {
-    color: var(--ltn__secondary-color-2) !important;
-    animation: scale 0.3s linear 1;
-    -webkit-animation: scale 0.3s linear 1;
-} */
+
 @keyframes scale {
     0%,
     100% {
@@ -101,40 +89,32 @@ i:hover {
     opacity: 1;
     display: block;
 }
-/* @media (max-width: 800px){
-    .menu-toggle{
-        display:block;
-    }
-    .left{
-        position: fixed;
-        width: 200px;
-    }
-  } */
-/* @media (min-width: 700px){
-    .menu-toggle{
-        display: block;
-    }
-    .left{
-        position: fixed;
-        width: 200px;
-    }
-  } */
 
 @media (max-width:600px) {
     .menu-toggle{
         display: block;
     }
     .left{
-        /* position: fixed; */
-        /* height: 100vh; */
-        /* width: 100%; */
         width: 400px;
-        /* transition: 0.2s linear; */
     }
     .left.is-active{
         left: 0;
     }
     
+}
+.title{
+    text-decoration: none;
+    text-align: center;
+}
+.title:visited{
+    text-decoration: none;
+}
+.title:active{
+    text-decoration: none;
+}
+.title:hover { 
+    text-decoration: none;
+    color:coral;
 }
 /* footer */
 footer {
@@ -162,8 +142,3 @@ hr {
 li .color {
     color: brown;
 }
-/* @media (max-width: 767px) {
-    .foot {
-        text-align: center;
-    }
-} */

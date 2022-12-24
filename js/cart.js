@@ -2,8 +2,6 @@ import { ecommerceUsers } from "./script.js";
 
 // check if user logged in
 let user = ecommerceUsers.validateLoginCookies();
-console.log(document.cookie);
-console.log(user);
 // if logged in
 if (user) {
     // get user cart
