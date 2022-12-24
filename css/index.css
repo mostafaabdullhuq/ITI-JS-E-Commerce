@@ -264,11 +264,13 @@ li {
     width: 17%;
     margin-bottom: 5px;
     margin-left: 5px;
-    /* box-shadow: inset 0px 0px 20px rgba(22, 21, 21, 0.2); */
+    /*box-shadow: inset 0px 0px 20px rgba(22, 21, 21, 0.2);
+    */
     font-weight: bold;
     text-transform: capitalize;
-    background-color: var(--ltn__primary-color);
-    color: white;
+    padding: 15px 5px;
+    background-color: var(--nude);
+    color: var(--ltn__primary-color-3);
 }
 .btn:hover {
     color: rgb(255, 255, 255);
