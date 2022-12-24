@@ -1,4 +1,4 @@
-import { setCookie, getCookie, deleteCookie, isPassValid, isEmailValid, User, Order, ecommerceUsers } from "./script.js";
+import { Order, ecommerceUsers } from "./script.js";
 
 // load the country phone dropdown
 var input = document.querySelector("#phone");
@@ -130,7 +130,6 @@ if (user) {
                     }
                 });
             }
-
             // if value of item changes
             else {
                 // if the event is triggered from the input itself
