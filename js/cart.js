@@ -31,7 +31,7 @@ if (user) {
                                     "
                                     class="image-container col-12 d-flex flex-column"
                                 ></div>
-                                <p class="col-12 prod-title ps-1 pe-1 mt-2">${prod.title}</p>
+                                <a class="col-12 prod-title  ps-1 pe-1 mt-3" href="./../docs/product-info.html?prod_id=${prod.id}">${prod.title}</a>
                             </div>
                             <!--? product price -->
                             <div class="prod-price col-xl-2 col-md-1 h5 py-2 mb-3 py-md-0 mb-md-0 fs-4">$${prod.price}</div>

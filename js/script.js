@@ -413,7 +413,7 @@ if (!ecommerceUsers.validateLoginCookies()) {
 ecommerceUsers.updateCart(user, [
     {
         id: 1,
-        title: "lorem ipsum datae alla",
+        title: "lorem ipsum datae alla lorem ipsum datae alla",
         price: 100,
         qty: 1,
         image: "https://images.unsplash.com/photo-1570831739435-6601aa3fa4fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1452&q=80",
