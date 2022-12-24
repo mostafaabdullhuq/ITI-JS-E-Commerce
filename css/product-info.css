@@ -60,6 +60,7 @@ p{
 }
 .desc{
     background-color: var(--border-color-8);
+    width:77%;
 }
 .accordion-button{
     background-color: var(--border-color-8);

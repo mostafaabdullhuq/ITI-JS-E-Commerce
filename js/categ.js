@@ -35,7 +35,7 @@ $(function () {
                 />
                 <h3 class="view">Quick View</h3>
               </a>
-              <h3 class="title" style="cursor: pointer;" data-prod-id="${product.id}">${product.title}</h3>
+              <a class="title fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
               <div class="price">
                 <span class="h6 fs-5 fw-bold">$${product.price}</span>
                 ${`<i class="fa-solid fa-star" style="color:var(--ltn__secondary-color-2)"></i>`.repeat(Math.round(product.rating.rate))}
@@ -48,7 +48,7 @@ $(function () {
             });
             $("#prods").html("");
             $("#prods").append(prods);
-            //when click quickview render to product-info page
+            //when click product title render to product-info page
             document.querySelectorAll(".title").forEach((link) => {
                 link.addEventListener("click", function () {
                     window.location.href = `./../docs/product-info.html?product_id=${this.getAttribute("data-prod-id")}`;
@@ -119,30 +119,36 @@ $(function () {
                 let prods = "";
                 products.forEach((product) => {
                     prods += `
-            <div class="col-sm-12 col-md-6 mb-4 col-lg-4 pb-4 pe-3 prod" data-prod-id="${product.id}" data-prod-category="${product.category}">
-            <div class="product-item">
-              <a href="#shop-single.html" class="card product-img">
-                <img
-                  src="${product.image}"
-                  alt="Image"
-                  class="img-fluid"
-                  style="height: 300px"
-                />
-                <h3 class="view">Quick View</h3>
-              </a>
-              <h3 class="title" style="cursor: pointer;">${product.title}</h3>
-              <div class="price">
-                <span class="h6 fs-5 fw-bold">$${product.price}</span>
-                ${`<i class="fa-solid fa-star" style="color:var(--ltn__secondary-color-2)"></i>`.repeat(Math.round(product.rating.rate))}
-                
-              </div>
-            </div>
-        </div>
-        
-        `;
+                    <div class="col-sm-12 col-md-6 mb-4 col-lg-4 pb-4 pe-3 prod" data-prod-id="${product.id}" data-prod-category="${product.category}">
+                    <div class="product-item">
+                      <a href="#shop-single.html" class="card product-img">
+                        <img
+                          src="${product.image}"
+                          alt="Image"
+                          class="img-fluid"
+                          style="height: 300px"
+                        />
+                        <h3 class="view">Quick View</h3>
+                      </a>
+                      <a class="title fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
+                      <div class="price">
+                        <span class="h6 fs-5 fw-bold">$${product.price}</span>
+                        ${`<i class="fa-solid fa-star" style="color:var(--ltn__secondary-color-2)"></i>`.repeat(Math.round(product.rating.rate))}
+                        
+                      </div>
+                    </div>
+                </div>
+                `;
                 });
+                
                 $("#prods").html("");
                 $("#prods").append(prods);
+                //when click product title render to product-info page
+                document.querySelectorAll(".title").forEach((link) => {
+                link.addEventListener("click", function () {
+                    window.location.href = `./../docs/product-info.html?product_id=${this.getAttribute("data-prod-id")}`;
+                });
+            });
             })
             .catch((e) => {
                 console.log("error when sort");

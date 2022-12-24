@@ -9,7 +9,6 @@ $(function () {
     fetch(`https://fakestoreapi.com/products/${prodID}`)
         .then((res) => res.json())
         .then((product) => {
-            // let prod="";
             prod = `
             <a href="#shop-single.html" class="card product-img">
                   <img
@@ -46,21 +45,19 @@ $(function () {
         });
 
     //fetching description
-    fetch("https://fakestoreapi.com/products?limit=1")
+    fetch(`https://fakestoreapi.com/products/${prodID}`)
         .then((res) => res.json())
-        .then((products) => {
-            products.forEach((product) => {
+        .then((product) => {
                 prod = `
             <div class="container mt-5 flex-lg-row flex-column d-flex" style="padding-left:15%;">
            <h2 class="fw-bold ">Description</h2>
         </div>
 
         <div class="container  flex-lg-row flex-column d-flex" style="padding-left:15%;">
-            <p class="desc">${product.description}
-            </p>
+            <p class="desc">${product.description}</p>
         </div>
             `;
-            });
+            
             $("#descr").append(prod);
         })
         .catch((e) => {
