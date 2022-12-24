@@ -1,5 +1,5 @@
  @import url("../style.css");
-body{
+/* body{
     background-color: blueviolet;
 }
 .btn2 {
@@ -20,8 +20,8 @@ i:hover {
     color: var(--ltn__secondary-color-2) !important;
     animation: scale 0.3s linear 1;
     -webkit-animation: scale 0.3s linear 1;
-}
-*/
+} */
+
 #quickviewpopup {
     display: none;
 }
