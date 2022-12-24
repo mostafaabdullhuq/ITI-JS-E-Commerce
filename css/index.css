@@ -307,9 +307,7 @@ a:link {
     width: 100%;
     font-size: 25px;
 }
-/* .product-item {
-    border-radius: 5px;
-} */
+
 .product-img {
     box-shadow: inset 0px 0px 20px rgba(22, 21, 21, 0.2);
 }
@@ -328,6 +326,7 @@ p {
 .shadow-effect {
     padding: 50px 20px !important;
 }
+
 
 /* top button */
 #topBtn {
