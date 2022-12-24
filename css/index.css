@@ -21,7 +21,7 @@
     border: 0;
     background-color: var(--ltn__secondary-color);
     position: relative;
-    right:5%;
+    right: 5%;
     bottom: 15%;
     padding-left: 3px;
 }
@@ -35,11 +35,11 @@
     border: 1px solid black;
     color: black;
 }
-.signup .btn-login:hover{
+.signup .btn-login:hover {
     border: 1px solid black;
     color: black;
 }
-.signin .btn-login:hover{
+.signin .btn-login:hover {
     border: 1px solid black;
     color: black;
 }
@@ -262,21 +262,37 @@ li {
 /* newest arrivals */
 .btn-new {
     width: 17%;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
     margin-left: 5px;
-    box-shadow: inset 0px 0px 20px rgba(22, 21, 21, 0.2);
+    /*box-shadow: inset 0px 0px 20px rgba(22, 21, 21, 0.2);
+    */
     font-weight: bold;
-   
-    
+    text-transform: capitalize;
+    padding: 15px 5px;
+    background-color: var(--ltn__primary-color);
+    color: white;
+    text-decoration: none !important;
+    border: none !important;
 }
-.btn:hover {
+
+a.btn-new:hover {
+    background-color: var(--ltn__secondary-color) !important;
+    color: white;
+}
+a.btn-new.active {
+    background-color: var(--ltn__secondary-color) !important;
+    color: white;
+}
+
+/* .btn:hover {
     color: rgb(255, 255, 255);
     background-color: black;
     text-decoration: none;
-}
+} */
+
 @media (max-width: 1200px) {
     .btn-new {
-       width: 30%;
+        width: 30%;
     }
 }
 @media (max-width: 806px) {
@@ -307,9 +323,7 @@ a:link {
     width: 100%;
     font-size: 25px;
 }
-/* .product-item {
-    border-radius: 5px;
-} */
+
 .product-img {
     box-shadow: inset 0px 0px 20px rgba(22, 21, 21, 0.2);
 }
@@ -345,9 +359,7 @@ p {
     padding-right: 6px;
     opacity: 0.7;
     background-color: inherit;
-  }
-  #topBtn:hover{
-   opacity: 1;
-  }
-
-  
+}
+#topBtn:hover {
+    opacity: 1;
+}

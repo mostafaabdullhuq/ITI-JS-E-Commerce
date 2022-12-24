@@ -1,5 +1,5 @@
-/* @import url("../style.css");
-body{
+ @import url("../style.css");
+/* body{
     background-color: blueviolet;
 }
 .btn2 {
@@ -40,7 +40,19 @@ i:hover {
     content: "";
     position: fixed;
     display: block;
-    width: 10000px !important;
-    height: 100% !important;
+    width: 100vw !important;
+    height: 100vh !important;
     background-color: rgba(0, 0, 0, 0.45);
+}
+.modal-dialog {
+    margin: 0px;
+    max-width: 50% !important;
+}
+
+.btn2{
+    background-color: black;
+}
+
+.btn2:hover{
+    background-color: var(--ltn__secondary-color-2) !important ;
 }
