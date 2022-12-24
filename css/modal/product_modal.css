@@ -37,8 +37,8 @@ i:hover {
     content: "";
     position: fixed;
     display: block;
-    width: 10000px !important;
-    height: 100% !important;
+    width: 100vw !important;
+    height: 100vh !important;
     background-color: rgba(0, 0, 0, 0.45);
 }
 .modal-dialog {
