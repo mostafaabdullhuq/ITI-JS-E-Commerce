@@ -10,11 +10,13 @@ let emailRe =   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(
 //REGEX for password :  Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
 let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ ; 
 
+
+
 document.forms[0].onsubmit = function(e){
-    //get inputs
+    // get inputs
     let firstNameInput = document.querySelector('[name="firstName"]').value;
     let lastNameInput = document.querySelector('[name="lastName"]').value;
-    let usernameInput = document.querySelector('[name="username"]').value;
+    // let usernameInput = document.querySelector('[name="username"]').value;
     let emailInput = document.querySelector('[name="email"]').value;
     let oldPassInput = document.querySelector('[name="oldpass"]').value;
     let newPassInput = document.querySelector('[name="newpass"]').value;
@@ -25,7 +27,7 @@ document.forms[0].onsubmit = function(e){
     //valid var's
     let fnameValid = nameRe.test(firstNameInput);
     let lnameValid = nameRe.test(lastNameInput);
-    let usernameValid = usernameRe.test(usernameInput);
+    // let usernameValid = usernameRe.test(usernameInput);
     let emailValid = emailRe.test(emailInput);
     let oldPassValid = passRe.test(oldPassInput);
     let newPassValid = passRe.test(newPassInput);
@@ -35,7 +37,7 @@ document.forms[0].onsubmit = function(e){
 
 
 
-    if(fnameValid===false || lnameValid===false || usernameValid===false || emailValid===false || oldPassValid===false || newPassValid ===false || repassValid===false || cityValid===false  || countryValid===false || newPassInput != repassInput ){
+    if(fnameValid===false || lnameValid===false || emailValid===false || oldPassValid===false || newPassValid ===false || repassValid===false || cityValid===false  || countryValid===false || newPassInput != repassInput ){
         e.preventDefault();
         console.log("faild")
     }
@@ -43,5 +45,19 @@ document.forms[0].onsubmit = function(e){
         console.log("success")
 
     }
-    
+
+    console.log(firstNameInput)
+    console.log(fnameValid)
+    console.log(emailInput)
+    console.log(emailValid)
+    console.log(oldPassInput)
+    console.log(oldPassValid)
+    console.log(newPassInput)
+    console.log(newPassValid)
+    console.log(cityInput)
+    console.log(cityValid)
+    // console.log()
+    // console.log()
 }
+
+
