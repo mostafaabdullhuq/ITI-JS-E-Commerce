@@ -65,6 +65,15 @@ $(function () {
             console.log(e);
         });
 
+        // products in nav 
+        document.querySelectorAll("").forEach()
+        product = `
+        <a class="nav-link dropdown-toggle text-dark me-4" id="productConv" href="./docs/categ.html" data-bs-toggle="dropdown" aria-expanded="false"> PRODUCTS </a>
+      `
+
+
+
+
     // fetch Newest arrival
     $(function () {
         fetch("https://fakestoreapi.com/products/categories")

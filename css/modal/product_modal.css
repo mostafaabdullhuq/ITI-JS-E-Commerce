@@ -7,7 +7,6 @@
     color: white;
     font-weight: bolder;
 }
-
 .btn:hover{
     background-color: var(--ltn__secondary-color) !important;
 }
@@ -20,8 +19,8 @@ i:hover {
     color: var(--ltn__secondary-color-2) !important;
     animation: scale 0.3s linear 1;
     -webkit-animation: scale 0.3s linear 1;
-} */
-
+}
+*/
 #quickviewpopup {
     display: none;
 }
@@ -41,8 +40,8 @@ i:hover {
     content: "";
     position: fixed;
     display: block;
-    width: 10000px !important;
-    height: 100% !important;
+    width: 100vw !important;
+    height: 100vh !important;
     background-color: rgba(0, 0, 0, 0.45);
 }
 .modal-dialog {
