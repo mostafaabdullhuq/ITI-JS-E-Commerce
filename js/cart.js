@@ -1,4 +1,4 @@
-import { setCookie, getCookie, deleteCookie, isPassValid, isEmailValid, User, Order, ecommerceUsers } from "./script.js";
+import { ecommerceUsers } from "./script.js";
 
 // check if user logged in
 let user = ecommerceUsers.validateLoginCookies();

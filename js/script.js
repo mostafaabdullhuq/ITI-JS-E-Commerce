@@ -256,9 +256,7 @@ export class Users {
                 }
             ])
     */
-    generateCookieToken() {
-        /////// logic
-    }
+
     updateCart(user, cartProducts) {
         // update the number of items, price of total items, the list of products in user cart
 

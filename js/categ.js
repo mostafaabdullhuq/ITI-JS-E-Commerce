@@ -35,7 +35,7 @@ $(function () {
                 />
                 <h3 class="view">Quick View</h3>
               </a>
-              <h3 class="title" style="cursor: pointer;">${product.title}</h3>
+              <h3 class="title" style="cursor: pointer;" data-prod-id="${product.id}">${product.title}</h3>
               <div class="price">
                 <span class="h6 fs-5 fw-bold">$${product.price}</span>
                 ${`<i class="fa-solid fa-star" style="color:var(--ltn__secondary-color-2)"></i>`.repeat(Math.round(product.rating.rate))}
@@ -51,7 +51,7 @@ $(function () {
             //when click quickview render to product-info page
             document.querySelectorAll(".title").forEach((link) => {
                 link.addEventListener("click", function () {
-                    window.location.href = "./../docs/product-info.html";
+                    window.location.href = `./../docs/product-info.html?product_id=${this.getAttribute("data-prod-id")}`;
                 });
             });
         })
