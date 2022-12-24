@@ -30,11 +30,11 @@ i {
     color: var(--ltn__primary-color) !important;
 }
 
-i:hover {
+.cell:hover {
     color: var(--ltn__secondary-color-2) !important;
     animation: scale 0.3s linear 1;
     -webkit-animation: scale 0.3s linear 1;
-    /* border-color:var(--ltn__secondary-color-2) ; */
+    border-color:var(--ltn__secondary-color-2) ;
 }
 @keyframes scale {
     0%,
@@ -62,6 +62,12 @@ p{
     background-color: var(--border-color-8);
     width:77%;
 }
+.ctitle{
+    width: 300px;
+    margin-left: 100px;
+    text-align: center;
+    align-items: center;
+}
 .accordion-button{
     background-color: var(--border-color-8);
     border: none;
@@ -69,6 +75,7 @@ p{
 .accordion-button:hover{
     background-color: var(--ltn__secondary-color);
     border: black;
+    border:none;
 }
 .accordion-body{
     word-break: break-all;
