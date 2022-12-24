@@ -185,6 +185,7 @@ export class Users {
             - object of type user if the cookie is valid
             - false if the cookie is not valid
     */
+
     validateLoginCookies() {
         let userID = getCookie("user_id"),
             userToken = getCookie("user_token");
@@ -255,7 +256,9 @@ export class Users {
                 }
             ])
     */
-
+    generateCookieToken() {
+        /////// logic
+    }
     updateCart(user, cartProducts) {
         // update the number of items, price of total items, the list of products in user cart
 
