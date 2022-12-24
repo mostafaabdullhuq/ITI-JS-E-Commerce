@@ -30,6 +30,13 @@ body {
 #sortBy a{
     text-decoration: none;
 }
+.dropdown-item{
+    cursor: pointer;
+    text-decoration: none;
+}
+.dropdown-item:hover{
+    background-color:var(--ltn__secondary-color);
+}
 .product-item .price , .title {
     text-align: center;
 }
