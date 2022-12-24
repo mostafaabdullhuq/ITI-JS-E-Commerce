@@ -25,10 +25,10 @@
                   <div class="card-body p-4 p-sm-5">
                     <h5 class="card-title text-center mb-5 fw-bolder fs-5 title">Sign Up</h5>
                     <div class="row mt-2">
-                      <div class="col-6"><label class="labels">First Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
-                      <div class="col-6"><label class="labels">Last Name</label><input type="text" class="form-control" value="" placeholder="last name"></div>
+                      <div class="col-6"><label class="labels">First Name</label><input type="text" class="form-control" placeholder="first name" value="" name="firstName"></div>
+                      <div class="col-6"><label class="labels">Last Name</label><input type="text" class="form-control" value="" placeholder="last name" name="lastName"></div>
                     </div>
-                    <div class="row mt-3">
+                    <div class="row mt-3"><form action="">
                       <div class="col-md-12"><label class="labels">username</label><input type="text" class="form-control" placeholder="enter username" value=""></div>
                       <div class="col-md-12"><label class="labels">Email</label><input type="email" class="form-control" placeholder="enter email" value=""></div>
                       <div class="col-md-12"><label class="labels">Password</label><input type="password" class="form-control" placeholder="new password" value=""></div>
@@ -38,12 +38,12 @@
                         <div class="col-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
                         <div class="col-6"><label class="labels">City</label><input type="text" class="form-control" value="" placeholder="city"></div>
                       </div>
-                      
-                    </div>
-                    <div class="d-grid">
-                      <button class="btn btn-form btn-login text-uppercase fw-bold mt-5" type="submit">Sign
-                        up</button>
-                    </div>
+                      <div class="d-grid">
+                        <button class="btn btn-form btn-login text-uppercase fw-bold mt-5" type="submit">Sign
+                          up</button>
+                      </div>
+                    </form></div>
+                    
                 </div>
             </div>
           </div>
@@ -55,5 +55,6 @@
 
 
     <script src="./../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./../../js/signup.js"></script>
 </body>
 </html>
