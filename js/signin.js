@@ -11,22 +11,8 @@ document.forms[0].onsubmit = function(e){
     let emailValid = emailRe.test(emailInput);
     let passValid = passRe.test(passInput);
 
-    console.log(emailInput);
-    console.log(emailValid);
-    console.log(passInput);
-    console.log(passValid);
-
-
     if(emailValid===false || passValid===false){
         e.preventDefault();
-        console.log("faild");
 
     }
-    else{
-        console.log("success")
-
-    }
-
-
-
 }
