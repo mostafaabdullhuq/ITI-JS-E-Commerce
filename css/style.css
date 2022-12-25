@@ -11,6 +11,9 @@ i {
 
 /* variables used accross all pages */
 :root {
+    --cart_prod_size: 350px;
+    --separators-color: #eee;
+
     --ltn__primary-color: #071c1f;
     --ltn__primary-color-2: #041113;
     --ltn__primary-color-3: #133236;

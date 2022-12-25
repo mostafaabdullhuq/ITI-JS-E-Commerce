@@ -1,958 +1,526 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- include bootstrap css file from node modules -->
-    <link
-      rel="stylesheet"
-      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <!-- include fontawesome css file from node modules -->
-    <link
-      rel="stylesheet"
-      href="./node_modules/font-awesome/css/font-awesome.min.css"
-    />
-    <!-- include css files -->
-    <link
-      rel="stylesheet"
-      href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="./node_modules/@splidejs/splide/dist/css/splide.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css"
-    />
-    <!--for slider -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css"
-      rel="stylesheet"
-    />
-    <!-- <link rel="stylesheet" href="./css/style.css" /> -->
-    <link rel="stylesheet" href="./css/index.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="./css/modal/signIn.css" />
-    <link rel="stylesheet" href="./css/modal/product_modal.css" />
-    <link rel="stylesheet" href="./css/modal/product_modal.css" />
-    <title>E-Commerce</title>
-  </head>
-  <body>
-    <!-- head Navbar -->
-    <div class="container-fluid pt-3 pb-3 border border-bottom">
-      <div class="row">
-        <div class="col col-sm-2">
-          <a href="#"
-            ><img
-              style="width: 100px; height: 50px"
-              src="./Hagar_logo.svg.png"
-              alt=""
-          /></a>
+        <!-- include bootstrap css file from node modules -->
+        <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <!-- include fontawesome css file from node modules -->
+        <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css" />
+        <!-- include css files -->
+        <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
+        <link rel="stylesheet" href="./node_modules/@splidejs/splide/dist/css/splide.min.css" />
+        <link rel="stylesheet" href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+        <!--for slider -->
+        <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet" />
+        <!-- <link rel="stylesheet" href="./css/style.css" /> -->
+        <!-- <link rel="stylesheet" href="./css/cart.css" /> -->
+        <link rel="stylesheet" href="./css/index.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="./css/modal/signIn.css" />
+        <link rel="stylesheet" href="./css/modal/product_modal.css" />
+        <link rel="stylesheet" href="./css/modal/product_modal.css" />
+        <title>E-Commerce</title>
+    </head>
+    <body>
+        <!-- head Navbar -->
+        <div class="container-fluid pt-3 pb-3 border border-bottom">
+            <div class="row">
+                <div class="col col-sm-2">
+                    <a href="#"><img style="width: 100px; height: 50px" src="./Hagar_logo.svg.png" alt="" /></a>
+                </div>
+                <div class="col col-sm-8">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2 border border-0 border-bottom rounded-0" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn" type="submit">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                                />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <div class="col col-sm-2 d-flex justify-content-end">
+                    <a class="nav-link dropdown-toggle text-dark" href="./docs/categ.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg class="icon1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                            <path
+                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"
+                            />
+                        </svg>
+                    </a>
+                    <ul class="dropdown-menu p-2" style="text-align: center">
+                        <li class="border-bottom mb-1 pb-1">
+                            <a class="icon1" data-bs-toggle="modal" href="#exampleModalToggle2"> Sign In </a>
+                        </li>
+                        <li>
+                            <a class="icon1" data-bs-toggle="modal" href="#exampleModalToggle3"> Sign up </a>
+                        </li>
+                    </ul>
+
+                    <a class="ms-3" href="./docs/cart.html"
+                        ><svg class="icon1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                            />
+                        </svg>
+                    </a>
+                    <p class="cart-btn text-light cart-items-count">0</p>
+                </div>
+            </div>
         </div>
-        <div class="col col-sm-8">
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2 border border-0 border-bottom rounded-0"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn" type="submit">
-              <svg
-                class="icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                fill="currentColor"
-                class="bi bi-search"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-                />
-              </svg>
+
+        <!-- Navbar -->
+        <div class="container-fluid border-bottom second-nav">
+            <div class="row">
+                <nav id="navbar_top" class="navbar navbar-expand-md fw-bold pt-1 pb-1">
+                    <div>
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavDropdown"
+                            aria-controls="navbarNavDropdown"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse justify-content-around nav-active" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item me-4">
+                                <a class="nav-link active text-dark me-4" aria-current="page" href="#">HOME</a>
+                            </li>
+                            <li class="nav-item dropdown me-4">
+                                <a class="nav-link dropdown-toggle text-dark me-4" id="productConv" href="./docs/categ.html" data-bs-toggle="dropdown" aria-expanded="false"> PRODUCTS </a>
+                                <ul class="dropdown-menu p-4" id="cat-ul"></ul>
+                            </li>
+                            <li class="nav-item me-4">
+                                <a class="nav-link text-dark me-4" href="#footer">ABOUT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="#contact">CONTACT</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Slider -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                    style="background-color: rgb(197, 135, 135)"
+                ></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" style="background-color: rgb(197, 135, 135)"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3" style="background-color: rgb(197, 135, 135)"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./images/84770f_bb57e5518bbd43e8870325b93c908cee_mv2.webp" class="d-block w-100" alt="..." />
+                    <div class="carousel-caption">
+                        <h2 class="animated bounceInRight" style="animation-delay: 1s">New product</h2>
+                        <h3 class="animated bounceInLeft" style="animation-delay: 2s">Lorem ipsum dolor sit amet.</h3>
+                        <a href="./docs/categ.html" class="btn animated bounceInRight" style="animation-delay: 3s">Shop Now</a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="./images/84770f_ca183cbde2e54902bb15671ac5b117dd_mv2.webp" class="d-block w-100" alt="..." />
+                    <div class="carousel-caption">
+                        <h2 class="animated bounceInRight" style="animation-delay: 1s">New Product</h2>
+                        <h3 class="animated bounceInLeft" style="animation-delay: 2s">Lorem ipsum dolor sit amet.</h3>
+                        <a href="./docs/categ.html" class="btn animated bounceInRight" style="animation-delay: 3s">Shop Now</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/slider-home-2.jpg" class="d-block w-100" alt="..." />
+                    <div class="carousel-caption">
+                        <h2 class="animated bounceInRight" style="animation-delay: 1s">New product</h2>
+                        <h3 class="animated bounceInLeft" style="animation-delay: 2s">Lorem ipsum dolor sit amet.</h3>
+                        <a href="./docs/categ.html" class="btn animated bounceInRight" style="animation-delay: 3s">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
             </button>
-          </form>
-        </div>
-        <div class="col col-sm-2 d-flex justify-content-end">
-          <a
-            class="nav-link dropdown-toggle text-dark"
-            href="./docs/categ.html"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <svg
-              class="icon1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              fill="currentColor"
-              class="bi bi-person"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"
-              />
-            </svg>
-          </a>
-          <ul class="dropdown-menu p-2" style="text-align: center">
-            <li class="border-bottom mb-1 pb-1">
-              <a
-                class="icon1"
-                data-bs-toggle="modal"
-                href="#exampleModalToggle2"
-              >
-                Sign In
-              </a>
-            </li>
-            <li>
-              <a
-                class="icon1"
-                data-bs-toggle="modal"
-                href="#exampleModalToggle3"
-              >
-                Sign up
-              </a>
-            </li>
-          </ul>
-
-          <a class="ms-3" href="./docs/cart.html"
-            ><svg
-              class="icon1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              fill="currentColor"
-              class="bi bi-cart"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-              />
-            </svg>
-          </a>
-          <p class="cart-btn text-light cart-items-count">0</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Navbar -->
-    <div class="container-fluid border-bottom second-nav">
-      <div class="row">
-        <nav id="navbar_top" class="navbar navbar-expand-md fw-bold pt-1 pb-1">
-          <div>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNavDropdown"
-              aria-controls="navbarNavDropdown"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
             </button>
-          </div>
-          <div
-            class="collapse navbar-collapse justify-content-around nav-active"
-            id="navbarNavDropdown"
-          >
-            <ul class="navbar-nav">
-              <li class="nav-item me-4">
-                <a
-                  class="nav-link active text-dark me-4"
-                  aria-current="page"
-                  href="#"
-                  >HOME</a
-                >
-              </li>
-              <li class="nav-item dropdown me-4">
-                <a
-                  class="nav-link dropdown-toggle text-dark me-4"
-                  id="productConv"
-                  href="./docs/categ.html"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  PRODUCTS
-                </a>
-                <ul class="dropdown-menu p-4" id="cat-ul"></ul>
-              </li>
-              <li class="nav-item me-4">
-                <a class="nav-link text-dark me-4" href="#footer">ABOUT</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="#contact">CONTACT</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </div>
-
-    <!-- Slider -->
-    <div
-      id="carouselExampleIndicators"
-      class="carousel slide"
-      data-bs-ride="carousel"
-    >
-      <div class="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="0"
-          class="active"
-          aria-current="true"
-          aria-label="Slide 1"
-          style="background-color: rgb(197, 135, 135)"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-          style="background-color: rgb(197, 135, 135)"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-          style="background-color: rgb(197, 135, 135)"
-        ></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img
-            src="./images/84770f_bb57e5518bbd43e8870325b93c908cee_mv2.webp"
-            class="d-block w-100"
-            alt="..."
-          />
-          <div class="carousel-caption">
-            <h2 class="animated bounceInRight" style="animation-delay: 1s">
-              New product
-            </h2>
-            <h3 class="animated bounceInLeft" style="animation-delay: 2s">
-              Lorem ipsum dolor sit amet.
-            </h3>
-            <a
-              href="./docs/categ.html"
-              class="btn animated bounceInRight"
-              style="animation-delay: 3s"
-              >Shop Now</a
-            >
-          </div>
         </div>
 
-        <div class="carousel-item">
-          <img
-            src="./images/84770f_ca183cbde2e54902bb15671ac5b117dd_mv2.webp"
-            class="d-block w-100"
-            alt="..."
-          />
-          <div class="carousel-caption">
-            <h2 class="animated bounceInRight" style="animation-delay: 1s">
-              New Product
-            </h2>
-            <h3 class="animated bounceInLeft" style="animation-delay: 2s">
-              Lorem ipsum dolor sit amet.
-            </h3>
-            <a
-              href="./docs/categ.html"
-              class="btn animated bounceInRight"
-              style="animation-delay: 3s"
-              >Shop Now</a
-            >
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img
-            src="./images/slider-home-2.jpg"
-            class="d-block w-100"
-            alt="..."
-          />
-          <div class="carousel-caption">
-            <h2 class="animated bounceInRight" style="animation-delay: 1s">
-              New product
-            </h2>
-            <h3 class="animated bounceInLeft" style="animation-delay: 2s">
-              Lorem ipsum dolor sit amet.
-            </h3>
-            <a
-              href="./docs/categ.html"
-              class="btn animated bounceInRight"
-              style="animation-delay: 3s"
-              >Shop Now</a
-            >
-          </div>
-        </div>
-      </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-
-    <!-- mid nav -->
-    <div
-      class="container-fluid website-strong p-4 border-bottom border-top my-5 mid-nav d-flex align-items-center justify-content-around"
-    >
-      <div class="row ps-4 w-75">
-        <div class="col-md-4 mid-small">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-2 col-sm-4">
-                <a class="text-dark fs-1">
-                  <i class="fa-solid fa-truck-fast"></i
-                ></a>
-              </div>
-              <div class="col-lg-10 col-sm-8">
-                <h4>Free Shipping</h4>
-                <p>Free shipping on orders over $99.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mid-small">
-          <div class="container ps-3">
-            <div class="row">
-              <div class="col-lg-2 col-sm-4">
-                <a class="text-dark fs-1">
-                  <i class="fa-solid fa-headset"></i
-                ></a>
-              </div>
-              <div class="col-lg-10 col-sm-8">
-                <h4>Customer Support</h4>
-                <p>Quick customer support guarantee.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-2 col-sm-4">
-                <a class="text-dark fs-1"
-                  ><i class="fa-solid fa-circle-dollar-to-slot"></i
-                ></a>
-              </div>
-              <div class="col-lg-10 col-sm-8">
-                <h4>Money Back</h4>
-                <p>15 days money back guarantee.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Newest Arrivals -->
-    <div class="container mb-4" style="text-align: center; width: 80%">
-      <h2 class="fw-bold">Newest Arrivals</h2>
-      <div
-        class="row btn-row my-5"
-        id="categ"
-        style="display: flex; justify-content: center"
-      >
-        <a
-          class="btn btn-new index-categ-button rounded-0 active"
-          role="button"
-          id="categId"
-          data-category="all"
-          >All</a
-        >
-      </div>
-      <!-- newest arrival products container -->
-      <div class="row pic ps-4 rounded-0" id="prods-container"></div>
-    </div>
-
-    <!-- Feedback -->
-    <div class="container-fluid feed py-5">
-      <h1 style="text-align: center" class="fw-bolder fs-2">
-        Customers Feedback
-      </h1>
-      <div class="row">
-        <div class="col-sm-12">
-          <div id="customers-testimonials" class="owl-carousel">
-            <!--TESTIMONIAL 1 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <span class="fs-2 fw-bold pe-5">Mostafa</span>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <p>
-                  Dramatically maintain clicks-and-mortar solutions without
-                  functional solutions. Completely synergize resource taxing
-                  relationships via premier niche markets. Professionally
-                  cultivate.
-                </p>
-              </div>
-            </div>
-            <!--END OF TESTIMONIAL 1 -->
-            <!--TESTIMONIAL 2 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <span class="fs-2 fw-bold pe-5">Sara</span>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <p>
-                  Dramatically maintain clicks-and-mortar solutions without
-                  functional solutions. Completely synergize resource taxing
-                  relationships via premier niche markets. Professionally
-                  cultivate.
-                </p>
-              </div>
-            </div>
-            <!--END OF TESTIMONIAL 2 -->
-            <!--TESTIMONIAL 3 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <span class="fs-2 fw-bold pe-5">Hagar</span>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <p>
-                  Dramatically maintain clicks-and-mortar solutions without
-                  functional solutions. Completely synergize resource taxing
-                  relationships via premier niche markets. Professionally
-                  cultivate.
-                </p>
-              </div>
-            </div>
-            <!--END OF TESTIMONIAL 3 -->
-            <!--TESTIMONIAL 4 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <span class="fs-2 fw-bold pe-5">Mohammed</span>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <p>
-                  Dramatically maintain clicks-and-mortar solutions without
-                  functional solutions. Completely synergize resource taxing
-                  relationships via premier niche markets. Professionally
-                  cultivate.
-                </p>
-              </div>
-            </div>
-            <!--END OF TESTIMONIAL 4-->
-            <!--TESTIMONIAL 5 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <span class="fs-2 fw-bold pe-5">Zienab</span>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <p>
-                  Dramatically maintain clicks-and-mortar solutions without
-                  functional solutions. Completely synergize resource taxing
-                  relationships via premier niche markets. Professionally
-                  cultivate.
-                </p>
-              </div>
-            </div>
-            <!--END OF TESTIMONIAL 5 -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- form -->
-    <div
-      class="container mt-3 mb-3"
-      id="contact"
-      style="display: flex; justify-content: center"
-    >
-      <div class="row">
-        <div class="col-lg-12">
-          <form action="">
-            <h2 class="fw-bold mb-4" style="text-align: center">Contact us</h2>
-            <div class="row d-flex justify-content-center">
-              <div class="col-sm-6">
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  class="email mb-3"
-                />
-              </div>
-              <div class="col-sm-6">
-                <input type="text" placeholder="Subject" class="sub mb-3" />
-              </div>
-            </div>
-            <div
-              class="row"
-              style="
-                padding-left: 2.5%;
-                padding-right: 2.5%;
-                padding-bottom: 3%;
-              "
-            >
-              <textarea
-                name="message"
-                id="msg"
-                rows="10"
-                placeholder="Message"
-                class="msg"
-              ></textarea
-              ><br />
-            </div>
-            <div class="row social">
-              <div class="col-sm-6">
-                <input
-                  type="submit"
-                  value="Send Message"
-                  class="btn btn-form rounded-0 p-2 fs-6"
-                  height="50px"
-                />
-              </div>
-              <div class="col-sm-6 ps-4">
-                <div class="container ps-4">
-                  <a
-                    href="http://127.0.0.1:5500/index.html#"
-                    class="text-dark pe-3 fs-4"
-                    ><i class="fa-brands fa-facebook"></i
-                  ></a>
-                  <a
-                    href="http://127.0.0.1:5500/index.html#"
-                    class="text-dark pe-3 fs-4"
-                    ><i class="fa-brands fa-twitter"></i
-                  ></a>
-                  <a
-                    href="http://127.0.0.1:5500/index.html#"
-                    class="text-dark pe-3 fs-4"
-                    ><i class="fa-brands fa-instagram"></i
-                  ></a>
-                  <a
-                    href="http://127.0.0.1:5500/index.html#"
-                    class="text-dark fs-4"
-                    ><i class="fa-solid fa-w"></i
-                  ></a>
+        <!-- mid nav -->
+        <div class="container-fluid website-strong p-4 border-bottom border-top my-5 mid-nav d-flex align-items-center justify-content-around">
+            <div class="row ps-4 w-75">
+                <div class="col-md-4 mid-small">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-2 col-sm-4">
+                                <a class="text-dark fs-1"> <i class="fa-solid fa-truck-fast"></i></a>
+                            </div>
+                            <div class="col-lg-10 col-sm-8">
+                                <h4>Free Shipping</h4>
+                                <p>Free shipping on orders over $99.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-
-    <footer class="bd-footer" id="footer">
-      <div class="container py-5">
-        <div class="row foot ps-4">
-          <div
-            class="col-lg-4 col-md-6 col-sm-12-justify-content-center offset-lg-1 mb-4"
-          >
-            <h2 class="text-dark fw-bolder">Contact Us</h2>
-            <ul type="none">
-              <li>
-                <span class="fw-bold">Phone Number:</span>
-                <a
-                  href="http://127.0.0.1:5500/index.html#"
-                  class="text-dark fs-6"
-                  >+11111111111</a
-                >
-              </li>
-              <li>
-                <span class="fw-bold">Email:</span
-                ><a
-                  href="http://127.0.0.1:5500/index.html#"
-                  class="text-dark fs-6"
-                >
-                  group2@gmail.com</a
-                >
-              </li>
-              <li>
-                <span class="fw-bold">Address:</span
-                ><a
-                  href="http://127.0.0.1:5500/index.html#"
-                  class="text-dark fs-6"
-                  >123 Alexandria</a
-                >
-              </li>
-            </ul>
-            <div class="container ps-3 pt-2">
-              <a
-                href="http://127.0.0.1:5500/index.html#"
-                class="text-dark pe-3 fs-4"
-                ><i class="fa-brands fa-facebook"></i
-              ></a>
-              <a
-                href="http://127.0.0.1:5500/index.html#"
-                class="text-dark pe-3 fs-4"
-                ><i class="fa-brands fa-twitter"></i
-              ></a>
-              <a
-                href="http://127.0.0.1:5500/index.html#"
-                class="text-dark pe-3 fs-4"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
-              <a
-                href="http://127.0.0.1:5500/index.html#"
-                class="text-dark pe-3 fs-4"
-                ><i class="fa-solid fa-w"></i
-              ></a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h2 class="text-dark fw-bolder">Need Help?</h2>
-            <ul type="none">
-              <li>
-                <a
-                  href="http://127.0.0.1:5500/index.html#"
-                  class="text-dark fs-6"
-                  >Payment Methods</a
-                >
-              </li>
-              <a
-                href="http://127.0.0.1:5500/index.html#"
-                class="text-dark fs-6"
-              >
-              </a>
-              <li>
-                <a
-                  href="http://127.0.0.1:5500/index.html#"
-                  class="text-dark fs-6"
-                ></a
-                ><a
-                  href="http://127.0.0.1:5500/index.html#"
-                  class="text-dark fs-6"
-                  >Money Back Gurantee</a
-                >
-              </li>
-              <li>
-                <a
-                  href="http://127.0.0.1:5500/index.html#"
-                  class="text-dark fs-6"
-                  >Customer Service</a
-                >
-              </li>
-              <li>
-                <a
-                  href="http://127.0.0.1:5500/index.html#"
-                  class="text-dark fs-6"
-                  >Terms &amp; Conditions</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-3 text-white">
-            <h2 class="text-dark fw-bolder">Navigate</h2>
-            <ul type="none">
-              <li>
-                <a
-                  href="http://127.0.0.1:5500/index.html#"
-                  class="text-dark fs-6"
-                  >My Orders</a
-                >
-              </li>
-              <li>
-                <a
-                  href="http://127.0.0.1:5500/index.html#"
-                  class="text-dark fs-6"
-                  >My Account</a
-                >
-              </li>
-              <li>
-                <a
-                  href="http://127.0.0.1:5500/index.html#"
-                  class="text-dark fs-6"
-                  >Products
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://127.0.0.1:5500/index.html#"
-                  class="text-dark fs-6"
-                  >Change Password
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://127.0.0.1:5500/index.html#"
-                  class="text-dark fs-6"
-                  >Track Order</a
-                >
-              </li>
-            </ul>
-          </div>
-          <hr style="width: 900px; position: relative; right: 2%" />
-          <div class="text-dark fw-bold fs-5" style="text-align: center">
-            Copyright © 2022-ITI Group 2
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- scroll top button -->
-    <button id="topBtn" title="Go to top">
-      <i class="fa-solid fa-angles-up"></i>
-    </button>
-    <!-- sign in popup -->
-    <div
-      class="modal fade"
-      id="exampleModalToggle2"
-      aria-hidden="true"
-      aria-labelledby="exampleModalToggleLabel2"
-      tabindex="-1"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="container">
-            <div class="row">
-              <div class="card border-0 shadow rounded-3 my-5">
-                <div class="card-body p-4 p-sm-5">
-                  <h5 class="card-title text-center mb-5 fw-bolder fs-5 title">
-                    Sign In
-                  </h5>
-                  <form>
-                    <div class="form-floating mb-3">
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="floatingInput"
-                        placeholder="name@example.com"
-                      />
-                      <label for="floatingInput">Email address</label>
+                <div class="col-md-4 mid-small">
+                    <div class="container ps-3">
+                        <div class="row">
+                            <div class="col-lg-2 col-sm-4">
+                                <a class="text-dark fs-1"> <i class="fa-solid fa-headset"></i></a>
+                            </div>
+                            <div class="col-lg-10 col-sm-8">
+                                <h4>Customer Support</h4>
+                                <p>Quick customer support guarantee.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-floating mb-3">
-                      <input
-                        type="password"
-                        class="form-control"
-                        id="floatingPassword"
-                        placeholder="Password"
-                      />
-                      <label for="floatingPassword">Password</label>
-                    </div>
-
-                    <div class="form-check mb-3">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id="rememberPasswordCheck"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="rememberPasswordCheck"
-                      >
-                        Remember password
-                      </label>
-                    </div>
-                    <div class="d-grid signin">
-                      <button
-                        class="btn btn-form btn-login text-uppercase fw-bold"
-                        type="submit"
-                      >
-                        Sign in
-                      </button>
-                    </div>
-                  </form>
                 </div>
-              </div>
+                <div class="col-md-4">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-2 col-sm-4">
+                                <a class="text-dark fs-1"><i class="fa-solid fa-circle-dollar-to-slot"></i></a>
+                            </div>
+                            <div class="col-lg-10 col-sm-8">
+                                <h4>Money Back</h4>
+                                <p>15 days money back guarantee.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <!-- sign up popup -->
-    <div
-      class="modal fade"
-      id="exampleModalToggle3"
-      aria-hidden="true"
-      aria-labelledby="exampleModalToggleLabel2"
-      tabindex="-1"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="container">
+
+        <!-- Newest Arrivals -->
+        <div class="container mb-4" style="text-align: center; width: 80%">
+            <h2 class="fw-bold">Newest Arrivals</h2>
+            <div class="row btn-row my-5" id="categ" style="display: flex; justify-content: center">
+                <a class="btn btn-new index-categ-button rounded-0 active" role="button" id="categId" data-category="all">All</a>
+            </div>
+            <!-- newest arrival products container -->
+            <div class="row pic ps-4 rounded-0" id="prods-container"></div>
+        </div>
+
+        <!-- Feedback -->
+        <div class="container-fluid feed py-5">
+            <h1 style="text-align: center" class="fw-bolder fs-2">Customers Feedback</h1>
             <div class="row">
-              <div class="card border-0 shadow rounded-3 my-5">
-                <div class="card-body p-4 p-sm-5">
-                  <h5 class="card-title text-center mb-5 fw-bolder fs-5 title">
-                    Sign Up
-                  </h5>
-                  <div class="row mt-2">
-                    <div class="col-6">
-                      <label class="labels">First Name</label
-                      ><input
-                        type="text"
-                        class="form-control"
-                        placeholder="first name"
-                        value=""
-                      />
+                <div class="col-sm-12">
+                    <div id="customers-testimonials" class="owl-carousel">
+                        <!--TESTIMONIAL 1 -->
+                        <div class="item">
+                            <div class="shadow-effect">
+                                <span class="fs-2 fw-bold pe-5">Mostafa</span>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <p>
+                                    Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
+                                    Professionally cultivate.
+                                </p>
+                            </div>
+                        </div>
+                        <!--END OF TESTIMONIAL 1 -->
+                        <!--TESTIMONIAL 2 -->
+                        <div class="item">
+                            <div class="shadow-effect">
+                                <span class="fs-2 fw-bold pe-5">Sara</span>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <p>
+                                    Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
+                                    Professionally cultivate.
+                                </p>
+                            </div>
+                        </div>
+                        <!--END OF TESTIMONIAL 2 -->
+                        <!--TESTIMONIAL 3 -->
+                        <div class="item">
+                            <div class="shadow-effect">
+                                <span class="fs-2 fw-bold pe-5">Hagar</span>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <p>
+                                    Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
+                                    Professionally cultivate.
+                                </p>
+                            </div>
+                        </div>
+                        <!--END OF TESTIMONIAL 3 -->
+                        <!--TESTIMONIAL 4 -->
+                        <div class="item">
+                            <div class="shadow-effect">
+                                <span class="fs-2 fw-bold pe-5">Mohammed</span>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <p>
+                                    Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
+                                    Professionally cultivate.
+                                </p>
+                            </div>
+                        </div>
+                        <!--END OF TESTIMONIAL 4-->
+                        <!--TESTIMONIAL 5 -->
+                        <div class="item">
+                            <div class="shadow-effect">
+                                <span class="fs-2 fw-bold pe-5">Zienab</span>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <p>
+                                    Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
+                                    Professionally cultivate.
+                                </p>
+                            </div>
+                        </div>
+                        <!--END OF TESTIMONIAL 5 -->
                     </div>
-                    <div class="col-6">
-                      <label class="labels">Last Name</label
-                      ><input
-                        type="text"
-                        class="form-control"
-                        value=""
-                        placeholder="last name"
-                      />
+                </div>
+            </div>
+        </div>
+        <!-- form -->
+        <div class="container mt-3 mb-3" id="contact" style="display: flex; justify-content: center">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form action="">
+                        <h2 class="fw-bold mb-4" style="text-align: center">Contact us</h2>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-sm-6">
+                                <input type="email" placeholder="Email Address" class="email mb-3" />
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" placeholder="Subject" class="sub mb-3" />
+                            </div>
+                        </div>
+                        <div class="row" style="padding-left: 2.5%; padding-right: 2.5%; padding-bottom: 3%">
+                            <textarea name="message" id="msg" rows="10" placeholder="Message" class="msg"></textarea><br />
+                        </div>
+                        <div class="row social">
+                            <div class="col-sm-6">
+                                <input type="submit" value="Send Message" class="btn btn-form rounded-0 p-2 fs-6" height="50px" />
+                            </div>
+                            <div class="col-sm-6 ps-4">
+                                <div class="container ps-4">
+                                    <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-brands fa-facebook"></i></a>
+                                    <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-brands fa-instagram"></i></a>
+                                    <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-4"><i class="fa-solid fa-w"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+
+        <footer class="bd-footer" id="footer">
+            <div class="container py-5">
+                <div class="row foot ps-4">
+                    <div class="col-lg-4 col-md-6 col-sm-12-justify-content-center offset-lg-1 mb-4">
+                        <h2 class="text-dark fw-bolder">Contact Us</h2>
+                        <ul type="none">
+                            <li>
+                                <span class="fw-bold">Phone Number:</span>
+                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">+11111111111</a>
+                            </li>
+                            <li><span class="fw-bold">Email:</span><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6"> group2@gmail.com</a></li>
+                            <li><span class="fw-bold">Address:</span><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">123 Alexandria</a></li>
+                        </ul>
+                        <div class="container ps-3 pt-2">
+                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-solid fa-w"></i></a>
+                        </div>
                     </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <label class="labels">Email</label
-                      ><input
-                        type="email"
-                        class="form-control"
-                        placeholder="enter email"
-                        value=""
-                      />
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <h2 class="text-dark fw-bolder">Need Help?</h2>
+                        <ul type="none">
+                            <li>
+                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Payment Methods</a>
+                            </li>
+                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6"> </a>
+                            <li><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6"></a><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Money Back Gurantee</a></li>
+                            <li>
+                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Customer Service</a>
+                            </li>
+                            <li>
+                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Terms &amp; Conditions</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-md-12">
-                      <label class="labels">Password</label
-                      ><input
-                        type="password"
-                        class="form-control"
-                        placeholder="new password"
-                        value=""
-                      />
+                    <div class="col-lg-3 text-white">
+                        <h2 class="text-dark fw-bolder">Navigate</h2>
+                        <ul type="none">
+                            <li>
+                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">My Orders</a>
+                            </li>
+                            <li>
+                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">My Account</a>
+                            </li>
+                            <li>
+                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Products </a>
+                            </li>
+                            <li>
+                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Change Password </a>
+                            </li>
+                            <li>
+                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Track Order</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-md-12">
-                      <label class="labels">Confirm Password</label
-                      ><input
-                        type="password"
-                        class="form-control"
-                        placeholder="confirm password"
-                        value=""
-                      />
+                    <hr style="width: 900px; position: relative; right: 2%" />
+                    <div class="text-dark fw-bold fs-5" style="text-align: center">Copyright © 2022-ITI Group 2</div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- scroll top button -->
+        <button id="topBtn" title="Go to top">
+            <i class="fa-solid fa-angles-up"></i>
+        </button>
+        <!-- sign in popup -->
+        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="card border-0 shadow rounded-3 my-5">
+                                <div class="card-body p-4 p-sm-5">
+                                    <h5 class="card-title text-center mb-5 fw-bolder fs-5 title">Sign In</h5>
+                                    <form>
+                                        <div class="form-floating mb-3">
+                                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                                            <label for="floatingInput">Email address</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+                                            <label for="floatingPassword">Password</label>
+                                        </div>
+
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck" />
+                                            <label class="form-check-label" for="rememberPasswordCheck"> Remember password </label>
+                                        </div>
+                                        <div class="d-grid signin">
+                                            <button class="btn btn-form btn-login text-uppercase fw-bold" type="submit">Sign in</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-12">
-                      <label class="labels">Shipping Address</label
-                      ><input
-                        type="text"
-                        class="form-control"
-                        placeholder="enter your address"
-                        value=""
-                      />
+                </div>
+            </div>
+        </div>
+        <!-- sign up popup -->
+        <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="card border-0 shadow rounded-3 my-5">
+                                <div class="card-body p-4 p-sm-5">
+                                    <h5 class="card-title text-center mb-5 fw-bolder fs-5 title">Sign Up</h5>
+                                    <div class="row mt-2">
+                                        <div class="col-6"><label class="labels">First Name</label><input type="text" class="form-control" placeholder="first name" value="" /></div>
+                                        <div class="col-6"><label class="labels">Last Name</label><input type="text" class="form-control" value="" placeholder="last name" /></div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-md-12"><label class="labels">Email</label><input type="email" class="form-control" placeholder="enter email" value="" /></div>
+                                        <div class="col-md-12"><label class="labels">Password</label><input type="password" class="form-control" placeholder="new password" value="" /></div>
+                                        <div class="col-md-12">
+                                            <label class="labels">Confirm Password</label><input type="password" class="form-control" placeholder="confirm password" value="" />
+                                        </div>
+                                        <div class="col-md-12"><label class="labels">Shipping Address</label><input type="text" class="form-control" placeholder="enter your address" value="" /></div>
+                                        <div class="row mt-3">
+                                            <div class="col-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value="" /></div>
+                                            <div class="col-6"><label class="labels">City</label><input type="text" class="form-control" value="" placeholder="city" /></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-grid signup">
+                                        <button class="btn btn-form btn-login text-uppercase fw-bold mt-5" type="submit">Sign up</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row mt-3">
-                      <div class="col-6">
-                        <label class="labels">Country</label
-                        ><input
-                          type="text"
-                          class="form-control"
-                          placeholder="country"
-                          value=""
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick View PopUp -->
+
+        <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content rounded-0">
+                    <div class="modal-body row">
+                        <img
+                            class="col-6 img-thumbnail modal-img"
+                            style="max-width: 50%"
+                            src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142"
+                            alt=""
+                            srcset=""
                         />
-                      </div>
-                      <div class="col-6">
-                        <label class="labels">City</label
-                        ><input
-                          type="text"
-                          class="form-control"
-                          value=""
-                          placeholder="city"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="d-grid signup">
-                    <button
-                      class="btn btn-form btn-login text-uppercase fw-bold mt-5"
-                      type="submit"
-                    >
-                      Sign up
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Quick View PopUp -->
-
-    <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content rounded-0">
-          <div class="modal-body row">
-            <img
-              class="col-6 img-thumbnail modal-img"
-              style="max-width: 50%"
-              src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142"
-              alt=""
-              srcset=""
-            />
-            <div class="col-6 mt-3">
-              <button
-                type="button "
-                class="btn-close"
-                data-bs-dismiss="modal"
-                style="float: right"
-                aria-label="Close"
-              ></button>
-              <h3 class="modal-title fw-bolder mb-2">Product name</h3>
-              <div class="d-flex">
-                <h3 class="modal-price">$1000</h3>
-                <div class="modal-rating"></div>
-                <!-- <i class="fa-solid fa-star pb-2"></i>
+                        <div class="col-6 mt-3">
+                            <button type="button " class="btn-close" data-bs-dismiss="modal" style="float: right" aria-label="Close"></button>
+                            <h3 class="modal-title fw-bolder mb-2">Product name</h3>
+                            <div class="d-flex">
+                                <h3 class="modal-price">$1000</h3>
+                                <div class="modal-rating"></div>
+                                <!-- <i class="fa-solid fa-star pb-2"></i>
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i> -->
-              </div>
-              <div class="d-flex justify-content-center mt-5">
-                <i class="fs-4 fa-solid fa-minus border border-2 p-1"></i>
-                <input
-                  type="text"
-                  class="text-center fw-bold fs-4 w-25"
-                  value="1"
-                />
-                <i class="fs-4 fa-solid fa-plus border border-2 p-1"></i>
-                <button
-                  class="btn btn2 add ms-3 text-center p-2 bg-dark text-white rounded-0"
-                >
-                  Add to cart
-                </button>
-              </div>
+                            </div>
+                            <div class="d-flex justify-content-center mt-5">
+                                <i class="fs-4 fa-solid fa-minus border border-2 p-1"></i>
+                                <input type="text" class="text-center fw-bold fs-4 w-25" value="1" />
+                                <i class="fs-4 fa-solid fa-plus border border-2 p-1"></i>
+                                <button class="btn btn2 add ms-3 text-center p-2 bg-dark text-white rounded-0">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
 
-    <!-- <h4 class="modal-title">Product name</h4>
+        <!-- <h4 class="modal-title">Product name</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body row">
@@ -970,7 +538,7 @@
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i> -->
-    <!-- </div>
+        <!-- </div>
                     </div>
                     <div class="modal-footer">
                         <div class="d-flex justify-content-center">
@@ -984,15 +552,15 @@
             </div>
         </div>  -->
 
-    <!-- include jquery file -->
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="/node_modules/jquery/dist/jquery.js"></script>
-    <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
-    <!-- include bootstrap js file from node modules -->
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- include javascript files -->
-    <!-- <script src="./js/script.js"></script> -->
-    <script type="module" src="./js/index.js"></script>
-    <!-- <script type="module" src="./js/cart.js"></script> -->
-  </body>
+        <!-- include jquery file -->
+        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="/node_modules/jquery/dist/jquery.js"></script>
+        <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+        <!-- include bootstrap js file from node modules -->
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- include javascript files -->
+        <!-- <script src="./js/script.js"></script> -->
+        <script type="module" src="./js/index.js"></script>
+        <!-- <script type="module" src="./js/cart.js"></script> -->
+    </body>
 </html>
