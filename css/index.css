@@ -556,3 +556,8 @@ ul.dropdown-menu {
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
 }
+
+footer a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
