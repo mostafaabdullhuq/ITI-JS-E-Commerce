@@ -6,6 +6,19 @@ export function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
+function generateToken() {
+    // E.g. 8 * 32 = 256 bits token
+    var randomPool = new Uint8Array(32);
+    crypto.getRandomValues(randomPool);
+    var hex = "";
+    for (var i = 0; i < randomPool.length; ++i) {
+        hex += randomPool[i].toString(16);
+    }
+    return hex;
+}
+
+console.log(generateToken());
+
 // a function to get a value of a specific cookie
 export function getCookie(cname) {
     let name = cname + "=";
