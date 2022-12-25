@@ -26,6 +26,7 @@ i:hover {
 #quickviewpopup {
     display: none;
 }
+
 #quickviewpopup,
 .modal-dialog {
     position: fixed !important;
@@ -60,4 +61,9 @@ i:hover {
 .btn2:hover{
     background-color: var(--ltn__secondary-color-2) !important ;
     color: white;
+}
+i:hover {
+    color: var(--ltn__secondary-color-2) !important;
+    animation: scale 0.3s linear 1;
+    -webkit-animation: scale 0.3s linear 1;
 }
