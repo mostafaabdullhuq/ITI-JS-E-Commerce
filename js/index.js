@@ -22,39 +22,31 @@ $(function () {
                  * ${'<i class="fa-solid fa-star"></i>'.repeat(Math.round(product.rating.rate))} ==> get the rating of the product from the api, then round it to the closest fixed number, then generate stars based on the number of rating
                  */
                 prodsCards += `
-<div class="col-lg-4 col-sm-6 prod" style="                min-width: 300px;
-" data-prod-id="${product.id}"  data-prod-category="${product.category}">
-    <div class="product-item mb-4 ">
 
-        <div class="prod-info col d-flex flex-column mb-2">
-            <div
-                data-prod-image= "${product.image}"
-                style="
-                    background: url(${product.image});
-                    min-height: calc(var(--cart_prod_size) + 50px);
-                    background-size: cover;
-                    background-position: center;
-                        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    border: 3px solid var(--separators-color);
-    position:relative;
+                <div class="prod col me-3" data-prod-id="${product.id}" data-prod-category="${product.category}">
+                    <div class="product-item mb-4 d-flex flex-column">
+                        <div class="prod-info d-flex flex-column mb-2 col-12">
+                            <div
+                                data-prod-image="${product.image}"
+                                style="background: url(${product.image})"
+                                class="image-container"
+                            >
+                                <p class="view py-2 fs-3 text-uppercase col-12" style="position: absolute; bottom: 0px" data-prod-id="${product.id}">Quick view</p>
+                            </div>
 
-                "
-                class="image-container col-12 d-flex flex-column"
-            >
-            <p class="view py-2 fs-3 text-uppercase " style="position: absolute; bottom:0;" data-prod-id="${product.id}" >Quick view</p>
-            </div>
+                            <a class="prod-title px-2 mt-3" style="word-break: break-all" href="./../docs/product-info.html?prod_id=${product.id}"
+                                >${product.title}</a
+                            >
+                        </div>
 
-            <a class="col-12 prod-title  px-1 mt-3" href="./../docs/product-info.html?prod_id=${product.id}">${product.title}</a>
-        </div>
-
-
-
-        <div class="price">
-            <span class="h4">$${product.price}</span>
-            ${'<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}
-        </div>
-    </div>
-</div>
+                        <div class="price d-flex col-12 d-flex px-3 align-items-center justify-content-center">
+                            <span class="h4 col mb-0">$${product.price}</span>
+                            <div class="rating col">
+                            ${'<i class="fa-solid fa-star fs-5" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
 `;
             });
             // add products fetched to the dom

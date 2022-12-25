@@ -333,14 +333,14 @@ a:link {
     opacity: 1;
     display: block;
     z-index: 99;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
 }
 
-.image-container::after {
+#prods-container .image-container::after {
     content: "";
     display: block;
     position: absolute;
@@ -351,14 +351,14 @@ a:link {
     z-index: 80;
     background: rgba(136, 136, 136, 0.544);
     opacity: 0;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
 }
 
-.image-container:hover::after {
+#prods-container .image-container:hover::after {
     opacity: 1;
 }
 
@@ -409,4 +409,22 @@ p {
     -moz-transform: scale(1.05);
     -ms-transform: scale(1.05);
     -o-transform: scale(1.05);
+}
+
+#prods-container .prod {
+    min-width: var(--cart_prod_size) !important;
+    max-width: calc(var(--cart_prod_size) + 100px) !important;
+    min-height: calc(var(--cart_prod_size) - 50px) !important;
+}
+
+#prods-container .image-container {
+    max-height: 100px !important;
+    min-height: calc(var(--cart_prod_size) + 50px);
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    /* background-repeat: repeat-y !important; */
+    background-position: center !important;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    border: 3px solid var(--separators-color);
+    position: relative;
 }
