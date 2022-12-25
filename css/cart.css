@@ -197,3 +197,7 @@ button.continue-shopping-button:hover {
     color: white;
     text-decoration: none;
 }
+
+.image-container::after {
+    display: none !important;
+}

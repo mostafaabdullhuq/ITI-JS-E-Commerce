@@ -30,6 +30,7 @@ $(function () {
             });
             $("#prods").html("");
             $("#prods").append(prods);
+            
             //when click product title render to product-info page
             document.querySelectorAll(".title").forEach((link) => {
                 link.addEventListener("click", function () {
@@ -118,7 +119,7 @@ $(function () {
                     $("#quickviewpopup").fadeOut(200);
                 });
             });
-        });
+       git });
     });
     })
     .catch((e) => {
