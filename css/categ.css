@@ -37,10 +37,15 @@ body {
 .dropdown-item:hover{
     background-color:var(--ltn__secondary-color);
 }
+#categories a{
+    text-decoration: none;
+}
+#categories:hover{
+    background-color:var(--ltn__secondary-color);
+}
 .product-item .price , .title {
     text-align: center;
 }
-
 .left{
     background-color: var(--border-color-8);
 }
@@ -126,12 +131,12 @@ input:hover{
     text-decoration: none;
     text-align: center;
 }
-.title:visited{
+/* .title:visited{
     text-decoration: none;
 }
 .title:active{
     text-decoration: none;
-}
+} */
 .title:hover { 
     text-decoration: none;
     color:coral;

@@ -1,5 +1,3 @@
-import { setCookie, getCookie, deleteCookie, isPassValid, isEmailValid, User, Order, ecommerceUsers } from "./script.js";
-
 // when window loads
 $(function () {
     // fetch only 8 products from api
@@ -216,3 +214,5 @@ ${'<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(produ
 </div>
 </div>
 </div> */
+
+// nta y wliaaaa a3333
