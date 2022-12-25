@@ -3,7 +3,7 @@ import { setCookie, getCookie, deleteCookie, isPassValid, isEmailValid, User, Or
 // when window loads
 $(function () {
     // fetch only 8 products from api
-    fetch("https://fakestoreapi.com/products?limit=8")
+    fetch("https://fakestoreapi.com/products?limit=9")
         // when promise complete , return the response converted to json
         .then((res) => res.json())
         // when json response contains list array of products objects returned
@@ -22,19 +22,31 @@ $(function () {
                  * ${'<i class="fa-solid fa-star"></i>'.repeat(Math.round(product.rating.rate))} ==> get the rating of the product from the api, then round it to the closest fixed number, then generate stars based on the number of rating
                  */
                 prodsCards += `
-        <div class="col-lg-3 col-sm-6 prod" data-prod-id="${product.id}" data-prod-category="${product.category}">
-            <div class="product-item mb-4 " style="height:500px;">
-            <div  style="cursor:pointer;" class="card product-img rounded-0">
-            <img src="${product.image}" alt="Image" class="img-fluid" style="height: 400px; width:100%" />
-            <p class="view" data-prod-id="${product.id}" >Quick view</p>
-            </div>
-        <h5 class="title mt-2">${product.title}</h5>
-        <div class="price">
-            <span class="h4">$${product.price}</span>
-            ${'<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}
-        </div>
-    </div>
-</div>
+
+                <div class="prod col me-3" data-prod-id="${product.id}" data-prod-category="${product.category}">
+                    <div class="product-item mb-4 d-flex flex-column">
+                        <div class="prod-info d-flex flex-column mb-2 col-12">
+                            <div
+                                data-prod-image="${product.image}"
+                                style="background: url(${product.image})"
+                                class="image-container"
+                            >
+                                <p class="view py-2 fs-3 text-uppercase col-12" style="position: absolute; bottom: 0px" data-prod-id="${product.id}">Quick view</p>
+                            </div>
+
+                            <a class="prod-title px-2 mt-3" style="word-break: break-all" href="./../docs/product-info.html?prod_id=${product.id}"
+                                >${product.title}</a
+                            >
+                        </div>
+
+                        <div class="price d-flex col-12 d-flex px-3 align-items-center justify-content-center">
+                            <span class="h4 col mb-0">$${product.price}</span>
+                            <div class="rating col">
+                            ${'<i class="fa-solid fa-star fs-5" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
 `;
             });
             // add products fetched to the dom
@@ -43,8 +55,9 @@ $(function () {
             document.querySelectorAll("p.view").forEach((p) => {
                 p.addEventListener("click", function () {
                     let product = $(this).parents(".prod");
-                    let prodImage = product.find("img")[0].getAttribute("src");
-                    let prodTitle = product.find(".title")[0].textContent;
+                    console.log(product);
+                    let prodImage = product.find(".image-container")[0].getAttribute("data-prod-image");
+                    let prodTitle = product.find(".prod-title")[0].textContent;
                     let prodPrice = product.find(".price span")[0].textContent;
                     let prodStarCount = product.find("i.fa-star").length;
                     $(".modal-title").text(prodTitle);
@@ -73,7 +86,7 @@ $(function () {
                 let categs = "";
                 categories.forEach((category) => {
                     categs += `
-            <a class="btn btn-new index-categ-button rounded-0" role="button" data-category="${category}">${category}</a>
+            <a class="btn btn-new index-categ-button rounded-0 col-12  col-lg me-2 mb-2 mb-lg-0" role="button" data-category="${category}">${category}</a>
             `;
                 });
                 $("#categ").append(categs);
@@ -189,3 +202,17 @@ mybutton.onclick = function () {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 };
+
+/* <div class="col-lg-3 col-sm-6 prod" data-prod-id="${product.id}" data-prod-category="${product.category}">
+<div class="product-item mb-4 " style="height:500px;">
+<div  style="cursor:pointer;" class="card product-img rounded-0">
+<img src="${product.image}" alt="Image" class="img-fluid" style="height: 400px; width:100%" />
+<p class="view" data-prod-id="${product.id}" >Quick view</p>
+</div>
+<a class="title mt-2">${product.title}</a>
+<div class="price">
+<span class="h4">$${product.price}</span>
+${'<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}
+</div>
+</div>
+</div> */

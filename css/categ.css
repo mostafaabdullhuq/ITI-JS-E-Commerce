@@ -30,6 +30,13 @@ body {
 #sortBy a{
     text-decoration: none;
 }
+.dropdown-item{
+    cursor: pointer;
+    text-decoration: none;
+}
+.dropdown-item:hover{
+    background-color:var(--ltn__secondary-color);
+}
 .product-item .price , .title {
     text-align: center;
 }
@@ -69,7 +76,7 @@ input:hover{
   color: var(--ltn__secondary-color);
   border-right: 5px solid var(--ltn__secondary-color);
 }
-.view {
+/* .view {
     overflow: visible;
     transform: translate(0, 0px);
     background-color: var(--border-color-4);
@@ -81,6 +88,19 @@ input:hover{
     text-align: center;
     text-decoration:underline;
 
+} */
+.view {
+    transform: translate(0, 0px);
+    background-color: var(--border-color-4);
+    display: none;
+    direction: nounderline;
+    color: #ffffff;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
 }
 .product-img img:hover {
     opacity: 0.4;
