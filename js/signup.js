@@ -22,6 +22,7 @@ document.forms[0].onsubmit = function(e){
     let repassInput = document.querySelector('[name="repass"]').value;
     let cityInput = document.querySelector('[name="city"]').value;
     let countryInput = document.querySelector('[name="country"]').value;
+    let addressInput = document.querySelector('[name="address"]').value;
     
     //valid var's
     let fnameValid = nameRe.test(firstNameInput);
@@ -42,7 +43,7 @@ document.forms[0].onsubmit = function(e){
     else{
         // console.log("success")
 
-        createAccount()
+        let newuser = new User(firstNameInput,lastNameInput,emailInput,passInput,countryInput,cityInput,)
     }
     
 }
