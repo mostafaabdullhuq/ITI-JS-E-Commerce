@@ -592,18 +592,17 @@ footer a:hover {
     text-align: left;
 }
 
- .modal-content2 {
+.modal-content2 {
     left: 50%;
     transform: translate(-50%, 0%);
     max-width: 75% !important;
     max-height: 75% !important;
-} 
+}
 
- /* @media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .modal-content {
        width: 90%;
     }} */
-
 
 .user-nav-cart::after {
     content: "( " attr(data-cart-items) " )";
@@ -631,4 +630,8 @@ nav .container-fluid {
 nav i:hover,
 .user-nav-cart:hover::after {
     color: var(--ltn__secondary-color) !important;
+}
+
+.user-controls-list a {
+    font-weight: 550;
 }
