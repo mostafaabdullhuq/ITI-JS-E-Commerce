@@ -6,12 +6,6 @@ export function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-function generateToken() {
-    return crypto.randomUUID();
-}
-
-console.log(generateToken());
-
 // a function to get a value of a specific cookie
 export function getCookie(cname) {
     let name = cname + "=";
@@ -25,7 +19,7 @@ export function getCookie(cname) {
             return c.substring(name.length, c.length);
         }
     }
-    return "";
+    return false;
 }
 
 // a function to delete a specific cookie
@@ -171,7 +165,7 @@ export class Users {
         });
 
         if (user) {
-            let userToken = generateToken();
+            let userToken = crypto.randomUUID();
             user.cookieToken = userToken;
             deleteCookie("user_id");
             deleteCookie("user_token");
