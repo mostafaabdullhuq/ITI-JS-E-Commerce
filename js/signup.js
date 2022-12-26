@@ -125,3 +125,26 @@ export class Users {
         // return the response object
         return response;
     }
+}
+
+// class that represents one user only
+export class User {
+    constructor(firstName, lastName, emailAddress, passWord, country, city, shippingAddr, phoneNumber) {
+        this.id = ecommerceUsers.usersList.length + 1;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.emailAddress = emailAddress;
+        this.passWord = passWord;
+        this.phoneNumber = phoneNumber;
+        this.shippingAddr = shippingAddr;
+        this.country = country;
+        this.city = city;
+        this.cookieToken = "Z3JvdXAyQGl0aS5nb3YuZWc6QWRtaW5AMTIzNA==";
+        this.ordersList = [];
+        this.cart = {
+            prodsCount: 0,
+            prodsPrice: 0,
+            prodsList: [],
+        };
+    }
+}
