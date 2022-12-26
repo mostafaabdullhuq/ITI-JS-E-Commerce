@@ -1,3 +1,5 @@
+// when window loads, update the navbar cart items
+
 // a function to create a new cookie
 export function setCookie(cname, cvalue, exdays) {
     const d = new Date();
@@ -62,6 +64,11 @@ export var isEmailValid = (emailAddress) => {
         : // if email is empty or false, return false
           [false, "Please enter an email address."];
 };
+
+// function to update the cart items in the navbar
+export function UpdateNavCart(cartItems) {
+    $(".user-nav-cart").attr("data-cart-items", cartItems);
+}
 
 // class that contains alll users operations
 export class Users {
@@ -184,7 +191,7 @@ export class Users {
     */
 
     logOut() {
-        cookiesNames = ["user_id", "user_token"];
+        let cookiesNames = ["user_id", "user_token"];
         // set cookies value to 0 and 0 and expire time to 0 to clear it
         cookiesNames.map((cookie) => {
             setCookie(cookie, 0, 0);
@@ -457,14 +464,37 @@ if (!user) {
         },
     ]);
 }
-// ecommerceUsers.logOut();
 
 //!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
 
-export function UpdateNavCart(cartItems) {
-    $(".user-nav-cart").attr("data-cart-items", cartItems);
+// if no user logged in
+if (!ecommerceUsers.validateLoginCookies()) {
+    $(".user-controls-list").html(`
+    <li class="border-bottom mb-1 pb-1">
+        <a class="icon1" data-bs-toggle="modal" href="#exampleModalToggle2"> Sign In </a>
+    </li>
+    <li>
+        <a class="icon1" data-bs-toggle="modal" href="#exampleModalToggle3"> Sign up </a>
+    </li>
+`);
 }
+// if user is logged in
+else {
+    $(".user-controls-list").html(`
 
-$(() => {
-    UpdateNavCart(user.cart.prodsCount ?? 0);
-});
+    <li class="border-bottom mb-1 pb-1">
+        <a class="icon1" data-bs-toggle="modal" href="./../docs/profile.html"> ${user.firstName} ${user.lastName} </a>
+    </li>
+    <li>
+        <a class="icon1 user-logout" href="#"> Logout </a>
+    </li>
+`);
+
+    $(".user-logout").on("click", (e) => {
+        ecommerceUsers.logOut();
+        window.location.href = "/index.html";
+    });
+    $(() => {
+        UpdateNavCart(user.cart.prodsCount ?? 0);
+    });
+}

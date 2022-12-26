@@ -100,3 +100,8 @@ i {
 .bor {
     border: 1px solid crimson !important;
 }
+
+.dropdown-menu li a:hover {
+    color: var(--ltn__secondary-color);
+    background-color: transparent;
+}
