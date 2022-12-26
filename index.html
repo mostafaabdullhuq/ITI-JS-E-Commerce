@@ -28,14 +28,64 @@
         <title>E-Commerce</title>
     </head>
     <body>
+        <nav class="navbar navbar-expand-lg fixed-top bg-white border-bottom py-4">
+            <div class="container-fluid">
+                <a class="navbar-brand text-uppercase col-xl-2 col-lg-3 fs-4 fw-bolder text-end" href="/index.html">E-Commerce</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse mt-2 mt-lg-0 col d-flex me-3" id="navbarSupportedContent">
+                    <ul class="navbar-nav col me-auto mb-2 mb-lg-0 d-flex justify-content-center">
+                        <li class="nav-item me-3">
+                            <a class="nav-link text-dark text-uppercase fw-bold active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item dropdown me-3">
+                            <a class="nav-link dropdown-toggle text-dark text-uppercase fw-bold" href="./docs/categ.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products </a>
+                            <ul class="dropdown-menu" id="cat-ul"></ul>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link text-dark text-uppercase fw-bold" href="#">About</a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link text-dark text-uppercase fw-bold">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- cart and user section -->
+                <div class="col-xl-2 col-lg-3 col d-flex align-items-center right-nav-side">
+                    <!-- profile dropdown -->
+                    <a class="nav-link dropdown-toggle text-dark fs-5" href="./docs/profile.html" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fa-solid fa-user"></i> </a>
+                    <ul class="dropdown-menu p-2" style="text-align: center">
+                        <li class="border-bottom mb-1 pb-1">
+                            <a class="icon1" data-bs-toggle="modal" href="#exampleModalToggle2"> Sign In </a>
+                        </li>
+                        <li>
+                            <a class="icon1" data-bs-toggle="modal" href="#exampleModalToggle3"> Sign up </a>
+                        </li>
+                    </ul>
+
+                    <a class="ms-4 user-nav-cart flex-grow-1 text-dark fs-5" href="./docs/cart.html" data-cart-items="20000"><i class="fa-solid fa-cart-shopping"></i> </a>
+                </div>
+            </div>
+        </nav>
+
         <!-- head Navbar -->
-        <div class="container-fluid pt-3 pb-3 border border-bottom">
+        <!-- <div class="container-fluid pt-3 pb-3 border-bottom bg-white">
             <div class="row">
-                <nav id="navbar_top" class="navbar navbar-expand-md fw-bold pt-1 pb-1">
-                    <div class="col col-sm-2">
-                        <a href="#"><img style="width: 100px; height: 50px" src="./Hagar_logo.svg.png" alt="" /></a>
-                    </div>
-                    <div>
+                <nav id="navbar_top" class="navbar navbar-expand-md fw-bold py-1 d-flex">
+                    <div class="col col-sm-2 ms-3 d-none d-md-block d-flex bor justify-content-center">
+                        <p class="h2 text-uppercase fw-bold text-center col">E-Commerce</p> -->
+        <!-- <a class="col" href="#"><img style="width: 100px; height: 50px" src="./Hagar_logo.svg.png" alt="" /></a> -->
+        <!-- </div> -->
+        <!-- <div class="ms-3 ms-md-0">
                         <button
                             class="navbar-toggler"
                             type="button"
@@ -47,26 +97,26 @@
                         >
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                    </div>
-                    <div class="collapse navbar-collapse justify-content-around nav-active" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item me-4">
+                    </div> -->
+        <!-- <div class="collapse navbar-collapse justify-content-around nav-active" id="navbarNavDropdown">
+                        <ul class="navbar-nav ms-4 pt-3 ms-md-0 pt-md-0">
+                            <li class="nav-item">
                                 <a class="nav-link active text-dark me-4" aria-current="page" href="#">HOME</a>
                             </li>
-                            <li class="nav-item dropdown me-4">
+                            <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-dark me-4" id="productConv" href="./docs/categ.html" data-bs-toggle="dropdown" aria-expanded="false"> PRODUCTS </a>
                                 <ul class="dropdown-menu p-4" id="cat-ul"></ul>
                             </li>
-                            <li class="nav-item me-4">
+                            <li class="nav-item">
                                 <a class="nav-link text-dark me-4" href="#footer">ABOUT</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" href="#contact">CONTACT</a>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
 
-                    <div class="col col-sm-2 d-flex justify-content-end">
+        <!-- <div class="col col-sm-2 d-flex justify-content-center me-3">
                         <a class="nav-link dropdown-toggle text-dark" href="./docs/categ.html" data-bs-toggle="dropdown" aria-expanded="false">
                             <svg class="icon1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
                                 <path
@@ -90,11 +140,11 @@
                                 />
                             </svg>
                         </a>
-                        <p class="cart-btn text-light cart-items-count">0</p>
+                        <p class="cart-btn cart-items-count fs-5 fw-bold">20</p>
                     </div>
                 </nav>
             </div>
-        </div>
+        </div> -->
 
         <!-- Slider -->
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -155,8 +205,8 @@
                     <div class="me-4 col-2 d-flex justify-content-center align-items-center">
                         <a class="text-dark fs-1 d-flex justify-content-center align-items-center"> <i class="fa-solid fa-truck-fast col"></i></a>
                     </div>
-                    <div class="col text-center">
-                        <h4 class="fs-4 fw-bolder">Free Shipping</h4>
+                    <div class="col text-lg-start text-center">
+                        <h4 class="fs-4 fw-bolder t">Free Shipping</h4>
                         <p>Free shipping on orders over $99.</p>
                     </div>
                 </div>
@@ -164,7 +214,7 @@
                     <div class="me-4 col-2 d-flex justify-content-center align-items-center">
                         <a class="text-dark fs-1 d-flex justify-content-center align-items-center"> <i class="fa-solid fa-headset col"></i></a>
                     </div>
-                    <div class="col text-center">
+                    <div class="col text-lg-start text-center">
                         <h4 class="fs-4 fw-bolder">Customer Support</h4>
                         <p>Quick customer support guarantee.</p>
                     </div>
@@ -173,7 +223,7 @@
                     <div class="me-4 col-2 d-flex justify-content-center align-items-center">
                         <a class="text-dark fs-1 d-flex justify-content-center align-items-center"> <i class="fa-solid fa-circle-dollar-to-slot col"></i></a>
                     </div>
-                    <div class="col text-center">
+                    <div class="col text-lg-start text-center">
                         <h4 class="fs-4 fw-bolder">Money Back</h4>
                         <p>15 days money back guarantee.</p>
                     </div>
@@ -494,6 +544,7 @@
                 </div>
             </div>
         </div>
+
         <!-- include jquery file -->
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
         <script src="/node_modules/jquery/dist/jquery.js"></script>
