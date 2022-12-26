@@ -163,27 +163,27 @@ class User {
 //       title: taskText,
 //       completed: false,
 //     };
-//     // Push Task To Array Of Tasks
+//     // Push Task To Array Of users
 //     users_list.push(task);
-//     // Add Tasks To Page
-//     addElementsToPageFrom(arrayOfTasks);
-//     // Add Tasks To Local Storage
-//     addDataToLocalStorageFrom(arrayOfTasks);
+//     // Add users To Page
+//     addElementsToPageFrom(arrayOfusers);
+//     // Add users To Local Storage
+//     addDataToLocalStorageFrom(arrayOfusers);
 //   }
 
 function addUser(user_arr) {
-    window.localStorage.setItem("tasks", JSON.stringify(user_arr));
+    window.localStorage.setItem("users", JSON.stringify(user_arr));
   }
   
   function getDataFromLocalStorage() {
-    let data = window.localStorage.getItem("tasks");
+    let data = window.localStorage.getItem("users");
     if (data) {
-      let tasks = JSON.parse(data);
-    //   addElementsToPageFrom(tasks);
-    // users_list.push(tasks)
-    console.log(tasks);
-    console.log(typeof(tasks));
-    users_list = tasks;
+      let users = JSON.parse(data);
+    //   addElementsToPageFrom(users);
+    // users_list.push(users)
+    console.log(users);
+    console.log(typeof(users));
+    users_list = users;
     }
   }
   

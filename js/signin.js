@@ -21,13 +21,13 @@ document.forms[0].onmouseenter = function(e){
 }
 
 function checkLocalStorage(email,pass) {
-    let data = window.localStorage.getItem("tasks");
+    let data = window.localStorage.getItem("users");
     if (data) {
-        let tasks = JSON.parse(data);
-        for (let index = 0; index < tasks.length; index++) {
-            if(tasks[index].emailAddress === email){
+        let users = JSON.parse(data);
+        for (let index = 0; index < users.length; index++) {
+            if(users[index].emailAddress === email){
                 console.log('email found!');
-                if (tasks[index].passWord === pass) {
+                if (users[index].passWord === pass) {
                     console.log('password correct');
                 }else{
                     console.log('password incorrect');
@@ -40,6 +40,6 @@ function checkLocalStorage(email,pass) {
 
             
         }
-        console.log(tasks);
+        // console.log(users);
     }
 }
