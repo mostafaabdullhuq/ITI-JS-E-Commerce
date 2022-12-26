@@ -6,19 +6,6 @@ export function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-function generateToken() {
-    // E.g. 8 * 32 = 256 bits token
-    var randomPool = new Uint8Array(32);
-    crypto.getRandomValues(randomPool);
-    var hex = "";
-    for (var i = 0; i < randomPool.length; ++i) {
-        hex += randomPool[i].toString(16);
-    }
-    return hex;
-}
-
-console.log(generateToken());
-
 // a function to get a value of a specific cookie
 export function getCookie(cname) {
     let name = cname + "=";
@@ -32,7 +19,7 @@ export function getCookie(cname) {
             return c.substring(name.length, c.length);
         }
     }
-    return "";
+    return false;
 }
 
 // a function to delete a specific cookie
@@ -172,9 +159,23 @@ export class Users {
     */
 
     loginAccount(emailAddress, passWord) {
-        return this.usersList.find((user) => {
+        console.log("in login");
+        let user = this.usersList.find((user) => {
             return user.emailAddress.toLowerCase() === emailAddress.toLowerCase() && user.passWord === passWord;
         });
+
+        if (user) {
+            let userToken = crypto.randomUUID();
+            user.cookieToken = userToken;
+            deleteCookie("user_id");
+            deleteCookie("user_token");
+            setCookie("user_id", user.id, 30);
+            setCookie("user_token", userToken, 30);
+        }
+
+        this.syncUpload;
+
+        return user;
     }
 
     /*
@@ -383,7 +384,7 @@ export class User {
         this.shippingAddr = shippingAddr;
         this.country = country;
         this.city = city;
-        this.cookieToken = "Z3JvdXAyQGl0aS5nb3YuZWc6QWRtaW5AMTIzNA==";
+        this.cookieToken = "";
         this.ordersList = [];
         this.cart = {
             prodsCount: 0,
@@ -417,11 +418,13 @@ let user = new User("Group", "Two", "group2@iti.gov.eg", "Admin@1234", "Egypt", 
 ecommerceUsers.createAccount(user);
 
 // if user not logged in
-if (!ecommerceUsers.validateLoginCookies()) {
-    // set the user cookies to login
-    setCookie("user_id", user.id, 999);
-    setCookie("user_token", user.cookieToken, 999);
-}
+// if (!ecommerceUsers.validateLoginCookies()) {
+//     // set the user cookies to login
+//     setCookie("user_id", user.id, 999);
+//     setCookie("user_token", user.cookieToken, 999);
+// }
+
+ecommerceUsers.loginAccount(user.emailAddress, user.passWord);
 
 // add items to user cart
 ecommerceUsers.updateCart(user, [
@@ -455,3 +458,7 @@ ecommerceUsers.updateCart(user, [
     },
 ]);
 //!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
+
+export function UpdateNavCart(cartItems) {
+    $(".user-nav-cart").attr("data-cart-items", cartItems);
+}
