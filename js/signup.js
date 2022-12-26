@@ -12,7 +12,7 @@ let emailRe =   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(
 //REGEX for password :  Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
 let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ ; 
 
-document.forms[0].onmouseenter = function(e){
+document.forms[0].onsubmit = function(e){
     //get inputs
     let firstNameInput = document.querySelector('[name="firstName"]').value;
     let lastNameInput = document.querySelector('[name="lastName"]').value;
@@ -133,7 +133,8 @@ class Users {
 // class that represents one user only
 class User {
     constructor(firstName, lastName, emailAddress, passWord, country, city, shippingAddr) {
-        this.id = ecommerceUsers.usersList.length + 1;
+        // this.id = ecommerceUsers.usersList.length + 1;
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
