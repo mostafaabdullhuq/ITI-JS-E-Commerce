@@ -1,3 +1,68 @@
+// let windowURL = window.location.href;
+// if (windowURL.split("?").length === 1) {
+//     window.location.href = "./../index.html";
+// }
+
+// let categName = window.location.href.split("?")[1].split("=")[1] || 1;
+// console.log(categName);
+// fetch Newest arrival
+// $(function () {
+//     fetch(`https://fakestoreapi.com/products/category/${categName}`)
+//       .then((response) => response.json())
+//       .then((products) => {
+//         let prods = "";
+//         products.forEach((product) => {
+//             prods += `
+//         <div class="col-sm-9 col-md-6 col-lg-4 prod" data-prod-id="${product.id}" data-prod-category="${product.category}">
+//         <div class="product-item"  style="height:500px;">
+//           <div href="#shop-single.html" class="card product-img rounded-0 d-flex justify-content-center" style="cursor:pointer;">
+//             <img
+//               src="${product.image}"
+//               alt="Image"
+//               class="img-fluid"
+//               style="height: 300px;width:70%;margin-left:10%"
+//             />
+//             <p class="view" data-prod-id="${product.id}" >Quick view</p>
+//           </div>
+//           <a class="title fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
+//           <div class="price">
+//             <span class="h6 fs-5 fw-bold">$${product.price}</span>
+//             ${`<i class="fa-solid fa-star" style="color:var(--ltn__secondary-color-2)"></i>`.repeat(Math.round(product.rating.rate))}
+            
+//           </div>
+//         </div>
+//     </div>
+    
+//     `;
+//         });
+//         // $("#categ").append(categs);
+//         $("#prods").html("");
+//         $("#prods").append(prods);
+
+//         // document.querySelectorAll(".categ-item").forEach((link) => {
+//             // when any category button is clicked, do this function
+//             // link.addEventListener("click", function () {
+//                 // get the category of the clicked button from the attribute
+//                 // let category = this.getAttribute("data-category"),
+//                    let products = document.querySelectorAll(".prod");
+//                     {
+//                     products.forEach((product) => {
+//                         if (product.getAttribute("data-prod-category") === `${categName}`) {
+//                             product.style.display = "block";
+//                         } else {
+//                             product.style.display = "none";
+//                         }
+//                     });
+//                     }
+//             // });
+//         // });
+
+//       })
+//       .catch((e) => {
+//         console.log("ERROR");
+//         console.log(e);
+//       });
+//   });
 $(function () {
     //fetching all products
     fetch("https://fakestoreapi.com/products?")
@@ -92,7 +157,7 @@ $(function () {
                         product.style.display = "none";
                     }
                 });
-            }
+                }
         });
     });
      //when click product title render to product-info page
