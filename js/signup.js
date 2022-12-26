@@ -42,30 +42,16 @@ document.forms[0].onsubmit = function(e){
 
     if(fnameValid===false || lnameValid===false || emailValid===false || passValid===false || repassValid===false || cityValid===false  || countryValid===false || passInput != repassInput ){
         e.preventDefault();
-        // console.log("faild")
     }
     else{
-        console.log("success");
-
         let newuser = new User(firstNameInput,lastNameInput,emailInput,passInput,countryInput,cityInput,addressInput);
-        // console.log("user obj within func");
-        // console.log(newuser)
         getDataFromLocalStorage();
         console.log(users_list);
-
         added(newuser);
-        // console.log(users_list);
-        // getDataFromLocalStorage();
-
-
-      
     }
     
 }
-// console.log("out func")
 
-console.log(users_list);
-// getDataFromLocalStorage();
 class Users {
     // private property
     #keyName = "eCommerceUsers";
@@ -170,20 +156,20 @@ class User {
 }
 
 
-function addTaskToArray(taskText) {
-    // Task Data
-    const task = {
-      id: Date.now(),
-      title: taskText,
-      completed: false,
-    };
-    // Push Task To Array Of Tasks
-    users_list.push(task);
-    // Add Tasks To Page
-    addElementsToPageFrom(arrayOfTasks);
-    // Add Tasks To Local Storage
-    addDataToLocalStorageFrom(arrayOfTasks);
-  }
+// function addTaskToArray(taskText) {
+//     // Task Data
+//     const task = {
+//       id: Date.now(),
+//       title: taskText,
+//       completed: false,
+//     };
+//     // Push Task To Array Of Tasks
+//     users_list.push(task);
+//     // Add Tasks To Page
+//     addElementsToPageFrom(arrayOfTasks);
+//     // Add Tasks To Local Storage
+//     addDataToLocalStorageFrom(arrayOfTasks);
+//   }
 
 function addUser(user_arr) {
     window.localStorage.setItem("tasks", JSON.stringify(user_arr));
