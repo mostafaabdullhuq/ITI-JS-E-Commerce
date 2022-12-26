@@ -426,6 +426,8 @@ ecommerceUsers.createAccount(user);
 
 ecommerceUsers.loginAccount(user.emailAddress, user.passWord);
 
+// ecommerceUsers.logOut();
+
 // add items to user cart
 ecommerceUsers.updateCart(user, [
     {
@@ -462,3 +464,7 @@ ecommerceUsers.updateCart(user, [
 export function UpdateNavCart(cartItems) {
     $(".user-nav-cart").attr("data-cart-items", cartItems);
 }
+
+$(() => {
+    UpdateNavCart(user.cart.prodsCount ?? 0);
+});
