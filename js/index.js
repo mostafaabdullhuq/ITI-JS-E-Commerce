@@ -37,7 +37,7 @@ $(function () {
                             >
                         </div>
 
-                        <div class="price d-flex col-12 d-flex px-3 align-items-center justify-content-center">
+                        <div class="price d-flex col-12 d-flex  align-items-center justify-content-center">
                             <span class="h4 col mb-0">$${product.price}</span>
                             <div class="rating col">
                             ${'<i class="fa-solid fa-star fs-5" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}

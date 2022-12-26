@@ -421,7 +421,7 @@ p {
 
 @media screen and (min-width: 1000px) {
     #prods-container .prod {
-        max-width: calc(var(--cart_prod_size) + 100px) !important;
+        max-width: calc(var(--cart_prod_size) + 60.5px) !important;
     }
 }
 
@@ -560,4 +560,18 @@ ul.dropdown-menu {
 footer a:hover {
     text-decoration: underline;
     font-weight: bold;
+}
+
+.prod .price {
+    max-width: 300px;
+    margin: auto;
+    /* border: 2px solid red; */
+}
+
+.prod .price .rating {
+    text-align: right;
+}
+
+.prod .price span {
+    text-align: left;
 }
