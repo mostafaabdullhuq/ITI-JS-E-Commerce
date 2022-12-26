@@ -49,29 +49,14 @@ document.forms[0].onmouseenter = function(e){
 
         let newuser = new User(firstNameInput,lastNameInput,emailInput,passInput,countryInput,cityInput,addressInput);
         console.log(newuser)
-        // let userdata = new Users(newuser);
+        users_list.push(newuser);
+        console.log(users_list);
 
-         // private property
-    #keyName = "eCommerceUsers";
-    !localStorage.getItem(this.#keyName)
-            ? // add the users list to the local storage
-              this.syncUpload
-            : // if there's already a users list in the local storage, sync it with the current one
-              this.syncDownload;
-    //! Users methods
-
-    // syncs the localstorage with the current users list
-    get syncUpload() {
-        localStorage.setItem(this.#keyName, JSON.stringify(this.usersList));
-    }
-
-    // syncs the current users list with the local storage
-    get syncDownload() {
-        this.usersList = JSON.parse(localStorage.getItem(this.#keyName));
-    }
+      
     }
     
 }
+console.log(users_list);
 
 class Users {
     // private property
@@ -175,3 +160,32 @@ class User {
         };
     }
 }
+
+
+function addTaskToArray(taskText) {
+    // Task Data
+    const task = {
+      id: Date.now(),
+      title: taskText,
+      completed: false,
+    };
+    // Push Task To Array Of Tasks
+    users_list.push(task);
+    // Add Tasks To Page
+    addElementsToPageFrom(arrayOfTasks);
+    // Add Tasks To Local Storage
+    addDataToLocalStorageFrom(arrayOfTasks);
+  }
+
+function addUser(arrayOfTasks) {
+    window.localStorage.setItem("tasks", JSON.stringify(arrayOfTasks));
+  }
+  
+  function getDataFromLocalStorage() {
+    let data = window.localStorage.getItem("tasks");
+    if (data) {
+      let tasks = JSON.parse(data);
+      addElementsToPageFrom(tasks);
+    }
+  }
+  
