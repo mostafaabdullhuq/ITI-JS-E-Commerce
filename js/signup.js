@@ -1,3 +1,7 @@
+
+
+
+
 // REGEX for first.last name , city and country : no numbers or special characters only english letters
 let nameRe = /^([a-zA-Z]){2,}$/
 //REGEX for username consisting only of non-whitespaces and at least 2 characters
