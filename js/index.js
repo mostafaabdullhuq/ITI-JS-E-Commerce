@@ -123,18 +123,19 @@ $(function () {
     });
 
     // fixing nav in scroll
-    // window.addEventListener("scroll", function () {
-    //     if (window.scrollY > 100) {
-    //         document.getElementById("navbar_top").classList.add("fixed-top");
-    //         document.getElementById("navbar_top").style.backgroundColor = "white";
-    //         document.getElementById("navbar_top").style.boxShadow = "2px 10px 4px rgb(133, 132, 132)";
-    //         let navbar_height = document.querySelector(".navbar").offsetHeight;
-    //         document.body.style.paddingTop = navbar_height + "px";
-    //     } else {
-    //         document.getElementById("navbar_top").classList.remove("fixed-top");
-    //         document.body.style.paddingTop = "0";
-    //     }
-    // });
+    let navbar = document.querySelector("nav");
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > navbar.offsetHeight) {
+            navbar.classList.add("fixed-top", "border-bottom", "bg-white");
+            navbar.style.backgroundColor = "white";
+            // document.getElementById("navbar_top").style.boxShadow = "2px 10px 4px rgb(133, 132, 132)";
+            // let navbar_height = document.querySelector(".navbar").offsetHeight;
+            document.body.style.paddingTop = navbar.offsetHeight + "px";
+        } else {
+            navbar.classList.remove("fixed-top", "border-bottom", "bg-white");
+            document.body.style.paddingTop = "0";
+        }
+    });
 
     //feedback
     ("use strict");
@@ -187,9 +188,13 @@ $(function () {
 
 // go top button
 let mybutton = document.getElementById("topBtn");
-window.onscroll = function () {
-    scrollFunction();
-};
+
+if (mybutton) {
+    window.onscroll = function () {
+        scrollFunction();
+    };
+}
+
 function scrollFunction() {
     if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
         mybutton.style.display = "block";
@@ -198,10 +203,12 @@ function scrollFunction() {
     }
 }
 
-mybutton.onclick = function () {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-};
+if (mybutton) {
+    mybutton.onclick = function () {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    };
+}
 
 /* <div class="col-lg-3 col-sm-6 prod" data-prod-id="${product.id}" data-prod-category="${product.category}">
 <div class="product-item mb-4 " style="height:500px;">

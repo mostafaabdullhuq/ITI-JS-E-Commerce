@@ -561,9 +561,9 @@ p {
     -o-border-radius: 0px !important;
 } */
 
-#carouselExampleIndicators {
+/* #carouselExampleIndicators {
     margin-top: 90px !important;
-}
+} */
 
 .nav-item:hover a.nav-link {
     color: var(--ltn__secondary-color) !important;
@@ -635,3 +635,7 @@ nav i:hover,
 .user-controls-list a {
     font-weight: 550;
 }
+
+/* .profile-info {
+    max-width: 50px;
+} */
