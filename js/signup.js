@@ -17,7 +17,7 @@ let users_list = [];
 
 
 
-document.forms[0].onmouseenter = function(e){
+document.forms[0].onsubmit = function(e){
     //get inputs
     let firstNameInput = document.querySelector('[name="firstName"]').value;
     let lastNameInput = document.querySelector('[name="lastName"]').value;
@@ -42,22 +42,30 @@ document.forms[0].onmouseenter = function(e){
 
     if(fnameValid===false || lnameValid===false || emailValid===false || passValid===false || repassValid===false || cityValid===false  || countryValid===false || passInput != repassInput ){
         e.preventDefault();
-        console.log("faild")
+        // console.log("faild")
     }
     else{
         console.log("success");
 
         let newuser = new User(firstNameInput,lastNameInput,emailInput,passInput,countryInput,cityInput,addressInput);
-        console.log(newuser)
-        users_list.push(newuser);
+        // console.log("user obj within func");
+        // console.log(newuser)
+        getDataFromLocalStorage();
         console.log(users_list);
+
+        added(newuser);
+        // console.log(users_list);
+        // getDataFromLocalStorage();
+
 
       
     }
     
 }
-console.log(users_list);
+// console.log("out func")
 
+console.log(users_list);
+// getDataFromLocalStorage();
 class Users {
     // private property
     #keyName = "eCommerceUsers";
@@ -177,15 +185,27 @@ function addTaskToArray(taskText) {
     addDataToLocalStorageFrom(arrayOfTasks);
   }
 
-function addUser(arrayOfTasks) {
-    window.localStorage.setItem("tasks", JSON.stringify(arrayOfTasks));
+function addUser(user_arr) {
+    window.localStorage.setItem("tasks", JSON.stringify(user_arr));
   }
   
   function getDataFromLocalStorage() {
     let data = window.localStorage.getItem("tasks");
     if (data) {
       let tasks = JSON.parse(data);
-      addElementsToPageFrom(tasks);
+    //   addElementsToPageFrom(tasks);
+    // users_list.push(tasks)
+    console.log(tasks);
+    console.log(typeof(tasks));
+    users_list = tasks;
     }
   }
   
+
+
+function added(newuser){
+    
+    users_list.push(newuser);
+        console.log(users_list);
+        addUser(users_list);
+}
