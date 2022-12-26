@@ -1,4 +1,4 @@
-import { ecommerceUsers } from "./script.js";
+import { ecommerceUsers, UpdateNavCart } from "./script.js";
 
 // check if user logged in
 let user = ecommerceUsers.validateLoginCookies();
@@ -145,7 +145,7 @@ if (user) {
 
             // update user cart in localstorage
             ecommerceUsers.updateCart(user, userCart.prodsList);
-
+            UpdateNavCart(userCart.prodsCount);
             // update right section values
             updateCartRight();
         });
