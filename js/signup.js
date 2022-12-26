@@ -12,11 +12,11 @@ let emailRe =   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(
 //REGEX for password :  Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
 let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ ; 
 
-document.forms[0].onsubmit = function(e){
+document.forms[0].onmouseenter = function(e){
     //get inputs
     let firstNameInput = document.querySelector('[name="firstName"]').value;
     let lastNameInput = document.querySelector('[name="lastName"]').value;
-    let usernameInput = document.querySelector('[name="username"]').value;
+    // let usernameInput = document.querySelector('[name="username"]').value;
     let emailInput = document.querySelector('[name="email"]').value;
     let passInput = document.querySelector('[name="pass"]').value;
     let repassInput = document.querySelector('[name="repass"]').value;
@@ -27,7 +27,7 @@ document.forms[0].onsubmit = function(e){
     //valid var's
     let fnameValid = nameRe.test(firstNameInput);
     let lnameValid = nameRe.test(lastNameInput);
-    let usernameValid = usernameRe.test(usernameInput);
+    // let usernameValid = usernameRe.test(usernameInput);
     let emailValid = emailRe.test(emailInput);
     let passValid = passRe.test(passInput);
     let repassValid = passRe.test(repassInput);
@@ -36,12 +36,12 @@ document.forms[0].onsubmit = function(e){
 
 
 
-    if(fnameValid===false || lnameValid===false || usernameValid===false || emailValid===false || passValid===false || repassValid===false || cityValid===false  || countryValid===false || passInput != repassInput ){
+    if(fnameValid===false || lnameValid===false || emailValid===false || passValid===false || repassValid===false || cityValid===false  || countryValid===false || passInput != repassInput ){
         e.preventDefault();
-        // console.log("faild")
+        console.log("faild")
     }
     else{
-        // console.log("success")
+        console.log("success")
 
         let newuser = new User(firstNameInput,lastNameInput,emailInput,passInput,countryInput,cityInput,addressInput);
         
