@@ -1,3 +1,4 @@
+// import { ecommerceUsers } from "./script.js";
 
 
 
@@ -38,9 +39,89 @@ document.forms[0].onsubmit = function(e){
         e.preventDefault();
         // console.log("faild")
     }
-    // else{
-    //     console.log("success")
+    else{
+        // console.log("success")
 
-    // }
+        createAccount()
+    }
     
 }
+
+export class Users {
+    // private property
+    #keyName = "eCommerceUsers";
+    constructor(usersList = []) {
+        this.usersList = usersList;
+        // if there's no users list with the same name in the local storage
+        !localStorage.getItem(this.#keyName)
+            ? // add the users list to the local storage
+              this.syncUpload
+            : // if there's already a users list in the local storage, sync it with the current one
+              this.syncDownload;
+    }
+    //! Users methods
+
+    // syncs the localstorage with the current users list
+    get syncUpload() {
+        localStorage.setItem(this.#keyName, JSON.stringify(this.usersList));
+    }
+
+    // syncs the current users list with the local storage
+    get syncDownload() {
+        this.usersList = JSON.parse(localStorage.getItem(this.#keyName));
+    }
+
+    /*
+        [DESC]
+            a method to create a new user in Users list
+
+        [Arguments]
+            userData: an object of type User contains the user data
+        EX: 
+            Users.createAccount(new User(firstName="John", lastName="Maxi", emailAddress="johnmaxi@gmail.com", passWord="John@12345", country="United States", city="New York", shippingAddr="1234 X Street Build 2", phoneNumber="+1234567891"))
+
+        [Return]
+            object of two keys
+                isCreated: boolean value indicates if the user is created or not
+                error: string value contains the error message if the user is not created
+        EX: 
+            {
+                isCreated: true,
+                error: ""
+            }
+
+    */
+
+    createAccount(userData) {
+        // initialize the return response object
+        let response = {
+            isCreated: true,
+            error: "",
+        };
+        // loop through all users
+        this.usersList.forEach((user) => {
+            // if the user's email is the same as the email of the user being created
+            if (userData.emailAddress == user.emailAddress) {
+                // cannot create account because email duplication
+                response.isCreated = false;
+                response.error = "Email Address is already exists.";
+            }
+            // if the user's username is the same as the username of the user being created
+            if (userData.userName == user.userName) {
+                // cannot create account because username duplication
+                response.isCreated = false;
+                response.error = "Username is already exists.";
+            }
+        });
+
+        // if user is created successfully
+        if (response.isCreated) {
+            // add the user to the users list
+            this.usersList.push(userData);
+
+            // update the localstorage
+            this.syncUpload;
+        }
+        // return the response object
+        return response;
+    }
