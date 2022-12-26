@@ -43,12 +43,14 @@ document.forms[0].onsubmit = function(e){
     else{
         // console.log("success")
 
-        let newuser = new User(firstNameInput,lastNameInput,emailInput,passInput,countryInput,cityInput,)
+        let newuser = new User(firstNameInput,lastNameInput,emailInput,passInput,countryInput,cityInput,addressInput);
+        
+        let userdata = new Users(newuser);
     }
     
 }
 
-export class Users {
+class Users {
     // private property
     #keyName = "eCommerceUsers";
     constructor(usersList = []) {
@@ -129,14 +131,14 @@ export class Users {
 }
 
 // class that represents one user only
-export class User {
-    constructor(firstName, lastName, emailAddress, passWord, country, city, shippingAddr, phoneNumber) {
+class User {
+    constructor(firstName, lastName, emailAddress, passWord, country, city, shippingAddr) {
         this.id = ecommerceUsers.usersList.length + 1;
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
         this.passWord = passWord;
-        this.phoneNumber = phoneNumber;
+        // this.phoneNumber = phoneNumber;
         this.shippingAddr = shippingAddr;
         this.country = country;
         this.city = city;
