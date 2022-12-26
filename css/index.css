@@ -575,3 +575,16 @@ footer a:hover {
 .prod .price span {
     text-align: left;
 }
+
+ .modal-content2 {
+    left: 50%;
+    transform: translate(-50%, 0%);
+    max-width: 75% !important;
+    max-height: 75% !important;
+} 
+
+ /* @media (max-width: 768px) {
+    .modal-content {
+       width: 90%;
+    }} */
+

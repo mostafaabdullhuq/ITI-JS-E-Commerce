@@ -1,60 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./../../node_modules/animate.css/animate.min.css" />
-    <link rel="stylesheet" href="./../../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
-    <link rel="stylesheet" href="../../css/modal/signIn.css"> 
-</head>
-<body>
-     <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle2" role="button">Open first modal</a>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="./../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./../../node_modules/animate.css/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./../../node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../css/modal/signIn.css" />
+  </head>
+  <body>
+    <a
+      class="btn btn-primary rounded-0"
+      data-bs-toggle="modal"
+      href="#exampleModalToggle2"
+      role="button"
+      >Open first modal</a
+    >
 
-
-  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="container">
+    <div
+      class="modal fade"
+      id="exampleModalToggle2"
+      aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel2"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-0">
+          <div class="container">
             <div class="row">
-                <div class="card border-0 shadow rounded-3 my-5">
-                  <div class="card-body p-4 p-sm-5">
-                    <h5 class="card-title text-center mb-5 fw-bolder fs-5 title">Sign Up</h5>
-                    <div class="row mt-2">
-                      <div class="col-6"><label class="labels">First Name</label><input type="text" class="form-control" placeholder="first name" value="" name="firstName"></div>
-                      <div class="col-6"><label class="labels">Last Name</label><input type="text" class="form-control" value="" placeholder="last name" name="lastName"></div>
+              <div class="card border-0 shadow rounded-3 my-5">
+                <div class="card-body p-4 p-sm-5">
+                  <h5 class="card-title text-center mb-5 fw-bolder fs-5 title">
+                    Sign Up
+                  </h5>
+                  <div class="row mt-2">
+                    <div class="col-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="first name"
+                        value=""
+                        name="firstName"
+                      />
                     </div>
-                    <div class="row mt-3"><form action="">
-                      <div class="col-md-12"><label class="labels">username</label><input type="text" class="form-control" placeholder="enter username" value="" name="username"></div>
-                      <div class="col-md-12"><label class="labels">Email</label><input type="email" class="form-control" placeholder="enter email" value="" name="email"></div>
-                      <div class="col-md-12"><label class="labels">Password</label><input type="password" class="form-control" placeholder="new password" value="" name="pass"></div>
-                      <div class="col-md-12"><label class="labels">Confirm Password</label><input type="password" class="form-control" placeholder="confirm password" value="" name="repass"></div>
-                      <div class="col-md-12"><label class="labels">Shipping Address</label><input type="text" class="form-control" placeholder="enter your address" value="" required></div>
+                    <div class="col-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        value=""
+                        placeholder="last name"
+                        name="lastName"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mt-3">
+                    <form action="">
+                      <div class="col-md-12">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="enter username"
+                          value=""
+                          name="username"
+                        />
+                      </div>
+                      <div class="col-md-12">
+                        <input
+                          type="email"
+                          class="form-control"
+                          placeholder="enter email"
+                          value=""
+                          name="email"
+                        />
+                      </div>
+                      <div class="col-md-12">
+                        <input
+                          type="password"
+                          class="form-control"
+                          placeholder="new password"
+                          value=""
+                          name="pass"
+                        />
+                      </div>
+                      <div class="col-md-12">
+                        <input
+                          type="password"
+                          class="form-control"
+                          placeholder="confirm password"
+                          value=""
+                          name="repass"
+                        />
+                      </div>
+                      <div class="col-md-12">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="enter your address"
+                          value=""
+                          required
+                        />
+                      </div>
                       <div class="row mt-3">
-                        <div class="col-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value="" name="country"></div>
-                        <div class="col-6"><label class="labels">City</label><input type="text" class="form-control" value="" placeholder="city" name="city"></div>
+                        <div class="col-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="country"
+                            value=""
+                            name="country"
+                          />
+                        </div>
+                        <div class="col-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            value=""
+                            placeholder="city"
+                            name="city"
+                          />
+                        </div>
                       </div>
                       <div class="d-grid">
-                        <button class="btn btn-form btn-login text-uppercase fw-bold mt-5" type="submit">Sign
-                          up</button>
+                        <button
+                          class="btn btn-form btn-login text-uppercase fw-bold mt-5"
+                          type="submit"
+                        >
+                          Sign up
+                        </button>
                       </div>
-                    </form></div>
-                    
+                    </form>
+                  </div>
                 </div>
+              </div>
             </div>
           </div>
-      </div> 
+        </div>
+      </div>
     </div>
-  </div>
-
-
-
 
     <script src="./../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="./../../js/signup.js"></script>
-</body>
+  </body>
 </html>
