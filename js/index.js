@@ -1,3 +1,5 @@
+import { ecommerceUsers, UpdateNavCart } from "./script.js";
+
 // when window loads
 $(function () {
     // fetch only 8 products from api
@@ -171,7 +173,7 @@ $(function () {
             categories.forEach((category) => {
                 categorylnk += `
             <li>
-            <a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html?categ=${category}">${category}</a>
+            <a style="text-transform:capitalize;font-weight: 550" class="  dropdown-item py-2" href="./docs/categ.html?categ=${category}">${category}</a>
             </li>
             `;
             });

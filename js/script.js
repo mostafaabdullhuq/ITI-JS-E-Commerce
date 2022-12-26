@@ -6,19 +6,6 @@ export function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-function generateToken() {
-    // E.g. 8 * 32 = 256 bits token
-    var randomPool = new Uint8Array(32);
-    crypto.getRandomValues(randomPool);
-    var hex = "";
-    for (var i = 0; i < randomPool.length; ++i) {
-        hex += randomPool[i].toString(16);
-    }
-    return hex;
-}
-
-console.log(generateToken());
-
 // a function to get a value of a specific cookie
 export function getCookie(cname) {
     let name = cname + "=";
@@ -32,7 +19,7 @@ export function getCookie(cname) {
             return c.substring(name.length, c.length);
         }
     }
-    return "";
+    return false;
 }
 
 // a function to delete a specific cookie
@@ -172,9 +159,23 @@ export class Users {
     */
 
     loginAccount(emailAddress, passWord) {
-        return this.usersList.find((user) => {
+        console.log("in login");
+        let user = this.usersList.find((user) => {
             return user.emailAddress.toLowerCase() === emailAddress.toLowerCase() && user.passWord === passWord;
         });
+
+        if (user) {
+            let userToken = crypto.randomUUID();
+            user.cookieToken = userToken;
+            deleteCookie("user_id");
+            deleteCookie("user_token");
+            setCookie("user_id", user.id, 30);
+            setCookie("user_token", userToken, 30);
+        }
+
+        this.syncUpload;
+
+        return user;
     }
 
     /*
@@ -383,7 +384,7 @@ export class User {
         this.shippingAddr = shippingAddr;
         this.country = country;
         this.city = city;
-        this.cookieToken = "Z3JvdXAyQGl0aS5nb3YuZWc6QWRtaW5AMTIzNA==";
+        this.cookieToken = "";
         this.ordersList = [];
         this.cart = {
             prodsCount: 0,
@@ -410,48 +411,60 @@ export var ecommerceUsers = new Users();
 
 //!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
 
-// initialize user object
-let user = new User("Group", "Two", "group2@iti.gov.eg", "Admin@1234", "Egypt", "Alexandria", "Lorem ipsum 24 Bld 2", "+101203215478");
+// check if there's a user logged in
+let user = ecommerceUsers.validateLoginCookies();
 
-// create account from user object
-ecommerceUsers.createAccount(user);
+// if user is not logged in
+if (!user) {
+    // create new user object
+    let user = new User("Group", "Two", "group2@iti.gov.eg", "Admin@1234", "Egypt", "Alexandria", "Lorem ipsum 24 Bld 2", "+101203215478");
 
-// if user not logged in
-if (!ecommerceUsers.validateLoginCookies()) {
-    // set the user cookies to login
-    setCookie("user_id", user.id, 999);
-    setCookie("user_token", user.cookieToken, 999);
+    // create account from user object
+    ecommerceUsers.createAccount(user);
+
+    // login to user account
+    user = ecommerceUsers.loginAccount(user.emailAddress, user.passWord);
+
+    // add items to user cart
+    ecommerceUsers.updateCart(user, [
+        {
+            id: 1,
+            title: "lorem ipsum datae alla lorem ipsum datae alla",
+            price: 100,
+            qty: 1,
+            image: "https://images.unsplash.com/photo-1570831739435-6601aa3fa4fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1452&q=80",
+        },
+        {
+            id: 2,
+            title: "Product 2",
+            price: 200,
+            qty: 2,
+            image: "https://images.unsplash.com/photo-1555487505-8603a1a69755?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
+        },
+        {
+            id: 3,
+            title: "Product 3",
+            price: 300,
+            qty: 3,
+            image: "https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+        },
+        {
+            id: 4,
+            title: "Product 4",
+            price: 400,
+            qty: 4,
+            image: "https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+        },
+    ]);
+}
+// ecommerceUsers.logOut();
+
+//!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
+
+export function UpdateNavCart(cartItems) {
+    $(".user-nav-cart").attr("data-cart-items", cartItems);
 }
 
-// add items to user cart
-ecommerceUsers.updateCart(user, [
-    {
-        id: 1,
-        title: "lorem ipsum datae alla lorem ipsum datae alla",
-        price: 100,
-        qty: 1,
-        image: "https://images.unsplash.com/photo-1570831739435-6601aa3fa4fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1452&q=80",
-    },
-    {
-        id: 2,
-        title: "Product 2",
-        price: 200,
-        qty: 2,
-        image: "https://images.unsplash.com/photo-1555487505-8603a1a69755?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
-    },
-    {
-        id: 3,
-        title: "Product 3",
-        price: 300,
-        qty: 3,
-        image: "https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
-    },
-    {
-        id: 4,
-        title: "Product 4",
-        price: 400,
-        qty: 4,
-        image: "https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
-    },
-]);
-//!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
+$(() => {
+    UpdateNavCart(user.cart.prodsCount ?? 0);
+});
