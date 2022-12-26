@@ -12,7 +12,12 @@ let emailRe =   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(
 //REGEX for password :  Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
 let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ ; 
 
-document.forms[0].onsubmit = function(e){
+
+let users_list = [];
+
+
+
+document.forms[0].onmouseenter = function(e){
     //get inputs
     let firstNameInput = document.querySelector('[name="firstName"]').value;
     let lastNameInput = document.querySelector('[name="lastName"]').value;
@@ -35,17 +40,35 @@ document.forms[0].onsubmit = function(e){
     let countryValid = nameRe.test(countryInput);
 
 
-
     if(fnameValid===false || lnameValid===false || emailValid===false || passValid===false || repassValid===false || cityValid===false  || countryValid===false || passInput != repassInput ){
         e.preventDefault();
         console.log("faild")
     }
     else{
-        console.log("success")
+        console.log("success");
 
         let newuser = new User(firstNameInput,lastNameInput,emailInput,passInput,countryInput,cityInput,addressInput);
-        
-        let userdata = new Users(newuser);
+        console.log(newuser)
+        // let userdata = new Users(newuser);
+
+         // private property
+    #keyName = "eCommerceUsers";
+    !localStorage.getItem(this.#keyName)
+            ? // add the users list to the local storage
+              this.syncUpload
+            : // if there's already a users list in the local storage, sync it with the current one
+              this.syncDownload;
+    //! Users methods
+
+    // syncs the localstorage with the current users list
+    get syncUpload() {
+        localStorage.setItem(this.#keyName, JSON.stringify(this.usersList));
+    }
+
+    // syncs the current users list with the local storage
+    get syncDownload() {
+        this.usersList = JSON.parse(localStorage.getItem(this.#keyName));
+    }
     }
     
 }
@@ -134,7 +157,7 @@ class Users {
 class User {
     constructor(firstName, lastName, emailAddress, passWord, country, city, shippingAddr) {
         // this.id = ecommerceUsers.usersList.length + 1;
-
+        // this.id = emailAddress;
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
