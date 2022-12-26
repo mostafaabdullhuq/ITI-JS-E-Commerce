@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!-- include bootstrap css file from node modules -->
         <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
@@ -236,329 +236,612 @@
             </div>
         </div>
 
-        <!-- Newest Arrivals -->
-        <div class="container mb-4 text-center d-flex flex-column">
-            <h2 class="col-12 text-uppercase fw-bolder">Newest Arrivals</h2>
-            <div class="col-12 btn-row my-5 d-flex justify-content-center flex-wrap ps-3 pe-2 ps-lg-2 pe-lg-0 pt-2 pt-lg-0" id="categ">
-                <a class="btn btn-new index-categ-button rounded-0 col-12 active col-lg me-2 mb-2 mb-lg-0" role="button" id="categId" data-category="all">All</a>
+    <!-- Newest Arrivals -->
+    <div class="container mb-4 text-center d-flex flex-column">
+      <h2 class="col-12 text-uppercase fw-bolder">Newest Arrivals</h2>
+      <div
+        class="col-12 btn-row my-5 d-flex justify-content-center flex-wrap ps-3 pe-2 ps-lg-2 pe-lg-0 pt-2 pt-lg-0"
+        id="categ"
+      >
+        <a
+          class="btn btn-new index-categ-button rounded-0 col-12 active col-lg me-2 mb-2 mb-lg-0"
+          role="button"
+          id="categId"
+          data-category="all"
+          >All</a
+        >
+      </div>
+      <!-- newest arrival products container -->
+      <div
+        class="rounded-0 d-flex flex-wrap justify-content-lg-start justify-content-center ps-3"
+        id="prods-container"
+      ></div>
+    </div>
+    <!-- Feedback -->
+    <div class="container-fluid feed py-5">
+      <h2 class="text-center text-uppercase fw-bolder mb-5">Testimonials</h2>
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="customers-testimonials" class="owl-carousel">
+            <!--TESTIMONIAL 1 -->
+            <div class="item d-flex flex-column shadow-effect">
+              <div class="d-flex col-12 align-items-center">
+                <span class="fs-4 fw-bold pe-5 text-start col text-start ps-3"
+                  >Mostafa</span
+                >
+                <div class="rating col-6 text-end pe-3">
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                </div>
+              </div>
+              <p
+                class="col-12 px-3 text-center mt-3"
+                style="word-break: break-all"
+              >
+                Dramatically maintain clicks-and-mortar solutions without
+                functional solutions. Completely synergize resource taxing
+                relationships via premier niche markets. Professionally
+                cultivate.
+              </p>
             </div>
-            <!-- newest arrival products container -->
-            <div class="rounded-0 d-flex flex-wrap justify-content-lg-start justify-content-center ps-3" id="prods-container"></div>
-        </div>
-        <!-- Feedback -->
-        <div class="container-fluid feed py-5">
-            <h2 class="text-center text-uppercase fw-bolder mb-5">Testimonials</h2>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div id="customers-testimonials" class="owl-carousel">
-                        <!--TESTIMONIAL 1 -->
-                        <div class="item d-flex flex-column shadow-effect">
-                            <div class="d-flex col-12 align-items-center">
-                                <span class="fs-4 fw-bold pe-5 text-start col text-start ps-3">Mostafa</span>
-                                <div class="rating col-6 text-end pe-3">
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                </div>
-                            </div>
-                            <p class="col-12 px-3 text-center mt-3" style="word-break: break-all">
-                                Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
-                                Professionally cultivate.
-                            </p>
-                        </div>
-                        <!--END OF TESTIMONIAL 1 -->
-                        <!--TESTIMONIAL 2 -->
-                        <div class="item d-flex flex-column shadow-effect">
-                            <div class="d-flex col-12 align-items-center">
-                                <span class="fs-4 fw-bold pe-5 text-start col text-start ps-3">Hager</span>
-                                <div class="rating col-6 text-end pe-3">
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                </div>
-                            </div>
-                            <p class="col-12 px-3 text-center mt-3" style="word-break: break-all">
-                                Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
-                                Professionally cultivate.
-                            </p>
-                        </div>
-                        <!--END OF TESTIMONIAL 2 -->
-                        <!--TESTIMONIAL 3 -->
-                        <div class="item d-flex flex-column shadow-effect">
-                            <div class="d-flex col-12 align-items-center">
-                                <span class="fs-4 fw-bold pe-5 text-start col text-start ps-3">Zienab</span>
-                                <div class="rating col-6 text-end pe-3">
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                </div>
-                            </div>
-                            <p class="col-12 px-3 text-center mt-3" style="word-break: break-all">
-                                Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
-                                Professionally cultivate.
-                            </p>
-                        </div>
-                        <!--END OF TESTIMONIAL 3 -->
-                        <!--TESTIMONIAL 4 -->
-                        <div class="item d-flex flex-column shadow-effect">
-                            <div class="d-flex col-12 align-items-center">
-                                <span class="fs-4 fw-bold pe-5 text-start col text-start ps-3">Mohamed</span>
-                                <div class="rating col-6 text-end pe-3">
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                </div>
-                            </div>
-                            <p class="col-12 px-3 text-center mt-3" style="word-break: break-all">
-                                Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
-                                Professionally cultivate.
-                            </p>
-                        </div>
-                        <!--END OF TESTIMONIAL 4 -->
-                        <!--TESTIMONIAL 5 -->
-                        <div class="item d-flex flex-column shadow-effect">
-                            <div class="d-flex col-12 align-items-center">
-                                <span class="fs-4 fw-bold pe-5 text-start col text-start ps-3">Sara</span>
-                                <div class="rating col-6 text-end pe-3">
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                    <i class="fa-solid fa-star fs-5" style="color: gold"></i>
-                                </div>
-                            </div>
-                            <p class="col-12 px-3 text-center mt-3" style="word-break: break-all">
-                                Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
-                                Professionally cultivate.
-                            </p>
-                        </div>
-                    </div>
+            <!--END OF TESTIMONIAL 1 -->
+            <!--TESTIMONIAL 2 -->
+            <div class="item d-flex flex-column shadow-effect">
+              <div class="d-flex col-12 align-items-center">
+                <span class="fs-4 fw-bold pe-5 text-start col text-start ps-3"
+                  >Hager</span
+                >
+                <div class="rating col-6 text-end pe-3">
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
                 </div>
+              </div>
+              <p
+                class="col-12 px-3 text-center mt-3"
+                style="word-break: break-all"
+              >
+                Dramatically maintain clicks-and-mortar solutions without
+                functional solutions. Completely synergize resource taxing
+                relationships via premier niche markets. Professionally
+                cultivate.
+              </p>
             </div>
-        </div>
-        <!-- form -->
-        <div class="container my-5 d-flex justify-content-center align-items-center flex-column" id="contact">
-            <h2 class="fw-bold mb-5 col text-uppercase text-center">Contact us</h2>
-            <form id="contact-form" action="mailto:itigroup2@iti.gov.eg" class="col-12 col-xl-8 d-flex flex-column">
-                <div class="col d-flex justify-content-center mb-3 form-inputs">
-                    <div class="col me-3 d-flex">
-                        <input type="email" placeholder="Email Address" class="contact-email col" />
-                    </div>
-                    <div class="col d-flex">
-                        <input type="text" placeholder="Subject" class="col" />
-                    </div>
+            <!--END OF TESTIMONIAL 2 -->
+            <!--TESTIMONIAL 3 -->
+            <div class="item d-flex flex-column shadow-effect">
+              <div class="d-flex col-12 align-items-center">
+                <span class="fs-4 fw-bold pe-5 text-start col text-start ps-3"
+                  >Zienab</span
+                >
+                <div class="rating col-6 text-end pe-3">
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
                 </div>
-                <textarea name="message" id="msg" rows="10" placeholder="Message" class="col"></textarea><br />
-                <div class="col controls d-flex justify-content-center">
-                    <div class="col d-flex me-3">
-                        <input type="submit" value="Send Message" class="col contact-submit fw-bold text-uppercase" />
-                    </div>
-                    <div class="col d-flex justify-content-end social py-1">
-                        <a href="http://127.0.0.1:5500/index.html#" class="col fs-2 me-2 d-flex justify-content-center align-items-center"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="http://127.0.0.1:5500/index.html#" class="col fs-2 me-2 d-flex justify-content-center align-items-center"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="http://127.0.0.1:5500/index.html#" class="col fs-2 me-2 d-flex justify-content-center align-items-center"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="http://127.0.0.1:5500/index.html#" class="col fs-2 d-flex justify-content-center align-items-center"><i class="fa-solid fa-globe"></i></a>
-                    </div>
+              </div>
+              <p
+                class="col-12 px-3 text-center mt-3"
+                style="word-break: break-all"
+              >
+                Dramatically maintain clicks-and-mortar solutions without
+                functional solutions. Completely synergize resource taxing
+                relationships via premier niche markets. Professionally
+                cultivate.
+              </p>
+            </div>
+            <!--END OF TESTIMONIAL 3 -->
+            <!--TESTIMONIAL 4 -->
+            <div class="item d-flex flex-column shadow-effect">
+              <div class="d-flex col-12 align-items-center">
+                <span class="fs-4 fw-bold pe-5 text-start col text-start ps-3"
+                  >Mohamed</span
+                >
+                <div class="rating col-6 text-end pe-3">
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
                 </div>
-            </form>
+              </div>
+              <p
+                class="col-12 px-3 text-center mt-3"
+                style="word-break: break-all"
+              >
+                Dramatically maintain clicks-and-mortar solutions without
+                functional solutions. Completely synergize resource taxing
+                relationships via premier niche markets. Professionally
+                cultivate.
+              </p>
+            </div>
+            <!--END OF TESTIMONIAL 4 -->
+            <!--TESTIMONIAL 5 -->
+            <div class="item d-flex flex-column shadow-effect">
+              <div class="d-flex col-12 align-items-center">
+                <span class="fs-4 fw-bold pe-5 text-start col text-start ps-3"
+                  >Sara</span
+                >
+                <div class="rating col-6 text-end pe-3">
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                  <i class="fa-solid fa-star fs-5" style="color: gold"></i>
+                </div>
+              </div>
+              <p
+                class="col-12 px-3 text-center mt-3"
+                style="word-break: break-all"
+              >
+                Dramatically maintain clicks-and-mortar solutions without
+                functional solutions. Completely synergize resource taxing
+                relationships via premier niche markets. Professionally
+                cultivate.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+    <!-- form -->
+    <div
+      class="container my-5 d-flex justify-content-center align-items-center flex-column"
+      id="contact"
+    >
+      <h2 class="fw-bold mb-5 col text-uppercase text-center">Contact us</h2>
+      <form
+        id="contact-form"
+        action="mailto:itigroup2@iti.gov.eg"
+        class="col-12 col-xl-8 d-flex flex-column"
+      >
+        <div class="col d-flex justify-content-center mb-3 form-inputs">
+          <div class="col me-3 d-flex">
+            <input
+              type="email"
+              placeholder="Email Address"
+              class="contact-email col"
+            />
+          </div>
+          <div class="col d-flex">
+            <input type="text" placeholder="Subject" class="col" />
+          </div>
+        </div>
+        <textarea
+          name="message"
+          id="msg"
+          rows="10"
+          placeholder="Message"
+          class="col"
+        ></textarea
+        ><br />
+        <div class="col controls d-flex justify-content-center">
+          <div class="col d-flex me-3">
+            <input
+              type="submit"
+              value="Send Message"
+              class="col contact-submit fw-bold text-uppercase"
+            />
+          </div>
+          <div class="col d-flex justify-content-end social py-1">
+            <a
+              href="http://127.0.0.1:5500/index.html#"
+              class="col fs-2 me-2 d-flex justify-content-center align-items-center"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a
+              href="http://127.0.0.1:5500/index.html#"
+              class="col fs-2 me-2 d-flex justify-content-center align-items-center"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a
+              href="http://127.0.0.1:5500/index.html#"
+              class="col fs-2 me-2 d-flex justify-content-center align-items-center"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              href="http://127.0.0.1:5500/index.html#"
+              class="col fs-2 d-flex justify-content-center align-items-center"
+              ><i class="fa-solid fa-globe"></i
+            ></a>
+          </div>
+        </div>
+      </form>
+    </div>
 
-        <!-- Footer -->
+    <!-- Footer -->
 
-        <footer class="bd-footer" id="footer">
-            <div class="container py-5">
-                <div class="row foot ps-4">
-                    <div class="col-lg-4 col-md-6 col-sm-12-justify-content-center offset-lg-1 mb-4">
-                        <h2 class="text-dark fw-bolder">Contact Us</h2>
-                        <ul type="none">
-                            <li>
-                                <span class="fw-bold">Phone Number:</span>
-                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">+11111111111</a>
-                            </li>
-                            <li><span class="fw-bold">Email:</span><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6"> group2@gmail.com</a></li>
-                            <li><span class="fw-bold">Address:</span><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">123 Alexandria</a></li>
-                        </ul>
-                        <div class="container ps-3 pt-2">
-                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-solid fa-w"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <h2 class="text-dark fw-bolder">Need Help?</h2>
-                        <ul type="none">
-                            <li>
-                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Payment Methods</a>
-                            </li>
-                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6"> </a>
-                            <li><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6"></a><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Money Back Gurantee</a></li>
-                            <li>
-                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Customer Service</a>
-                            </li>
-                            <li>
-                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Terms &amp; Conditions</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 text-white">
-                        <h2 class="text-dark fw-bolder">Navigate</h2>
-                        <ul type="none">
-                            <li>
-                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">My Orders</a>
-                            </li>
-                            <li>
-                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">My Account</a>
-                            </li>
-                            <li>
-                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Products </a>
-                            </li>
-                            <li>
-                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Change Password </a>
-                            </li>
-                            <li>
-                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Track Order</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <hr style="width: 900px; position: relative; right: 2%" />
-                    <div class="text-dark fw-bold fs-5" style="text-align: center">Copyright © 2022-ITI Group 2</div>
-                </div>
+    <footer class="bd-footer" id="footer">
+      <div class="container py-5">
+        <div class="row foot ps-4">
+          <div
+            class="col-lg-4 col-md-6 col-sm-12-justify-content-center offset-lg-1 mb-4"
+          >
+            <h2 class="text-dark fw-bolder">Contact Us</h2>
+            <ul type="none">
+              <li>
+                <span class="fw-bold">Phone Number:</span>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >+11111111111</a
+                >
+              </li>
+              <li>
+                <span class="fw-bold">Email:</span
+                ><a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                >
+                  group2@gmail.com</a
+                >
+              </li>
+              <li>
+                <span class="fw-bold">Address:</span
+                ><a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >123 Alexandria</a
+                >
+              </li>
+            </ul>
+            <div class="container ps-3 pt-2">
+              <a
+                href="http://127.0.0.1:5500/index.html#"
+                class="text-dark pe-3 fs-4"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a
+                href="http://127.0.0.1:5500/index.html#"
+                class="text-dark pe-3 fs-4"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a
+                href="http://127.0.0.1:5500/index.html#"
+                class="text-dark pe-3 fs-4"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a
+                href="http://127.0.0.1:5500/index.html#"
+                class="text-dark pe-3 fs-4"
+                ><i class="fa-solid fa-w"></i
+              ></a>
             </div>
-        </footer>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h2 class="text-dark fw-bolder">Need Help?</h2>
+            <ul type="none">
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Payment Methods</a
+                >
+              </li>
+              <a
+                href="http://127.0.0.1:5500/index.html#"
+                class="text-dark fs-6"
+              >
+              </a>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                ></a
+                ><a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Money Back Gurantee</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Customer Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Terms &amp; Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 text-white">
+            <h2 class="text-dark fw-bolder">Navigate</h2>
+            <ul type="none">
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >My Orders</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >My Account</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Products
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Change Password
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Track Order</a
+                >
+              </li>
+            </ul>
+          </div>
+          <hr style="width: 900px; position: relative; right: 2%" />
+          <div class="text-dark fw-bold fs-5" style="text-align: center">
+            Copyright © 2022-ITI Group 2
+          </div>
+        </div>
+      </div>
+    </footer>
 
         <!-- scroll top button -->
         <button id="topBtn" title="Go to top">
             <i class="fa-solid fa-angles-up"></i>
         </button>
         <!-- sign in popup -->
-        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="card border-0 shadow rounded-3 my-5">
-                                <div class="card-body p-4 p-sm-5">
-                                    <h5 class="card-title text-center mb-5 fw-bolder fs-5 title">Sign In</h5>
-                                    <form>
-                                        <div class="form-floating mb-3">
-                                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-                                            <label for="floatingInput">Email address</label>
-                                        </div>
-                                        <div class="form-floating mb-3">
-                                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
-                                            <label for="floatingPassword">Password</label>
-                                        </div>
-
-                                        <div class="form-check mb-3">
-                                            <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck" />
-                                            <label class="form-check-label" for="rememberPasswordCheck"> Remember password </label>
-                                        </div>
-                                        <div class="d-grid signin">
-                                            <button class="btn btn-form btn-login text-uppercase fw-bold" type="submit">Sign in</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+        <div
+      class="modal fade"
+      id="exampleModalToggle2"
+      aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel2"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-0">
+          <div class="container">
+            <div class="row">
+              <div class="card border-0 shadow rounded-3">
+                <div class="card-body p-4 p-sm-5">
+                  <h5 class="card-title text-center mb-5 fw-bolder fs-4 title">
+                    Sign In
+                  </h5>
+                  <div class="row">
+                    <div class="col-12">
+                      <input
+                        type="email"
+                        class="form-control rounded-0 mb-3 p-3 fs-5"
+                        placeholder="Email Address"
+                        value=""
+                      />
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- sign up popup -->
-        <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="card border-0 shadow rounded-3 my-5">
-                                <div class="card-body p-4 p-sm-5">
-                                    <h5 class="card-title text-center mb-5 fw-bolder fs-5 title">Sign Up</h5>
-                                    <div class="row mt-2">
-                                        <div class="col-6"><label class="labels">First Name</label><input type="text" class="form-control" placeholder="first name" value="" /></div>
-                                        <div class="col-6"><label class="labels">Last Name</label><input type="text" class="form-control" value="" placeholder="last name" /></div>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="col-md-12"><label class="labels">Email</label><input type="email" class="form-control" placeholder="enter email" value="" /></div>
-                                        <div class="col-md-12"><label class="labels">Password</label><input type="password" class="form-control" placeholder="new password" value="" /></div>
-                                        <div class="col-md-12">
-                                            <label class="labels">Confirm Password</label><input type="password" class="form-control" placeholder="confirm password" value="" />
-                                        </div>
-                                        <div class="col-md-12"><label class="labels">Shipping Address</label><input type="text" class="form-control" placeholder="enter your address" value="" /></div>
-                                        <div class="row mt-3">
-                                            <div class="col-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value="" /></div>
-                                            <div class="col-6"><label class="labels">City</label><input type="text" class="form-control" value="" placeholder="city" /></div>
-                                        </div>
-                                    </div>
-                                    <div class="d-grid signup">
-                                        <button class="btn btn-form btn-login text-uppercase fw-bold mt-5" type="submit">Sign up</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-12">
+                      <input
+                        type="password"
+                        class="form-control rounded-0 mb-3 p-3 fs-5"
+                        placeholder="Password"
+                        value=""
+                      />
                     </div>
+                    <button
+                      class="btn col-12 btn-form btn-login text-uppercase fw-bold mt-3 p-3 rounded-0"
+                      type="Submit"
+                    >
+                      Sign In
+                    </button>
+                    <p class="fs-4 mt-3 text-center">
+                      New Customer? <a class="icon1" data-bs-toggle="modal"  href="#exampleModalToggle3">Sign Up</a>
+                    </p>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-
-        <!-- Quick View PopUp -->
-
-        <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body d-flex row">
-                        <img
-                            class="col-6 img-thumbnail modal-img"
-                            style="max-width: 50%"
-                            src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142"
-                            alt=""
-                            srcset=""
+      </div>
+    </div>
+    <!-- sign up popup -->
+    <div
+      class="modal fade"
+      id="exampleModalToggle3"
+      aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel2"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-0">
+          <div class="container">
+            <div class="row">
+              <div class="card border-0 shadow d-block rounded-0">
+                <div class="card-body p-4 p-sm-5">
+                  <h5 class="card-title text-center mb-5 fw-bolder fs-3 title">
+                    Sign Up
+                  </h5>
+                  <div class="row mt-2">
+                    <div class="col-6">
+                      <input
+                        type="text"
+                        class="form-control rounded-0 p-3 fs-5"
+                        placeholder="First name"
+                        value=""
+                      />
+                    </div>
+                    <div class="col-6">
+                      <input
+                        type="text"
+                        class="form-control rounded-0 p-3 fs-5"
+                        value=""
+                        placeholder="Last name"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-md-12">
+                      <input
+                        type="email"
+                        class="form-control rounded-0 mb-3 p-3 fs-5"
+                        placeholder="Email Address"
+                        value=""
+                      />
+                    </div>
+                    <div class="col-md-12">
+                      <input
+                        type="password"
+                        class="form-control rounded-0 mb-3 p-3 fs-5"
+                        placeholder="New Password"
+                        value=""
+                      />
+                    </div>
+                    <div class="col-md-12">
+                      <input
+                        type="password"
+                        class="form-control rounded-0 mb-3 p-3 fs-5"
+                        placeholder="Confirm Password"
+                        value=""
+                      />
+                    </div>
+                    <div class="col-md-12">
+                      <input
+                        type="text"
+                        class="form-control rounded-0 p-3 fs-5"
+                        placeholder="Enter your address"
+                        value=""
+                      />
+                    </div>
+                    <div class="row mt-2">
+                      <div class="col-6">
+                        <input
+                          type="text"
+                          class="form-control rounded-0 mt-3 p-3 fs-5"
+                          placeholder="Country"
+                          value=""
                         />
-                        <div class="col-6 mt-3 d-flex flex-column">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            <h3 class="modal-title col fw-bolder mb-2">Product name</h3>
-                            <div class="d-flex col">
-                                <h3 class="modal-price me-4 fs-4">$1000</h3>
-                                <div class="modal-rating">
-                                    <i class="fa-solid fa-star pb-2"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
-                                <br />
-                            </div>
-
-                            <div class="prod-qty col">
-                                <i class="prod-qty-remove fs-4 col-2 fa-solid fa-minus text-start"></i>
-                                <input type="text" class="text-center fw-bold fs-4 prod-qty-value col-6 p-0" value="1" />
-                                <i class="prod-qty-add fs-4 col-2 fa-solid fa-plus text-end"></i>
-                            </div>
-                            <div class="d-flex justify-content-center">
-                                <button class="btn btn2 col add text-center p-2 bg-dark text-white">Add to cart</button>
-                            </div>
-                        </div>
+                      </div>
+                      <div class="col-6">
+                        <input
+                          type="text"
+                          class="form-control rounded-0 p-3 mt-3 fs-5 ms-4"
+                          placeholder="City"
+                          value=""
+                        />
+                      </div>
                     </div>
+                  </div>
+                  <div class="mt-3">
+                    <input
+                      class="form-check-input rounded-0 fs-4"
+                      type="checkbox"
+                      value=""
+                      id="invalidCheck"
+                      required
+                    />
+                    <label class="form-check-label fs-4" for="invalidCheck">
+                      I Agree to the Terms & Conditions
+                    </label>
+                  </div>
+                  <div class="d-grid signup">
+                    <button
+                      class="btn btn-form btn-login text-uppercase fw-bold mt-3 p-3 fs-5 rounded-0"
+                      type="Submit"
+                    >
+                      Sign up
+                    </button>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <!-- include jquery file -->
-        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-        <script src="/node_modules/jquery/dist/jquery.js"></script>
-        <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
-        <!-- include bootstrap js file from node modules -->
-        <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- include javascript files -->
-        <!-- <script src="./js/script.js"></script> -->
-        <script type="module" src="./js/index.js"></script>
-        <!-- <script type="module" src="./js/cart.js"></script> -->
-    </body>
+    <!-- Quick View PopUp -->
+
+    <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1">
+      <div class="modal-dialog2">
+        <div class="modal-content">
+          <div class="modal-body d-flex row">
+            <img
+              class="col-6 img-thumbnail modal-img"
+              style="max-width: 50%"
+              src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142"
+              alt=""
+              srcset=""
+            />
+            <div class="col-6 mt-3 d-flex flex-column">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+              <h3 class="modal-title col fw-bolder mb-2">Product name</h3>
+              <div class="d-flex col">
+                <h3 class="modal-price me-4 fs-4">$1000</h3>
+                <div class="modal-rating">
+                  <i class="fa-solid fa-star pb-2"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <br />
+              </div>
+
+              <div class="prod-qty col">
+                <i
+                  class="prod-qty-remove fs-4 col-2 fa-solid fa-minus text-start"
+                ></i>
+                <input
+                  type="text"
+                  class="text-center fw-bold fs-4 prod-qty-value col-6 p-0"
+                  value="1"
+                />
+                <i
+                  class="prod-qty-add fs-4 col-2 fa-solid fa-plus text-end"
+                ></i>
+              </div>
+              <div class="d-flex justify-content-center">
+                <button
+                  class="btn btn2 col add text-center p-2 bg-dark text-white"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- include jquery file -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+    <!-- include bootstrap js file from node modules -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- include javascript files -->
+    <!-- <script src="./js/script.js"></script> -->
+    <script type="module" src="./js/index.js"></script>
+    <!-- <script type="module" src="./js/cart.js"></script> -->
+  </body>
 </html>

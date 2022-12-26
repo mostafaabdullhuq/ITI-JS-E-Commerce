@@ -592,6 +592,19 @@ footer a:hover {
     text-align: left;
 }
 
+ .modal-content2 {
+    left: 50%;
+    transform: translate(-50%, 0%);
+    max-width: 75% !important;
+    max-height: 75% !important;
+} 
+
+ /* @media (max-width: 768px) {
+    .modal-content {
+       width: 90%;
+    }} */
+
+
 .user-nav-cart::after {
     content: "( " attr(data-cart-items) " )";
     color: var(--ltn__primary-color);
