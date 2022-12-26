@@ -49,7 +49,11 @@
                         </li>
                         <li class="nav-item dropdown me-3">
                             <a class="nav-link dropdown-toggle text-dark text-uppercase fw-bold" href="./docs/categ.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products </a>
-                            <ul class="dropdown-menu" id="cat-ul"></ul>
+                            <ul class="dropdown-menu rounded-0 py-0" id="cat-ul">
+                                <li>
+                                    <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2" href="./docs/categ.html">All Products</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item me-3">
                             <a class="nav-link text-dark text-uppercase fw-bold" href="#">About</a>
@@ -59,11 +63,12 @@
                         </li>
                     </ul>
                 </div>
+
                 <!-- cart and user section -->
-                <div class="col-xl-2 col-lg-3 col d-flex align-items-center right-nav-side">
+                <div class="col-xl-2 col-lg-3 dropdown col d-flex align-items-center right-nav-side">
                     <!-- profile dropdown -->
                     <a class="nav-link dropdown-toggle text-dark fs-5" href="./docs/profile.html" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fa-solid fa-user"></i> </a>
-                    <ul class="dropdown-menu p-2" style="text-align: center">
+                    <ul class="dropdown-menu rounded-0" style="text-align: center">
                         <li class="border-bottom mb-1 pb-1">
                             <a class="icon1" data-bs-toggle="modal" href="#exampleModalToggle2"> Sign In </a>
                         </li>
@@ -72,7 +77,7 @@
                         </li>
                     </ul>
 
-                    <a class="ms-4 user-nav-cart flex-grow-1 text-dark fs-5" href="./docs/cart.html" data-cart-items="20000"><i class="fa-solid fa-cart-shopping"></i> </a>
+                    <a class="ms-4 user-nav-cart flex-grow-1 text-dark fs-5" href="./docs/cart.html" data-cart-items="0"><i class="fa-solid fa-cart-shopping"></i> </a>
                 </div>
             </div>
         </nav>
