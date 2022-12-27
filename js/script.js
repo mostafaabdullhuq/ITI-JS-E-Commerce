@@ -484,11 +484,11 @@ if (!ecommerceUsers.validateLoginCookies()) {
 else {
     $(".user-controls-list").html(`
 
-    <li class="border-bottom mb-1 pb-1">
-        <a class="icon1" data-bs-toggle="modal" href="./../docs/profile.html"> ${user.firstName} ${user.lastName} </a>
+    <li class="border-bottom user-profile-dropdown dropdown-item py-2" style="cursor: pointer;">
+        ${user.firstName} ${user.lastName}
     </li>
-    <li>
-        <a class="icon1 user-logout" href="#"> Logout </a>
+    <li class="user-logout  user-profile-dropdown dropdown-item py-2" style="cursor: pointer;">
+    Logout
     </li>
 `);
 
@@ -500,3 +500,10 @@ else {
         UpdateNavCart(user.cart.prodsCount ?? 0);
     });
 }
+
+$(function () {
+    $(".user-profile-dropdown").on("click", function () {
+        console.log("clicked");
+        window.location.href = "./../docs/profile.html";
+    });
+});

@@ -620,11 +620,12 @@ nav i:hover,
     color: var(--ltn__secondary-color) !important;
 }
 
-.user-controls-list a {
+.user-controls-list li {
     font-weight: 550;
 }
 
-nav .dropdown li a:hover {
+nav .dropdown li a:hover,
+nav .dropdown li:hover {
     color: white;
     background-color: var(--ltn__secondary-color);
     transition: all 0.3s ease-in-out;
