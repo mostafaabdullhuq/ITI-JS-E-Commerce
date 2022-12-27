@@ -134,7 +134,7 @@ class Users {
 // class that represents one user only
 class User {
     constructor(firstName, lastName, emailAddress, passWord, country, city, shippingAddr) {
-        // this.id = ecommerceUsers.usersList.length + 1;
+        this.id = ecommerceUsers.usersList.length + 1;
         // this.id = emailAddress;
         this.firstName = firstName;
         this.lastName = lastName;

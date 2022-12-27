@@ -1,4 +1,4 @@
-import { ecommerceUsers, UpdateNavCart } from "./script.js";
+import { ecommerceUsers } from "./script.js";
 
 // check if user logged in
 let user = ecommerceUsers.validateLoginCookies();
@@ -42,7 +42,7 @@ if (user) {
                                 <i class="prod-qty-add fs-4 col-2 fa-solid fa-plus text-end" data-prod-id="${prod.id}"></i>
                             </div>
                             <!--? product total -->
-                            <div class="h5 prod-total col-xl-2 col-md-2 py-2 mb-3 py-md-0 mb-md-0 fs-4">$${prod.price * prod.qty}</div>
+                            <div class="h5 prod-total col-xl-2 col-md-2 py-2 mb-3 py-md-0 mb-md-0 fs-4">$${+(prod.price * prod.qty).toFixed(2)}</div>
                         </div>
                         `;
             });
@@ -141,11 +141,11 @@ if (user) {
             $(this)
                 .parents(".prod-qty")
                 .siblings(".prod-total")
-                .text(`$${+$(this).val() * prodPrice}`);
+                .text(`$${+(+$(this).val() * prodPrice).toFixed(2)}`);
 
             // update user cart in localstorage
             ecommerceUsers.updateCart(user, userCart.prodsList);
-            UpdateNavCart(userCart.prodsCount);
+
             // update right section values
             updateCartRight();
         });
@@ -173,5 +173,5 @@ if (user) {
 // if not logged in
 else {
     // redirect to login page
-    // window.location.href = "./../index.html";
+    window.location.href = "./../index.html";
 }

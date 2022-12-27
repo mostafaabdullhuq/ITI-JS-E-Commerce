@@ -19,7 +19,6 @@ html {
     background-color: var(--white-6);
 }
 .cart-btn {
-    /* border-radius: 50%; */
     height: 27px;
     width: 25px;
     border: 0;
@@ -29,6 +28,8 @@ html {
     bottom: 15%; */
     padding-left: 10px;
 }
+
+
 
 /* form */
 .social .btn-form {
@@ -88,13 +89,14 @@ html {
     }
 }
 
+
 /* footer */
 footer {
     background-color: var(--separators-color);
 }
 ul {
     display: inline;
-    padding: 1;
+    padding: 0;
 }
 a:link {
     text-decoration: none;
@@ -194,6 +196,10 @@ li {
     transition: all 250ms ease-out 0s;
     width: 20px;
 }
+.feed {
+    background-color: var(--separators-color);
+}
+
 
 /*slider */
 .carousel-caption {
@@ -454,10 +460,21 @@ p {
     border: 3px solid var(--separators-color);
     position: relative;
 }
-
-.feed {
-    background-color: var(--separators-color);
+.prod .price {
+    max-width: 300px;
+    margin: auto;
 }
+
+.prod .price .rating {
+    text-align: right;
+}
+
+.prod .price span {
+    text-align: left;
+}
+
+
+/* form  */
 
 #contact-form .form-inputs input,
 #contact-form textarea {
@@ -466,7 +483,7 @@ p {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 1px solid var(--separators-color);
+    border: 4px solid var(--separators-color);
     border-radius: 0;
     outline: none;
     -webkit-border-radius: 0;
@@ -551,20 +568,6 @@ p {
     color: white !important;
 }
 
-/* ul.dropdown-menu {
-    left: auto !important;
-    top: 61px !important;
-    border-radius: 0px !important;
-    -webkit-border-radius: 0px !important;
-    -moz-border-radius: 0px !important;
-    -ms-border-radius: 0px !important;
-    -o-border-radius: 0px !important;
-} */
-
-#carouselExampleIndicators {
-    margin-top: 90px !important;
-}
-
 .nav-item:hover a.nav-link {
     color: var(--ltn__secondary-color) !important;
     transition: all 0.3s ease-in-out;
@@ -579,18 +582,7 @@ footer a:hover {
     font-weight: bold;
 }
 
-.prod .price {
-    max-width: 300px;
-    margin: auto;
-}
 
-.prod .price .rating {
-    text-align: right;
-}
-
-.prod .price span {
-    text-align: left;
-}
 
 .modal-content2 {
     left: 50%;
@@ -635,3 +627,7 @@ nav i:hover,
 .user-controls-list a {
     font-weight: 550;
 }
+
+/* .profile-info {
+    max-width: 50px;
+} */
