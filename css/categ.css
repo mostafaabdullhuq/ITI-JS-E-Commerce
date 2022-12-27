@@ -182,12 +182,14 @@ p {
     margin: auto;
 }
 
-.prod .price .rating {
-    text-align: right;
+.prod .rating {
+    float: right;
+    
 }
 
 .prod .price span {
     text-align: left;
+   
 }
 
 #prods .prod {

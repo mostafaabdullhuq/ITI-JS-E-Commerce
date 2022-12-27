@@ -196,6 +196,10 @@ li {
     transition: all 250ms ease-out 0s;
     width: 20px;
 }
+.feed {
+    background-color: var(--separators-color);
+}
+
 
 /*slider */
 .carousel-caption {
@@ -456,10 +460,19 @@ p {
     border: 3px solid var(--separators-color);
     position: relative;
 }
-
-.feed {
-    background-color: var(--separators-color);
+.prod .price {
+    max-width: 300px;
+    margin: auto;
 }
+
+.prod .price .rating {
+    text-align: right;
+}
+
+.prod .price span {
+    text-align: left;
+}
+
 
 /* form  */
 
@@ -569,18 +582,7 @@ footer a:hover {
     font-weight: bold;
 }
 
-.prod .price {
-    max-width: 300px;
-    margin: auto;
-}
 
-.prod .price .rating {
-    text-align: right;
-}
-
-.prod .price span {
-    text-align: left;
-}
 
 .modal-content2 {
     left: 50%;
