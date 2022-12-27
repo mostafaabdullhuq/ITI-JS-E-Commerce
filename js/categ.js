@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // let windowURL = window.location.href;
 // if (windowURL.split("?").length === 1) {
 //     window.location.href = "./../index.html";
@@ -63,6 +64,13 @@
 //         console.log(e);
 //       });
 //   });
+=======
+import { ecommerceUsers, UpdateNavCart } from "./script.js";
+
+// check if user logged in
+let user = ecommerceUsers.validateLoginCookies();
+
+>>>>>>> 91a780d21a763768942cae0ab49cd5fc434369bf
 let windowURL = window.location.href,
     prodID = "";
 if (windowURL.split("?").length > 1) {
