@@ -68,6 +68,7 @@ import { ecommerceUsers, UpdateNavCart } from "./script.js";
 // check if user logged in
 let user = ecommerceUsers.validateLoginCookies();
 
+
 let windowURL = window.location.href,
     prodID = "";
 if (windowURL.split("?").length > 1) {
