@@ -88,7 +88,7 @@ $(function () {
                 <img
                   src="${product.image}"
                   alt="Image"
-                  class="img-fluid"
+                  class="img-fluid "
                   style="height: 300px;width:70%;margin-left:10%"
                 />
                 <p class="view py-2 fs-3 text-uppercase col-12" style="position: absolute; bottom: 0px" data-prod-id="${
@@ -96,9 +96,9 @@ $(function () {
                   }">Quick view</p>
               </div>
               <a class="title prod-title fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
-              <div class="prod">
+              <div class="price d-flex col-12 d-flex  align-items-center justify-content-center">
                 <span class="h6 fs-5 fw-bold price">$${product.price}</span>
-                ${`<i class="fa-solid fa-star rating" style="color:var(--ltn__secondary-color-2)"></i>`.repeat(Math.round(product.rating.rate))}
+                ${`<i class="fa-solid fa-star rating" style="color:gold;"></i>`.repeat(Math.round(product.rating.rate))}
                 
               </div>
             </div>
