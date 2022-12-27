@@ -468,7 +468,7 @@ p {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 1px solid var(--separators-color);
+    border: 4px solid var(--separators-color);
     border-radius: 0;
     outline: none;
     -webkit-border-radius: 0;
