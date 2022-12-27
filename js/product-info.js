@@ -109,18 +109,28 @@ $(function () {
             $(".add-to-cart").on("click", function (e) {
                 // console.log(product);
                 // console.log(user);
-                console.log(ecommerceUsers.isProdInCart(user, product));
                 if (user) {
                     let prodQty = +$(this).siblings(".prod-qty-value").val(),
                         userProdList = user.cart.prodsList;
 
-                    userProdList.push({
-                        id: product.id,
-                        title: product.title,
-                        image: product.image,
-                        price: product.price,
-                        qty: prodQty,
-                    });
+                    // check if the product is already in the cart
+                    let prodInCart = ecommerceUsers.isProdInCart(user, product);
+
+                    if (prodInCart[0]) {
+                        // if product is in the cart, add the current quantity to the cart quantity
+                        userProdList[prodInCart[1]].qty += prodQty;
+                    }
+                    // if product is not in the cart, add it to the cart
+                    else {
+                        userProdList.push({
+                            id: product.id,
+                            title: product.title,
+                            image: product.image,
+                            price: product.price,
+                            qty: prodQty,
+                        });
+                    }
+
                     ecommerceUsers.updateCart(user, userProdList);
                     UpdateNavCart(user.cart.prodsCount);
                 }
