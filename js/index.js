@@ -174,7 +174,7 @@ $(function () {
             categories.forEach((category) => {
                 categorylnk += `
             <li>
-            <a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html?categ=${category}">${category}</a>
+            <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2" href="./docs/categ.html?categ=${category}">${category}</a>
             </li>
             `;
             });
@@ -223,5 +223,3 @@ ${'<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(produ
 </div>
 </div>
 </div> */
-
-// nta y wliaaaa a3333

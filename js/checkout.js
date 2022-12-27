@@ -72,7 +72,7 @@ if (user) {
                                 <i class="prod-qty-add fs-5 col-2 fa-solid fa-plus text-end" data-prod-id="${prod.id}"></i>
                             </div>
                             <!--? product price -->
-                            <div class="prod-price col fs-5 text-end">$${prod.qty * prod.price}</div>
+                            <div class="prod-price col fs-5 text-end">$${+(prod.qty * prod.price).toFixed(2)}</div>
                         </div>
                 `;
             });
@@ -167,7 +167,7 @@ if (user) {
             $(this)
                 .parents(".prod-qty")
                 .siblings(".prod-price")
-                .text(`$${+$(this).val() * prodPrice}`);
+                .text(`$${+(+$(this).val() * prodPrice).toFixed(2)}`);
 
             // update user cart in localstorage
             ecommerceUsers.updateCart(user, userCart.prodsList);
