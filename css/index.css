@@ -94,7 +94,7 @@ footer {
 }
 ul {
     display: inline;
-    padding: 1;
+    padding: 0;
 }
 a:link {
     text-decoration: none;
@@ -459,6 +459,8 @@ p {
     background-color: var(--separators-color);
 }
 
+/* form  */
+
 #contact-form .form-inputs input,
 #contact-form textarea {
     width: 100%;
@@ -550,20 +552,6 @@ p {
 .social a:hover i {
     color: white !important;
 }
-
-/* ul.dropdown-menu {
-    left: auto !important;
-    top: 61px !important;
-    border-radius: 0px !important;
-    -webkit-border-radius: 0px !important;
-    -moz-border-radius: 0px !important;
-    -ms-border-radius: 0px !important;
-    -o-border-radius: 0px !important;
-} */
-
-/* #carouselExampleIndicators {
-    margin-top: 90px !important;
-} */
 
 .nav-item:hover a.nav-link {
     color: var(--ltn__secondary-color) !important;
