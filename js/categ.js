@@ -63,6 +63,12 @@
 //         console.log(e);
 //       });
 //   });
+let windowURL = window.location.href,
+    prodID = "";
+if (windowURL.split("?").length > 1) {
+    prodID = window.location.href.split("?")[1].split("=")[1] || "";
+}
+
 $(function () {
     //fetching all products
     fetch("https://fakestoreapi.com/products?")
@@ -95,7 +101,7 @@ $(function () {
             });
             $("#prods").html("");
             $("#prods").append(prods);
-            
+
             //when click product title render to product-info page
             document.querySelectorAll(".title").forEach((link) => {
                 link.addEventListener("click", function () {
@@ -129,35 +135,37 @@ $(function () {
             console.log(e);
         });
 
-        //fetching categories in dropdowns menu
+    //fetching categories in dropdowns menu
     fetch("https://fakestoreapi.com/products/categories")
-    .then((res) => res.json())
-    .then((categories) => {
-        let categs = "";
-        categories.forEach((category) => {
-            categs += `<li>
+        .then((res) => res.json())
+        .then((categories) => {
+            let categs = "";
+            categories.forEach((category) => {
+                categs += `<li>
        <a class="dropdown-item border-bottom text-muted pb-1 categ-item" data-category="${category}">${category}</a>
        </li>
        `;
-        });
-        $("#prodNav").append(categs);
-        $("#categBar").append(categs);
-         
-        document.querySelectorAll(".categ-item").forEach((link) => {
-        // when any category button is clicked, do this function
-        link.addEventListener("click", function () {
-            // get the category of the clicked button from the attribute
-            let category = this.getAttribute("data-category"),
-                products = document.querySelectorAll(".prod");
-                {
-                products.forEach((product) => {
-                    if (product.getAttribute("data-prod-category") === category) {
-                        product.style.display = "block";
-                    } else {
-                        product.style.display = "none";
+            });
+            $("#prodNav").append(categs);
+            $("#categBar").append(categs);
+
+            document.querySelectorAll(".categ-item").forEach((link) => {
+                // when any category button is clicked, do this function
+                link.addEventListener("click", function () {
+                    // get the category of the clicked button from the attribute
+                    let category = this.getAttribute("data-category"),
+                        products = document.querySelectorAll(".prod");
+                    {
+                        products.forEach((product) => {
+                            if (product.getAttribute("data-prod-category") === category) {
+                                product.style.display = "block";
+                            } else {
+                                product.style.display = "none";
+                            }
+                        });
                     }
                 });
-                }
+                })
         });
     });
      //when click product title render to product-info page
@@ -184,14 +192,32 @@ $(function () {
                     $("#quickviewpopup").fadeOut(200);
                 });
             });
-       git });
-    });
-    })
-    .catch((e) => {
-        console.log("Error");
-        console.log(e);
-    });
-   
+            // Product PopUp
+            document.querySelectorAll("p.view").forEach((p) => {
+                p.addEventListener("click", function () {
+                    let product = $(this).parents(".prod");
+                    let prodImage = product.find("img")[0].getAttribute("src");
+                    let prodTitle = product.find(".title")[0].textContent;
+                    let prodPrice = product.find(".price span")[0].textContent;
+                    let prodStarCount = product.find("i.fa-star").length;
+                    $(".modal-title").text(prodTitle);
+                    $(".modal-price").text(prodPrice);
+                    $(".modal-img").attr("src", prodImage);
+                    $(".modal-rating").html("");
+                    $(".modal-rating").append('<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(prodStarCount)));
+                    $("#quickviewpopup").fadeIn(200, function () {
+                        $(".modal-dialog .btn-close").on("click", function () {
+                            $("#quickviewpopup").fadeOut(200);
+                        });
+                    });
+                    git;
+                });
+            });
+        })
+        .catch((e) => {
+            console.log("Error");
+            console.log(e);
+        });
 
     let desc = document.getElementById("desc");
 
@@ -224,35 +250,35 @@ $(function () {
         </div>
                 `;
                 });
-                
+
                 $("#prods").html("");
                 $("#prods").append(prods);
                 //when click product title render to product-info page
                 document.querySelectorAll(".title").forEach((link) => {
-                link.addEventListener("click", function () {
-                    window.location.href = `./../docs/product-info.html?product_id=${this.getAttribute("data-prod-id")}`;
+                    link.addEventListener("click", function () {
+                        window.location.href = `./../docs/product-info.html?product_id=${this.getAttribute("data-prod-id")}`;
+                    });
                 });
-            });
-            // Product PopUp
-            document.querySelectorAll("p.view").forEach((p) => {
-                p.addEventListener("click", function () {
-                    let product = $(this).parents(".prod");
-                    let prodImage = product.find("img")[0].getAttribute("src");
-                    let prodTitle = product.find(".title")[0].textContent;
-                    let prodPrice = product.find(".price span")[0].textContent;
-                    let prodStarCount = product.find("i.fa-star").length;
-                    $(".modal-title").text(prodTitle);
-                    $(".modal-price").text(prodPrice);
-                    $(".modal-img").attr("src", prodImage);
-                    $(".modal-rating").html("");
-                    $(".modal-rating").append('<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(prodStarCount)));
-                    $("#quickviewpopup").fadeIn(200, function () {
-                        $(".modal-dialog .btn-close").on("click", function () {
-                            $("#quickviewpopup").fadeOut(200);
+                // Product PopUp
+                document.querySelectorAll("p.view").forEach((p) => {
+                    p.addEventListener("click", function () {
+                        let product = $(this).parents(".prod");
+                        let prodImage = product.find("img")[0].getAttribute("src");
+                        let prodTitle = product.find(".title")[0].textContent;
+                        let prodPrice = product.find(".price span")[0].textContent;
+                        let prodStarCount = product.find("i.fa-star").length;
+                        $(".modal-title").text(prodTitle);
+                        $(".modal-price").text(prodPrice);
+                        $(".modal-img").attr("src", prodImage);
+                        $(".modal-rating").html("");
+                        $(".modal-rating").append('<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(prodStarCount)));
+                        $("#quickviewpopup").fadeIn(200, function () {
+                            $(".modal-dialog .btn-close").on("click", function () {
+                                $("#quickviewpopup").fadeOut(200);
+                            });
                         });
                     });
                 });
-            });
             })
             .catch((e) => {
                 console.log("error when sort");

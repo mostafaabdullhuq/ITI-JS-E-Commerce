@@ -1,4 +1,4 @@
-import { Order, ecommerceUsers } from "./script.js";
+import { Order, UpdateNavCart, ecommerceUsers } from "./script.js";
 
 // load the country phone dropdown
 var input = document.querySelector("#phone");
@@ -171,6 +171,7 @@ if (user) {
 
             // update user cart in localstorage
             ecommerceUsers.updateCart(user, userCart.prodsList);
+            UpdateNavCart(userCart.prodsCount);
 
             // if there's no products in checkout, redirect to home
             if (prods.length == 0) {
