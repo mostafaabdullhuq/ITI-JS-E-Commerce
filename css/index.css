@@ -29,8 +29,6 @@ html {
     padding-left: 10px;
 }
 
-
-
 /* form */
 .social .btn-form {
     background-color: var(--border-color-4);
@@ -89,7 +87,6 @@ html {
     }
 }
 
-
 /* footer */
 footer {
     background-color: var(--separators-color);
@@ -120,7 +117,7 @@ li {
     .foot {
         text-align: center;
     }
-    .social{
+    .social {
         justify-content: center;
     }
 }
@@ -202,7 +199,6 @@ li {
 .feed {
     background-color: var(--separators-color);
 }
-
 
 /*slider */
 .carousel-caption {
@@ -476,7 +472,6 @@ p {
     text-align: left;
 }
 
-
 /* form  */
 
 #contact-form .form-inputs input,
@@ -585,8 +580,6 @@ footer a:hover {
     font-weight: bold;
 }
 
-
-
 .modal-content2 {
     left: 50%;
     transform: translate(-50%, 0%);
@@ -631,6 +624,12 @@ nav i:hover,
     font-weight: 550;
 }
 
-/* .profile-info {
-    max-width: 50px;
-} */
+nav .dropdown li a:hover {
+    color: white;
+    background-color: var(--ltn__secondary-color);
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
