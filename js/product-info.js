@@ -1,5 +1,3 @@
-// import { ecommerceUsers } from "./script.js";
-
 import { ecommerceUsers, UpdateNavCart } from "./script.js";
 
 // check if user logged in
@@ -25,7 +23,7 @@ $(function () {
                         class="img-fluid img-thumbnail"
                         style="height: 300px ;width:300px"
                     />
-                    </a>
+                </a>
                 `;
             $(".product-item").append(prod);
         })
