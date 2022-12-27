@@ -105,3 +105,20 @@ i {
     color: var(--ltn__secondary-color);
     background-color: transparent;
 }
+
+.accordion-button:focus {
+    border: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--ltn__primary-color) !important;
+    border-radius: 0% !important;
+    -webkit-border-radius: 0% !important;
+    -moz-border-radius: 0% !important;
+    -ms-border-radius: 0% !important;
+    -o-border-radius: 0% !important;
+}
+.accordion-button:not(.collapsed) h3,
+.accordion-button:not(.collapsed) h5 {
+    color: white !important;
+}

@@ -1,5 +1,3 @@
-// import { ecommerceUsers } from "./script.js";
-
 import { ecommerceUsers, UpdateNavCart } from "./script.js";
 
 // check if user logged in
@@ -25,7 +23,7 @@ $(function () {
                         class="img-fluid img-thumbnail"
                         style="height: 300px ;width:300px"
                     />
-                    </a>
+                </a>
                 `;
             $(".product-item").append(prod);
         })
@@ -109,8 +107,9 @@ $(function () {
             });
 
             $(".add-to-cart").on("click", function (e) {
-                console.log(product);
-                console.log(user);
+                // console.log(product);
+                // console.log(user);
+                console.log(ecommerceUsers.isProdInCart(user, product));
                 if (user) {
                     let prodQty = +$(this).siblings(".prod-qty-value").val(),
                         userProdList = user.cart.prodsList;
