@@ -181,8 +181,8 @@ function addUser(user_arr) {
       let users = JSON.parse(data);
     //   addElementsToPageFrom(users);
     // users_list.push(users)
-    console.log(users);
-    console.log(typeof(users));
+    //console.log(users);
+    //console.log(typeof(users));
     users_list = users;
     }
   }

@@ -70,7 +70,7 @@ export function UpdateNavCart(cartItems) {
     $(".user-nav-cart").attr("data-cart-items", cartItems);
 }
 
-// class that contains alll users operations
+// class that contains all users operations
 export class Users {
     // private property
     #keyName = "eCommerceUsers";
@@ -131,11 +131,11 @@ export class Users {
                 response.error = "Email Address is already exists.";
             }
             // if the user's username is the same as the username of the user being created
-            if (userData.userName == user.userName) {
-                // cannot create account because username duplication
-                response.isCreated = false;
-                response.error = "Username is already exists.";
-            }
+            // if (userData.userName == user.userName) {
+            //     // cannot create account because username duplication
+            //     response.isCreated = false;
+            //     response.error = "Username is already exists.";
+            // }
         });
 
         // if user is created successfully
@@ -470,33 +470,33 @@ if (!user) {
 //!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
 
 // if no user logged in
-if (!ecommerceUsers.validateLoginCookies()) {
-    $(".user-controls-list").html(`
-    <li class="border-bottom mb-1 pb-1">
-        <a class="icon1" data-bs-toggle="modal" href="#exampleModalToggle2"> Sign In </a>
-    </li>
-    <li>
-        <a class="icon1" data-bs-toggle="modal" href="#exampleModalToggle3"> Sign up </a>
-    </li>
-`);
-}
-// if user is logged in
-else {
-    $(".user-controls-list").html(`
+// if (!ecommerceUsers.validateLoginCookies()) {
+//     $(".user-controls-list").html(`
+//     <li class="border-bottom mb-1 pb-1">
+//         <a class="icon1" data-bs-toggle="modal" href="#exampleModalToggle2"> Sign In </a>
+//     </li>
+//     <li>
+//         <a class="icon1" data-bs-toggle="modal" href="#exampleModalToggle3"> Sign up </a>
+//     </li>
+// `);
+// }
+// // if user is logged in
+// else {
+//     $(".user-controls-list").html(`
 
-    <li class="border-bottom mb-1 pb-1">
-        <a class="icon1" data-bs-toggle="modal" href="./../docs/profile.html"> ${user.firstName} ${user.lastName} </a>
-    </li>
-    <li>
-        <a class="icon1 user-logout" href="#"> Logout </a>
-    </li>
-`);
+//     <li class="border-bottom mb-1 pb-1">
+//         <a class="icon1" data-bs-toggle="modal" href="./../docs/profile.html"> ${user.firstName} ${user.lastName} </a>
+//     </li>
+//     <li>
+//         <a class="icon1 user-logout" href="#"> Logout </a>
+//     </li>
+// `);
 
-    $(".user-logout").on("click", (e) => {
-        ecommerceUsers.logOut();
-        window.location.href = "/index.html";
-    });
-    $(() => {
-        UpdateNavCart(user.cart.prodsCount ?? 0);
-    });
-}
+//     $(".user-logout").on("click", (e) => {
+//         ecommerceUsers.logOut();
+//         window.location.href = "/index.html";
+//     });
+//     $(() => {
+//         UpdateNavCart(user.cart.prodsCount ?? 0);
+//     });
+// }
