@@ -20,13 +20,7 @@ body {
     background-color:var(--border-color-8);
     /* position: fixed; */
 }
-.nav-link:hover{
-    background-color: var(--ltn__secondary-color);
-}
-#sortBy:hover{
-    background-color: var(--ltn__secondary-color);
-    
-}
+
 #sortBy a{
     text-decoration: none;
 }
@@ -34,15 +28,11 @@ body {
     cursor: pointer;
     text-decoration: none;
 }
-.dropdown-item:hover{
-    background-color:var(--ltn__secondary-color);
-}
+
 #categories a{
     text-decoration: none;
 }
-#categories:hover{
-    background-color:var(--ltn__secondary-color);
-}
+
 .product-item .price , .title {
     text-align: center;
 }
@@ -137,10 +127,6 @@ input:hover{
 .title:active{
     text-decoration: none;
 } */
-.title:hover { 
-    text-decoration: none;
-    color:coral;
-}
 /* footer */
 footer {
     background-color: var(--white-6);
