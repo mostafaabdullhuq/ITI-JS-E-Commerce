@@ -82,21 +82,23 @@ $(function () {
             let prods = "";
             products.forEach((product) => {
                 prods += `
-            <div class="col-sm-9 col-md-6 col-lg-4 prod" data-prod-id="${product.id}" data-prod-category="${product.category}">
-            <div class="product-item"  style="height:500px;">
-              <div href="#shop-single.html" class="card product-img rounded-0 d-flex justify-content-center" style="cursor:pointer;">
+            <div class="col-sm-9 col-md-6 col-lg-4 prod prod-info " data-prod-id="${product.id}" data-prod-category="${product.category}">
+            <div class="product-item prod-info "  style="height:500px;">
+              <div href="#shop-single.html" class="card product-img image-container rounded-0 d-flex justify-content-center" style="cursor:pointer;">
                 <img
                   src="${product.image}"
                   alt="Image"
                   class="img-fluid"
                   style="height: 300px;width:70%;margin-left:10%"
                 />
-                <p class="view" data-prod-id="${product.id}" >Quick view</p>
+                <p class="view py-2 fs-3 text-uppercase col-12" style="position: absolute; bottom: 0px" data-prod-id="${
+                    product.id
+                  }">Quick view</p>
               </div>
-              <a class="title fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
-              <div class="price">
-                <span class="h6 fs-5 fw-bold">$${product.price}</span>
-                ${`<i class="fa-solid fa-star" style="color:var(--ltn__secondary-color-2)"></i>`.repeat(Math.round(product.rating.rate))}
+              <a class="title prod-title fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
+              <div class="prod">
+                <span class="h6 fs-5 fw-bold price">$${product.price}</span>
+                ${`<i class="fa-solid fa-star rating" style="color:var(--ltn__secondary-color-2)"></i>`.repeat(Math.round(product.rating.rate))}
                 
               </div>
             </div>

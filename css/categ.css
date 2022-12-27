@@ -90,6 +90,7 @@ li .color {
     color: brown;
 }
 
+
 /* Quick View */
 .view {
     cursor: pointer;
@@ -158,6 +159,7 @@ p {
 
 .prod-info .prod-title {
     font-weight: 700;
+    text-decoration: none;
     color: var(--ltn__primary-color-3);
     font-size: 1.16rem !important;
     transition: transform 0.3s ease-in-out;
@@ -168,12 +170,24 @@ p {
 }
 
 .prod-info .prod-title:hover {
-    color: var(--ltn__secondary-color-2);
+    color: var(--ltn__secondary-color-2) !important;
     transform: scale(1.05);
     -webkit-transform: scale(1.05);
     -moz-transform: scale(1.05);
     -ms-transform: scale(1.05);
     -o-transform: scale(1.05);
+}
+.prod .price {
+    max-width: 300px;
+    margin: auto;
+}
+
+.prod .price .rating {
+    text-align: right;
+}
+
+.prod .price span {
+    text-align: left;
 }
 
 #prods .prod {
