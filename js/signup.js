@@ -16,7 +16,7 @@ let users_list = [];
 
 
 
-document.forms[0].onmouseenter = function(e){
+document.forms[0].onsubmit = function(e){
     //get inputs
     let firstNameInput = document.querySelector('[name="firstName"]').value;
     let lastNameInput = document.querySelector('[name="lastName"]').value;
