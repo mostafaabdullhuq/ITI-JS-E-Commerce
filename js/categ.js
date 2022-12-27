@@ -85,7 +85,7 @@ $(function () {
             <div class="col-sm-9 col-md-6 col-lg-4 prod prod-info " data-prod-id="${
               product.id
             }" data-prod-category="${product.category}">
-            <div class="product-item prod-info "  style="height:500px;">
+            <div class="product-item prod-info "  style="height:550px;">
               <div href="#shop-single.html" class="card product-img image-container rounded-0 d-flex justify-content-center" style="cursor:pointer;">
                 <img
                   src="${product.image}"
