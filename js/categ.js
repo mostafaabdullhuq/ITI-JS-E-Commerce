@@ -9,6 +9,8 @@ if (windowURL.split("?").length > 1) {
   prodID = window.location.href.split("?")[1].split("=")[1] || "";
 }
 
+// this is a comment for syncing
+
 $(function () {
   //fetching all products
   fetch("https://fakestoreapi.com/products?")
