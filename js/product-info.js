@@ -124,6 +124,7 @@ $(function () {
                         qty: prodQty,
                     });
                     ecommerceUsers.updateCart(user, userProdList);
+                    UpdateNavCart(user.cart.prodsCount);
                 }
             });
         })

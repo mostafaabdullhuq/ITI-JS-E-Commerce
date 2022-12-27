@@ -433,36 +433,38 @@ if (!user) {
     user = ecommerceUsers.loginAccount(user.emailAddress, user.passWord);
 
     // add items to user cart
-    ecommerceUsers.updateCart(user, [
-        {
-            id: 1,
-            title: "lorem ipsum datae alla lorem ipsum datae alla",
-            price: 100,
-            qty: 1,
-            image: "https://images.unsplash.com/photo-1570831739435-6601aa3fa4fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1452&q=80",
-        },
-        {
-            id: 2,
-            title: "Product 2",
-            price: 200,
-            qty: 2,
-            image: "https://images.unsplash.com/photo-1555487505-8603a1a69755?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
-        },
-        {
-            id: 3,
-            title: "Product 3",
-            price: 300,
-            qty: 3,
-            image: "https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
-        },
-        {
-            id: 4,
-            title: "Product 4",
-            price: 400,
-            qty: 4,
-            image: "https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
-        },
-    ]);
+    if (user.cart.prodsCount === 0) {
+        ecommerceUsers.updateCart(user, [
+            {
+                id: 1,
+                title: "lorem ipsum datae alla lorem ipsum datae alla",
+                price: 100,
+                qty: 1,
+                image: "https://images.unsplash.com/photo-1570831739435-6601aa3fa4fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1452&q=80",
+            },
+            {
+                id: 2,
+                title: "Product 2",
+                price: 200,
+                qty: 2,
+                image: "https://images.unsplash.com/photo-1555487505-8603a1a69755?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
+            },
+            {
+                id: 3,
+                title: "Product 3",
+                price: 300,
+                qty: 3,
+                image: "https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+            },
+            {
+                id: 4,
+                title: "Product 4",
+                price: 400,
+                qty: 4,
+                image: "https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+            },
+        ]);
+    }
 }
 
 //!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
