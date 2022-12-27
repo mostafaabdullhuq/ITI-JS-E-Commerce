@@ -120,6 +120,9 @@ li {
     .foot {
         text-align: center;
     }
+    .social{
+        justify-content: center;
+    }
 }
 
 /* feedback */
