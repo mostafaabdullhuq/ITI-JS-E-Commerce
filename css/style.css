@@ -118,6 +118,7 @@ i {
     -ms-border-radius: 0% !important;
     -o-border-radius: 0% !important;
 }
-.accordion-button:not(.collapsed) h3 {
+.accordion-button:not(.collapsed) h3,
+.accordion-button:not(.collapsed) h5 {
     color: white !important;
 }
