@@ -270,13 +270,11 @@ let desc = document.getElementById("desc");
                       <a class="title fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
                       <div class="price">
                         <span class="h6 fs-5 fw-bold">$${product.price}</span>
-                        ${`<i class="fa-solid fa-star" style="color:var(--ltn__secondary-color-2)"></i>`.repeat(Math.round(product.rating.rate))}
-                        
+                        ${`<i class="fa-solid fa-star" style="color:var(--ltn__secondary-color-2)"></i>`.repeat(Math.round(product.rating.rate))}   
                       </div>
                     </div>
-                </div>
-        
-        `;
+                 </div>
+                `;
                 });
                 $("#prods").html("");
                 $("#prods").append(prods);
