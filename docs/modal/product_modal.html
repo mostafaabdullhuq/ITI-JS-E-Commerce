@@ -16,6 +16,7 @@
                 background-color: vr(--ltn__secondary-color) !important;
                 color: white;
             }
+          
 
             i {
                 color: var(--ltn__primary-color) !important;
@@ -25,6 +26,10 @@
                 color: var(--ltn__secondary-color-2) !important;
                 animation: scale 0.3s linear 1;
                 -webkit-animation: scale 0.3s linear 1;
+            }
+
+            .btn-close{
+
             }
         </style>
     </head>
@@ -43,7 +48,7 @@
                             srcset=""
                         />
                         <div class="col-6 mt-3 d-flex flex-column">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close bg-dark" style="position:relative;float:right background-color:black " data-bs-dismiss="modal" aria-label="Close"></button>
                             <h3 class="modal-title col fw-bolder mb-2">Product name</h3>
                             <div class="d-flex col">
                                 <h3 class="modal-price me-4 fs-4">$1000</h3>
