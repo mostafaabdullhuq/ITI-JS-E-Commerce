@@ -300,6 +300,17 @@ export class Users {
         return user.cart;
     }
 
+    // check if product exists in cart before adding to the cart
+    isProdInCart(user, prod) {
+        // check if there's a product with the same id, title, price and image in the cart
+        let isInCart = user.cart.prodsList.find((p) => p.id === prod.id && p.image === prod.image && p.title === prod.title && p.price === prod.price),
+            // get the index of the product in the cart if found
+            prodIndex = isInCart ? user.cart.prodsList.findIndex((p) => p == isInCart) : -1;
+
+        // return the results
+        return [isInCart, prodIndex];
+    }
+
     /*
         [DESC]
             a method to add order to user orders list

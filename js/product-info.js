@@ -109,8 +109,9 @@ $(function () {
             });
 
             $(".add-to-cart").on("click", function (e) {
-                console.log(product);
-                console.log(user);
+                // console.log(product);
+                // console.log(user);
+                console.log(ecommerceUsers.isProdInCart(user, product));
                 if (user) {
                     let prodQty = +$(this).siblings(".prod-qty-value").val(),
                         userProdList = user.cart.prodsList;
