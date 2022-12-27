@@ -52,7 +52,6 @@ $(function () {
                         <span class="prod-price h5 me-5 fw-bold">$${product.price}</span>
                         ${`<i class="fa-solid fa-star" style="color:var(--ltn__secondary-color-2)"></i>`.repeat(Math.round(product.rating.rate))}
                     </div>
-
                 </div> 
 
                 <!--? product quantity -->
