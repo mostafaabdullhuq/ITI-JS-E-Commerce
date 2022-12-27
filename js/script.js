@@ -292,7 +292,7 @@ export class Users {
 
         // update the cart values
         user.cart.prodsCount = itemsCount;
-        user.cart.prodsPrice = cartSubtotal;
+        user.cart.prodsPrice = +cartSubtotal.toFixed(2);
         user.cart.prodsList = cartProducts;
         // update the user cart in localstorage
         this.syncUpload;
