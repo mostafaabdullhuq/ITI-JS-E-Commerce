@@ -41,6 +41,7 @@ document.forms[0].onsubmit = function(e){
 
     if(fnameValid===false || lnameValid===false || emailValid===false || passValid===false || repassValid===false || cityValid===false  || countryValid===false || passInput != repassInput ){
         e.preventDefault();
+        console.log('feild')
     }
     else{
         let newuser = new User(firstNameInput,lastNameInput,emailInput,passInput,countryInput,cityInput,addressInput);
@@ -134,7 +135,7 @@ class Users {
 // class that represents one user only
 class User {
     constructor(firstName, lastName, emailAddress, passWord, country, city, shippingAddr) {
-        this.id = ecommerceUsers.usersList.length + 1;
+        // this.id = ecommerceUsers.usersList.length + 1;
         // this.id = emailAddress;
         this.firstName = firstName;
         this.lastName = lastName;
