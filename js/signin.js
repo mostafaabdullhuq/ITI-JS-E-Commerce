@@ -4,7 +4,7 @@ let emailRe =   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(
 let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ ; 
 
 
-document.forms[0].onsubmit = function(e){
+document.forms[0].onmouseenter = function(e){
     let emailInput = document.querySelector('[name="email"]').value;
     let passInput = document.querySelector('[name="pass"]').value;
 
@@ -14,5 +14,32 @@ document.forms[0].onsubmit = function(e){
     if(emailValid===false || passValid===false){
         e.preventDefault();
 
+    }else{
+        checkLocalStorage(emailInput,passInput);
+
+    }
+}
+
+function checkLocalStorage(email,pass) {
+    let data = window.localStorage.getItem("users");
+    if (data) {
+        let users = JSON.parse(data);
+        for (let index = 0; index < users.length; index++) {
+            if(users[index].emailAddress === email){
+                console.log('email found!');
+                if (users[index].passWord === pass) {
+                    console.log('password correct');
+                }else{
+                    console.log('password incorrect');
+                }
+
+            }else{
+                console.log('email incorrect');
+
+            }
+
+            
+        }
+        // console.log(users);
     }
 }

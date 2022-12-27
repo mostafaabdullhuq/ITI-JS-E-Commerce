@@ -15,44 +15,59 @@
         <title>Shopping Cart</title>
     </head>
     <body>
-        <div class="container-fluid border-bottom second-nav">
-            <div class="row">
-                <nav id="navbar_top" class="navbar navbar-expand-md fw-bold py-3">
-                    <div>
-                        <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavDropdown"
-                            aria-controls="navbarNavDropdown"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                        >
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg py-4">
+            <div class="container-fluid">
+                <a class="d-none d-lg-block navbar-brand text-uppercase col-xl-2 col-lg-3 fs-5 fw-bolder text-center" href="/index.html">E-Commerce</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse mt-2 mt-lg-0 col me-3" id="navbarSupportedContent">
+                    <ul class="navbar-nav col me-auto mb-2 mb-lg-0 d-flex justify-content-center">
+                        <li class="nav-item me-3">
+                            <a class="nav-link text-dark text-uppercase fw-bold active" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown me-3">
+                            <a class="nav-link dropdown-toggle text-dark text-uppercase fw-bold" href="./categ.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products </a>
+                            <ul class="dropdown-menu rounded-0 py-0" id="cat-ul">
+                                <li>
+                                    <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2" href="./categ.html">All Products</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link text-dark text-uppercase fw-bold" href="#footer">About</a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a href="/index.html#contact" class="nav-link text-dark text-uppercase fw-bold">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- cart and user section -->
+                <div class="col-xl-2 col-lg-3 dropdown col d-flex text-center align-items-center right-nav-side">
+                    <div class="d-flex col justify-content-center">
+                        <!-- profile dropdown -->
+                        <a class="nav-link profile-info dropdown-toggle text-center text-dark fs-5" href="./profile.html" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                        <ul class="dropdown-menu user-controls-list rounded-0" style="text-align: center"></ul>
+                        <!-- cart dropdown -->
+                        <a class="ms-3 user-nav-cart text-dark text-start fs-5" href="#" data-cart-items="0"><i class="fa-solid fa-cart-shopping"></i> </a>
                     </div>
-                    <!-- navbar -->
-                    <div class="collapse navbar-collapse justify-content-around nav-active" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item me-4">
-                                <a class="nav-link active text-dark me-4" aria-current="page" href="#">HOME</a>
-                            </li>
-                            <li class="nav-item dropdown me-4">
-                                <a class="nav-link dropdown-toggle text-dark me-4" href="./categ.html" data-bs-toggle="dropdown" aria-expanded="false"> PRODUCTS </a>
-                                <ul class="dropdown-menu p-4" id="cat-ul"></ul>
-                            </li>
-                            <li class="nav-item me-4">
-                                <a class="nav-link text-dark me-4" href="#footer">ABOUT</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="#contact">CONTACT</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                </div>
             </div>
-        </div>
-        <h2 class="h1 my-5 mx-5 text-center text-lg-start">Your Shopping Cart</h2>
+        </nav>
+
+        <h2 class="h3 fw-bolder my-5 mx-5 text-center text-lg-start">Your Shopping Cart</h2>
         <!-- page container -->
         <div class="cart-container d-flex mt-5 flex-lg-row flex-column">
             <!-- left cart side -->
@@ -74,7 +89,6 @@
             <!-- right cart side -->
             <div class="right col-lg col-md-12 mt-md-4 mt-lg-0 d-flex flex-column">
                 <!-- total side title -->
-                <!-- <h2 class="h1 mb-5">Order Summery</h2> -->
                 <!-- total content -->
                 <div class="col right-sub-container d-flex px-3 px-lg-0">
                     <div class="separator col"></div>
@@ -169,9 +183,6 @@
         <!-- include bootstrap js file from node modules -->
         <script src="./../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <!-- include javascript files -->
-        <!-- <script src="./js/script.js"></script> -->
-        <!-- splide -->
-        <!-- <script src="./node_modules/@splidejs/splide/dist/js/splide.min.js"></script> -->
         <script type="module" src="./../js/index.js"></script>
         <script type="module" src="./../js/cart.js"></script>
     </body>

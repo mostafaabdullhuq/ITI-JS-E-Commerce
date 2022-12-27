@@ -1,5 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="./../node_modules/animate.css/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/@splidejs/splide/dist/css/splide.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./../css/style.css" />
+    <link rel="stylesheet" href="./../css/categ.css" />
+    <link rel="stylesheet" href="./../css/modal/product_modal.css" />
+    <title>Categories</title>
+  </head>
+  <body>
+    <!----------------------- Navbar --------------------------------->
+    <div class="container-fluid justify-content-around border-bottom nav mb-2">
+      <div class="row">
+        <nav id="navbar_top" class="navbar navbar-expand-md fw-bold pt-1 pb-1">
+          <div>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div
+            class="collapse navbar-collapse nav-active"
+            id="navbarNavDropdown"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item me-4">
+                <a
+                  class="nav-link active text-dark me-4"
+                  aria-current="page"
+                  href="./../index.html"
+                  >HOME</a
+                >
+              </li>
+              <li class="nav-item dropdown me-4">
+                <a
+                  class="nav-link dropdown-toggle text-dark me-4"
+                  href="./docs/categ.html"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  PRODUCTS
+                </a>
+                <ul class="dropdown-menu p-4" id="prodNav">
+
+                </ul>
+              </li>
+              <li class="nav-item me-4">
+                <a class="nav-link text-dark me-4" href="#footer">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="#contact">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="row justify-content-around mx-5">
+      <div class="col-md-12 col-sm-12">
+        <div class="container-fluid">
+          <div
+            id="categories"
+            class="d-flex justify-content-center col-md-12 mb-2 border border-4 py-1 fw-bold"
+            style="float: right; width: 100px"
+          >
+            <a
+              style="cursor: pointer"
+              class="dropdown-toggle text-dark"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Category</a
+            >
+            <ul class="dropdown-menu p-4 list-unstyled" id="categBar">
+
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12">
+        <div class="container-fluid">
+          <div
+            id="sortBy"
+            class="d-flex justify-content-center col-md-12 mb-2 border border-4 py-1 fw-bold"
+            style="float: right; width: 100px"
+          >
+            <a
+              style="cursor: pointer"
+              class="dropdown-toggle text-dark"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Sort By</a
+            >
+            <ul class="dropdown-menu p-4 list-unstyled">
+              <li>
+                <div
+                  class="dropdown-item border-bottom text-muted pb-1"
+                  id="asc"
+                >
+                  Asc
+                </div>
+              </li>
+              <li>
+                <div
+                  class="dropdown-item border-bottom text-muted pb-1"
+                  id="desc"
+                >
+                  Desc
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row mx-5" id="prods"></div>
+    </div>
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -145,7 +287,7 @@
         <!-- </div> -->
         <!-- </div> -->
 
-        <!-- Footer -->
+    <!-- Footer -->
 
         <footer class="bd-footer" id="footer">
             <div class="container py-5">
@@ -209,44 +351,45 @@
             </div>
         </footer>
 
+        
         <!-- Quick View PopUp -->
 
         <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Product name</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body row">
-                        <img
-                            class="col-6 img-thumbnail modal-img"
-                            style="max-width: 50%"
-                            src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142"
-                            alt=""
-                            srcset=""
-                        />
-                        <div class="col-6 mt-3">
-                            <h3 class="modal-price">$1000</h3>
-                            <div class="modal-rating"></div>
-                            <!-- <i class="fa-solid fa-star"></i>
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title">Product name</h4>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body row">
+                      <img
+                          class="col-6 img-thumbnail modal-img"
+                          style="max-width: 50%"
+                          src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142"
+                          alt=""
+                          srcset=""
+                      />
+                      <div class="col-6 mt-3">
+                          <h3 class="modal-price">$1000</h3>
+                          <div class="modal-rating"></div>
+                          <!-- <i class="fa-solid fa-star"></i>
                           <i class="fa-solid fa-star"></i>
                           <i class="fa-solid fa-star"></i>
                           <i class="fa-solid fa-star"></i>
                           <i class="fa-solid fa-star"></i> -->
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="d-flex justify-content-center">
-                            <i class="fs-4 fa-solid fa-minus border border-2 p-1"></i>
-                            <input type="text" class="text-center fw-bold fs-4 w-25" value="1" />
-                            <i class="fs-4 fa-solid fa-plus border border-2 p-1"></i>
-                            <button class="btn btn2 ms-3 text-center p-2">Add to cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                      <div class="d-flex justify-content-center">
+                          <i class="fs-4 fa-solid fa-minus border border-2 p-1"></i>
+                          <input type="text" class="text-center fw-bold fs-4 w-25" value="1" />
+                          <i class="fs-4 fa-solid fa-plus border border-2 p-1"></i>
+                          <button class="btn btn2 ms-3 text-center p-2">Add to cart</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
         <!-- include jquery file -->
         <!-- <link rel="stylesheet" href="./node_modules/owl.carousel/dist/owl.carousel.min.js"> -->
         <script src="./../node_modules/jquery/dist/jquery.min.js"></script>
