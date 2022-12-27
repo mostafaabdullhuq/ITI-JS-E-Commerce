@@ -459,6 +459,8 @@ p {
     background-color: var(--separators-color);
 }
 
+/* form  */
+
 #contact-form .form-inputs input,
 #contact-form textarea {
     width: 100%;
