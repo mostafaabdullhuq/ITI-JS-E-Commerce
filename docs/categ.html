@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="./../css/index.css" />
         <title>Categories</title>
     </head>
-
+    <body>
         <!----------------------- Navbar --------------------------------->
         <nav class="navbar navbar-expand-lg py-4">
             <div class="container-fluid">
@@ -27,7 +27,8 @@
                     data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent"
                     aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    aria-label="Toggle navigation"
+                >
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse mt-2 mt-lg-0 col me-3" id="navbarSupportedContent">
@@ -35,14 +36,14 @@
                         <li class="nav-item me-3">
                             <a class="nav-link text-dark text-uppercase fw-bold active" aria-current="page" href="../index.html">Home</a>
                         </li>
-                        <!-- <li class="nav-item dropdown me-3">
+                        <li class="nav-item dropdown me-3">
                             <a class="nav-link dropdown-toggle text-dark text-uppercase fw-bold" href="./docs/categ.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products </a>
                             <ul class="dropdown-menu rounded-0 py-0" id="cat-ul">
                                 <li>
                                     <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2" href="./docs/categ.html">All Products</a>
                                 </li>
                             </ul>
-                        </li> -->
+                        </li>
                         <li class="nav-item me-3">
                             <a class="nav-link text-dark text-uppercase fw-bold" href="#footer">About</a>
                         </li>
@@ -67,42 +68,26 @@
             </div>
         </nav>
 
-                        <!-- dropdown -->
-        <div class="row justify-content-around mx-5">
-            <div class="col-md-12 col-sm-12">
-                <div class="container-fluid">
-                    <div id="categories" class="d-flex justify-content-center col-md-12 mb-2 border border-4 py-1 fw-bold" style="float: right; width: 100px">
-                        <a style="cursor: pointer" class="dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
-                        <ul class="dropdown-menu p-4 list-unstyled" id="categBar"></ul>
-                    </div>
-                </div>
+        <!-- dropdown -->
+        <div class="dropdowns-container d-flex justify-content-center justify-content-lg-end mt-5 px-3 mb-5">
+            <div id="categories" class="category-dropdown d-flex justify-content-center py-2 fw-bold px-3">
+                <a style="cursor: pointer" class="dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
+                <ul class="dropdown-menu p-0 list-unstyled rounded-0" id="categBar"></ul>
             </div>
-            <div class="col-md-12 col-sm-12">
-                <div class="container-fluid">
-                    <div id="sortBy" class="d-flex justify-content-center col-md-12 mb-2 border border-4 py-1 fw-bold" style="float: right; width: 100px">
-                        <a style="cursor: pointer" class="dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-expanded="false">Sort By</a>
-                        <ul class="dropdown-menu p-4 list-unstyled">
-                            <li>
-                                <div class="dropdown-item border-bottom text-muted pb-1" id="asc">Asc</div>
-                            </li>
-                            <li>
-                                <div class="dropdown-item border-bottom text-muted pb-1" id="desc">Desc</div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <div id="sortBy" class="sort-by-dropdown ms-3 d-flex justify-content-center py-2 fw-bold px-3">
+                <a style="cursor: pointer" class="dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-expanded="false">Sort By</a>
+                <ul class="dropdown-menu p-0 list-unstyled rounded-0">
+                    <li class="dropdown-item py-2 text-center" id="asc">Ascending</li>
+                    <li class="dropdown-item py-2 text-center" id="desc">Descending</li>
+                </ul>
             </div>
-            <!--products-->
-            <div>
-            
-                
+        </div>
+        <!--products-->
+        <div>
             <div class="row mx-5" id="prods"></div>
         </div>
-        </div>
-        
-   
 
-      <!-- Footer -->
+        <!-- Footer -->
 
         <footer class="bd-footer" id="footer">
             <div class="container py-5">
@@ -174,9 +159,9 @@
             </div>
         </footer>
 
-         <!-- Quick View PopUp -->
+        <!-- Quick View PopUp -->
 
-         <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1">
+        <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body d-flex row">
@@ -185,7 +170,8 @@
                             style="max-width: 50%"
                             src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142"
                             alt=""
-                            srcset=""/>
+                            srcset=""
+                        />
                         <div class="col-6 mt-3 d-flex flex-column">
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             <h3 class="modal-title col fw-bolder mb-2">Product name</h3>
@@ -198,7 +184,7 @@
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
                                 </div>
-                                <br/>
+                                <br />
                             </div>
                             <div class="prod-qty col">
                                 <i class="prod-qty-remove fs-4 col-2 fa-solid fa-minus text-start"></i>
@@ -214,7 +200,6 @@
             </div>
         </div>
 
-
         <!-- include jquery file -->
         <!-- <link rel="stylesheet" href="./node_modules/owl.carousel/dist/owl.carousel.min.js"> -->
         <script src="./../node_modules/jquery/dist/jquery.min.js"></script>
@@ -228,6 +213,5 @@
         <!-- <script src="./../node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
         <script type="module" src="./../js/categ.js"></script>
         <script type="module" src="./../js/index.js"></script>
-        
     </body>
 </html>
