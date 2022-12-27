@@ -50,7 +50,7 @@ $(function () {
                             <div class="rating col">
                             ${'<i class="fa-solid fa-star fs-5" style="color:gold;"></i>'.repeat(
                               Math.round(product.rating.rate)
-                            )}
+                              )}
                             </div>
                         </div>
                     </div>
@@ -84,6 +84,7 @@ $(function () {
               $("#quickviewpopup").fadeOut(200);
             });
           });
+          $(".prod-qty")
         });
       });
     })

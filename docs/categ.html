@@ -1,222 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-        <link rel="stylesheet" href="./../node_modules/animate.css/animate.min.css" />
-        <link rel="stylesheet" href="./node_modules/@splidejs/splide/dist/css/splide.min.css" />
-        <link rel="stylesheet" href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
-        <link rel="stylesheet" href="./../css/style.css" />
-        <link rel="stylesheet" href="./../css/categ.css" />
-        <link rel="stylesheet" href="./../css/modal/product_modal.css" />
-        <link rel="stylesheet" href="./../css/index.css" />
-        <title>Categories</title>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="./../node_modules/animate.css/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/@splidejs/splide/dist/css/splide.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./../css/style.css" />
+    <link rel="stylesheet" href="./../css/categ.css" />
+    <link rel="stylesheet" href="./../css/modal/product_modal.css" />
+    <link rel="stylesheet" href="./../css/index.css" />
+    <title>Categories</title>
+  </head>
+  <body>
+    <!----------------------- Navbar --------------------------------->
+    <nav class="navbar navbar-expand-lg py-4">
+      <div class="container-fluid">
+        <a
+          class="d-none d-lg-block navbar-brand text-uppercase col-xl-2 col-lg-3 fs-5 fw-bolder text-center"
+          href="/index.html"
+          >E-Commerce</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse mt-2 mt-lg-0 col me-3"
+          id="navbarSupportedContent"
+        >
+          <ul
+            class="navbar-nav col me-auto mb-2 mb-lg-0 d-flex justify-content-center"
+          >
+            <li class="nav-item me-3">
+              <a
+                class="nav-link text-dark text-uppercase fw-bold active"
+                aria-current="page"
+                href="../index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item dropdown me-3">
+              <a
+                class="nav-link dropdown-toggle text-dark text-uppercase fw-bold"
+                href="./docs/categ.html"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Products
+              </a>
+              <ul class="dropdown-menu rounded-0 py-0" id="cat-ul">
+                <li>
+                  <a
+                    style="text-transform: capitalize; font-weight: 550"
+                    class="border-bottom dropdown-item py-2"
+                    href="./docs/categ.html"
+                    >All Products</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item me-3">
+              <a
+                class="nav-link text-dark text-uppercase fw-bold"
+                href="#footer"
+                >About</a
+              >
+            </li>
+            <li class="nav-item me-3">
+              <a
+                href="#contact"
+                class="nav-link text-dark text-uppercase fw-bold"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
 
-        <!----------------------- Navbar --------------------------------->
-        <nav class="navbar navbar-expand-lg py-4">
-            <div class="container-fluid">
-                <a class="d-none d-lg-block navbar-brand text-uppercase col-xl-2 col-lg-3 fs-5 fw-bolder text-center" href="/index.html">E-Commerce</a>
+        <!-- cart and user section -->
+        <div
+          class="col-xl-2 col-lg-3 dropdown col d-flex text-center align-items-center right-nav-side"
+        >
+          <div class="d-flex col justify-content-center">
+            <!-- profile dropdown -->
+            <a
+              class="nav-link profile-info dropdown-toggle text-center text-dark fs-5"
+              href="./docs/profile.html"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa-solid fa-user"></i>
+            </a>
+            <ul
+              class="dropdown-menu user-controls-list rounded-0"
+              style="text-align: center"
+            ></ul>
+            <!-- cart dropdown -->
+            <a
+              class="ms-3 user-nav-cart text-dark text-start fs-5"
+              href="./docs/cart.html"
+              data-cart-items="0"
+              ><i class="fa-solid fa-cart-shopping"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- dropdown -->
+    <div
+      class="dropdowns-container d-flex justify-content-center justify-content-lg-end mt-5 px-3 mb-5"
+    >
+      <div
+        id="categories"
+        class="category-dropdown d-flex justify-content-center py-2 fw-bold px-3"
+      >
+        <a
+          style="cursor: pointer"
+          class="dropdown-toggle text-dark"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          >Category</a
+        >
+        <ul
+          class="dropdown-menu p-0 list-unstyled rounded-0"
+          id="categBar"
+        ></ul>
+      </div>
+      <div
+        id="sortBy"
+        class="sort-by-dropdown ms-3 d-flex justify-content-center py-2 fw-bold px-3"
+      >
+        <a
+          style="cursor: pointer"
+          class="dropdown-toggle text-dark"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          >Sort By</a
+        >
+        <ul class="dropdown-menu p-0 list-unstyled rounded-0">
+          <li class="dropdown-item py-2 text-center" id="asc">Ascending</li>
+          <li class="dropdown-item py-2 text-center" id="desc">Descending</li>
+        </ul>
+      </div>
+    </div>
+    <!--products-->
+    <div class="container">
+      <div class="row mx-5" id="prods"></div>
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="bd-footer" id="footer">
+      <div class="container py-5">
+        <div class="row foot ps-4">
+          <div
+            class="col-lg-4 col-md-6 col-sm-12-justify-content-center offset-lg-1 mb-4"
+          >
+            <h2 class="text-dark fw-bolder">Contact Us</h2>
+            <ul type="none">
+              <li>
+                <span class="fw-bold">Phone Number:</span>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >+11111111111</a
+                >
+              </li>
+              <li>
+                <span class="fw-bold">Email:</span
+                ><a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                >
+                  group2@gmail.com</a
+                >
+              </li>
+              <li>
+                <span class="fw-bold">Address:</span
+                ><a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >123 Alexandria</a
+                >
+              </li>
+            </ul>
+            <div class="col d-flex social mt-1 py-1">
+              <a
+                href="http://127.0.0.1:5500/index.html#"
+                style="text-decoration: none"
+                class="col fs-2 me-2 d-flex justify-content-center align-items-center"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a
+                href="http://127.0.0.1:5500/index.html#"
+                style="text-decoration: none"
+                class="col fs-2 me-2 d-flex justify-content-center align-items-center"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a
+                href="http://127.0.0.1:5500/index.html#"
+                style="text-decoration: none"
+                class="col fs-2 me-2 d-flex justify-content-center align-items-center"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a
+                href="http://127.0.0.1:5500/index.html#"
+                style="text-decoration: none"
+                class="col fs-2 d-flex justify-content-center align-items-center"
+                ><i class="fa-solid fa-globe"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h2 class="text-dark fw-bolder">Need Help?</h2>
+            <ul type="none">
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Payment Methods</a
+                >
+              </li>
+              <a
+                href="http://127.0.0.1:5500/index.html#"
+                class="text-dark fs-6"
+              >
+              </a>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                ></a
+                ><a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Money Back Gurantee</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Customer Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Terms &amp; Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 text-white">
+            <h2 class="text-dark fw-bolder">Navigate</h2>
+            <ul type="none">
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >My Orders</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >My Account</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Products
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Change Password
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/index.html#"
+                  class="text-dark fs-6"
+                  >Track Order</a
+                >
+              </li>
+            </ul>
+          </div>
+          <hr style="width: 900px; position: relative; right: 2%" />
+          <div class="text-dark fw-bold fs-5" style="text-align: center">
+            Copyright © 2022-ITI Group 2
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Quick View PopUp -->
+
+    <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body d-flex row">
+            <img
+              class="col-6 img-thumbnail modal-img"
+              style="max-width: 50%"
+              src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142"
+              alt=""
+              srcset=""
+            />
+            <div class="col-6 mt-3 d-flex flex-column">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+              <h3 class="modal-title col fw-bolder mb-2">Product name</h3>
+              <div class="d-flex col">
+                <h3 class="modal-price me-4 fs-4">$1000</h3>
+                <div class="modal-rating">
+                  <i class="fa-solid fa-star pb-2"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <br />
+              </div>
+              <div class="prod-qty col">
+                <i
+                  class="prod-qty-remove fs-4 col-2 fa-solid fa-minus text-start"
+                ></i>
+                <input
+                  type="text"
+                  class="text-center fw-bold fs-4 prod-qty-value col-6 p-0"
+                  value="1"
+                />
+                <i
+                  class="prod-qty-add fs-4 col-2 fa-solid fa-plus text-end"
+                ></i>
+              </div>
+              <div class="d-flex justify-content-center">
                 <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                  class="btn btn2 col add text-center p-2 bg-dark text-white"
+                >
+                  Add to cart
                 </button>
-                <div class="collapse navbar-collapse mt-2 mt-lg-0 col me-3" id="navbarSupportedContent">
-                    <ul class="navbar-nav col me-auto mb-2 mb-lg-0 d-flex justify-content-center">
-                        <li class="nav-item me-3">
-                            <a class="nav-link text-dark text-uppercase fw-bold active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item dropdown me-3">
-                            <a class="nav-link dropdown-toggle text-dark text-uppercase fw-bold" href="./docs/categ.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products </a>
-                            <ul class="dropdown-menu rounded-0 py-0" id="cat-ul">
-                                <li>
-                                    <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2" href="./docs/categ.html">All Products</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item me-3">
-                            <a class="nav-link text-dark text-uppercase fw-bold" href="#footer">About</a>
-                        </li>
-                        <li class="nav-item me-3">
-                            <a href="#contact" class="nav-link text-dark text-uppercase fw-bold">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- cart and user section -->
-                <div class="col-xl-2 col-lg-3 dropdown col d-flex text-center align-items-center right-nav-side">
-                    <div class="d-flex col justify-content-center">
-                        <!-- profile dropdown -->
-                        <a class="nav-link profile-info dropdown-toggle text-center text-dark fs-5" href="./docs/profile.html" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-user"></i>
-                        </a>
-                        <ul class="dropdown-menu user-controls-list rounded-0" style="text-align: center"></ul>
-                        <!-- cart dropdown -->
-                        <a class="ms-3 user-nav-cart text-dark text-start fs-5" href="./docs/cart.html" data-cart-items="0"><i class="fa-solid fa-cart-shopping"></i> </a>
-                    </div>
-                </div>
+              </div>
             </div>
-        </nav>
-
-        <!------------ dropdown --------------->
-        <div class="row justify-content-around mx-5">
-            <div class="col-md-12 col-sm-12">
-                <div class="container-fluid">
-                    <div id="categories" class="d-flex justify-content-center col-md-12 mb-2 border border-4 py-1 fw-bold" style="float: right; width: 100px">
-                        <a style="cursor: pointer" class="dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
-                        <ul class="dropdown-menu p-4 list-unstyled" id="categBar"></ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 col-sm-12">
-                <div class="container-fluid">
-                    <div id="sortBy" class="d-flex justify-content-center col-md-12 mb-2 border border-4 py-1 fw-bold" style="float: right; width: 100px">
-                        <a style="cursor: pointer" class="dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-expanded="false">Sort By</a>
-                        <ul class="dropdown-menu p-4 list-unstyled">
-                            <li>
-                                <div class="dropdown-item border-bottom text-muted pb-1" id="asc">Asc</div>
-                            </li>
-                            <li>
-                                <div class="dropdown-item border-bottom text-muted pb-1" id="desc">Desc</div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- fetching products heeeeere -->
-            <div class="row mx-5" id="prods"></div>
+          </div>
         </div>
+      </div>
+    </div>
 
-         <!----------- Quick View PopUp -------->
+    <!-- include jquery file -->
+    <script src="./../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
 
-         <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body d-flex row">
-                        <img
-                            class="col-6 img-thumbnail modal-img"
-                            style="max-width: 50%"
-                            src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142"
-                            alt=""
-                            srcset=""/>
-                        <div class="col-6 mt-3 d-flex flex-column">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            <h3 class="modal-title col fw-bolder mb-2">Product name</h3>
-                            <div class="d-flex col">
-                                <h3 class="modal-price me-4 fs-4">$1000</h3>
-                                <div class="modal-rating">
-                                    <i class="fa-solid fa-star pb-2"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
-                                <br/>
-                            </div>
-                            <div class="prod-qty col">
-                                <i class="prod-qty-remove fs-4 col-2 fa-solid fa-minus text-start" data-prod-id=""></i>
-                                <input type="text" class="prod-qty-value text-center fw-bold fs-4 col-6 p-0" data-prod-id="" value="1" />
-                                <i class="prod-qty-add fs-4 col-2 fa-solid fa-plus text-end" data-prod-id=""></i>
-                            </div>
-                            <div class="btnAdd d-flex justify-content-center">
-                                <div class="button add-to-cart btn btn2 col add text-center p-2 bg-dark text-white" data-prod-id="">Add to cart</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-   
-      <!-- Footer -->
-        <footer class="bd-footer" id="footer">
-            <div class="container py-5">
-                <div class="row foot ps-4">
-                    <div class="col-lg-4 col-md-6 col-sm-12-justify-content-center offset-lg-1 mb-4">
-                        <h2 class="text-dark fw-bolder">Contact Us</h2>
-                        <ul type="none">
-                            <li>
-                                <span class="fw-bold">Phone Number:</span>
-                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">+11111111111</a>
-                            </li>
-                            <li><span class="fw-bold">Email:</span><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6"> group2@gmail.com</a></li>
-                            <li><span class="fw-bold">Address:</span><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">123 Alexandria</a></li>
-                        </ul>
-                        <div class="col d-flex social py-1">
-                            <a href="http://127.0.0.1:5500/index.html#" style="text-decoration: none" class="col fs-2 me-2 d-flex justify-content-center align-items-center"
-                                ><i class="fa-brands fa-facebook-f"></i
-                            ></a>
-                            <a href="http://127.0.0.1:5500/index.html#" style="text-decoration: none" class="col fs-2 me-2 d-flex justify-content-center align-items-center"
-                                ><i class="fa-brands fa-twitter"></i
-                            ></a>
-                            <a href="http://127.0.0.1:5500/index.html#" style="text-decoration: none" class="col fs-2 me-2 d-flex justify-content-center align-items-center"
-                                ><i class="fa-brands fa-instagram"></i
-                            ></a>
-                            <a href="http://127.0.0.1:5500/index.html#" style="text-decoration: none" class="col fs-2 d-flex justify-content-center align-items-center"
-                                ><i class="fa-solid fa-globe"></i
-                            ></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <h2 class="text-dark fw-bolder">Need Help?</h2>
-                        <ul type="none">
-                            <li>
-                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Payment Methods</a>
-                            </li>
-                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6"> </a>
-                            <li><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6"></a><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Money Back Gurantee</a></li>
-                            <li>
-                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Customer Service</a>
-                            </li>
-                            <li>
-                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Terms &amp; Conditions</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 text-white">
-                        <h2 class="text-dark fw-bolder">Navigate</h2>
-                        <ul type="none">
-                            <li>
-                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">My Orders</a>
-                            </li>
-                            <li>
-                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">My Account</a>
-                            </li>
-                            <li>
-                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Products </a>
-                            </li>
-                            <li>
-                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Change Password </a>
-                            </li>
-                            <li>
-                                <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Track Order</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <hr style="width: 900px; position: relative; right: 2%" />
-                    <div class="text-dark fw-bold fs-5" style="text-align: center">Copyright © 2022-ITI Group 2</div>
-                </div>
-            </div>
-        </footer>
+    <script src="./../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-        <!-- include jquery file -->
-        <script src="./../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="./../node_modules/jquery/dist/jquery.min.js"></script>
-        <script src="./../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
-
-        <script src="./../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
-        <script type="module" src="./../js/categ.js"></script>
-        <script type="module" src="./../js/index.js"></script>
-        <script type="module" src="./../js/script.js"></script>
-        
-    </body>
+    <script type="module" src="./../js/categ.js"></script>
+    <script type="module" src="./../js/index.js"></script>
+    <script type="module" src="./../js/script.js"></script>
+  </body>
 </html>

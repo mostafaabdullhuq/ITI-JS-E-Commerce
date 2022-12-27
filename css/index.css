@@ -19,7 +19,6 @@ html {
     background-color: var(--white-6);
 }
 .cart-btn {
-    /* border-radius: 50%; */
     height: 27px;
     width: 25px;
     border: 0;
@@ -118,6 +117,9 @@ li {
     .foot {
         text-align: center;
     }
+    .social {
+        justify-content: center;
+    }
 }
 
 /* feedback */
@@ -193,6 +195,9 @@ li {
     transform-origin: 50% 50% 0;
     transition: all 250ms ease-out 0s;
     width: 20px;
+}
+.feed {
+    background-color: var(--separators-color);
 }
 
 /*slider */
@@ -454,9 +459,17 @@ p {
     border: 3px solid var(--separators-color);
     position: relative;
 }
+.prod .price {
+    max-width: 300px;
+    margin: auto;
+}
 
-.feed {
-    background-color: var(--separators-color);
+.prod .price .rating {
+    text-align: right;
+}
+
+.prod .price span {
+    text-align: left;
 }
 
 /* form  */
@@ -567,19 +580,6 @@ footer a:hover {
     font-weight: bold;
 }
 
-.prod .price {
-    max-width: 300px;
-    margin: auto;
-}
-
-.prod .price .rating {
-    text-align: right;
-}
-
-.prod .price span {
-    text-align: left;
-}
-
 .modal-content2 {
     left: 50%;
     transform: translate(-50%, 0%);
@@ -624,6 +624,12 @@ nav i:hover,
     font-weight: 550;
 }
 
-/* .profile-info {
-    max-width: 50px;
-} */
+nav .dropdown li a:hover {
+    color: white;
+    background-color: var(--ltn__secondary-color);
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}

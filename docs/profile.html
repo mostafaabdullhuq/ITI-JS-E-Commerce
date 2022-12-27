@@ -11,82 +11,235 @@
     <link rel="stylesheet" href="./../node_modules/animate.css/animate.min.css" />
     <link rel="stylesheet" href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Profile</title>
   
   </head>
   <body>
-    <div class="container rounded bg-white mt-5 mb-5">
-      <div class="row">
-          <div class="col-md-3 border-right">
-              <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="../imgs/profile-picture_640.png"><span class="font-weight-bold">User</span><span class="text-black-50">test_email@group2.com</span><span> </span></div>
+    <nav class="navbar navbar-expand-lg py-4 border-bottom">
+      <div class="container-fluid">
+          <a class="d-none d-lg-block navbar-brand text-uppercase col-xl-2 col-lg-3 fs-5 fw-bolder text-center" href="/index.html">E-Commerce</a>
+          <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+          >
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse mt-2 mt-lg-0 col me-3" id="navbarSupportedContent">
+              <ul class="navbar-nav col me-auto mb-2 mb-lg-0 d-flex justify-content-center">
+                  <li class="nav-item me-3">
+                      <a class="nav-link text-dark text-uppercase fw-bold active" aria-current="page" href="../index.html">Home</a>
+                  </li>
+                  <li class="nav-item dropdown me-3">
+                      <a class="nav-link dropdown-toggle text-dark text-uppercase fw-bold" href="./categ.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products </a>
+                      <ul class="dropdown-menu rounded-0 py-0" id="cat-ul">
+                          <li>
+                              <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2" href="./categ.html">All Products</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li class="nav-item me-3">
+                      <a class="nav-link text-dark text-uppercase fw-bold" href="#footer">About</a>
+                  </li>
+                  <li class="nav-item me-3">
+                      <a href="#footer" class="nav-link text-dark text-uppercase fw-bold">Contact</a>
+                  </li>
+              </ul>
           </div>
-          <div class="col-md-5 border-right">
-              <div class="p-3 py-5">
-                  <div class="d-flex justify-content-between align-items-center mb-3">
-                      <h4 class="text-right">Update details</h4>
-                  </div>
-                  <form id="fff">
-                  <div class="row mt-2">
-                      <div class="col-md-6"><label class="labels">First Name</label><input type="text" class="form-control" placeholder="first name"   name="firstName"></div>
-                      <div class="col-md-6"><label class="labels">Last Name</label><input type="text" class="form-control"  placeholder="last name"  name="lastName"></div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Email</label><input type="email" class="form-control" placeholder="enter email"   name="email"></div>
-                    <div class="col-md-12"><label class="labels">Shipping Address</label><input type="text" class="form-control" placeholder="enter your address" ></div>
-                    <div class="row mt-3">
-                      <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country"   name="country"></div>
-                      <div class="col-md-6"><label class="labels">City</label><input type="text" class="form-control"  placeholder="city"  name="city"></div>
-                    </div>
-                    
-                    <div><hr></div>
 
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">Change Password</h4>
-                    </div>
-                    <div class="col-md-12"><label class="labels">Currant Password</label><input type="password" class="form-control" placeholder="password"  name="oldpass"></div>
-                    <div class="col-md-12"><label class="labels">New Password</label><input type="password" class="form-control" placeholder="new password"  name="newpass"></div>
-                    <div class="col-md-12"><label class="labels">Confirm Password</label><input type="password" class="form-control" placeholder="confirm password"  name="repass"></div>
-                      
-                    </div>
-                  
-                  <div class="mt-5 text-center"><input type="submit" value="Save updates" class="btn rounded-0 p-2 btn-form fs-6 me-5" height="50px"></div>
-                  
-                </form>
+          <!-- cart and user section -->
+          <div class="col-xl-2 col-lg-3 dropdown col d-flex text-center align-items-center right-nav-side">
+              <div class="d-flex col justify-content-center">
+                  <!-- profile dropdown -->
+                  <a class="nav-link profile-info dropdown-toggle text-center text-dark fs-5" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fa-solid fa-user"></i>
+                  </a>
+                  <ul class="dropdown-menu user-controls-list rounded-0" style="text-align: center"></ul>
+                  <!-- cart dropdown -->
+                  <a class="ms-3 user-nav-cart text-dark text-start fs-5" href="./cart.html" data-cart-items="0"><i class="fa-solid fa-cart-shopping"></i> </a>
               </div>
           </div>
-          <div class="col-md-4">
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center experience"><h4>Track orders</h4></div><br>
-                    <div class="col-md-12 card" style="width: 18rem;">
-                    <div class="card-body ">
-                      <h5 class="card-title text-center">Order #1</h5>
-                      <p class="card-text">Total: 200$</p>
-                      <p class="card-text">Order Date : 22/12/2022</p>
-                      <div class="text-center"><input type="submit" value="Track order" class="btn rounded-0 p-2 btn-form fs-6 me-5" height="50px"></div>
+      </div>
+  </nav>
+
+
+   <div class="container mb-4 mt-5">
+    <div class="row">
+      <div class="col-md-3 mb-2">
+        <div class="d-flex flex-column align-items-center">
+          <img class="rounded-circle" width="150px" src="../imgs/profile-picture_640.png">
+          <span class="font-weight-bold fs-4">Group2</span>
+          <span class="text-black-50 fs-4">test_email@group2.com</span>
+        </div>
+        </div>
+        <div class="col-md-9">
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item rounded-0">
+              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                  <h3 class="text-black">Update details</h3>
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                  <form id="fff">
+                    <div class="row mt-2">
+                        <div class="col-md-6"><input type="text" class="form-control fs-4 rounded-0" placeholder="First name"   name="firstName"></div>
+                        <div class="col-md-6"><input type="text" class="form-control fs-4 rounded-0"  placeholder="Last name"  name="lastName"></div>
+                    </div>
+                    <div class="row mt-3">
+                      <div class="col-md-12"><input type="email" class="form-control fs-4 rounded-0 mb-3" placeholder="Enter email"   name="email"></div>
+                      <div class="col-md-12"><input type="text" class="form-control fs-4 rounded-0 mb-3" placeholder="Enter your address" ></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-3"><input type="text" class="form-control fs-4 rounded-0" placeholder="Country"   name="country"></div>
+                        <div class="col-md-6 "><input type="text" class="form-control fs-4 rounded-0"  placeholder="City"  name="city"></div>
+                      </div>
+                      <div class="row div-btn">
+                        <input type="submit" value="Update Details" class="btn rounded-0 btn-form fw-bold text-uppercase fs-4">
+                      </div>
+                      </form>
+                    </div>
+            </div>
+            </div>
+            <div class="accordion-item  rounded-0">
+              <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                  <h3 class="text-black">Change Password</h3>
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                <div class="accordion-body">
+                  <form id="fff">
+                  <div class="col-md-12"><input type="password" class="form-control fs-4 rounded-0 mb-3" placeholder="Password"  name="oldpass"></div>
+                  <div class="col-md-12"><input type="password" class="form-control fs-4 rounded-0 mb-3" placeholder="New password"  name="newpass"></div>
+                  <div class="col-md-12"><input type="password" class="form-control fs-4 rounded-0 mb-3" placeholder="Confirm password"  name="repass"></div> 
+                  <div class="row div-btn">
+                  <input type="submit" value="Update Details" class="btn rounded-0 btn-form fw-bold text-uppercase fs-4">
+                  </div> 
+                  </form>
+                  </div>
+                  </div> 
+                  </div>              
+            <div class="accordion-item rounded-0">
+              <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                  <h3 class="text-black">Track orders</h3>
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                <div class="accordion-body">
+                  <div class="row border pt-1 pb-1 mb-2">
+                    <div class="col-lg-8">
+                      <div class="card-body">
+                        <h5 class="card-title fs-4">Order #1</h5>
+                        <p class="card-text fs-5">Total: 200$</p>
+                        <p class="card-text fs-5">Order Date : 22/12/2022</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="mt-3"><input type="submit" value="Track order" class="btn rounded-0 btn-form text-uppercase fw-bold fs-4 ps-5 pe-5"></div>
                     </div>
                   </div>
-                    <br>
-                    <div class="col-md-12 card" style="width: 18rem;">
-                      <div class="card-body ">
-                        <h5 class="card-title text-center">Order #2</h5>
-                        <p class="card-text">Total: 200$</p>
-                        <p class="card-text">Order Date : 22/12/2022</p>
-                        <div class="text-center"><input type="submit" value="Track order" class="btn rounded-0 p-2 btn-form fs-6 me-5" height="50px"></div>
-                      </div>
-                
-                <br>
+                  <div class="row border pt-1 pb-1">
+                    <div class="col-lg-8">
+                      <div class="card-body">
+                        <h5 class="card-title fs-4">Order #2</h5>
+                        <p class="card-text fs-5">Total: 200$</p>
+                        <p class="card-text fs-5">Order Date : 22/12/2022</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="mt-3"><input type="submit" value="Track order" class="btn rounded-0 btn-form text-uppercase fw-bold fs-4 ps-5 pe-5"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-          
       </div>
-      </div>
-  </div>
-  </div>
-  </div>
-    
-    
+    </div>
+   </div>
+   <footer class="bd-footer" id="footer">
+    <div class="container py-5">
+        <div class="row foot ps-4">
+            <div class="col-lg-4 col-md-6 col-sm-12-justify-content-center offset-lg-1 mb-4">
+                <h2 class="text-dark fw-bolder">Contact Us</h2>
+                <ul type="none">
+                    <li>
+                        <span class="fw-bold">Phone Number:</span>
+                        <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">+11111111111</a>
+                    </li>
+                    <li><span class="fw-bold">Email:</span><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6"> group2@gmail.com</a></li>
+                    <li><span class="fw-bold">Address:</span><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">123 Alexandria</a></li>
+                </ul>
+                <div class="col d-flex social mt-1 py-1">
+                    <a href="http://127.0.0.1:5500/index.html#" style="text-decoration: none" class="col fs-2 me-2 d-flex justify-content-center align-items-center"
+                        ><i class="fa-brands fa-facebook-f"></i
+                    ></a>
+                    <a href="http://127.0.0.1:5500/index.html#" style="text-decoration: none" class="col fs-2 me-2 d-flex justify-content-center align-items-center"
+                        ><i class="fa-brands fa-twitter"></i
+                    ></a>
+                    <a href="http://127.0.0.1:5500/index.html#" style="text-decoration: none" class="col fs-2 me-2 d-flex justify-content-center align-items-center"
+                        ><i class="fa-brands fa-instagram"></i
+                    ></a>
+                    <a href="http://127.0.0.1:5500/index.html#" style="text-decoration: none" class="col fs-2 d-flex justify-content-center align-items-center"
+                        ><i class="fa-solid fa-globe"></i
+                    ></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h2 class="text-dark fw-bolder">Need Help?</h2>
+                <ul type="none">
+                    <li>
+                        <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Payment Methods</a>
+                    </li>
+                    <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6"> </a>
+                    <li><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6"></a><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Money Back Gurantee</a></li>
+                    <li>
+                        <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Customer Service</a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Terms &amp; Conditions</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 text-white">
+                <h2 class="text-dark fw-bolder">Navigate</h2>
+                <ul type="none">
+                    <li>
+                        <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">My Orders</a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">My Account</a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Products </a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Change Password </a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">Track Order</a>
+                    </li>
+                </ul>
+            </div>
+            <hr style="width: 900px; position: relative; right: 2%" />
+            <div class="text-dark fw-bold fs-5" style="text-align: center">Copyright © 2022-ITI Group 2</div>
+        </div>
+    </div>
+</footer>
+<script type="module" src="./../js/index.js"></script>
+<script type="module" src="./../js/script.js"></script> 
   <script src="./../js/profile.js"></script>
-  <script src="./../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="./../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 
   </body>
 </html>
