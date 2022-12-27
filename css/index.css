@@ -19,7 +19,6 @@ html {
     background-color: var(--white-6);
 }
 .cart-btn {
-    /* border-radius: 50%; */
     height: 27px;
     width: 25px;
     border: 0;
@@ -29,6 +28,8 @@ html {
     bottom: 15%; */
     padding-left: 10px;
 }
+
+
 
 /* form */
 .social .btn-form {
@@ -87,6 +88,7 @@ html {
         text-align: center;
     }
 }
+
 
 /* footer */
 footer {
