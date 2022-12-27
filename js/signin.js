@@ -29,6 +29,7 @@ function checkLocalStorage(email,pass) {
                 console.log('email found!');
                 if (users[index].passWord === pass) {
                     console.log('password correct');
+                    setCookie(email,pass,100);
                 }else{
                     console.log('password incorrect');
                 }
@@ -43,3 +44,10 @@ function checkLocalStorage(email,pass) {
         // console.log(users);
     }
 }
+
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
