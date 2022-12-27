@@ -4,7 +4,7 @@ let emailRe =   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(
 let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ ; 
 
 
-document.forms[0].onmouseenter = function(e){
+document.getElementById("signinForm").onmouseenter = function(e){
     let emailInput = document.querySelector('[name="email"]').value;
     let passInput = document.querySelector('[name="pass"]').value;
 
@@ -13,10 +13,10 @@ document.forms[0].onmouseenter = function(e){
 
     if(emailValid===false || passValid===false){
         e.preventDefault();
-
+        console.log("faild")
     }else{
+        console.log("enter func")
         checkLocalStorage(emailInput,passInput);
-
     }
 }
 
@@ -29,7 +29,7 @@ function checkLocalStorage(email,pass) {
                 console.log('email found!');
                 if (users[index].passWord === pass) {
                     console.log('password correct');
-                    setCookie(email,pass,100);
+                    // setCookie(email,pass,100);
                 }else{
                     console.log('password incorrect');
                 }
