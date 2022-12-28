@@ -437,7 +437,8 @@
             <i class="fa-solid fa-angles-up"></i>
         </button>
         <!-- sign in popup -->
-        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+
+        <!-- <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content rounded-0">
                     <div class="container">
@@ -464,7 +465,64 @@
                     </div>
                 </div>
             </div>
+        </div> -->
+
+
+        <div
+        class="modal fade"
+        id="signInModal"
+        aria-hidden="true"
+        aria-labelledby="exampleModalToggleLabel2"
+        tabindex="-1"
+    >
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-0">
+            <div class="container">
+            <div class="row">
+                <div class="card border-0 shadow rounded-3">
+                <div class="card-body p-4 p-sm-5">
+                <form id="signinForm">
+                    <h5 class="card-title text-center mb-5 fw-bolder fs-4 title">
+                    Sign In
+                    </h5>
+                    <div class="row">
+                    <div class="col-12">
+                        <input
+                        type="email"
+                        class="form-control rounded-0 mb-3 p-3 fs-5"
+                        placeholder="Email Address"
+                        value=""
+                        name="email"
+                        />
+                    </div>
+                    <div class="col-12">
+                        <input
+                        type="password"
+                        class="form-control rounded-0 mb-3 p-3 fs-5"
+                        placeholder="Password"
+                        value=""
+                        name="pass"
+                        />
+                    </div>
+                    <button
+                        class="btn col-12 btn-form btn-login text-uppercase fw-bold mt-3 p-3 rounded-0"
+                        type="Submit"
+                    >
+                        Sign In
+                    </button>
+                    <p class="fs-4 mt-3 text-center">
+                        New Customer? <a href="#">Sign Up</a>
+                    </p>
+                    </div>
+                </form>
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
+        </div>
+    </div>
+
         <!-- sign up popup -->
         <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
