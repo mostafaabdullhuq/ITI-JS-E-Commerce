@@ -319,6 +319,7 @@ a:link {
     text-decoration: none;
 }
 
+/* quick view */
 .view {
     cursor: pointer;
     transform: translate(0, 0px);
