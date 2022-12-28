@@ -70,6 +70,7 @@ $(function () {
                     product.image = prodImage;
                     product.title = prodTitle;
                     product.price = +prodPrice.replace("$", "");
+                    $(".prod-qty-value").val(1);
 
                     $(".modal-title").text(prodTitle);
                     $(".modal-price").text(prodPrice);
@@ -266,17 +267,22 @@ $(function () {
 
     $(".add-to-cart").on("click", function (e) {
         if (user) {
+            console.log("add to cart clicked");
             let prodQty = +$(this).parent().siblings(".prod-qty").children(".prod-qty-value").val(),
                 userProdList = user.cart.prodsList;
-
             product.qty = prodQty;
             let isInCart = ecommerceUsers.isProdInCart(user, product);
             if (isInCart[0]) {
-                userProdList[isInCart[1]].qty += prodQty;
+                console.log("Quantity In Cart: " + isInCart[0].qty);
+                let newQuantity = (isInCart[0].qty += prodQty);
+                userProdList[newQuantity];
+                console.log("New Quantity: " + newQuantity);
             } else {
                 userProdList.push(product);
             }
-            console.log(userProdList);
+
+            console.log("Input Quantity: " + prodQty);
+            // console.log(userProdList);
             ecommerceUsers.updateCart(user, userProdList);
             UpdateNavCart(user.cart.prodsCount);
         }
