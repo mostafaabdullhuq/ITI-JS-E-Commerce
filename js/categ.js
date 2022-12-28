@@ -18,25 +18,15 @@ $(function () {
     .then((products) => {
       let prods = "";
       products.forEach((product) => {
-        prods += `
-            <div class="col-sm-9  col-md-8 col-lg-3 col-xl-3 prod prod-info " data-prod-id="${
-              product.id
-            }" data-prod-category="${product.category}">
-    //fetching all products
-    fetch("https://fakestoreapi.com/products?")
-        .then((response) => response.json())
-        .then((products) => {
-            let prods = "";
-            products.forEach((product) => {
                 prods += `
             <div class="col-sm-9  col-md-8 col-lg-4 col-xl-3 prod prod-info " data-prod-id="${product.id}" data-prod-category="${product.category}">
-            <div class="product-item prod-info "  style="height:550px;">
+            <div class="product-item prod-info " style="height:550px;">
               <div href="#shop-single.html" class="card product-img image-container rounded-0 d-flex justify-content-center" style="cursor:pointer;">
                 <img
                   src="${product.image}"
                   alt="Image"
                   class="img-fluid "
-style="height: 300px;width:90%;margin: 0px auto;"                />
+style="height: 300px;width:90%;margin: 0px auto;"/>
                 <p class="view py-2 fs-3 text-uppercase col-12" style="position: absolute; bottom: 0px" data-prod-id="${product.id}">Quick view</p>
               </div>
               <a class="title prod-title fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
@@ -56,7 +46,7 @@ style="height: 300px;width:90%;margin: 0px auto;"                />
             //when click product title render to product-info page
             document.querySelectorAll(".title").forEach((link) => {
                 link.addEventListener("click", function () {
-                    window.location.href = `././docs/product-info.html?product_id=${this.getAttribute("data-prod-id")}`;
+                    window.location.href = "././docs/product-info.html?product_id=${this.getAttribute(data-prod-id)}";
                 });
             });
             // Product PopUp
