@@ -548,7 +548,6 @@ else {
 }
 
 $(function () {
-<<<<<<< HEAD
     $("#user-info").on("click", function () {
         console.log("clicked");
 
