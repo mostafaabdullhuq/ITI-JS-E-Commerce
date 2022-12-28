@@ -224,3 +224,52 @@ ${'<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(produ
 </div>
 </div>
 </div> */
+
+// let user = ecommerceUsers.validateLoginCookies();
+// console.log(user);
+// $(function () {
+//   let product = false;
+//           $(".prod-qty-remove").on("click", function () {
+//               let prodId = $(this).attr("data-prod-id"),
+//                   prodQty = +$(this).siblings(".prod-qty-value").val();
+//               {
+//                   prodQty -= 1;
+//                   $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
+//               }
+//           });
+//           $(".prod-qty-add").on("click", function () {
+//               let prodId = $(this).attr("data-prod-id"),
+//                   prodQty = +$(this).siblings(".prod-qty-value").val();
+//                   prodQty += 1;
+//               $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
+//           });
+//           $(".prod-qty-value").on("input", function (e, prodQty, prodId) {
+//               {
+//                   if (!prodQty || !prodId) {
+//                       prodId = $(this).attr("data-prod-id");
+//                       prodQty = $(this).val() == 0 ? 1 : $(this).val();
+//                   }
+//                   if (+prodQty > 999) prodQty = 999;
+//                   else if (+prodQty < 1) prodQty = 1;
+//                   $(this).val(prodQty);
+//                   console.log(prodQty);
+//               }
+//           });
+
+//           $(".add-to-cart").on("click", function (e) {
+//             console.log(user);
+//               if (user) {
+//                   let prodQty = +$(this).siblings(".prod-qty-value").val(),
+//                       userProdList = user.cart.prodsList;
+
+//                   userProdList.push({
+//                       id: product.id,
+//                       title: product.title,
+//                       image: product.image,
+//                   });
+//                   ecommerceUsers.updateCart(user, userProdList);
+//                   UpdateNavCart(user.cart.prodsCount);
+//               }
+//           });
+//       });
+// localStorage.clear();
