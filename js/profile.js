@@ -1,4 +1,4 @@
-
+import { Users } from "./script.js";
 //.............................................. validation .............................................................
 
 // REGEX for first.last name , city and country : no numbers or special characters only english letters
@@ -10,9 +10,11 @@ let emailRe =   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(
 //REGEX for password :  Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
 let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ ; 
 
+let test = new Users().validateLoginCookies();
+console.log(test);
 
 
-document.forms[0].onsubmit = function(e){
+document.forms[0].onmouseenter = function(e){
     // get inputs
     let firstNameInput = document.querySelector('[name="firstName"]').value;
     let lastNameInput = document.querySelector('[name="lastName"]').value;
