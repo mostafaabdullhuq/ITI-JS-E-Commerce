@@ -522,7 +522,3 @@ $(function () {
         window.location.href = "./../docs/profile.html";
     });
 });
-// document.getElementById("mmm").onclick = function(){
-//     console.log("clicked");
-//         window.location.href = "./../docs/profile.html";
-// }
