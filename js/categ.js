@@ -56,7 +56,7 @@ style="height: 300px;width:90%;margin: 0px auto;"                />
             //when click product title render to product-info page
             document.querySelectorAll(".title").forEach((link) => {
                 link.addEventListener("click", function () {
-                    window.location.href = `./../docs/product-info.html?product_id=${this.getAttribute("data-prod-id")}`;
+                    window.location.href = `././docs/product-info.html?product_id=${this.getAttribute("data-prod-id")}`;
                 });
             });
             // Product PopUp
