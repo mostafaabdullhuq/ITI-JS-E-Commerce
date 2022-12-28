@@ -492,19 +492,23 @@ if (!ecommerceUsers.validateLoginCookies()) {
 `);
 }
 // if user is logged in
-else {
-    $(".user-controls-list").html(`
 
-    <li class="border-bottom user-profile-dropdown dropdown-item py-2" style="cursor: pointer;">
+else {
+    let user = ecommerceUsers.validateLoginCookies();
+
+    $(".user-controls-list").html(`
+    <li id="user-info" class="border-bottom user-profile-dropdown dropdown-item py-2" style="cursor: pointer;">
         ${user.firstName} ${user.lastName}
     </li>
-    <li class="user-logout  user-profile-dropdown dropdown-item py-2" style="cursor: pointer;">
+    <li class="user-logout  user-profile-dropdown dropdown-item py-2" style="cursor: pointer; href = "/index.html";">
     Logout
     </li>
 `);
 
     $(".user-logout").on("click", (e) => {
-        ecommerceUsers.logOut();
+        window.location.href = "/index.html";
+
+        // ecommerceUsers.logOut();
         window.location.href = "/index.html";
     });
     $(() => {
@@ -513,8 +517,12 @@ else {
 }
 
 $(function () {
-    $(".user-profile-dropdown").on("click", function () {
+    $("#user-info").on("click", function () {
         console.log("clicked");
         window.location.href = "./../docs/profile.html";
     });
 });
+// document.getElementById("mmm").onclick = function(){
+//     console.log("clicked");
+//         window.location.href = "./../docs/profile.html";
+// }
