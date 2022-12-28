@@ -335,6 +335,9 @@ a:link {
     -o-transform: translate(0, 0px);
     opacity: 0;
 }
+.btn-close:hover{
+    background-color:var(--ltn__secondary-color);
+}
 
 /* .product-img {
     box-shadow: inset 0px 0px 20px rgba(22, 21, 21, 0.2);
