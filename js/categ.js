@@ -66,66 +66,66 @@ style="height: 300px;width:90%;margin: 0px auto;"/>
                     $(".prod-qty-value").attr("data-prod-id", product.id);
                     $(".prod-qty-add").attr("data-prod-id", product.id);
                     $(".add-to-cart").attr("data-prod-id", product.id);
-                    $(".prod-qty-remove").on("click", function () {
-                        // get product id
-                        let prodId = $(this).attr("data-prod-id"),
-                            // get product quantity
-                            prodQty = +$(this).siblings(".prod-qty-value").val();
+                    // $(".prod-qty-remove").on("click", function () {
+                    //     // get product id
+                    //     let prodId = $(this).attr("data-prod-id"),
+                    //         // get product quantity
+                    //         prodQty = +$(this).siblings(".prod-qty-value").val();
 
-                        {
-                            // decrease product quantity
-                            prodQty -= 1;
-                            $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
-                        }
-                    });
+                    //     {
+                    //         // decrease product quantity
+                    //         prodQty -= 1;
+                    //         $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
+                    //     }
+                    // });
 
-                    $(".prod-qty-add").on("click", function () {
-                        // get product id
-                        let prodId = $(this).attr("data-prod-id"),
-                            // get product quantity
-                            prodQty = +$(this).siblings(".prod-qty-value").val();
+                    // $(".prod-qty-add").on("click", function () {
+                    //     // get product id
+                    //     let prodId = $(this).attr("data-prod-id"),
+                    //         // get product quantity
+                    //         prodQty = +$(this).siblings(".prod-qty-value").val();
 
-                        // increase product quantity
-                        prodQty += 1;
-                        $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
-                    });
+                    //     // increase product quantity
+                    //     prodQty += 1;
+                    //     $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
+                    // });
                     // when input value trigger changes
-                    $(".prod-qty-value").on("input", function (e, prodQty, prodId) {
-                        {
-                            // if the event is triggered from the input itself
-                            if (!prodQty || !prodId) {
-                                // get the product id and quantity values
-                                prodId = $(this).attr("data-prod-id");
-                                prodQty = $(this).val() == 0 ? 1 : $(this).val();
-                            }
-                            // if the quantity is more than 999, max it to 999
-                            if (+prodQty > 999) prodQty = 999;
-                            // if the quantity is less than 1, min it to 1
-                            else if (+prodQty < 1) prodQty = 1;
+                    // $(".prod-qty-value").on("input", function (e, prodQty, prodId) {
+                    //     {
+                    //         // if the event is triggered from the input itself
+                    //         if (!prodQty || !prodId) {
+                    //             // get the product id and quantity values
+                    //             prodId = $(this).attr("data-prod-id");
+                    //             prodQty = $(this).val() == 0 ? 1 : $(this).val();
+                    //         }
+                    //         // if the quantity is more than 999, max it to 999
+                    //         if (+prodQty > 999) prodQty = 999;
+                    //         // if the quantity is less than 1, min it to 1
+                    //         else if (+prodQty < 1) prodQty = 1;
 
-                            // change the input value to the new quantity
-                            $(this).val(prodQty);
-                            console.log(prodQty);
-                        }
-                    });
-                    $(".add-to-cart").on("click", function (e) {
-                        console.log(product);
-                        console.log(user);
-                        if (user) {
-                            let prodQty = +$(this).siblings(".prod-qty-value").val(),
-                                userProdList = user.cart.prodsList;
+                    //         // change the input value to the new quantity
+                    //         $(this).val(prodQty);
+                    //         console.log(prodQty);
+                    //     }
+                    // });
+                    // $(".add-to-cart").on("click", function (e) {
+                    //     console.log(product);
+                    //     console.log(user);
+                    //     if (user) {
+                    //         let prodQty = +$(this).siblings(".prod-qty-value").val(),
+                    //             userProdList = user.cart.prodsList;
 
-                            userProdList.push({
-                                id: product.id,
-                                title: product.title,
-                                image: product.image,
-                                price: product.price,
-                                qty: prodQty,
-                            });
-                            ecommerceUsers.updateCart(user, userProdList);
-                            UpdateNavCart(user.cart.prodsCount);
-                        }
-                    });
+                    //         userProdList.push({
+                    //             id: product.id,
+                    //             title: product.title,
+                    //             image: product.image,
+                    //             price: product.price,
+                    //             qty: prodQty,
+                    //         });
+                    //         ecommerceUsers.updateCart(user, userProdList);
+                    //         UpdateNavCart(user.cart.prodsCount);
+                    //     }
+                    // });
                     $("#quickviewpopup").fadeIn(200, function () {
                         $(".modal-dialog .btn-close").on("click", function () {
                             $("#quickviewpopup").fadeOut(200);
@@ -238,66 +238,66 @@ style="height: 300px;width:90%;margin: 0px auto;"              />
                         $(".prod-qty-value").attr("data-prod-id", product.id);
                         $(".prod-qty-add").attr("data-prod-id", product.id);
                         $(".add-to-cart").attr("data-prod-id", product.id);
-                        $(".prod-qty-remove").on("click", function () {
-                            // get product id
-                            let prodId = $(this).attr("data-prod-id"),
-                                // get product quantity
-                                prodQty = +$(this).siblings(".prod-qty-value").val();
+                        // $(".prod-qty-remove").on("click", function () {
+                        //     // get product id
+                        //     let prodId = $(this).attr("data-prod-id"),
+                        //         // get product quantity
+                        //         prodQty = +$(this).siblings(".prod-qty-value").val();
 
-                            {
-                                // decrease product quantity
-                                prodQty -= 1;
-                                $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
-                            }
-                        });
+                        //     {
+                        //         // decrease product quantity
+                        //         prodQty -= 1;
+                        //         $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
+                        //     }
+                        // });
 
-                        $(".prod-qty-add").on("click", function () {
-                            // get product id
-                            let prodId = $(this).attr("data-prod-id"),
-                                // get product quantity
-                                prodQty = +$(this).siblings(".prod-qty-value").val();
+                        // $(".prod-qty-add").on("click", function () {
+                        //     // get product id
+                        //     let prodId = $(this).attr("data-prod-id"),
+                        //         // get product quantity
+                        //         prodQty = +$(this).siblings(".prod-qty-value").val();
 
-                            // increase product quantity
-                            prodQty += 1;
-                            $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
-                        });
+                        //     // increase product quantity
+                        //     prodQty += 1;
+                        //     $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
+                        // });
                         // when input value trigger changes
-                        $(".prod-qty-value").on("input", function (e, prodQty, prodId) {
-                            {
-                                // if the event is triggered from the input itself
-                                if (!prodQty || !prodId) {
-                                    // get the product id and quantity values
-                                    prodId = $(this).attr("data-prod-id");
-                                    prodQty = $(this).val() == 0 ? 1 : $(this).val();
-                                }
-                                // if the quantity is more than 999, max it to 999
-                                if (+prodQty > 999) prodQty = 999;
-                                // if the quantity is less than 1, min it to 1
-                                else if (+prodQty < 1) prodQty = 1;
+                        // $(".prod-qty-value").on("input", function (e, prodQty, prodId) {
+                        //     {
+                        //         // if the event is triggered from the input itself
+                        //         if (!prodQty || !prodId) {
+                        //             // get the product id and quantity values
+                        //             prodId = $(this).attr("data-prod-id");
+                        //             prodQty = $(this).val() == 0 ? 1 : $(this).val();
+                        //         }
+                        //         // if the quantity is more than 999, max it to 999
+                        //         if (+prodQty > 999) prodQty = 999;
+                        //         // if the quantity is less than 1, min it to 1
+                        //         else if (+prodQty < 1) prodQty = 1;
 
-                                // change the input value to the new quantity
-                                $(this).val(prodQty);
-                                console.log(prodQty);
-                            }
-                        });
-                        $(".add-to-cart").on("click", function (e) {
-                            console.log(product);
-                            console.log(user);
-                            if (user) {
-                                let prodQty = +$(this).siblings(".prod-qty-value").val(),
-                                    userProdList = user.cart.prodsList;
+                        //         // change the input value to the new quantity
+                        //         $(this).val(prodQty);
+                        //         console.log(prodQty);
+                        //     }
+                        // });
+                        // $(".add-to-cart").on("click", function (e) {
+                        //     console.log(product);
+                        //     console.log(user);
+                        //     if (user) {
+                        //         let prodQty = +$(this).siblings(".prod-qty-value").val(),
+                        //             userProdList = user.cart.prodsList;
 
-                                userProdList.push({
-                                    id: product.id,
-                                    title: product.title,
-                                    image: product.image,
-                                    price: product.price,
-                                    qty: prodQty,
-                                });
-                                ecommerceUsers.updateCart(user, userProdList);
-                                UpdateNavCart(user.cart.prodsCount);
-                            }
-                        });
+                        //         userProdList.push({
+                        //             id: product.id,
+                        //             title: product.title,
+                        //             image: product.image,
+                        //             price: product.price,
+                        //             qty: prodQty,
+                        //         });
+                        //         ecommerceUsers.updateCart(user, userProdList);
+                        //         UpdateNavCart(user.cart.prodsCount);
+                        //     }
+                        // });
                         $("#quickviewpopup").fadeIn(200, function () {
                             $(".modal-dialog .btn-close").on("click", function () {
                                 $("#quickviewpopup").fadeOut(200);
@@ -378,48 +378,48 @@ asc.addEventListener("click", function () {
                         $(".prod-qty-value").attr("data-prod-id", product.id);
                         $(".prod-qty-add").attr("data-prod-id", product.id);
                         $(".add-to-cart").attr("data-prod-id", product.id);
-                        $(".prod-qty-remove").on("click", function () {
-                            // get product id
-                            let prodId = $(this).attr("data-prod-id"),
-                                // get product quantity
-                                prodQty = +$(this).siblings(".prod-qty-value").val();
+                        // $(".prod-qty-remove").on("click", function () {
+                        //     // get product id
+                        //     let prodId = $(this).attr("data-prod-id"),
+                        //         // get product quantity
+                        //         prodQty = +$(this).siblings(".prod-qty-value").val();
 
-                            {
-                                // decrease product quantity
-                                prodQty -= 1;
-                                $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
-                            }
-                        });
+                        //     {
+                        //         // decrease product quantity
+                        //         prodQty -= 1;
+                        //         $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
+                        //     }
+                        // });
 
-                        $(".prod-qty-add").on("click", function () {
-                            // get product id
-                            let prodId = $(this).attr("data-prod-id"),
-                                // get product quantity
-                                prodQty = +$(this).siblings(".prod-qty-value").val();
+                        // $(".prod-qty-add").on("click", function () {
+                        //     // get product id
+                        //     let prodId = $(this).attr("data-prod-id"),
+                        //         // get product quantity
+                        //         prodQty = +$(this).siblings(".prod-qty-value").val();
 
-                            // increase product quantity
-                            prodQty += 1;
-                            $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
-                        });
+                        //     // increase product quantity
+                        //     prodQty += 1;
+                        //     $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
+                        // });
                         // when input value trigger changes
-                        $(".prod-qty-value").on("input", function (e, prodQty, prodId) {
-                            {
-                                // if the event is triggered from the input itself
-                                if (!prodQty || !prodId) {
-                                    // get the product id and quantity values
-                                    prodId = $(this).attr("data-prod-id");
-                                    prodQty = $(this).val() == 0 ? 1 : $(this).val();
-                                }
-                                // if the quantity is more than 999, max it to 999
-                                if (+prodQty > 999) prodQty = 999;
-                                // if the quantity is less than 1, min it to 1
-                                else if (+prodQty < 1) prodQty = 1;
+                        // $(".prod-qty-value").on("input", function (e, prodQty, prodId) {
+                        //     {
+                        //         // if the event is triggered from the input itself
+                        //         if (!prodQty || !prodId) {
+                        //             // get the product id and quantity values
+                        //             prodId = $(this).attr("data-prod-id");
+                        //             prodQty = $(this).val() == 0 ? 1 : $(this).val();
+                        //         }
+                        //         // if the quantity is more than 999, max it to 999
+                        //         if (+prodQty > 999) prodQty = 999;
+                        //         // if the quantity is less than 1, min it to 1
+                        //         else if (+prodQty < 1) prodQty = 1;
 
-                                // change the input value to the new quantity
-                                $(this).val(prodQty);
-                                console.log(prodQty);
-                            }
-                        });
+                        //         // change the input value to the new quantity
+                        //         $(this).val(prodQty);
+                        //         console.log(prodQty);
+                        //     }
+                        // });
                         $(".add-to-cart").on("click", function (e) {
                             console.log(product);
                             console.log(user);
