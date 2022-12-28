@@ -19,7 +19,7 @@ $(function () {
       let prods = "";
       products.forEach((product) => {
         prods += `
-            <div class="col-sm-9  col-md-8 col-lg-4 col-xl-3 prod prod-info " data-prod-id="${
+            <div class="col-sm-9  col-md-8 col-lg-3 col-xl-3 prod prod-info " data-prod-id="${
               product.id
             }" data-prod-category="${product.category}">
             <div class="product-item prod-info "  style="height:550px;">
