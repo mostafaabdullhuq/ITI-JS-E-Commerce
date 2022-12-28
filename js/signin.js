@@ -16,6 +16,9 @@ document.getElementById("signinForm").onsubmit = function(e){
     }else{
         console.log("enter func")
         checkLocalStorage(emailInput,passInput);
+        // let users = new all.Users(users_list).createAccount(newuser);
+        // console.log(users);
+
     }
 }
 
