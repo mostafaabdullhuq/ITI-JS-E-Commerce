@@ -26,27 +26,28 @@ $(function () {
             let prods = "";
             products.forEach((product) => {
                 prods += `
-            <div class="col-sm-9  col-md-8 col-lg-4 col-xl-3 prod prod-info d-none" data-prod-id="${product.id}" data-prod-category="${product.category.replace(" ", "-").replace("'", "")}">
-            <div class="product-item prod-info "  style="height:550px;">
-              <div href="#shop-single.html" class="card product-img image-container rounded-0 d-flex justify-content-center" data-prod-image="${product.image}" style="cursor:pointer;">
-                <img
-                  src="${product.image}"
-                  alt="Image"
-                  class="img-fluid "
-
-style="height: 300px;width:90%;margin: 0px auto;"                />
-                <p class="view py-2 fs-3 text-uppercase col-12" style="position: absolute; bottom: 0px" data-prod-id="${product.id}">Quick view</p>
+                <div class="col-sm-9 col-md-8 col-lg-4 prod prod-info " data-prod-id="${product.id}" data-prod-category="${product.category.replace(" ", "-").replace("'", "")}">
+                  <div class="product-item prod-info "  style="height:550px;">
+                    <div href="#shop-single.html" class="card product-img image-container rounded-0 d-flex justify-content-center" style="cursor:pointer;" data-prod-image="${product.image}">
+                    <div
+                                data-prod-image="${product.image}"
+                                style="background: url(${product.image})"
+                                class="image-container"
+                            >
+                                <p class="view py-2 fs-3 text-uppercase col-12" style="position: absolute; bottom: 0px" data-prod-id="${product.id}">Quick view</p>
+                            </div>
+                    </div>
+                    <a class="title prod-title fs-5 mt-3 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
+                    <div class="price d-flex col-12 mt-2 d-flex  align-items-center justify-content-center">
+                            <span class="fs-4 col mb-0">$${product.price}</span>
+                            <div class="rating col">
+                            ${'<i class="fa-solid fa-star fs-5" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}
+                            </div>
+                        </div>
+                  </div>
               </div>
-              <a class="title prod-title mt-3 fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
-              <div class="price d-flex col-12 d-flex  justify-content-center ">
-                <span class=" fs-5 price ms-3">$${product.price}</span>
-                ${`<i class="fa-solid fa-star rating mt-1" style="color:gold;"></i>`.repeat(Math.round(product.rating.rate))}
-                
-              </div>
-            </div>
-        </div>
-        
-        `;
+              
+              `;
             });
             $("#prods-container").html("");
             $("#prods-container").append(prods);
@@ -201,10 +202,12 @@ style="height: 300px;width:90%;margin: 0px auto;"                />
                     if (category === "all") {
                         products.forEach((product) => {
                             $(product).addClass("d-block").removeClass("d-none");
+                            $(".cteg").text("category");
                         });
                     } else {
                         products.forEach((product) => {
                             if (product.getAttribute("data-prod-category") === category) {
+                                $(".cteg").text(category);
                                 $(product).addClass("d-block").removeClass("d-none");
                             } else {
                                 $(product).addClass("d-none").removeClass("d-block");
@@ -232,6 +235,7 @@ let desc = document.getElementById("desc");
 
 desc.addEventListener("click", function () {
     console.log("desc clicked");
+    $(".srt").text("Descending");
     fetch("https://fakestoreapi.com/products?sort=desc")
         .then((res) => res.json())
         .then((products) => {
@@ -241,18 +245,22 @@ desc.addEventListener("click", function () {
         <div class="col-sm-9 col-md-8 col-lg-4 prod prod-info " data-prod-id="${product.id}" data-prod-category="${product.category.replace(" ", "-").replace("'", "")}">
           <div class="product-item prod-info "  style="height:550px;">
             <div href="#shop-single.html" class="card product-img image-container rounded-0 d-flex justify-content-center" style="cursor:pointer;" data-prod-image="${product.image}">
-              <img
-                src="${product.image}"
-                alt="Image"
-                class="img-fluid "
-
-style="height: 300px;width:90%;margin: 0px auto;"              />
-              <p class="view py-2 fs-3 text-uppercase col-12" style="position: absolute; bottom: 0px" data-prod-id="${product.id}">Quick view</p>
+            <div
+                                data-prod-image="${product.image}"
+                                style="background: url(${product.image})"
+                                class="image-container"
+                            >
+                                <p class="view py-2 fs-3 text-uppercase col-12" style="position: absolute; bottom: 0px" data-prod-id="${product.id}">Quick view</p>
+                            </div>
             </div>
             <a class="title prod-title fs-5 mt-3 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
-            <div class="price d-flex col-12 d-flex  align-items-center justify-content-center">
-              <span class="fs-5 price ms-4">$${product.price}</span>
-              ${`<i class="fa-solid fa-star rating mt-1" style="color:gold;"></i>`.repeat(Math.round(product.rating.rate))}
+            <div class="price d-flex col-12 mt-2 d-flex  align-items-center justify-content-center">
+                            <span class="fs-4 col mb-0">$${product.price}</span>
+                            <div class="rating col">
+                            ${'<i class="fa-solid fa-star fs-5" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}
+                            </div>
+                        </div>
+        </div>
               
             </div>
           </div>
@@ -367,6 +375,7 @@ style="height: 300px;width:90%;margin: 0px auto;"              />
 let asc = document.getElementById("asc");
 asc.addEventListener("click", function () {
     console.log("asc clicked");
+    $(".srt").text("Ascending");
     fetch("https://fakestoreapi.com/products")
         .then((res) => res.json())
         .then((products) => {
@@ -376,21 +385,22 @@ asc.addEventListener("click", function () {
         <div class="col-sm-9  col-md-8 col-lg-4  prod prod-info " data-prod-id="${product.id}" data-prod-category="${product.category.replace(" ", "-").replace("'", "")}">
           <div class="product-item prod-info "  style="height:550px;">
             <div href="#shop-single.html" class="card product-img image-container rounded-0 d-flex justify-content-center" style="cursor:pointer;" data-prod-image="${product.image}">
-              <img
-                src="${product.image}"
-                alt="Image"
-                class="img-fluid "
-                style="height: 300px;width:90%;margin: 0px auto;"
-                data-prod-image="${product.image}"
-              />
-              <p class="view py-2 fs-3 text-uppercase col-12" style="position: absolute; bottom: 0px" data-prod-id="${product.id}">Quick view</p>
+            <div
+                                data-prod-image="${product.image}"
+                                style="background: url(${product.image})"
+                                class="image-container"
+                            >
+                                <p class="view py-2 fs-3 text-uppercase col-12" style="position: absolute; bottom: 0px" data-prod-id="${product.id}">Quick view</p>
+                            </div>
             </div>
             <a class="title prod-title mt-3 fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
-            <div class="price d-flex col-12 d-flex  align-items-center justify-content-center">
-              <span class="fs-5 price ms-4">$${product.price}</span>
-              ${`<i class="fa-solid fa-star mt-1 rating" style="color:gold;"></i>`.repeat(Math.round(product.rating.rate))}
-              
-            </div>
+            <div class="price d-flex col-12 mt-2 d-flex  align-items-center justify-content-center">
+                            <span class="fs-4 col mb-0">$${product.price}</span>
+                            <div class="rating col">
+                            ${'<i class="fa-solid fa-star fs-5" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}
+                            </div>
+                        </div>
+                        </div>
           </div>
       </div>
       

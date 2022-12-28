@@ -249,9 +249,7 @@ $(function () {
             categories.forEach((category) => {
                 categorylnk += `
             <li>
-            <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2" href="/docs/categ.html?categ=${category
-                .replace(" ", "-")
-                .replace("'", "")}">${category}</a>
+            <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2" href="./docs/categ.html?categ=${category}">${category}</a>
             </li>
             `;
             });
@@ -347,3 +345,4 @@ $(function () {
         }
     });
 });
+// localStorage.clear();

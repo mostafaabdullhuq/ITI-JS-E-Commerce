@@ -73,13 +73,13 @@
         <div class="container">
             <div class="dropdowns-container d-flex justify-content-center justify-content-lg-end mt-5 mb-5">
                 <div id="categories" class="category-dropdown py-2 fw-bold px-3">
-                    <a style="cursor: pointer" class="dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
+                    <a style="cursor: pointer" class="cteg dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
                     <ul class="dropdown-menu p-0 list-unstyled rounded-0" id="categBar">
                         <li class="dropdown-item py-2 text-center text-capitalize categ-item" data-category="all">All Products</li>
                     </ul>
                 </div>
                 <div id="sortBy" class="sort-by-dropdown ms-3 py-2 fw-bold px-3">
-                    <a style="cursor: pointer" class="dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-expanded="false">Sort By</a>
+                    <a style="cursor: pointer" class="srt dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-expanded="false">Sort By</a>
                     <ul class="dropdown-menu p-0 list-unstyled rounded-0">
                         <li class="dropdown-item py-2 text-center" id="asc">Ascending</li>
                         <li class="dropdown-item py-2 text-center" id="desc">Descending</li>
@@ -169,37 +169,40 @@
 
         <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1">
             <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content" style="height: 90%; width: 150%; position: absolute; top: 0; bottom: 0; right:0; left: -25%;">
                     <div class="modal-body d-flex row">
                         <img
                             class="col-6 img-thumbnail modal-img"
-                            style="max-width: 50%"
+                            style="max-width: 50%; height:88%;"
                             src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142"
                             alt=""
                             srcset=""
                         />
-                        <div class="col-6 d-flex flex-column">
+                        <div class="col-6 mt-3 d-flex text-center flex-column">
                             <button type="button" class="btn-close" style="position: absolute" data-bs-dismiss="modal" aria-label="Close"></button>
-                            <h3 class="modal-title col mt-3 fw-bolder mb-2">Product name</h3>
-                            <div class="d-flex col">
-                                <h3 class="modal-price me-4 fs-4 mt-3">$1000</h3>
-                                <div class="modal-rating mt-3">
-                                    <i class="fa-solid fa-star pb-2"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
+                            <div class="col-12 d-flex text-center flex-column">
+                                <button type="button" class="btn-close" style="position: absolute" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <h4 class="modal-title col fw-bolder mb-3 mt-5">Product name</h4>
+                                <div class="d-flex text-center justify-content-center col">
+                                    <h3 class="modal-price me-5 fs-4 mt-3 mb-5">$1000</h3>
+                                    <div class="modal-rating mt-3">
+                                        <i class="fa-solid fa-star pb-2"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <br />
                                 </div>
-                                <br />
-                            </div>
-                            <div class="prod-qty col mt-2">
-                                <i class="prod-qty-remove fs-4 col-2 fa-solid fa-minus text-start"></i>
-                                <input type="text" class="text-center fw-bold fs-4 prod-qty-value col-6 p-0" value="1" />
-                                <i class="prod-qty-add fs-4 col-2 fa-solid fa-plus text-end"></i>
-                            </div>
-                            <div class="d-flex justify-content-center">
-                                <button class="btn btn2 col add-to-cart text-center p-2 mt-3 bg-dark text-white">Add to cart</button>
-                            </div>
+
+                                <div class="prod-qty col mt-5">
+                                    <i class="prod-qty-remove fs-4 col-2 fa-solid fa-minus text-start"></i>
+                                    <input type="text" class="text-center fw-bold prod-qty-value border fs-4 col-6 p-0" value="1" />
+                                    <i class="prod-qty-add fs-4 col-2 fa-solid fa-plus text-end"></i>
+                                </div>
+                                <div class="d-flex justify-content-center mt-4">
+                                    <button class="add-to-cart btn btn2 col text-center p-2 fs-4 bg-dark text-white rounded-0">Add to cart</button>
+                                </div>
                         </div>
                     </div>
                 </div>

@@ -16,7 +16,7 @@ html {
     outline: none !important;
 }
 body {
-    font-family: var(--ltn-font-family);
+    font-family: var(--bs-body-font-family)
 }
 
 .nav {
@@ -174,18 +174,18 @@ p {
     margin: auto;
 }
 
-.price .rating {
+.prod .price .rating {
     text-align: right;
 }
 
-.price span {
+.prod .price span {
     text-align: left;
 }
 
-#prods-container .prod {
+/* #prods-container .prod {
     min-width: var(--cart_prod_size) !important;
     min-height: calc(var(--cart_prod_size) - 50px) !important;
-}
+} */
 
 @media screen and (min-width: 1000px) {
     #prods-container .prod {
@@ -198,11 +198,12 @@ p {
     min-height: calc(var(--cart_prod_size) + 50px);
     background-size: contain !important;
     background-repeat: no-repeat !important;
+    background-repeat: repeat-y !important;
     background-position: center !important;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    border: 3px solid var(--separators-color) !important;
+    border: 3px solid var(--separators-color);
     position: relative;
-}
+} 
 
 .dropdowns-container > div {
     background-color: var(--ltn__primary-color);
