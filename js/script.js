@@ -551,9 +551,7 @@ $(function () {
 <<<<<<< HEAD
     $("#user-info").on("click", function () {
         console.log("clicked");
-=======
-    $(".profile-info i").on("click", function () {
->>>>>>> 19e4339c50135c32fe512cd13171aa4202af9d3a
+
         window.location.href = "./../docs/profile.html";
     });
 });
