@@ -506,9 +506,7 @@ else {
 `);
 
     $(".user-logout").on("click", (e) => {
-        window.location.href = "/index.html";
-
-        // ecommerceUsers.logOut();
+        ecommerceUsers.logOut();
         window.location.href = "/index.html";
     });
     $(() => {

@@ -94,7 +94,7 @@ let emailRe =   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(
 //REGEX for password :  Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
 let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ ; 
 
-document.getElementById("signinForm").onmouseenter = function(e){
+document.getElementById("signinForm").onsubmit = function(e){
     let emailInput = document.querySelector('[name="email"]').value;
     let passInput = document.querySelector('[name="pass"]').value;
 
