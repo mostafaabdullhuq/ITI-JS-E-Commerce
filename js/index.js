@@ -50,7 +50,7 @@ $(function () {
 `;
             });
             // add products fetched to the dom
-            $("#prods-container").append(prodsCards);
+            $("#prods-container").html(prodsCards);
             // Product PopUp
             document.querySelectorAll("p.view").forEach((p) => {
                 p.addEventListener("click", function () {
