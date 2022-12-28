@@ -174,11 +174,12 @@ p {
     margin: auto;
 }
 
-.prod .rating {
-    float: right;
+.price .rating {
+    text-align: right;
+    
 }
 
-.prod .price span {
+.price span {
     text-align: left;
 }
 
