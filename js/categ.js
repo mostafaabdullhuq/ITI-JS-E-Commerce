@@ -4,10 +4,14 @@ import { ecommerceUsers, UpdateNavCart } from "./script.js";
 let user = ecommerceUsers.validateLoginCookies();
 
 let windowURL = window.location.href,
-    prodID = "";
+    categParam = "";
 if (windowURL.split("?").length > 1) {
-    prodID = window.location.href.split("?")[1].split("=")[1] || "";
+    categParam = window.location.href.split("?")[1].split("=")[1].toLowerCase();
 }
+
+categParam = categParam ? categParam : "all";
+
+// console.log(categParam ? categParam : "all");
 
 // this is a comment for syncing
 
@@ -30,7 +34,7 @@ $(function () {
 style="height: 300px;width:90%;margin: 0px auto;"                />
                 <p class="view py-2 fs-3 text-uppercase col-12" style="position: absolute; bottom: 0px" data-prod-id="${product.id}">Quick view</p>
               </div>
-              <a class="title prod-title fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
+              <a class="title prod-title mt-3 fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
               <div class="price d-flex col-12 d-flex  justify-content-center ">
                 <span class=" fs-5 price ms-3">$${product.price}</span>
                 ${`<i class="fa-solid fa-star rating mt-1" style="color:gold;"></i>`.repeat(Math.round(product.rating.rate))}
@@ -189,7 +193,12 @@ style="height: 300px;width:90%;margin: 0px auto;"                />
                     // get the category of the clicked button from the attribute
                     let category = this.getAttribute("data-category"),
                         products = document.querySelectorAll(".prod");
-                    {
+
+                    if (category === "all") {
+                        products.forEach((product) => {
+                            product.style.display = "block";
+                        });
+                    } else {
                         products.forEach((product) => {
                             if (product.getAttribute("data-prod-category") === category) {
                                 product.style.display = "block";
@@ -200,6 +209,7 @@ style="height: 300px;width:90%;margin: 0px auto;"                />
                     }
                 });
             });
+            $(`#categBar .categ-item[data-category="${categParam}"]`).trigger("click");
         });
 });
 //when click product title render to product-info page
@@ -219,7 +229,6 @@ desc.addEventListener("click", function () {
             let prods = "";
             products.forEach((product) => {
                 prods += `
-        
         <div class="col-sm-9 col-md-8 col-lg-4 prod prod-info " data-prod-id="${product.id}" data-prod-category="${product.category}">
           <div class="product-item prod-info "  style="height:550px;">
             <div href="#shop-single.html" class="card product-img image-container rounded-0 d-flex justify-content-center" style="cursor:pointer;" data-prod-image="${product.image}">
@@ -231,7 +240,7 @@ desc.addEventListener("click", function () {
 style="height: 300px;width:90%;margin: 0px auto;"              />
               <p class="view py-2 fs-3 text-uppercase col-12" style="position: absolute; bottom: 0px" data-prod-id="${product.id}">Quick view</p>
             </div>
-            <a class="title prod-title fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
+            <a class="title prod-title fs-5 mt-3 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
             <div class="price d-flex col-12 d-flex  align-items-center justify-content-center">
               <span class="fs-5 price ms-4">$${product.price}</span>
               ${`<i class="fa-solid fa-star rating mt-1" style="color:gold;"></i>`.repeat(Math.round(product.rating.rate))}
@@ -367,7 +376,7 @@ asc.addEventListener("click", function () {
               />
               <p class="view py-2 fs-3 text-uppercase col-12" style="position: absolute; bottom: 0px" data-prod-id="${product.id}">Quick view</p>
             </div>
-            <a class="title prod-title fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
+            <a class="title prod-title mt-3 fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
             <div class="price d-flex col-12 d-flex  align-items-center justify-content-center">
               <span class="fs-5 price ms-4">$${product.price}</span>
               ${`<i class="fa-solid fa-star mt-1 rating" style="color:gold;"></i>`.repeat(Math.round(product.rating.rate))}
