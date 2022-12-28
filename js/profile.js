@@ -21,7 +21,7 @@ console.log(test);
     document.querySelector('[name="country"]').value = test.country;
 
 
-document.forms[0].onmouseenter = function(e){
+document.forms[0].onsubmit = function(e){
     // get inputs
     let firstNameInput = document.querySelector('[name="firstName"]').value;
     let lastNameInput = document.querySelector('[name="lastName"]').value;
@@ -41,19 +41,32 @@ document.forms[0].onmouseenter = function(e){
     let oldPassValid = passRe.test(oldPassInput);
     let newPassValid = passRe.test(newPassInput);
     let repassValid = passRe.test(repassInput);
-    let cityValid = nameRe.test(cityInput);
-    let countryValid = nameRe.test(countryInput);
 
 
-
-    if(fnameValid===false || lnameValid===false || emailValid===false || oldPassValid===false || newPassValid ===false || repassValid===false || cityValid===false  || countryValid===false || newPassInput != repassInput ){
+    if(fnameValid===false || lnameValid===false || emailValid===false){
         e.preventDefault();
         console.log("faild")
     }
     else{
         console.log("success")
+        if(oldPassInput === test.passWord){
+            console.log("correct pass");
+            if(newPassValid ===false || repassValid===false || newPassInput != repassInput ){
+                //new pass not valid or repeated
+                console.log("new pass not valid or repeated");
+            }else{
+                //change user data in local storage
+            }
+        }else{
+            console.log("not correct pass");
+            console.log(oldPassInput);
+            console.log(test.passWord);
 
+
+        }
     }
+    
+
 
 }
 // down = document.getElementsByClassName("down-btn");
