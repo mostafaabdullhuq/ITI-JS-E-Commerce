@@ -66,7 +66,7 @@ $(function () {
                         prodTitle = productElement.find(".prod-title")[0].textContent,
                         prodPrice = productElement.find(".price span")[0].textContent,
                         prodStarCount = productElement.find("i.fa-star").length;
-                    product.id = this.getAttribute("data-prod-id");
+                    product.id = +this.getAttribute("data-prod-id");
                     product.image = prodImage;
                     product.title = prodTitle;
                     product.price = +prodPrice.replace("$", "");
@@ -239,28 +239,28 @@ ${'<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(produ
 let user = ecommerceUsers.validateLoginCookies();
 $(function () {
     $(".prod-qty-remove").on("click", function () {
-        let prodId = $(this).attr("data-prod-id"),
-            prodQty = +$(this).siblings(".prod-qty-value").val();
+        let prodQty = +$(this).siblings(".prod-qty-value").val();
         {
             prodQty -= 1;
-            $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
+            $(this).siblings(".prod-qty-value").trigger("input", [prodQty]);
         }
     });
     $(".prod-qty-add").on("click", function () {
-        let prodId = $(this).attr("data-prod-id"),
-            prodQty = +$(this).siblings(".prod-qty-value").val();
+        let prodQty = +$(this).siblings(".prod-qty-value").val();
         prodQty += 1;
-        $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
+        $(this).siblings(".prod-qty-value").trigger("input", [prodQty]);
     });
-    $(".prod-qty-value").on("input", function (e, prodQty, prodId) {
+    $(".prod-qty-value").on("input", function (e, prodQty) {
         {
-            if (!prodQty || !prodId) {
-                prodId = $(this).attr("data-prod-id");
+            console.log("in trigger");
+            if (!prodQty) {
+                console.log("in if");
                 prodQty = $(this).val() == 0 ? 1 : $(this).val();
             }
             if (+prodQty > 999) prodQty = 999;
             else if (+prodQty < 1) prodQty = 1;
-            $(this).val(prodQty);
+
+            $(this).val(+prodQty);
         }
     });
 
@@ -270,11 +270,15 @@ $(function () {
                 userProdList = user.cart.prodsList;
 
             product.qty = prodQty;
-            userProdList.push(product);
+            let isInCart = ecommerceUsers.isProdInCart(user, product);
+            if (isInCart[0]) {
+                userProdList[isInCart[1]].qty += prodQty;
+            } else {
+                userProdList.push(product);
+            }
             console.log(userProdList);
             ecommerceUsers.updateCart(user, userProdList);
             UpdateNavCart(user.cart.prodsCount);
         }
     });
 });
-// localStorage.clear();
