@@ -300,6 +300,17 @@ export class Users {
         return user.cart;
     }
 
+    // check if product exists in cart before adding to the cart
+    isProdInCart(user, prod) {
+        // check if there's a product with the same id, title, price and image in the cart
+        let isInCart = user.cart.prodsList.find((p) => p.id === prod.id && p.image === prod.image && p.title === prod.title && p.price === prod.price),
+            // get the index of the product in the cart if found
+            prodIndex = isInCart ? user.cart.prodsList.findIndex((p) => p == isInCart) : -1;
+
+        // return the results
+        return [isInCart, prodIndex];
+    }
+
     /*
         [DESC]
             a method to add order to user orders list
@@ -484,11 +495,11 @@ if (!ecommerceUsers.validateLoginCookies()) {
 else {
     $(".user-controls-list").html(`
 
-    <li class="border-bottom mb-1 pb-1">
-        <a class="icon1" data-bs-toggle="modal" href="./../docs/profile.html"> ${user.firstName} ${user.lastName} </a>
+    <li class="border-bottom user-profile-dropdown dropdown-item py-2" style="cursor: pointer;">
+        ${user.firstName} ${user.lastName}
     </li>
-    <li>
-        <a class="icon1 user-logout" href="#"> Logout </a>
+    <li class="user-logout  user-profile-dropdown dropdown-item py-2" style="cursor: pointer;">
+    Logout
     </li>
 `);
 
@@ -500,3 +511,10 @@ else {
         UpdateNavCart(user.cart.prodsCount ?? 0);
     });
 }
+
+$(function () {
+    $(".user-profile-dropdown").on("click", function () {
+        console.log("clicked");
+        window.location.href = "./../docs/profile.html";
+    });
+});

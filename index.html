@@ -4,7 +4,6 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
         <!-- include bootstrap css file from node modules -->
         <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
@@ -71,7 +70,7 @@
                         <a class="nav-link profile-info dropdown-toggle text-center text-dark fs-5" href="./docs/profile.html" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-user"></i>
                         </a>
-                        <ul class="dropdown-menu user-controls-list rounded-0" style="text-align: center"></ul>
+                        <ul class="dropdown-menu user-controls-list dropdown p-0 rounded-0" style="text-align: center"></ul>
                         <!-- cart dropdown -->
                         <a class="ms-3 user-nav-cart text-dark text-start fs-5" href="./docs/cart.html" data-cart-items="0"><i class="fa-solid fa-cart-shopping"></i> </a>
                     </div>
@@ -459,7 +458,7 @@
 
         <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1">
             <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content rounded-0">
                     <div class="modal-body d-flex row">
                         <img
                             class="col-6 img-thumbnail modal-img"
@@ -469,7 +468,7 @@
                             srcset=""
                         />
                         <div class="col-6 mt-3 d-flex flex-column">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close " style="position:absolute" data-bs-dismiss="modal" aria-label="Close"></button>
                             <h3 class="modal-title col fw-bolder mb-2">Product name</h3>
                             <div class="d-flex col">
                                 <h3 class="modal-price me-4 fs-4">$1000</h3>

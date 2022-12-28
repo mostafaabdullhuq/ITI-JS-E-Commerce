@@ -1,5 +1,5 @@
 @import url("./style.css");
-@import '@splidejs/splide/css';
+@import "@splidejs/splide/css";
 html {
     scroll-behavior: smooth;
 }
@@ -19,28 +19,27 @@ body {
     font-family: var(--ltn-font-family);
 }
 
-.nav{
-    background-color:var(--border-color-8);
+.nav {
+    background-color: var(--border-color-8);
     position: fixed;
 }
 
-#sortBy a{
+#sortBy a {
     text-decoration: none;
 }
-.dropdown-item{
+.dropdown-item {
     cursor: pointer;
     text-decoration: none;
 }
 
-#categories a{
+#categories a {
     text-decoration: none;
 }
 
-.product-item .price , .title {
+.product-item .price,
+.title {
     text-align: center;
 }
-
-
 
 @keyframes scale {
     0%,
@@ -60,9 +59,6 @@ body {
         -o-transform: scale(1.3);
     }
 }
-
-
-
 
 /* footer */
 footer {
@@ -90,7 +86,6 @@ hr {
 li .color {
     color: brown;
 }
-
 
 /* Quick View */
 .view {
@@ -181,7 +176,6 @@ p {
 
 .prod .rating {
     float: right;
-    
 }
 
 .prod .price span {
@@ -210,7 +204,37 @@ p {
     position: relative;
 }
 
+.dropdowns-container > div {
+    background-color: var(--ltn__primary-color);
+}
 
+.dropdowns-container > div a::after {
+    margin-left: 10px;
+}
 
+.dropdowns-container > div a {
+    color: white !important;
+}
 
+.dropdowns-container > div:hover {
+    background-color: var(--ltn__secondary-color) !important;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
 
+.dropdowns-container > div ul li {
+    font-weight: 500;
+}
+
+.dropdowns-container > div ul li:hover {
+    color: white;
+    background-color: var(--ltn__secondary-color) !important;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
