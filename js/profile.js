@@ -12,6 +12,13 @@ let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,
 
 let test = new Users().validateLoginCookies();
 console.log(test);
+// test.shippingAddr name="address"
+    document.querySelector('[name="firstName"]').value = test.firstName;
+    document.querySelector('[name="lastName"]').value = test.lastName;
+    document.querySelector('[name="email"]').value = test.emailAddress;
+    document.querySelector('[name="address"]').value = test.shippingAddr;
+    document.querySelector('[name="city"]').value = test.city;
+    document.querySelector('[name="country"]').value = test.country;
 
 
 document.forms[0].onmouseenter = function(e){
