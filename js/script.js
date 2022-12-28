@@ -513,8 +513,7 @@ else {
 }
 
 $(function () {
-    $(".user-profile-dropdown").on("click", function () {
-        console.log("clicked");
+    $(".profile-info i").on("click", function () {
         window.location.href = "./../docs/profile.html";
     });
 });

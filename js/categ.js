@@ -13,6 +13,7 @@ if (windowURL.split("?").length > 1) {
 }
 categParam = categParam ? categParam : "all";
 
+console.log(categParam);
 // console.log(categParam ? categParam : "all");
 
 // this is a comment for syncing
@@ -25,7 +26,7 @@ $(function () {
             let prods = "";
             products.forEach((product) => {
                 prods += `
-            <div class="col-sm-9  col-md-8 col-lg-4 col-xl-3 prod prod-info " data-prod-id="${product.id}" data-prod-category="${product.category}">
+            <div class="col-sm-9  col-md-8 col-lg-4 col-xl-3 prod prod-info d-none" data-prod-id="${product.id}" data-prod-category="${product.category.replace(" ", "-").replace("'", "")}">
             <div class="product-item prod-info "  style="height:550px;">
               <div href="#shop-single.html" class="card product-img image-container rounded-0 d-flex justify-content-center" data-prod-image="${product.image}" style="cursor:pointer;">
                 <img
@@ -49,6 +50,7 @@ style="height: 300px;width:90%;margin: 0px auto;"                />
             });
             $("#prods-container").html("");
             $("#prods-container").append(prods);
+            $(`#categBar .categ-item[data-category="${categParam}"]`).trigger("click");
 
             //when click product title render to product-info page
             document.querySelectorAll(".title").forEach((link) => {
@@ -181,7 +183,7 @@ style="height: 300px;width:90%;margin: 0px auto;"                />
         .then((categories) => {
             let categs = "";
             categories.forEach((category) => {
-                categs += `<li class="dropdown-item py-2 text-center text-capitalize categ-item" data-category="${category}">
+                categs += `<li class="dropdown-item py-2 text-center text-capitalize categ-item" data-category="${category.replace("'", "").replace(" ", "-")}">
        ${category}
        </li>
        `;
@@ -198,14 +200,14 @@ style="height: 300px;width:90%;margin: 0px auto;"                />
 
                     if (category === "all") {
                         products.forEach((product) => {
-                            product.style.display = "block";
+                            $(product).addClass("d-block").removeClass("d-none");
                         });
                     } else {
                         products.forEach((product) => {
                             if (product.getAttribute("data-prod-category") === category) {
-                                product.style.display = "block";
+                                $(product).addClass("d-block").removeClass("d-none");
                             } else {
-                                product.style.display = "none";
+                                $(product).addClass("d-none").removeClass("d-block");
                             }
                         });
                     }
@@ -231,7 +233,7 @@ desc.addEventListener("click", function () {
             let prods = "";
             products.forEach((product) => {
                 prods += `
-        <div class="col-sm-9 col-md-8 col-lg-4 prod prod-info " data-prod-id="${product.id}" data-prod-category="${product.category}">
+        <div class="col-sm-9 col-md-8 col-lg-4 prod prod-info " data-prod-id="${product.id}" data-prod-category="${product.category.replace(" ", "-").replace("'", "")}">
           <div class="product-item prod-info "  style="height:550px;">
             <div href="#shop-single.html" class="card product-img image-container rounded-0 d-flex justify-content-center" style="cursor:pointer;" data-prod-image="${product.image}">
               <img
@@ -366,7 +368,7 @@ asc.addEventListener("click", function () {
             let prods = "";
             products.forEach((product) => {
                 prods += `
-        <div class="col-sm-9  col-md-8 col-lg-4  prod prod-info " data-prod-id="${product.id}" data-prod-category="${product.category}">
+        <div class="col-sm-9  col-md-8 col-lg-4  prod prod-info " data-prod-id="${product.id}" data-prod-category="${product.category.replace(" ", "-").replace("'", "")}">
           <div class="product-item prod-info "  style="height:550px;">
             <div href="#shop-single.html" class="card product-img image-container rounded-0 d-flex justify-content-center" style="cursor:pointer;" data-prod-image="${product.image}">
               <img
