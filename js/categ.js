@@ -3,12 +3,14 @@ import { ecommerceUsers, UpdateNavCart } from "./script.js";
 // check if user logged in
 let user = ecommerceUsers.validateLoginCookies();
 
+// get window url
 let windowURL = window.location.href,
     categParam = "";
+
+// get category param from url
 if (windowURL.split("?").length > 1) {
     categParam = window.location.href.split("?")[1].split("=")[1].toLowerCase();
 }
-
 categParam = categParam ? categParam : "all";
 
 // console.log(categParam ? categParam : "all");
@@ -51,7 +53,7 @@ style="height: 300px;width:90%;margin: 0px auto;"                />
             //when click product title render to product-info page
             document.querySelectorAll(".title").forEach((link) => {
                 link.addEventListener("click", function () {
-                    window.location.href = `./../docs/product-info.html?product_id=${this.getAttribute("data-prod-id")}`;
+                    window.location.href = "././docs/product-info.html?product_id=${this.getAttribute(data-prod-id)}";
                 });
             });
             // $("#prods-container").on("click", "p.view", function (e) {
