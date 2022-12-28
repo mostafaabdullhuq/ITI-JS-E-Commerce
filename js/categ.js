@@ -38,7 +38,7 @@ $(function () {
                 product.id
               }">${product.title}</a>
               <div class="price d-flex col-12 d-flex  justify-content-center ">
-                <span class=" fs-5 price ms-4">$${product.price}</span>
+                <span class=" fs-5 price ms-3">$${product.price}</span>
                 ${`<i class="fa-solid fa-star rating mt-1" style="color:gold;"></i>`.repeat(
                   Math.round(product.rating.rate)
                 )}
