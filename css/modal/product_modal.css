@@ -51,9 +51,9 @@ i:hover {
     background-color: rgba(0, 0, 0, 0.45);
 }
 /* .modal-dialog {
-    margin: 0px;
-    max-width: 50% !important;
-    max-height: 50% !important;
+    margin: 10px;
+    max-width: 70% !important;
+    max-height: 70% !important;
 } */
 
 .btn2{
