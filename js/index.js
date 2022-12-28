@@ -1,4 +1,11 @@
 import { ecommerceUsers, UpdateNavCart } from "./script.js";
+let product = {
+    id: false,
+    image: false,
+    price: false,
+    qty: false,
+    title: false,
+};
 
 // when window loads
 $(function () {
@@ -54,12 +61,16 @@ $(function () {
             // Product PopUp
             document.querySelectorAll("p.view").forEach((p) => {
                 p.addEventListener("click", function () {
-                    let product = $(this).parents(".prod");
-                    console.log(product);
-                    let prodImage = product.find(".image-container")[0].getAttribute("data-prod-image");
-                    let prodTitle = product.find(".prod-title")[0].textContent;
-                    let prodPrice = product.find(".price span")[0].textContent;
-                    let prodStarCount = product.find("i.fa-star").length;
+                    let productElement = $(this).parents(".prod"),
+                        prodImage = productElement.find(".image-container")[0].getAttribute("data-prod-image"),
+                        prodTitle = productElement.find(".prod-title")[0].textContent,
+                        prodPrice = productElement.find(".price span")[0].textContent,
+                        prodStarCount = productElement.find("i.fa-star").length;
+                    product.id = this.getAttribute("data-prod-id");
+                    product.image = prodImage;
+                    product.title = prodTitle;
+                    product.price = +prodPrice.replace("$", "");
+
                     $(".modal-title").text(prodTitle);
                     $(".modal-price").text(prodPrice);
                     $(".modal-img").attr("src", prodImage);
@@ -225,51 +236,45 @@ ${'<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(produ
 </div>
 </div> */
 
-// let user = ecommerceUsers.validateLoginCookies();
-// console.log(user);
-// $(function () {
-//   let product = false;
-//           $(".prod-qty-remove").on("click", function () {
-//               let prodId = $(this).attr("data-prod-id"),
-//                   prodQty = +$(this).siblings(".prod-qty-value").val();
-//               {
-//                   prodQty -= 1;
-//                   $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
-//               }
-//           });
-//           $(".prod-qty-add").on("click", function () {
-//               let prodId = $(this).attr("data-prod-id"),
-//                   prodQty = +$(this).siblings(".prod-qty-value").val();
-//                   prodQty += 1;
-//               $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
-//           });
-//           $(".prod-qty-value").on("input", function (e, prodQty, prodId) {
-//               {
-//                   if (!prodQty || !prodId) {
-//                       prodId = $(this).attr("data-prod-id");
-//                       prodQty = $(this).val() == 0 ? 1 : $(this).val();
-//                   }
-//                   if (+prodQty > 999) prodQty = 999;
-//                   else if (+prodQty < 1) prodQty = 1;
-//                   $(this).val(prodQty);
-//                   console.log(prodQty);
-//               }
-//           });
+let user = ecommerceUsers.validateLoginCookies();
+$(function () {
+    $(".prod-qty-remove").on("click", function () {
+        let prodId = $(this).attr("data-prod-id"),
+            prodQty = +$(this).siblings(".prod-qty-value").val();
+        {
+            prodQty -= 1;
+            $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
+        }
+    });
+    $(".prod-qty-add").on("click", function () {
+        let prodId = $(this).attr("data-prod-id"),
+            prodQty = +$(this).siblings(".prod-qty-value").val();
+        prodQty += 1;
+        $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
+    });
+    $(".prod-qty-value").on("input", function (e, prodQty, prodId) {
+        {
+            if (!prodQty || !prodId) {
+                prodId = $(this).attr("data-prod-id");
+                prodQty = $(this).val() == 0 ? 1 : $(this).val();
+            }
+            if (+prodQty > 999) prodQty = 999;
+            else if (+prodQty < 1) prodQty = 1;
+            $(this).val(prodQty);
+        }
+    });
 
-//           $(".add-to-cart").on("click", function (e) {
-//             console.log(user);
-//               if (user) {
-//                   let prodQty = +$(this).siblings(".prod-qty-value").val(),
-//                       userProdList = user.cart.prodsList;
+    $(".add-to-cart").on("click", function (e) {
+        if (user) {
+            let prodQty = +$(this).parent().siblings(".prod-qty").children(".prod-qty-value").val(),
+                userProdList = user.cart.prodsList;
 
-//                   userProdList.push({
-//                       id: product.id,
-//                       title: product.title,
-//                       image: product.image,
-//                   });
-//                   ecommerceUsers.updateCart(user, userProdList);
-//                   UpdateNavCart(user.cart.prodsCount);
-//               }
-//           });
-//       });
+            product.qty = prodQty;
+            userProdList.push(product);
+            console.log(userProdList);
+            ecommerceUsers.updateCart(user, userProdList);
+            UpdateNavCart(user.cart.prodsCount);
+        }
+    });
+});
 // localStorage.clear();
