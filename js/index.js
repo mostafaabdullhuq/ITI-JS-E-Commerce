@@ -10,25 +10,26 @@ let product = {
 // when window loads
 $(function () {
     // fetch only 8 products from api
-    fetch("https://fakestoreapi.com/products?limit=9")
-        // when promise complete , return the response converted to json
-        .then((res) => res.json())
-        // when json response contains list array of products objects returned
-        .then((products) => {
-            // variable that contains the html of all products
-            let prodsCards = "";
-            // loop over each product in products
-            products.forEach((product) => {
-                // add the current product to the products
-                /*
-                 * data-prod-id="${product.id}" ==> adds product custom attribute to store the product id provided by the api
-                 * data-prod-category ==>"${product.category}" => adds product custom attribute to store the product category provided by the api
-                 * src="${product.image}" ==> set the src of the product image to the image link provided by the api
-                 * ${product.title} ==> set the text of the heading to the product title provided by the api
-                 * ${product.price} ==> set the value of the span to the price of the product provided by the api
-                 * ${'<i class="fa-solid fa-star"></i>'.repeat(Math.round(product.rating.rate))} ==> get the rating of the product from the api, then round it to the closest fixed number, then generate stars based on the number of rating
-                 */
-                prodsCards += `
+    if (window.location.href.search("/index.html") !== -1) {
+        fetch("https://fakestoreapi.com/products?limit=9")
+            // when promise complete , return the response converted to json
+            .then((res) => res.json())
+            // when json response contains list array of products objects returned
+            .then((products) => {
+                // variable that contains the html of all products
+                let prodsCards = "";
+                // loop over each product in products
+                products.forEach((product) => {
+                    // add the current product to the products
+                    /*
+                     * data-prod-id="${product.id}" ==> adds product custom attribute to store the product id provided by the api
+                     * data-prod-category ==>"${product.category}" => adds product custom attribute to store the product category provided by the api
+                     * src="${product.image}" ==> set the src of the product image to the image link provided by the api
+                     * ${product.title} ==> set the text of the heading to the product title provided by the api
+                     * ${product.price} ==> set the value of the span to the price of the product provided by the api
+                     * ${'<i class="fa-solid fa-star"></i>'.repeat(Math.round(product.rating.rate))} ==> get the rating of the product from the api, then round it to the closest fixed number, then generate stars based on the number of rating
+                     */
+                    prodsCards += `
 
                 <div class="prod col me-3" data-prod-id="${product.id}" data-prod-category="${product.category}">
                     <div class="product-item mb-4 d-flex flex-column">
@@ -55,12 +56,13 @@ $(function () {
                     </div>
                 </div>
 `;
-            });
-            // add products fetched to the dom
-            $("#prods-container").html(prodsCards);
-            // Product PopUp
-            document.querySelectorAll("p.view").forEach((p) => {
-                p.addEventListener("click", function () {
+                });
+                // add products fetched to the dom
+                $("#prods-container").html(prodsCards);
+                // Product PopUp
+
+                $("#prods-container").on("click", ".view", function (e) {
+                    console.log("hereeeeee");
                     let productElement = $(this).parents(".prod"),
                         prodImage = productElement.find(".image-container")[0].getAttribute("data-prod-image"),
                         prodTitle = productElement.find(".prod-title")[0].textContent,
@@ -70,6 +72,9 @@ $(function () {
                     product.image = prodImage;
                     product.title = prodTitle;
                     product.price = +prodPrice.replace("$", "");
+
+                    console.log(`You Are Viewing: ${JSON.stringify(product)}`);
+                    $(".prod-qty-value").val(1);
 
                     $(".modal-title").text(prodTitle);
                     $(".modal-price").text(prodPrice);
@@ -81,57 +86,115 @@ $(function () {
                             $("#quickviewpopup").fadeOut(200);
                         });
                     });
-                    $(".prod-qty");
                 });
-            });
-        })
-        .catch((e) => {
-            console.log("some error happend");
-            console.log(e);
-        });
 
-    // fetch Newest arrival
-    $(function () {
-        fetch("https://fakestoreapi.com/products/categories")
-            .then((response) => response.json())
-            .then((categories) => {
-                let categs = "";
-                categories.forEach((category) => {
-                    categs += `
-            <a class="btn btn-new index-categ-button rounded-0 col-12  col-lg me-2 mb-2 mb-lg-0" role="button" data-category="${category}">${category}</a>
-            `;
-                });
-                $("#categ").append(categs);
-
-                // select all categories button and loop on them
-                document.querySelectorAll(".index-categ-button").forEach((button) => {
-                    // when any category button is clicked, do this function
-                    button.addEventListener("click", function () {
-                        // get the category of the clicked button from the attribute
-                        $(this).siblings(".index-categ-button").removeClass("active");
-                        $(this).addClass("active");
-                        let category = this.getAttribute("data-category"),
-                            products = document.querySelectorAll(".prod");
-                        if (category === "all") {
-                            products.forEach((product) => {
-                                product.style.display = "block";
-                            });
-                        } else {
-                            products.forEach((product) => {
-                                if (product.getAttribute("data-prod-category") === category) {
-                                    product.style.display = "block";
-                                } else {
-                                    product.style.display = "none";
-                                }
-                            });
-                        }
-                    });
-                });
+                // document.querySelectorAll("p.view").forEach((p) => {
+                //     p.addEventListener("click", function () {
+                //         let productElement = $(this).parents(".prod"),
+                //             prodImage = productElement.find(".image-container")[0].getAttribute("data-prod-image"),
+                //             prodTitle = productElement.find(".prod-title")[0].textContent,
+                //             prodPrice = productElement.find(".price span")[0].textContent,
+                //             prodStarCount = productElement.find("i.fa-star").length;
+                //         product.id = +this.getAttribute("data-prod-id");
+                //         product.image = prodImage;
+                //         product.title = prodTitle;
+                //         product.price = +prodPrice.replace("$", "");
+                //         console.log(`You Are Viewing: ${JSON.stringify(product)}`);
+                //         $(".prod-qty-value").val(1);
+                //         console.log("here");
+                //         $(".modal-title").text(prodTitle);
+                //         $(".modal-price").text(prodPrice);
+                //         $(".modal-img").attr("src", prodImage);
+                //         $(".modal-rating").html("");
+                //         $(".modal-rating").append('<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(prodStarCount)));
+                //         $("#quickviewpopup").fadeIn(200, function () {
+                //             $(".modal-dialog .btn-close").on("click", function () {
+                //                 $("#quickviewpopup").fadeOut(200);
+                //             });
+                //         });
+                //     });
+                // });
             })
             .catch((e) => {
-                console.log("ERROR");
+                console.log("some error happend");
                 console.log(e);
             });
+    }
+
+    // quick view logic
+    $(function () {
+        $("#prods-container").on("click", ".view", function (e) {
+            console.log("hereeeeee");
+            let productElement = $(this).parents(".prod"),
+                prodImage = productElement.find(".image-container")[0].getAttribute("data-prod-image"),
+                prodTitle = productElement.find(".prod-title")[0].textContent,
+                prodPrice = productElement.find(".price span")[0].textContent,
+                prodStarCount = productElement.find("i.fa-star").length;
+            product.id = +this.getAttribute("data-prod-id");
+            product.image = prodImage;
+            product.title = prodTitle;
+            product.price = +prodPrice.replace("$", "");
+
+            console.log(`You Are Viewing: ${JSON.stringify(product)}`);
+            $(".prod-qty-value").val(1);
+
+            $(".modal-title").text(prodTitle);
+            $(".modal-price").text(prodPrice);
+            $(".modal-img").attr("src", prodImage);
+            $(".modal-rating").html("");
+            $(".modal-rating").append('<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(prodStarCount)));
+            $("#quickviewpopup").fadeIn(200, function () {
+                $(".modal-dialog .btn-close").on("click", function () {
+                    $("#quickviewpopup").fadeOut(200);
+                });
+            });
+        });
+    });
+
+    // fetch categories in newest arrivals buttons
+    $(function () {
+        if (window.location.href.search("/index.html") !== -1) {
+            fetch("https://fakestoreapi.com/products/categories")
+                .then((response) => response.json())
+                .then((categories) => {
+                    let categs = "";
+                    categories.forEach((category) => {
+                        categs += `
+            <a class="btn btn-new index-categ-button rounded-0 col-12  col-lg me-2 mb-2 mb-lg-0" role="button" data-category="${category}">${category}</a>
+            `;
+                    });
+                    $("#categ").append(categs);
+
+                    // select all categories button and loop on them
+                    document.querySelectorAll(".index-categ-button").forEach((button) => {
+                        // when any category button is clicked, do this function
+                        button.addEventListener("click", function () {
+                            // get the category of the clicked button from the attribute
+                            $(this).siblings(".index-categ-button").removeClass("active");
+                            $(this).addClass("active");
+                            let category = this.getAttribute("data-category"),
+                                products = document.querySelectorAll(".prod");
+                            if (category === "all") {
+                                products.forEach((product) => {
+                                    product.style.display = "block";
+                                });
+                            } else {
+                                products.forEach((product) => {
+                                    if (product.getAttribute("data-prod-category") === category) {
+                                        product.style.display = "block";
+                                    } else {
+                                        product.style.display = "none";
+                                    }
+                                });
+                            }
+                        });
+                    });
+                })
+                .catch((e) => {
+                    console.log("ERROR");
+                    console.log(e);
+                });
+        }
     });
 
     // fixing nav in scroll
@@ -222,21 +285,8 @@ if (mybutton) {
     };
 }
 
-/* <div class="col-lg-3 col-sm-6 prod" data-prod-id="${product.id}" data-prod-category="${product.category}">
-<div class="product-item mb-4 " style="height:500px;">
-<div  style="cursor:pointer;" class="card product-img rounded-0">
-<img src="${product.image}" alt="Image" class="img-fluid" style="height: 400px; width:100%" />
-<p class="view" data-prod-id="${product.id}" >Quick view</p>
-</div>
-<a class="title mt-2">${product.title}</a>
-<div class="price">
-<span class="h4">$${product.price}</span>
-${'<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}
-</div>
-</div>
-</div> */
-
 let user = ecommerceUsers.validateLoginCookies();
+
 $(function () {
     $(".prod-qty-remove").on("click", function () {
         let prodQty = +$(this).siblings(".prod-qty-value").val();
@@ -266,19 +316,32 @@ $(function () {
 
     $(".add-to-cart").on("click", function (e) {
         if (user) {
+            let newQuantity = false;
+            console.log("add to cart clicked");
             let prodQty = +$(this).parent().siblings(".prod-qty").children(".prod-qty-value").val(),
                 userProdList = user.cart.prodsList;
-
-            product.qty = prodQty;
+            console.log(product);
             let isInCart = ecommerceUsers.isProdInCart(user, product);
+            console.log("Input Quantity: " + prodQty);
             if (isInCart[0]) {
-                userProdList[isInCart[1]].qty += prodQty;
+                console.log("Quantity In Cart: " + isInCart[0].qty);
+                newQuantity = isInCart[0].qty + prodQty;
+                userProdList[isInCart[1]].qty = newQuantity;
+                console.log("New Quantity: " + newQuantity);
+                console.log(product);
             } else {
                 userProdList.push(product);
             }
+            //! here!!!!!!!!!!!!!!!!!!!!!!!!!!
+            product.qty = newQuantity ? newQuantity : prodQty;
             console.log(userProdList);
             ecommerceUsers.updateCart(user, userProdList);
             UpdateNavCart(user.cart.prodsCount);
+        } else {
+            console.log("here");
+            ////// show the login popup
+            $("#exampleModalToggle2").fadeIn();
+            $("#quickviewpopup").fadeOut(0);
         }
     });
 });
