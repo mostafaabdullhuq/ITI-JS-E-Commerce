@@ -1,4 +1,4 @@
-import { Users } from "./script.js";
+import { Users,deleteCookie } from "./script.js";
 //.............................................. validation .............................................................
 
 // REGEX for first.last name , city and country : no numbers or special characters only english letters
@@ -69,9 +69,45 @@ document.forms[0].onsubmit = function(e){
 
 
 }
+
+document.getElementById("logout_btn").onclick = function(e){
+    if(confirm("Are you sure you want to logout?")){
+        // let n = new Users().logOut();
+        // console.log(n);
+        // let cookiesNames = ["user_id", "user_token"];
+        // // set cookies value to 0 and 0 and expire time to 0 to clear it
+        // cookiesNames.map((cookie) => {
+        //     setCookie(cookie, 0, 0);
+        // });
+        // setCookie("user_id",99,10);
+        // console.log(n);
+        // deleteCookie("user_id");
+        dCookie("user_id",99);
+    }
+}
+function dCookie(cname, cvalue) {
+    // const d = new Date();
+    // d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
 // down = document.getElementsByClassName("down-btn");
 // down.onclick = function () {
 //    down.style.backgroundColor="rgb(245, 197, 175)";
 // };
 
-
+function getCookie()  
+{  
+    if(document.cookie.length!=0)  
+    {  
+    alert(document.cookie);  
+    }  
+    else  
+    {  
+        alert("Cookie not avaliable");  
+    }  
+}  
+function eatCookie()   
+{  
+    document.cookie="name=user_id;max-age=0";  
+}   
