@@ -25,7 +25,8 @@ i:hover {
 .btn-close{
     top: 10px;
     right: 20px;
-                }
+    }
+
 #quickviewpopup {
     display: none;
 }
@@ -50,11 +51,11 @@ i:hover {
     height: 100vh !important;
     background-color: rgba(0, 0, 0, 0.45);
 }
-/* .modal-dialog {
-    margin: 10px;
-    max-width: 70% !important;
-    max-height: 70% !important;
-} */
+.modal-dialog {
+    margin: 0px;
+    width: 70% !important;
+    height: 70% !important;
+}
 
 .btn2{
     background-color: black;
