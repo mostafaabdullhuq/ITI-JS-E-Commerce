@@ -129,13 +129,9 @@ export class Users {
                 // cannot create account because email duplication
                 response.isCreated = false;
                 response.error = "Email Address is already exists.";
+                console.log(userData.emailAddress);
             }
-            // if the user's username is the same as the username of the user being created
-            if (userData.userName == user.userName) {
-                // cannot create account because username duplication
-                response.isCreated = false;
-                response.error = "Username is already exists.";
-            }
+            
         });
 
         // if user is created successfully
@@ -487,7 +483,7 @@ if (!ecommerceUsers.validateLoginCookies()) {
         <a class="icon1" data-bs-toggle="modal" href="#signInModal"> Sign In </a>
     </li>
     <li>
-        <a class="icon1" data-bs-toggle="modal" href="#exampleModalToggle3"> Sign up </a>
+        <a class="icon1" data-bs-toggle="modal" href="#signUpModal"> Sign up </a>
     </li>
 `);
 }
