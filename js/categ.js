@@ -254,11 +254,12 @@ desc.addEventListener("click", function () {
                             </div>
             </div>
             <a class="title prod-title fs-5 mt-3 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
-            <div class="price d-flex col-12 d-flex  align-items-center justify-content-center">
-            <span class="h3 col mb-0">$${product.price}</span>
-            <div class="rating col">
-            ${'<i class="fa-solid fa-star fs-5" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}
-            </div>
+            <div class="price d-flex col-12 mt-2 d-flex  align-items-center justify-content-center">
+                            <span class="fs-4 col mb-0">$${product.price}</span>
+                            <div class="rating col">
+                            ${'<i class="fa-solid fa-star fs-5" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}
+                            </div>
+                        </div>
         </div>
               
             </div>
@@ -393,12 +394,12 @@ asc.addEventListener("click", function () {
                             </div>
             </div>
             <a class="title prod-title mt-3 fs-5 d-flex justify-content-center" style="cursor: pointer; color:black;" data-prod-id="${product.id}">${product.title}</a>
-            <div class="price d-flex col-12 d-flex  align-items-center justify-content-center">
-            <span class="h3 col mb-0">$${product.price}</span>
-            <div class="rating col">
-            ${'<i class="fa-solid fa-star fs-5" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}
-            </div>
-        </div>
+            <div class="price d-flex col-12 mt-2 d-flex  align-items-center justify-content-center">
+                            <span class="fs-4 col mb-0">$${product.price}</span>
+                            <div class="rating col">
+                            ${'<i class="fa-solid fa-star fs-5" style="color:gold;"></i>'.repeat(Math.round(product.rating.rate))}
+                            </div>
+                        </div>
                         </div>
           </div>
       </div>
