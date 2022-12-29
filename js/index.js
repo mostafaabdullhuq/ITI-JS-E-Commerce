@@ -1,11 +1,4 @@
 import { ecommerceUsers, UpdateNavCart } from "./script.js";
-let product = {
-    id: false,
-    image: false,
-    price: false,
-    qty: false,
-    title: false,
-};
 
 // when window loads
 $(function () {
@@ -61,57 +54,29 @@ $(function () {
                 $("#prods-container").html(prodsCards);
                 // Product PopUp
 
-                $("#prods-container").on("click", ".view", function (e) {
-                    console.log("hereeeeee");
-                    let productElement = $(this).parents(".prod"),
-                        prodImage = productElement.find(".image-container")[0].getAttribute("data-prod-image"),
-                        prodTitle = productElement.find(".prod-title")[0].textContent,
-                        prodPrice = productElement.find(".price span")[0].textContent,
-                        prodStarCount = productElement.find("i.fa-star").length;
-                    product.id = +this.getAttribute("data-prod-id");
-                    product.image = prodImage;
-                    product.title = prodTitle;
-                    product.price = +prodPrice.replace("$", "");
+                // $("#prods-container").on("click", ".view", function (e) {
+                //     console.log("hereeeeee");
+                //     let productElement = $(this).parents(".prod"),
+                //         prodImage = productElement.find(".image-container")[0].getAttribute("data-prod-image"),
+                //         prodTitle = productElement.find(".prod-title")[0].textContent,
+                //         prodPrice = productElement.find(".price span")[0].textContent,
+                //         prodStarCount = productElement.find("i.fa-star").length;
+                //     product.id = +this.getAttribute("data-prod-id");
+                //     product.image = prodImage;
+                //     product.title = prodTitle;
+                //     product.price = +prodPrice.replace("$", "");
 
-                    console.log(`You Are Viewing: ${JSON.stringify(product)}`);
-                    $(".prod-qty-value").val(1);
+                //     console.log(`You Are Viewing: ${JSON.stringify(product)}`);
+                //     $("#quickviewpopup .prod-qty-value").val(1);
 
-                    $(".modal-title").text(prodTitle);
-                    $(".modal-price").text(prodPrice);
-                    $(".modal-img").attr("src", prodImage);
-                    $(".modal-rating").html("");
-                    $(".modal-rating").append('<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(prodStarCount)));
-                    $("#quickviewpopup").fadeIn(200, function () {
-                        $(".modal-dialog .btn-close").on("click", function () {
-                            $("#quickviewpopup").fadeOut(200);
-                        });
-                    });
-                });
-
-                // document.querySelectorAll("p.view").forEach((p) => {
-                //     p.addEventListener("click", function () {
-                //         let productElement = $(this).parents(".prod"),
-                //             prodImage = productElement.find(".image-container")[0].getAttribute("data-prod-image"),
-                //             prodTitle = productElement.find(".prod-title")[0].textContent,
-                //             prodPrice = productElement.find(".price span")[0].textContent,
-                //             prodStarCount = productElement.find("i.fa-star").length;
-                //         product.id = +this.getAttribute("data-prod-id");
-                //         product.image = prodImage;
-                //         product.title = prodTitle;
-                //         product.price = +prodPrice.replace("$", "");
-                //         console.log(`You Are Viewing: ${JSON.stringify(product)}`);
-                //         $(".prod-qty-value").val(1);
-                //         console.log("here");
-                //         $(".modal-title").text(prodTitle);
-                //         $(".modal-price").text(prodPrice);
-                //         $(".modal-img").attr("src", prodImage);
-                //         $(".modal-rating").html("");
-                //         $(".modal-rating").append('<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(prodStarCount)));
-                //         $("#quickviewpopup").fadeIn(200, function () {
-                //             $(".modal-dialog .btn-close").on("click", function () {
-                //                 $("#quickviewpopup").fadeOut(200);
-                //             });
-                //         });
+                //     $("#quickviewpopup .modal-title").text(prodTitle);
+                //     $("#quickviewpopup .modal-price").text(prodPrice);
+                //     $("#quickviewpopup .modal-img").attr("data-image-src", prodImage);
+                //     $("#quickviewpopup .modal-img").css("background", `url("${prodImage}")`);
+                //     $("#quickviewpopup .modal-rating").html("");
+                //     $("#quickviewpopup .modal-rating").append('<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(prodStarCount)));
+                //     $("#quickviewpopup").fadeIn(200, function () {
+                //         console.log("in fade in");
                 //     });
                 // });
             })
@@ -120,36 +85,6 @@ $(function () {
                 console.log(e);
             });
     }
-
-    // quick view logic
-    $(function () {
-        $("#prods-container").on("click", ".view", function (e) {
-            console.log("hereeeeee");
-            let productElement = $(this).parents(".prod"),
-                prodImage = productElement.find(".image-container")[0].getAttribute("data-prod-image"),
-                prodTitle = productElement.find(".prod-title")[0].textContent,
-                prodPrice = productElement.find(".price span")[0].textContent,
-                prodStarCount = productElement.find("i.fa-star").length;
-            product.id = +this.getAttribute("data-prod-id");
-            product.image = prodImage;
-            product.title = prodTitle;
-            product.price = +prodPrice.replace("$", "");
-
-            console.log(`You Are Viewing: ${JSON.stringify(product)}`);
-            $(".prod-qty-value").val(1);
-
-            $(".modal-title").text(prodTitle);
-            $(".modal-price").text(prodPrice);
-            $(".modal-img").attr("src", prodImage);
-            $(".modal-rating").html("");
-            $(".modal-rating").append('<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(prodStarCount)));
-            $("#quickviewpopup").fadeIn(200, function () {
-                $(".modal-dialog .btn-close").on("click", function () {
-                    $("#quickviewpopup").fadeOut(200);
-                });
-            });
-        });
-    });
 
     // fetch categories in newest arrivals buttons
     $(function () {
@@ -249,7 +184,9 @@ $(function () {
             categories.forEach((category) => {
                 categorylnk += `
             <li>
-            <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2 text-center" href="/docs/categ.html?filter=${category}">${category}</a>
+            <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2 text-center" href="/docs/categ.html?filter=${category
+                .replace(" ", "-")
+                .replace("'", "")}">${category}</a>
             </li>
             `;
             });
@@ -303,9 +240,10 @@ $(function () {
     $(".prod-qty-value").on("input", function (e, prodQty) {
         {
             console.log("in trigger");
-            if (!prodQty) {
+            if (!prodQty || isNaN(prodQty)) {
                 console.log("in if");
-                prodQty = $(this).val() == 0 ? 1 : $(this).val();
+                prodQty = $(this).val() == 0 || isNaN($(this).val()) ? 1 : $(this).val();
+                console.log("prodQty: " + prodQty);
             }
             if (+prodQty > 999) prodQty = 999;
             else if (+prodQty < 1) prodQty = 1;
@@ -313,36 +251,120 @@ $(function () {
             $(this).val(+prodQty);
         }
     });
+    $("#prods-container").on("click", ".view", function (e) {
+        $(".add-to-cart").off("click");
+        let product = {
+            id: false,
+            image: false,
+            price: false,
+            qty: false,
+            title: false,
+        };
+        e.stopPropagation();
+        let productElement = $(this).parents(".prod"),
+            prodImage = productElement.find(".image-container")[0].getAttribute("data-prod-image"),
+            prodTitle = productElement.find(".prod-title")[0].textContent,
+            prodPrice = productElement.find(".price span")[0].textContent,
+            prodStarCount = productElement.find("i.fa-star").length;
+        product.id = +this.getAttribute("data-prod-id");
+        product.image = prodImage;
+        product.title = prodTitle;
+        product.price = +prodPrice.replace("$", "");
 
-    $(".add-to-cart").on("click", function (e) {
-        if (user) {
-            let newQuantity = false;
-            console.log("add to cart clicked");
-            let prodQty = +$(this).parent().siblings(".prod-qty").children(".prod-qty-value").val(),
-                userProdList = user.cart.prodsList;
-            console.log(product);
-            let isInCart = ecommerceUsers.isProdInCart(user, product);
-            console.log("Input Quantity: " + prodQty);
-            if (isInCart[0]) {
-                console.log("Quantity In Cart: " + isInCart[0].qty);
-                newQuantity = isInCart[0].qty + prodQty;
-                userProdList[isInCart[1]].qty = newQuantity;
-                console.log("New Quantity: " + newQuantity);
-                console.log(product);
-            } else {
-                userProdList.push(product);
-            }
-            //! here!!!!!!!!!!!!!!!!!!!!!!!!!!
-            product.qty = newQuantity ? newQuantity : prodQty;
-            console.log(userProdList);
-            ecommerceUsers.updateCart(user, userProdList);
-            UpdateNavCart(user.cart.prodsCount);
-        } else {
-            console.log("here");
-            ////// show the login popup
-            $("#exampleModalToggle2").fadeIn();
-            $("#quickviewpopup").fadeOut(0);
-        }
+        console.log(`You Are Viewing: ${JSON.stringify(product)}`);
+        $("#quickviewpopup .prod-qty-value").val(1);
+        $("#quickviewpopup .modal-title").text(prodTitle);
+        $("#quickviewpopup .modal-price").text(prodPrice);
+        $("#quickviewpopup .modal-img").attr("data-image-src", prodImage);
+        $("#quickviewpopup .modal-img").css("background", `url("${prodImage}")`);
+        $("#quickviewpopup .modal-rating").html("");
+        $("#quickviewpopup .modal-rating").append('<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(prodStarCount)));
+        $("#quickviewpopup").fadeIn(200, function () {
+            $(".add-to-cart").on("click", function (e) {
+                e.stopPropagation();
+                console.log("in add to cart");
+                if (user) {
+                    let newQuantity = false;
+                    let qtyInput = $(this).siblings(".controls").children(".prod-qty-value");
+                    let prodQty = +$(qtyInput).val(),
+                        userProdList = user.cart.prodsList;
+                    console.log(`Current Product: ${JSON.stringify(product)}`);
+                    let isInCart = ecommerceUsers.isProdInCart(user, product);
+                    console.log("Input Quantity: " + prodQty);
+                    // console.log("Is In Cart: " + isInCart);
+                    if (isInCart[0]) {
+                        console.log("Quantity In Cart: " + isInCart[0].qty);
+                        newQuantity = isInCart[0].qty + prodQty;
+                        userProdList[isInCart[1]].qty = newQuantity;
+                        console.log("New Quantity: " + newQuantity);
+                        // console.log(product);
+                    } else {
+                        userProdList.push(product);
+                    }
+                    // console.log(product);
+
+                    //! here!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    product.qty = newQuantity ? newQuantity : prodQty;
+                    console.log("Prods List: " + JSON.stringify(userProdList));
+                    ecommerceUsers.updateCart(user, userProdList);
+                    UpdateNavCart(user.cart.prodsCount);
+                } else {
+                    ////// show the login popup
+                    $("#exampleModalToggle2").fadeIn();
+                    $("#quickviewpopup").fadeOut(0);
+                }
+            });
+        });
     });
 });
 // localStorage.clear();
+$(function () {
+    $("#quickviewpopup .close-modal").on("click", function (e) {
+        $("#quickviewpopup").fadeOut(200);
+    });
+});
+
+/*
+
+        <div id="quickviewpopup" tabindex="-1">
+            <div class="modal-content product-item pe-4 d-flex flex-row col justify-content-between product rounded-0">
+                <button type="button" class="btn-close close-modal" aria-label="Close"></button>
+                <!-- ----------image-------- -->
+                <div class="product-img modal-img col" data-prod-id="2" style="background: url('https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg')"></div>
+                <!-- --------------product name ,price & rate btn------ -->
+                <div class="detail justify-content-center d-flex flex-column col align-items-start ms-3">
+                    <!--? product title -->
+
+                    <h3 class="title modal-title fw-bold" style="word-break: break-all">
+                        Mens Casual Premium Slim Fit T-ShirtsMens Casual Premium Slim Fit T-ShirtsMens Casual Premium Slim Fit T-ShirtsMens
+                    </h3>
+
+                    <!--? product price -->
+                    <div class="d-flex align-items-center w-100 my-3">
+                        <span class="prod-price fs-1 modal-price fw-bold col me-3">$22.3</span>
+                        <div class="rating col d-flex justify-content-end">
+                            <i class="fa-solid fa-star fs-4 text-end" style="color: gold !important"></i><i class="fa-solid fa-star fs-4 text-end" style="color: gold !important"></i
+                            ><i class="fa-solid fa-star fs-4 text-end" style="color: gold !important"></i><i class="fa-solid fa-star fs-4 text-end" style="color: gold !important"></i>
+                        </div>
+                    </div>
+
+                    <!--? product quantity -->
+
+                    <div class="prod-qty d-flex w-100 flex-column">
+                        <div class="controls d-flex align-items-center col-12 px-4 py-2" data-dashlane-rid="e57ed92aaa144668" data-form-type="other">
+                            <i class="prod-qty-remove cell fs-4 fa-solid fa-minus border-0 p-1" data-prod-id="2"></i>
+                            <input
+                                type="text"
+                                class="flex-grow-1 prod-qty-value text-center fw-bold border-0 fs-4 w-25"
+                                data-prod-id="2"
+                                value="1"
+                                data-dashlane-rid="2e7cd989401b8d46"
+                                data-form-type="other"
+                            />
+                            <i class="prod-qty-add cell fs-4 fa-solid fa-plus border-0 p-1" data-prod-id="2"></i>
+                        </div>
+                        <div class="button add-to-cart btn col-12 text-center py-3 rounded-0 px-4 text-uppercase mt-2" data-prod-id="2">Add to cart</div>
+                    </div>
+                </div>
+            </div>
+        </div>*/
