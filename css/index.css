@@ -19,7 +19,6 @@ html {
     background-color: var(--white-6);
 }
 .cart-btn {
-    /* border-radius: 50%; */
     height: 27px;
     width: 25px;
     border: 0;
@@ -118,6 +117,9 @@ li {
     .foot {
         text-align: center;
     }
+    .social {
+        justify-content: center;
+    }
 }
 
 /* feedback */
@@ -194,6 +196,9 @@ li {
     transition: all 250ms ease-out 0s;
     width: 20px;
 }
+.feed {
+    background-color: var(--separators-color);
+}
 
 /*slider */
 .carousel-caption {
@@ -203,7 +208,7 @@ li {
     color: rgb(136, 134, 134);
 }
 .carousel-caption h2 {
-    font-size: 60px;
+    font-size: 45px;
     text-transform: uppercase;
     font-weight: bolder;
     /* font-family: "Alfa Slab One", cursive; */
@@ -314,6 +319,7 @@ a:link {
     text-decoration: none;
 }
 
+/* quick view */
 .view {
     cursor: pointer;
     transform: translate(0, 0px);
@@ -328,6 +334,9 @@ a:link {
     -ms-transform: translate(0, 0px);
     -o-transform: translate(0, 0px);
     opacity: 0;
+}
+.btn-close:hover {
+    background-color: var(--ltn__secondary-color);
 }
 
 /* .product-img {
@@ -454,9 +463,17 @@ p {
     border: 3px solid var(--separators-color);
     position: relative;
 }
+.prod .price {
+    max-width: 300px;
+    margin: auto;
+}
 
-.feed {
-    background-color: var(--separators-color);
+.prod .price .rating {
+    text-align: right;
+}
+
+.prod .price span {
+    text-align: left;
 }
 
 /* form  */
@@ -468,7 +485,7 @@ p {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 1px solid var(--separators-color);
+    border: 4px solid var(--separators-color);
     border-radius: 0;
     outline: none;
     -webkit-border-radius: 0;
@@ -567,19 +584,6 @@ footer a:hover {
     font-weight: bold;
 }
 
-.prod .price {
-    max-width: 300px;
-    margin: auto;
-}
-
-.prod .price .rating {
-    text-align: right;
-}
-
-.prod .price span {
-    text-align: left;
-}
-
 .modal-content2 {
     left: 50%;
     transform: translate(-50%, 0%);
@@ -620,10 +624,18 @@ nav i:hover,
     color: var(--ltn__secondary-color) !important;
 }
 
-.user-controls-list a {
+.user-controls-list li,
+.user-controls-list li a {
     font-weight: 550;
 }
 
-/* .profile-info {
-    max-width: 50px;
-} */
+nav .dropdown li a:hover,
+nav .dropdown li:hover {
+    color: white;
+    background-color: var(--ltn__secondary-color);
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}

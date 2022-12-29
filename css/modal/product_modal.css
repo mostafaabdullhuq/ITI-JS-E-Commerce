@@ -22,6 +22,10 @@ i:hover {
 }
 */
 
+.btn-close{
+    top: 10px;
+    right:35px;
+    }
 
 #quickviewpopup {
     display: none;
@@ -49,8 +53,8 @@ i:hover {
 }
 .modal-dialog {
     margin: 0px;
-    max-width: 50% !important;
-    max-height: 50% !important;
+    width: 70% !important;
+    height: 70% !important;
 }
 
 .btn2{

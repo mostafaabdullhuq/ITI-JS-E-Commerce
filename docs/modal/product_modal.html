@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="./../../node_modules/animate.css/animate.min.css" />
         <link rel="stylesheet" href="./../../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
         <!-- <link rel="stylesheet" href="../../css/modal/product_modal.css"> -->
-
         <style>
             @import url("../../css/style.css");
 
@@ -17,6 +16,7 @@
                 background-color: vr(--ltn__secondary-color) !important;
                 color: white;
             }
+          
 
             i {
                 color: var(--ltn__primary-color) !important;
@@ -27,24 +27,30 @@
                 animation: scale 0.3s linear 1;
                 -webkit-animation: scale 0.3s linear 1;
             }
+
+            .btn-close{
+top: 10px;
+right: 20px;
+            }
         </style>
     </head>
     <body>
         <a class="btn" data-bs-toggle="modal" href="#exampleModalToggle2" role="button">Open</a>
 
-        <div id="quickviewpopup" class="modal modal-dialog modal-dialog-centered" tabindex="-1">
+        <div id="quickviewpopup" class="modal modal-dialog modal-dialog-centered " style="position: relative;" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body d-flex row">
                         <img
-                            class="col-6 img-thumbnail modal-img"
-                            style="max-width: 50%"
+                            class="col-sm-12 img-thumbnail modal-img"
+                            
                             src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142"
                             alt=""
+                            style="max-width: 50%"
                             srcset=""
                         />
                         <div class="col-6 mt-3 d-flex flex-column">
-                            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                            <button type="button" class="btn-close " style="position:absolute" data-bs-dismiss="modal" aria-label="Close"></button>
                             <h3 class="modal-title col fw-bolder mb-2">Product name</h3>
                             <div class="d-flex col">
                                 <h3 class="modal-price me-4 fs-4">$1000</h3>

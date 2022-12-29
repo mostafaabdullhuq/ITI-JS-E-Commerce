@@ -1,147 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="./../node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <link
-      rel="stylesheet"
-      href="./../node_modules/animate.css/animate.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="./node_modules/@splidejs/splide/dist/css/splide.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css"
-    />
-    <link rel="stylesheet" href="./../css/style.css" />
-    <link rel="stylesheet" href="./../css/categ.css" />
-    <link rel="stylesheet" href="./../css/modal/product_modal.css" />
-    <title>Categories</title>
-  </head>
-  <body>
-    <!----------------------- Navbar --------------------------------->
-    <div class="container-fluid justify-content-around border-bottom nav mb-2">
-      <div class="row">
-        <nav id="navbar_top" class="navbar navbar-expand-md fw-bold pt-1 pb-1">
-          <div>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNavDropdown"
-              aria-controls="navbarNavDropdown"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </div>
-          <div
-            class="collapse navbar-collapse nav-active"
-            id="navbarNavDropdown"
-          >
-            <ul class="navbar-nav">
-              <li class="nav-item me-4">
-                <a
-                  class="nav-link active text-dark me-4"
-                  aria-current="page"
-                  href="./../index.html"
-                  >HOME</a
-                >
-              </li>
-              <li class="nav-item dropdown me-4">
-                <a
-                  class="nav-link dropdown-toggle text-dark me-4"
-                  href="./docs/categ.html"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  PRODUCTS
-                </a>
-                <ul class="dropdown-menu p-4" id="prodNav">
-
-                </ul>
-              </li>
-              <li class="nav-item me-4">
-                <a class="nav-link text-dark me-4" href="#footer">ABOUT</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="#contact">CONTACT</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </div>
-
-    <div class="row justify-content-around mx-5">
-      <div class="col-md-12 col-sm-12">
-        <div class="container-fluid">
-          <div
-            id="categories"
-            class="d-flex justify-content-center col-md-12 mb-2 border border-4 py-1 fw-bold"
-            style="float: right; width: 100px"
-          >
-            <a
-              style="cursor: pointer"
-              class="dropdown-toggle text-dark"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Category</a
-            >
-            <ul class="dropdown-menu p-4 list-unstyled" id="categBar">
-
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-12 col-sm-12">
-        <div class="container-fluid">
-          <div
-            id="sortBy"
-            class="d-flex justify-content-center col-md-12 mb-2 border border-4 py-1 fw-bold"
-            style="float: right; width: 100px"
-          >
-            <a
-              style="cursor: pointer"
-              class="dropdown-toggle text-dark"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Sort By</a
-            >
-            <ul class="dropdown-menu p-4 list-unstyled">
-              <li>
-                <div
-                  class="dropdown-item border-bottom text-muted pb-1"
-                  id="asc"
-                >
-                  Asc
-                </div>
-              </li>
-              <li>
-                <div
-                  class="dropdown-item border-bottom text-muted pb-1"
-                  id="desc"
-                >
-                  Desc
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="row mx-5" id="prods"></div>
-    </div>
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -154,140 +12,88 @@
         <link rel="stylesheet" href="./../css/style.css" />
         <link rel="stylesheet" href="./../css/categ.css" />
         <link rel="stylesheet" href="./../css/modal/product_modal.css" />
-        <!-- <link rel="stylesheet" href="./../css/index.css" /> -->
+        <link rel="stylesheet" href="./../css/index.css" />
         <title>Categories</title>
     </head>
     <body>
         <!----------------------- Navbar --------------------------------->
-        <div class="container-fluid justify-content-around border-bottom nav mb-2">
-            <div class="row">
-                <nav id="navbar_top" class="navbar navbar-expand-md fw-bold pt-1 pb-1">
-                    <div>
-                        <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavDropdown"
-                            aria-controls="navbarNavDropdown"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                        >
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse nav-active" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item me-4">
-                                <a class="nav-link active text-dark me-4" aria-current="page" href="./../index.html">HOME</a>
-                            </li>
-                            <li class="nav-item dropdown me-4">
-                                <a class="nav-link dropdown-toggle text-dark me-4" href="./docs/categ.html" data-bs-toggle="dropdown" aria-expanded="false"> PRODUCTS </a>
-                                <ul class="dropdown-menu p-4" id="prodNav">
-                                    <!-- <li>
-                                        <a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 1</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 2</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 3</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 4</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 5</a>
-                                    </li> -->
-                                </ul>
-                            </li>
-                            <li class="nav-item me-4">
-                                <a class="nav-link text-dark me-4" href="#footer">ABOUT</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="#contact">CONTACT</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <!-- <div class="d-flex justify-content-center nav-active" id="Dropdown">        -->
-        <!-- <div class="d-flex justify-content-center nav-active dropdown border border-4 fw-bold " style="height: 30px;width: 100px;margin-bottom: 50px;margin-top: 30px;margin-left: 85%;" id="Dropdown"> -->
-
-        <!-- <div class="column container-fluid">
-            <div id="sortBy" class="d-flex justify-content-center col-md-12 mb-2 border border-4 py-1 fw-bold" style="float: right; width: 100px">
-                <a style="cursor: pointer" class="dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-expanded="false"> Sort By</a>
-                <ul class="dropdown-menu p-4 list-unstyled">
-                    <li>
-                        <div class="dropdown-item border-bottom text-muted pb-1" id="asc">Asc</div>
-                    </li>
-                    <li>
-                        <div class="dropdown-item border-bottom text-muted pb-1" id="desc">Desc</div>
-                    </li>
-                </ul>
-            </div>
-        </div> -->
-
-        <!-- </div>   -->
-        <!-- </div> -->
-
-        <!-- /// -->
-        <div class="row justify-content-around mx-5">
-            <!-- <div class="left col-md-3 col-sm-4 border-end border-4 d-flex justify-content-center">
-                <div>
-                    <p class="h3 fw-bold mb-5 pt-5 ps-4">Categories</p>
-                    <ul class="menu list-unstyled categories" id="categers">                
+        <nav class="navbar navbar-expand-lg py-4">
+            <div class="container-fluid">
+                <a class="d-none d-lg-block navbar-brand text-uppercase col-xl-2 col-lg-3 fs-5 fw-bolder text-center" href="/index.html">E-Commerce</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse mt-2 mt-lg-0 col me-3" id="navbarSupportedContent">
+                    <ul class="navbar-nav col me-auto mb-2 mb-lg-0 d-flex justify-content-center">
+                        <li class="nav-item me-3">
+                            <a class="nav-link text-dark text-uppercase fw-bold active" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown me-3">
+                            <a class="nav-link dropdown-toggle text-dark text-uppercase fw-bold" href="/docs/categ.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products </a>
+                            <ul class="dropdown-menu rounded-0 py-0" id="cat-ul">
+                                <li>
+                                    <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2" href="/docs/categ.html">All Products</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link text-dark text-uppercase fw-bold" href="/index.html#footer">About</a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a href="/index.html#contact" class="nav-link text-dark text-uppercase fw-bold">Contact</a>
+                        </li>
                     </ul>
                 </div>
-            </div> -->
 
-            <!-- ----------------------------------- -->
-            <!-- <div class="row"> -->
-            <div class="col-md-12 col-sm-12">
-                <div class="container-fluid">
-                    <div id="categories" class="d-flex justify-content-center col-md-12 mb-2 border border-4 py-1 fw-bold" style="float: right; width: 100px">
-                        <a style="cursor: pointer" class="dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-expanded="false"> Category</a>
-                        <ul class="dropdown-menu p-4 list-unstyled" id="categBar">
-                            <!-- <li>
-                              <a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 1</a>
-                          </li>
-                          <li>
-                              <a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 2</a>
-                          </li>
-                          <li>
-                              <a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 3</a>
-                          </li>
-                          <li>
-                              <a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 4</a>
-                          </li>
-                          <li>
-                              <a class="dropdown-item border-bottom text-muted pb-1" href="./docs/categ.html">Category 5</a>
-                          </li> -->
-                        </ul>
+                <!-- cart and user section -->
+                <div class="col-xl-2 col-lg-3 dropdown col d-flex text-center align-items-center right-nav-side">
+                    <div class="d-flex col justify-content-center">
+                        <!-- profile dropdown -->
+                        <a class="nav-link profile-info dropdown-toggle text-center text-dark fs-5" href="/docs/profile.html" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                        <ul class="dropdown-menu user-controls-list dropdown p-0 rounded-0" style="text-align: center"></ul>
+                        <!-- cart dropdown -->
+                        <a class="ms-3 user-nav-cart text-dark text-start fs-5" href="/docs/cart.html" data-cart-items="0"><i class="fa-solid fa-cart-shopping"></i> </a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-12 col-sm-12">
-                <div class="container-fluid">
-                    <div id="sortBy" class="d-flex justify-content-center col-md-12 mb-2 border border-4 py-1 fw-bold" style="float: right; width: 100px">
-                        <a style="cursor: pointer" class="dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-expanded="false"> Sort By</a>
-                        <ul class="dropdown-menu p-4 list-unstyled">
-                            <li>
-                                <div class="dropdown-item border-bottom text-muted pb-1" id="asc">Asc</div>
-                            </li>
-                            <li>
-                                <div class="dropdown-item border-bottom text-muted pb-1" id="desc">Desc</div>
-                            </li>
-                        </ul>
-                    </div>
+        </nav>
+
+        <!-- dropdown -->
+
+        <div class="container">
+            <div class="dropdowns-container d-flex justify-content-center justify-content-lg-end mt-5 mb-5">
+                <div id="categories" class="category-dropdown py-2 fw-bold px-3">
+                    <a style="cursor: pointer" class="cteg dropdown-toggle text-dark text-capitalize" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
+                    <ul class="dropdown-menu p-0 list-unstyled rounded-0" id="categBar">
+                        <li class="dropdown-item py-2 text-center text-capitalize categ-item" data-category="all">All Products</li>
+                    </ul>
+                </div>
+                <div id="sortBy" class="sort-by-dropdown ms-3 py-2 fw-bold px-3">
+                    <a style="cursor: pointer" class="srt dropdown-toggle text-dark text-capitalize" data-bs-toggle="dropdown" aria-expanded="false">Sort By</a>
+                    <ul class="dropdown-menu p-0 list-unstyled rounded-0">
+                        <li class="dropdown-item py-2 text-center" id="asc">Ascending</li>
+                        <li class="dropdown-item py-2 text-center" id="desc">Descending</li>
+                    </ul>
                 </div>
             </div>
-            <div class="row mx-5" id="prods"></div>
         </div>
-        <!-- </div> -->
-        <!-- </div> -->
 
-    <!-- Footer -->
+        <!--products-->
+        <div class="container justify-content-center">
+            <div class="row mx-5 justify-content-center" id="prods-container"></div>
+        </div>
+
+        <!-- Footer -->
 
         <footer class="bd-footer" id="footer">
             <div class="container py-5">
@@ -296,17 +102,25 @@
                         <h2 class="text-dark fw-bolder">Contact Us</h2>
                         <ul type="none">
                             <li>
-                                <span class="fw-bold color">Phone Number:</span>
+                                <span class="fw-bold">Phone Number:</span>
                                 <a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">+11111111111</a>
                             </li>
-                            <li><span class="fw-bold color">Email:</span><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6"> group2@gmail.com</a></li>
-                            <li><span class="fw-bold color">Address:</span><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">123 Alexandria</a></li>
+                            <li><span class="fw-bold">Email:</span><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6"> group2@gmail.com</a></li>
+                            <li><span class="fw-bold">Address:</span><a href="http://127.0.0.1:5500/index.html#" class="text-dark fs-6">123 Alexandria</a></li>
                         </ul>
-                        <div class="container ps-3 pt-2">
-                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="http://127.0.0.1:5500/index.html#" class="text-dark pe-3 fs-4"><i class="fa-solid fa-w"></i></a>
+                        <div class="col d-flex social mt-1 py-1">
+                            <a href="http://127.0.0.1:5500/index.html#" style="text-decoration: none" class="col fs-2 me-2 d-flex justify-content-center align-items-center"
+                                ><i class="fa-brands fa-facebook-f"></i
+                            ></a>
+                            <a href="http://127.0.0.1:5500/index.html#" style="text-decoration: none" class="col fs-2 me-2 d-flex justify-content-center align-items-center"
+                                ><i class="fa-brands fa-twitter"></i
+                            ></a>
+                            <a href="http://127.0.0.1:5500/index.html#" style="text-decoration: none" class="col fs-2 me-2 d-flex justify-content-center align-items-center"
+                                ><i class="fa-brands fa-instagram"></i
+                            ></a>
+                            <a href="http://127.0.0.1:5500/index.html#" style="text-decoration: none" class="col fs-2 d-flex justify-content-center align-items-center"
+                                ><i class="fa-solid fa-globe"></i
+                            ></a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 mb-4">
@@ -351,58 +165,60 @@
             </div>
         </footer>
 
-        
         <!-- Quick View PopUp -->
 
         <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1">
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h4 class="modal-title">Product name</h4>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body row">
-                      <img
-                          class="col-6 img-thumbnail modal-img"
-                          style="max-width: 50%"
-                          src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142"
-                          alt=""
-                          srcset=""
-                      />
-                      <div class="col-6 mt-3">
-                          <h3 class="modal-price">$1000</h3>
-                          <div class="modal-rating"></div>
-                          <!-- <i class="fa-solid fa-star"></i>
-                          <i class="fa-solid fa-star"></i>
-                          <i class="fa-solid fa-star"></i>
-                          <i class="fa-solid fa-star"></i>
-                          <i class="fa-solid fa-star"></i> -->
-                      </div>
-                  </div>
-                  <div class="modal-footer">
-                      <div class="d-flex justify-content-center">
-                          <i class="fs-4 fa-solid fa-minus border border-2 p-1"></i>
-                          <input type="text" class="text-center fw-bold fs-4 w-25" value="1" />
-                          <i class="fs-4 fa-solid fa-plus border border-2 p-1"></i>
-                          <button class="btn btn2 ms-3 text-center p-2">Add to cart</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+            <div class="modal-dialog">
+                <div class="modal-content" style="height: 90%; width: 150%; position: absolute; top: 0; bottom: 0; right: 0; left: -25%">
+                    <div class="modal-body d-flex row">
+                        <img
+                            class="col-6 img-thumbnail modal-img"
+                            style="max-width: 50%; height: 88%"
+                            src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142"
+                            alt=""
+                            srcset=""
+                        />
+                        <div class="col-6 mt-3 d-flex text-center flex-column">
+                            <button type="button" class="btn-close" style="position: absolute" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div class="col-12 d-flex text-center flex-column">
+                                <button type="button" class="btn-close" style="position: absolute" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <h4 class="modal-title col fw-bolder mb-3 mt-5">Product name</h4>
+                                <div class="d-flex text-center justify-content-center col">
+                                    <h3 class="modal-price me-5 fs-4 mt-3 mb-5">$1000</h3>
+                                    <div class="modal-rating mt-3">
+                                        <i class="fa-solid fa-star pb-2"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <br />
+                                </div>
+
+                                <div class="prod-qty col mt-5">
+                                    <i class="prod-qty-remove fs-4 col-2 fa-solid fa-minus text-start"></i>
+                                    <input type="text" class="text-center fw-bold prod-qty-value border fs-4 col-6 p-0" value="1" />
+                                    <i class="prod-qty-add fs-4 col-2 fa-solid fa-plus text-end"></i>
+                                </div>
+                                <div class="d-flex justify-content-center mt-4">
+                                    <button class="add-to-cart btn btn2 col text-center p-2 fs-4 bg-dark text-white rounded-0">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- include jquery file -->
-        <!-- <link rel="stylesheet" href="./node_modules/owl.carousel/dist/owl.carousel.min.js"> -->
+        <script src="./../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="./../node_modules/jquery/dist/jquery.min.js"></script>
         <script src="./../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
-        <!-- include bootstrap js file from node modules -->
-        <script src="./../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- include javascript files -->
-        <!-- <script src="./js/script.js"></script> -->
-        <!-- splide -->
-        <!-- <script src="./node_modules/@splidejs/splide/dist/js/splide.min.js"></script> -->
-        <!-- <script src="./../node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
-        <script type="module" src="./../js/categ.js"></script>
 
-        <!-- ya saraaaaaaaaaaaaaaaaa -->
+        <script src="./../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script type="module" src="./../js/categ.js"></script>
+        <script type="module" src="./../js/index.js"></script>
+        <script type="module" src="./../js/script.js"></script>
     </body>
 </html>
