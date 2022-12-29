@@ -47,10 +47,10 @@
                             <a class="nav-link text-dark text-uppercase fw-bold active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item dropdown me-3">
-                            <a class="nav-link dropdown-toggle text-dark text-uppercase fw-bold" href="./docs/categ.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products </a>
+                            <a class="nav-link dropdown-toggle text-dark text-uppercase fw-bold" href="/docs/categ.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products </a>
                             <ul class="dropdown-menu rounded-0 py-0" id="cat-ul">
                                 <li>
-                                    <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2" href="./docs/categ.html">All Products</a>
+                                    <a style="text-transform: capitalize; font-weight: 550" class="text-center border-bottom dropdown-item py-2" href="/docs/categ.html">All Products</a>
                                 </li>
                             </ul>
                         </li>
@@ -67,12 +67,12 @@
                 <div class="col-xl-2 col-lg-3 dropdown col d-flex text-center align-items-center right-nav-side">
                     <div class="d-flex col justify-content-center">
                         <!-- profile dropdown -->
-                        <a class="nav-link profile-info dropdown-toggle text-center text-dark fs-5" href="./docs/profile.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link profile-info dropdown-toggle text-center text-dark fs-5" href="/docs/profile.html" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-user"></i>
                         </a>
-                        <ul class="dropdown-menu user-controls-list dropdown p-0 rounded-0" style="text-align: center" ></ul>
+                        <ul class="dropdown-menu user-controls-list dropdown p-0 rounded-0" style="text-align: center"></ul>
                         <!-- cart dropdown -->
-                        <a class="ms-3 user-nav-cart text-dark text-start fs-5" href="./docs/cart.html" data-cart-items="0"><i class="fa-solid fa-cart-shopping"></i> </a>
+                        <a class="ms-3 user-nav-cart text-dark text-start fs-5" href="/docs/cart.html" data-cart-items="0"><i class="fa-solid fa-cart-shopping"></i> </a>
                     </div>
                 </div>
             </div>
@@ -467,61 +467,33 @@
             </div>
         </div> -->
 
-
-        <div
-        class="modal fade"
-        id="signInModal"
-        aria-hidden="true"
-        aria-labelledby="exampleModalToggleLabel2"
-        tabindex="-1"
-    >
-        <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content rounded-0">
-            <div class="container">
-            <div class="row">
-                <div class="card border-0 shadow rounded-3">
-                <div class="card-body p-4 p-sm-5">
-                <form id="signinForm">
-                    <h5 class="card-title text-center mb-5 fw-bolder fs-4 title">
-                    Sign In
-                    </h5>
-                    <div class="row">
-                    <div class="col-12">
-                        <input
-                        type="email"
-                        class="form-control rounded-0 mb-3 p-3 fs-5"
-                        placeholder="Email Address"
-                        value=""
-                        name="email"
-                        />
+        <div class="modal fade" id="signInModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="card border-0 shadow rounded-3">
+                                <div class="card-body p-4 p-sm-5">
+                                    <form id="signinForm">
+                                        <!-- <h5 class="card-title text-center mb-5 fw-bolder fs-4 title">Sign In</h5> -->
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <input type="email" class="form-control rounded-0 mb-3 p-3 fs-5" placeholder="Email Address" value="" name="email" />
+                                            </div>
+                                            <div class="col-12">
+                                                <input type="password" class="form-control rounded-0 mb-3 p-3 fs-5" placeholder="Password" value="" name="pass" />
+                                            </div>
+                                            <button class="btn col-12 btn-form btn-login text-uppercase fw-bold mt-3 p-3 rounded-0" type="Submit">Sign In</button>
+                                            <p class="fs-4 mt-3 text-center">New Customer? <a href="#">Sign Up</a></p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-12">
-                        <input
-                        type="password"
-                        class="form-control rounded-0 mb-3 p-3 fs-5"
-                        placeholder="Password"
-                        value=""
-                        name="pass"
-                        />
-                    </div>
-                    <button
-                        class="btn col-12 btn-form btn-login text-uppercase fw-bold mt-3 p-3 rounded-0"
-                        type="Submit"
-                    >
-                        Sign In
-                    </button>
-                    <p class="fs-4 mt-3 text-center">
-                        New Customer? <a href="#">Sign Up</a>
-                    </p>
-                    </div>
-                </form>
-                </div>
                 </div>
             </div>
-            </div>
         </div>
-        </div>
-    </div>
 
         <!-- sign up popup -->
 
@@ -578,132 +550,62 @@
             </div>
         </div> -->
 
-            <div
-        class="modal fade"
-        id="signUpModal"
-        aria-hidden="true"
-        aria-labelledby="exampleModalToggleLabel2"
-        tabindex="-1"
-        >
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content rounded-0">
-            <div class="container">
-                <div class="row">
-                <div class="card border-0 shadow rounded-3 my-5">
-                    <div class="card-body p-4 p-sm-5">
-                    <h5 class="card-title text-center mb-5 fw-bolder fs-5 title">
-                        Sign Up
-                    </h5>
-                    <form id="signUp-form">
-                    <div class="row mt-2">
-                        
-                        <div class="col-6">
-                        <input
-                            type="text"
-                            class="form-control"
-                            placeholder="first name"
-                            value=""
-                            name="firstName"
-                        />
-                        </div>
-                        <div class="col-6">
-                        <input
-                            type="text"
-                            class="form-control"
-                            value=""
-                            placeholder="last name"
-                            name="lastName"
-                        />
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-12">
-                            
-                        </div>
-                        <div class="col-md-12">
-                            <input
-                            type="email"
-                            class="form-control"
-                            placeholder="enter email"
-                            value=""
-                            name="newemail"
-                            /> <br>
-                        </div>
-                        <div class="col-md-12">
-                            <input
-                            type="password"
-                            class="form-control"
-                            placeholder="new password"
-                            value=""
-                            name="newpass"
-                            /><br>
-                        </div>
-                        <div class="col-md-12">
-                            <input
-                            type="password"
-                            class="form-control"
-                            placeholder="confirm password"
-                            value=""
-                            name="repass"
-                            /><br>
-                        </div>
-                        <div class="col-md-12">
-                            <input
-                            type="text"
-                            class="form-control"
-                            placeholder="enter your address"
-                            value=""
-                            required
-                            name="address"
-                            />
-                        </div><br>
-                        <div class="row mt-3">
-                            <div class="col-6">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="country"
-                                value=""
-                                name="country"
-                            />
-                            </div>
-                            <div class="col-6">
-                            <input
-                                type="text"
-                                class="form-control"
-                                value=""
-                                placeholder="city"
-                                name="city"
-                            />
+        <div class="modal fade" id="signUpModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="card border-0 shadow rounded-3 my-5">
+                                <div class="card-body p-4 p-sm-5">
+                                    <h5 class="card-title text-center mb-5 fw-bolder fs-5 title">Sign Up</h5>
+                                    <form id="signUp-form">
+                                        <div class="row mt-2">
+                                            <div class="col-6">
+                                                <input type="text" class="form-control" placeholder="first name" value="" name="firstName" />
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="text" class="form-control" value="" placeholder="last name" name="lastName" />
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-md-12"></div>
+                                            <div class="col-md-12"><input type="email" class="form-control" placeholder="enter email" value="" name="newemail" /> <br /></div>
+                                            <div class="col-md-12"><input type="password" class="form-control" placeholder="new password" value="" name="newpass" /><br /></div>
+                                            <div class="col-md-12"><input type="password" class="form-control" placeholder="confirm password" value="" name="repass" /><br /></div>
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control" placeholder="enter your address" value="" required name="address" />
+                                            </div>
+                                            <br />
+                                            <div class="row mt-3">
+                                                <div class="col-6">
+                                                    <input type="text" class="form-control" placeholder="country" value="" name="country" />
+                                                </div>
+                                                <div class="col-6">
+                                                    <input type="text" class="form-control" value="" placeholder="city" name="city" />
+                                                </div>
+                                            </div>
+                                            <div class="d-grid">
+                                                <button class="btn btn-form btn-login text-uppercase fw-bold mt-5" type="submit">Sign up</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                        <div class="d-grid">
-                            <button
-                            class="btn btn-form btn-login text-uppercase fw-bold mt-5"
-                            type="submit"
-                            >
-                            Sign up
-                            </button>
-                        </div>
-                        </form>
-                    </div>
                     </div>
                 </div>
-                </div>
             </div>
-            </div>
-        </div>
         </div>
 
         <!-- Quick View PopUp -->
 
-        <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1" >
-            <div class="modal-dialog" >
-                <div class="modal-content rounded-0" style="height: 90%; width: 150%; position: absolute; top: 0; bottom: 0; right:0; left: -25%;">
+        <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content rounded-0" style="height: 90%; width: 150%; position: absolute; top: 0; bottom: 0; right: 0; left: -25%">
                     <div class="modal-body d-flex row">
                         <img
                             class="col-6 img-thumbnail modal-img"
-                            style="max-width: 50%; height:88%;"
+                            style="max-width: 50%; height: 88%"
                             src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142"
                             alt=""
                             srcset=""

@@ -1,7 +1,5 @@
 // // import { ecommerceUsers } from "./script.js";
 
-
-
 // // REGEX for first.last name , city and country : no numbers or special characters only english letters
 // let nameRe = /^([a-zA-Z]){2,}$/
 // //REGEX for username consisting only of non-whitespaces and at least 2 characters
@@ -9,12 +7,9 @@
 // // email validation REGEX
 // let emailRe =   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
 // //REGEX for password :  Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
-// let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ ; 
-
+// let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ ;
 
 // let users_list = [];
-
-
 
 // document.forms[0].onsubmit = function(e){
 //     //get inputs
@@ -27,7 +22,7 @@
 //     let cityInput = document.querySelector('[name="city"]').value;
 //     let countryInput = document.querySelector('[name="country"]').value;
 //     let addressInput = document.querySelector('[name="address"]').value;
-    
+
 //     //valid var's
 //     let fnameValid = nameRe.test(firstNameInput);
 //     let lnameValid = nameRe.test(lastNameInput);
@@ -37,7 +32,6 @@
 //     let repassValid = passRe.test(repassInput);
 //     let cityValid = nameRe.test(cityInput);
 //     let countryValid = nameRe.test(countryInput);
-
 
 //     if(fnameValid===false || lnameValid===false || emailValid===false || passValid===false || repassValid===false || cityValid===false  || countryValid===false || passInput != repassInput ){
 //         e.preventDefault();
@@ -49,7 +43,7 @@
 //         console.log(users_list);
 //         added(newuser);
 //     }
-    
+
 // }
 
 // class Users {
@@ -82,14 +76,14 @@
 
 //         [Arguments]
 //             userData: an object of type User contains the user data
-//         EX: 
+//         EX:
 //             Users.createAccount(new User(firstName="John", lastName="Maxi", emailAddress="johnmaxi@gmail.com", passWord="John@12345", country="United States", city="New York", shippingAddr="1234 X Street Build 2", phoneNumber="+1234567891"))
 
 //         [Return]
 //             object of two keys
 //                 isCreated: boolean value indicates if the user is created or not
 //                 error: string value contains the error message if the user is not created
-//         EX: 
+//         EX:
 //             {
 //                 isCreated: true,
 //                 error: ""
@@ -155,7 +149,6 @@
 //     }
 // }
 
-
 // // function addTaskToArray(taskText) {
 // //     // Task Data
 // //     const task = {
@@ -174,7 +167,7 @@
 // function addUser(user_arr) {
 //     window.localStorage.setItem("users", JSON.stringify(user_arr));
 //   }
-  
+
 //   function getDataFromLocalStorage() {
 //     let data = window.localStorage.getItem("users");
 //     if (data) {
@@ -186,11 +179,9 @@
 //     users_list = users;
 //     }
 //   }
-  
-
 
 // function added(newuser){
-    
+
 //     users_list.push(newuser);
 //         console.log(users_list);
 //         addUser(users_list);
@@ -199,18 +190,17 @@
 import * as all from "./script.js";
 
 // REGEX for first.last name , city and country : no numbers or special characters only english letters
-let nameRe = /^([a-zA-Z]){2,}$/
+let nameRe = /^([a-zA-Z]){2,}$/;
 //REGEX for username consisting only of non-whitespaces and at least 2 characters
 let usernameRe = /^\S{2,}$/;
 // email validation REGEX
-let emailRe =   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
+let emailRe = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
 //REGEX for password :  Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
-let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ ; 
-
+let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
 let users_list = [];
 
-document.getElementById("signUp-form").onsubmit = function(e){
+document.getElementById("signUp-form").onsubmit = function (e) {
     //get inputs
     let firstNameInput = document.querySelector('[name="firstName"]').value;
     let lastNameInput = document.querySelector('[name="lastName"]').value;
@@ -221,7 +211,7 @@ document.getElementById("signUp-form").onsubmit = function(e){
     let cityInput = document.querySelector('[name="city"]').value;
     let countryInput = document.querySelector('[name="country"]').value;
     let addressInput = document.querySelector('[name="address"]').value;
-    
+
     //valid var's
     let fnameValid = nameRe.test(firstNameInput);
     let lnameValid = nameRe.test(lastNameInput);
@@ -232,14 +222,11 @@ document.getElementById("signUp-form").onsubmit = function(e){
     let cityValid = nameRe.test(cityInput);
     let countryValid = nameRe.test(countryInput);
 
-
-    if(fnameValid===false || lnameValid===false || emailValid===false || passValid===false || repassValid===false || passInput != repassInput ){
+    if (fnameValid === false || lnameValid === false || emailValid === false || passValid === false || repassValid === false || passInput != repassInput) {
         e.preventDefault();
-    }
-    else{
-        let newuser = new all.User(firstNameInput,lastNameInput,emailInput,passInput,countryInput,cityInput,addressInput);
+    } else {
+        let newuser = new all.User(firstNameInput, lastNameInput, emailInput, passInput, countryInput, cityInput, addressInput);
         let users = new all.Users(users_list).createAccount(newuser);
         console.log(users);
     }
-    
-}
+};

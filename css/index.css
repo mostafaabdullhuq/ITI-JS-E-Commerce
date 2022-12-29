@@ -335,8 +335,8 @@ a:link {
     -o-transform: translate(0, 0px);
     opacity: 0;
 }
-.btn-close:hover{
-    background-color:var(--ltn__secondary-color);
+.btn-close:hover {
+    background-color: var(--ltn__secondary-color);
 }
 
 /* .product-img {
@@ -624,7 +624,8 @@ nav i:hover,
     color: var(--ltn__secondary-color) !important;
 }
 
-.user-controls-list li {
+.user-controls-list li,
+.user-controls-list li a {
     font-weight: 550;
 }
 

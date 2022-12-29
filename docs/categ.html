@@ -34,21 +34,21 @@
                 <div class="collapse navbar-collapse mt-2 mt-lg-0 col me-3" id="navbarSupportedContent">
                     <ul class="navbar-nav col me-auto mb-2 mb-lg-0 d-flex justify-content-center">
                         <li class="nav-item me-3">
-                            <a class="nav-link text-dark text-uppercase fw-bold active" aria-current="page" href="../index.html">Home</a>
+                            <a class="nav-link text-dark text-uppercase fw-bold active" aria-current="page" href="/index.html">Home</a>
                         </li>
                         <li class="nav-item dropdown me-3">
-                            <a class="nav-link dropdown-toggle text-dark text-uppercase fw-bold" href="./categ.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products </a>
+                            <a class="nav-link dropdown-toggle text-dark text-uppercase fw-bold" href="/docs/categ.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products </a>
                             <ul class="dropdown-menu rounded-0 py-0" id="cat-ul">
                                 <li>
-                                    <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2" href="./categ.html">All Products</a>
+                                    <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2" href="/docs/categ.html">All Products</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item me-3">
-                            <a class="nav-link text-dark text-uppercase fw-bold" href="#footer">About</a>
+                            <a class="nav-link text-dark text-uppercase fw-bold" href="/index.html#footer">About</a>
                         </li>
                         <li class="nav-item me-3">
-                            <a href="#contact" class="nav-link text-dark text-uppercase fw-bold">Contact</a>
+                            <a href="/index.html#contact" class="nav-link text-dark text-uppercase fw-bold">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -57,12 +57,12 @@
                 <div class="col-xl-2 col-lg-3 dropdown col d-flex text-center align-items-center right-nav-side">
                     <div class="d-flex col justify-content-center">
                         <!-- profile dropdown -->
-                        <a class="nav-link profile-info dropdown-toggle text-center text-dark fs-5" href="./profile.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link profile-info dropdown-toggle text-center text-dark fs-5" href="/docs/profile.html" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-user"></i>
                         </a>
-                        <ul class="dropdown-menu user-controls-list rounded-0" style="text-align: center"></ul>
+                        <ul class="dropdown-menu user-controls-list dropdown p-0 rounded-0" style="text-align: center"></ul>
                         <!-- cart dropdown -->
-                        <a class="ms-3 user-nav-cart text-dark text-start fs-5" href="./cart.html" data-cart-items="0"><i class="fa-solid fa-cart-shopping"></i> </a>
+                        <a class="ms-3 user-nav-cart text-dark text-start fs-5" href="/docs/cart.html" data-cart-items="0"><i class="fa-solid fa-cart-shopping"></i> </a>
                     </div>
                 </div>
             </div>
@@ -73,13 +73,13 @@
         <div class="container">
             <div class="dropdowns-container d-flex justify-content-center justify-content-lg-end mt-5 mb-5">
                 <div id="categories" class="category-dropdown py-2 fw-bold px-3">
-                    <a style="cursor: pointer" class="cteg dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
+                    <a style="cursor: pointer" class="cteg dropdown-toggle text-dark text-capitalize" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
                     <ul class="dropdown-menu p-0 list-unstyled rounded-0" id="categBar">
                         <li class="dropdown-item py-2 text-center text-capitalize categ-item" data-category="all">All Products</li>
                     </ul>
                 </div>
                 <div id="sortBy" class="sort-by-dropdown ms-3 py-2 fw-bold px-3">
-                    <a style="cursor: pointer" class="srt dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-expanded="false">Sort By</a>
+                    <a style="cursor: pointer" class="srt dropdown-toggle text-dark text-capitalize" data-bs-toggle="dropdown" aria-expanded="false">Sort By</a>
                     <ul class="dropdown-menu p-0 list-unstyled rounded-0">
                         <li class="dropdown-item py-2 text-center" id="asc">Ascending</li>
                         <li class="dropdown-item py-2 text-center" id="desc">Descending</li>
@@ -169,11 +169,11 @@
 
         <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1">
             <div class="modal-dialog">
-                <div class="modal-content" style="height: 90%; width: 150%; position: absolute; top: 0; bottom: 0; right:0; left: -25%;">
+                <div class="modal-content" style="height: 90%; width: 150%; position: absolute; top: 0; bottom: 0; right: 0; left: -25%">
                     <div class="modal-body d-flex row">
                         <img
                             class="col-6 img-thumbnail modal-img"
-                            style="max-width: 50%; height:88%;"
+                            style="max-width: 50%; height: 88%"
                             src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142"
                             alt=""
                             srcset=""
@@ -203,6 +203,7 @@
                                 <div class="d-flex justify-content-center mt-4">
                                     <button class="add-to-cart btn btn2 col text-center p-2 fs-4 bg-dark text-white rounded-0">Add to cart</button>
                                 </div>
+                            </div>
                         </div>
                     </div>
                 </div>

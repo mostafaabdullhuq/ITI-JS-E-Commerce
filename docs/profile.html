@@ -1,250 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./../node_modules/animate.css/animate.min.css" />
-    <link rel="stylesheet" href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
-    <link rel="stylesheet" href="../css/profile.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <title>Profile</title>
-  
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg py-4 border-bottom">
-      <div class="container-fluid">
-          <a class="d-none d-lg-block navbar-brand text-uppercase col-xl-2 col-lg-3 fs-5 fw-bolder text-center" href="/index.html">E-Commerce</a>
-          <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-          >
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse mt-2 mt-lg-0 col me-3" id="navbarSupportedContent">
-              <ul class="navbar-nav col me-auto mb-2 mb-lg-0 d-flex justify-content-center">
-                  <li class="nav-item me-3">
-                      <a class="nav-link text-dark text-uppercase fw-bold active" aria-current="page" href="../index.html">Home</a>
-                  </li>
-                  <li class="nav-item dropdown me-3">
-                      <a class="nav-link dropdown-toggle text-dark text-uppercase fw-bold" href="./categ.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products </a>
-                      <ul class="dropdown-menu rounded-0 py-0" id="cat-ul">
-                          <li>
-                              <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2" href="./categ.html">All Products</a>
-                          </li>
-                      </ul>
-                  </li>
-                  <li class="nav-item me-3">
-                      <a class="nav-link text-dark text-uppercase fw-bold" href="#footer">About</a>
-                  </li>
-                  <li class="nav-item me-3">
-                      <a href="#footer" class="nav-link text-dark text-uppercase fw-bold">Contact</a>
-                  </li>
-              </ul>
-          </div>
-
-          <!-- cart and user section -->
-          <div class="col-xl-2 col-lg-3 dropdown col d-flex text-center align-items-center right-nav-side">
-              <div class="d-flex col justify-content-center">
-                  <!-- profile dropdown -->
-                  <a class="nav-link profile-info dropdown-toggle text-center text-dark fs-5" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa-solid fa-user"></i>
-                  </a>
-                  <ul class="dropdown-menu user-controls-list rounded-0" style="text-align: center"></ul>
-                  <!-- cart dropdown -->
-                  <a class="ms-3 user-nav-cart text-dark text-start fs-5" href="./cart.html" data-cart-items="0"><i class="fa-solid fa-cart-shopping"></i> </a>
-              </div>
-          </div>
-      </div>
-  </nav>
-
-
-    <div class="container mb-4 mt-5">
-    <div class="row">
-      <div class="col-md-3 mb-2">
-        <div class="d-flex flex-column align-items-center">
-          <img class="rounded-circle" width="150px" src="../imgs/profile-picture_640.png">
-          <span class="font-weight-bold fs-4">Group2</span>
-          <span class="text-black-50 fs-4">test_email@group2.com</span>
-        </div>
-        </div>
-        <div class="col-md-9">
-          <div class="accordion" id="accordionPanelsStayOpenExample">
-            <div class="accordion-item rounded-0">
-              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                  <h3 class="text-black">Update details</h3>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="./../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./../node_modules/animate.css/animate.min.css" />
+        <link rel="stylesheet" href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+        <link rel="stylesheet" href="../css/profile.css" />
+        <link rel="stylesheet" href="../css/index.css" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <title>Profile</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg py-4 border-bottom">
+            <div class="container-fluid">
+                <a class="d-none d-lg-block navbar-brand text-uppercase col-xl-2 col-lg-3 fs-5 fw-bolder text-center" href="/index.html">E-Commerce</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-              </h2>
-              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                <div class="accordion-body">
-                  <form id="userInfo-form">
-                    <div class="row mt-2">
-                        <div class="col-md-6"><input type="text" class="form-control fs-5 rounded-0 p-3" placeholder="First name"   name="firstName"></div>
-                        <div class="col-md-6"><input type="text" class="form-control fs-5 rounded-0 p-3"  placeholder="Last name"  name="lastName"></div>
-                    </div>
-                    <div class="row mt-3">
-                      <div class="col-md-12"><input type="email" class="form-control fs-4 rounded-0 mb-3" placeholder="Enter email"   name="email"></div>
-                      <div class="col-md-12"><input type="text" class="form-control fs-4 rounded-0 mb-3" placeholder="Enter your address" name="address"></div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6 mb-3"><input type="text" class="form-control fs-5 rounded-0 p-3" placeholder="Country"   name="country"></div>
-                        <div class="col-md-6 "><input type="text" class="form-control fs-5 rounded-0 p-3"  placeholder="City"  name="city"></div>
-                      </div>
-                      <div class="row div-btn">
-                        <input type="submit" value="Update Details" class="btn p-3 rounded-0 btn-form fw-bold text-uppercase fs-5">
-                      </div>
-                      </form>
-                    </div>
-            </div>
-            </div>
-            <div class="accordion-item  rounded-0">
-              <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                  <h3 class="text-black">Change Password</h3>
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-                <div class="accordion-body">
-                  <form id="pass-form">
-                  <div class="col-md-12"><input type="password" class="form-control fs-5 rounded-0 mb-3 p-3" placeholder="Password"  name="oldpass"></div>
-                  <div class="col-md-12"><input type="password" class="form-control fs-5 rounded-0 mb-3 p-3" placeholder="New password"  name="newpass"></div>
-                  <div class="col-md-12"><input type="password" class="form-control fs-5 rounded-0 mb-3 p-3" placeholder="Confirm password"  name="repass"></div> 
-                  <div class="row div-btn">
-                  <input type="submit" value="Change password" class="btn rounded-0 btn-form fw-bold text-uppercase p-3 fs-5">
-                  </div> 
-                  </form>
-                  </div>
-                  </div> 
-                  </div>              
-            <div class="accordion-item rounded-0">
-              <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                  <h3 class="text-black">Track orders</h3>
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-                <div class="accordion-body">
-                  <div class="row border pt-1 pb-1 mb-2">
-                    <div class="col-lg-8">
-                      <div class="card-body">
-                        <h5 class="card-title fs-4">Order #1</h5>
-                        <p class="card-text fs-6">Total: 200$</p>
-                        <p class="card-text fs-6">Order Date : 22/12/2022</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                      <div class="mt-2"><input type="submit" value="Track order" class="btn rounded-0 btn-form text-uppercase fw-bold fs-5 ps-5 pe-5 p-3"></div>
-                    </div>
-                  </div>
-                  <div class="row border pt-1 pb-1">
-                    <div class="col-lg-8">
-                      <div class="card-body">
-                        <h5 class="card-title fs-4">Order #2</h5>
-                        <p class="card-text fs-6">Total: 200$</p>
-                        <p class="card-text fs-6">Order Date : 22/12/2022</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                      <div class="mt-2"><input type="submit" value="Track order" class="btn rounded-0 btn-form text-uppercase fw-bold fs-5 ps-5 pe-5 p-3"></div>
-                    </div>
-                  </div>
+                <div class="collapse navbar-collapse mt-2 mt-lg-0 col me-3" id="navbarSupportedContent">
+                    <ul class="navbar-nav col me-auto mb-2 mb-lg-0 d-flex justify-content-center">
+                        <li class="nav-item me-3">
+                            <a class="nav-link text-dark text-uppercase fw-bold active" aria-current="page" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown me-3">
+                            <a class="nav-link dropdown-toggle text-dark text-uppercase fw-bold" href="./categ.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products </a>
+                            <ul class="dropdown-menu rounded-0 py-0" id="cat-ul">
+                                <li>
+                                    <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2" href="./categ.html">All Products</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link text-dark text-uppercase fw-bold" href="#footer">About</a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a href="#footer" class="nav-link text-dark text-uppercase fw-bold">Contact</a>
+                        </li>
+                    </ul>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-   </div>
-   <footer class="bd-footer" id="footer">
-    <div class="container py-5">
-        <div class="row foot ps-4">
-            <div class="col-lg-4 col-md-6 col-sm-12-justify-content-center offset-lg-1 mb-4">
-                <h2 class="text-dark fw-bolder">Contact Us</h2>
-                <ul type="none">
-                    <li>
-                        <span class="fw-bold">Phone Number:</span>
-                        <a href="#" class="text-dark fs-6">+11111111111</a>
-                    </li>
-                    <li><span class="fw-bold">Email:</span><a href="#" class="text-dark fs-6"> group2@gmail.com</a></li>
-                    <li><span class="fw-bold">Address:</span><a href="#" class="text-dark fs-6">123 Alexandria</a></li>
-                </ul>
-                <div class="col d-flex social mt-1 py-1">
-                    <a href="#" style="text-decoration: none" class="col fs-2 me-2 d-flex justify-content-center align-items-center"
-                        ><i class="fa-brands fa-facebook-f"></i
-                    ></a>
-                    <a href="#" style="text-decoration: none" class="col fs-2 me-2 d-flex justify-content-center align-items-center"
-                        ><i class="fa-brands fa-twitter"></i
-                    ></a>
-                    <a href="#" style="text-decoration: none" class="col fs-2 me-2 d-flex justify-content-center align-items-center"
-                        ><i class="fa-brands fa-instagram"></i
-                    ></a>
-                    <a href="#" style="text-decoration: none" class="col fs-2 d-flex justify-content-center align-items-center"
-                        ><i class="fa-solid fa-globe"></i
-                    ></a>
+
+                <!-- cart and user section -->
+                <div class="col-xl-2 col-lg-3 dropdown col d-flex text-center align-items-center right-nav-side">
+                    <div class="d-flex col justify-content-center">
+                        <!-- profile dropdown -->
+                        <a class="nav-link profile-info dropdown-toggle text-center text-dark fs-5" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                        <ul class="dropdown-menu user-controls-list rounded-0" style="text-align: center"></ul>
+                        <!-- cart dropdown -->
+                        <a class="ms-3 user-nav-cart text-dark text-start fs-5" href="./cart.html" data-cart-items="0"><i class="fa-solid fa-cart-shopping"></i> </a>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <h2 class="text-dark fw-bolder">Need Help?</h2>
-                <ul type="none">
-                    <li>
-                        <a href="#" class="text-dark fs-6">Payment Methods</a>
-                    </li>
-                    <a href="#" class="text-dark fs-6"> </a>
-                    <li><a href="#" class="text-dark fs-6"></a><a href="#" class="text-dark fs-6">Money Back Gurantee</a></li>
-                    <li>
-                        <a href="#" class="text-dark fs-6">Customer Service</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-dark fs-6">Terms &amp; Conditions</a>
-                    </li>
-                </ul>
+        </nav>
+
+        <div class="container mb-4 mt-5">
+            <div class="row">
+                <div class="col-md-3 mb-2">
+                    <div class="d-flex flex-column align-items-center">
+                        <img class="rounded-circle" width="150px" src="../imgs/profile-picture_640.png" />
+                        <span class="font-weight-bold fs-4">Group2</span>
+                        <span class="text-black-50 fs-4">test_email@group2.com</span>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item rounded-0">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button
+                                    class="accordion-button"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseOne"
+                                    aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseOne"
+                                >
+                                    <h3 class="text-black m-0">Update details</h3>
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body">
+                                    <form id="userInfo-form">
+                                        <div class="row mt-2">
+                                            <div class="col-md-6"><input type="text" class="form-control p-3 fs-5 rounded-0 mb-3" placeholder="First name" name="firstName" /></div>
+                                            <div class="col-md-6"><input type="text" class="form-control p-3 fs-5 rounded-0 mb-3" placeholder="Last name" name="lastName" /></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12"><input type="email" class="form-control p-3 fs-5 rounded-0 mb-3" placeholder="Email Address" name="email" /></div>
+                                            <div class="col-md-12"><input type="text" class="form-control p-3 fs-5 rounded-0 mb-3" placeholder="Shipping Address" name="address" /></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3"><input type="text" class="form-control p-3 fs-5 rounded-0" placeholder="Country" name="country" /></div>
+                                            <div class="col-md-6"><input type="text" class="form-control p-3 fs-5 rounded-0" placeholder="City" name="city" /></div>
+                                        </div>
+                                        <div class="row div-btn">
+                                            <input type="submit" value="Update Details" class="btn p-3 rounded-0 btn-form fw-bold text-uppercase fs-5" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item rounded-0">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                <button
+                                    class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseTwo"
+                                    aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseTwo"
+                                >
+                                    <h3 class="text-black m-0">Change Password</h3>
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                                <div class="accordion-body">
+                                    <form id="fff">
+                                        <div class="col-md-12"><input type="password" class="form-control fs-5 rounded-0 mb-3 p-3" placeholder="Current Password" name="oldpass" /></div>
+                                        <div class="col-md-12"><input type="password" class="form-control fs-5 rounded-0 mb-3 p-3" placeholder="New password" name="newpass" /></div>
+                                        <div class="col-md-12"><input type="password" class="form-control fs-5 rounded-0 mb-3 p-3" placeholder="Confirm New password" name="repass" /></div>
+                                        <div class="row div-btn">
+                                            <input type="submit" value="Change Password" class="btn rounded-0 btn-form fw-bold text-uppercase p-3 fs-5" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item rounded-0">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                <button
+                                    class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseThree"
+                                    aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseThree"
+                                >
+                                    <h3 class="text-black m-0">Track orders</h3>
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                <div class="accordion-body">
+                                    <div class="row border pt-1 pb-1 mb-2">
+                                        <div class="col-lg-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title fs-4">Order #1</h5>
+                                                <p class="card-text fs-6">Total: 200$</p>
+                                                <p class="card-text fs-6">Order Date : 22/12/2022</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="mt-2"><input type="submit" value="Track order" class="btn rounded-0 btn-form text-uppercase fw-bold fs-5 ps-5 pe-5 p-3" /></div>
+                                        </div>
+                                    </div>
+                                    <div class="row border pt-1 pb-1">
+                                        <div class="col-lg-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title fs-4">Order #2</h5>
+                                                <p class="card-text fs-6">Total: 200$</p>
+                                                <p class="card-text fs-6">Order Date : 22/12/2022</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="mt-2"><input type="submit" value="Track order" class="btn rounded-0 btn-form text-uppercase fw-bold fs-5 ps-5 pe-5 p-3" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-3 text-white">
-                <h2 class="text-dark fw-bolder">Navigate</h2>
-                <ul type="none">
-                    <li>
-                        <a href="#" class="text-dark fs-6">My Orders</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-dark fs-6">My Account</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-dark fs-6">Products </a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-dark fs-6">Change Password </a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-dark fs-6">Track Order</a>
-                    </li>
-                </ul>
-            </div>
-            <hr style="width: 900px; position: relative; right: 2%" />
-            <div class="text-dark fw-bold fs-5" style="text-align: center">Copyright © 2022-ITI Group 2</div>
         </div>
-    </div>
-</footer>
-<!-- include jquery file -->
-<script src="./../node_modules/jquery/dist/jquery.min.js"></script>
-<script src="./../node_modules/jquery/dist/jquery.js"></script>
-<script src="./../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
-<!-- include bootstrap js file from node modules -->
-  <script src="./../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 
-<script src="./../js/test.js"></script>
-  <script type="module" src="./../js/profile.js"></script>
+        <footer class="bd-footer" id="footer">
+            <div class="container py-5">
+                <div class="row foot ps-4">
+                    <div class="col-lg-4 col-md-6 col-sm-12-justify-content-center offset-lg-1 mb-4">
+                        <h2 class="text-dark fw-bolder">Contact Us</h2>
+                        <ul type="none">
+                            <li>
+                                <span class="fw-bold">Phone Number:</span>
+                                <a href="#" class="text-dark fs-6">+11111111111</a>
+                            </li>
+                            <li><span class="fw-bold">Email:</span><a href="#" class="text-dark fs-6"> group2@gmail.com</a></li>
+                            <li><span class="fw-bold">Address:</span><a href="#" class="text-dark fs-6">123 Alexandria</a></li>
+                        </ul>
+                        <div class="col d-flex social mt-1 py-1">
+                            <a href="#" style="text-decoration: none" class="col fs-2 me-2 d-flex justify-content-center align-items-center"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" style="text-decoration: none" class="col fs-2 me-2 d-flex justify-content-center align-items-center"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#" style="text-decoration: none" class="col fs-2 me-2 d-flex justify-content-center align-items-center"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" style="text-decoration: none" class="col fs-2 d-flex justify-content-center align-items-center"><i class="fa-solid fa-globe"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <h2 class="text-dark fw-bolder">Need Help?</h2>
+                        <ul type="none">
+                            <li>
+                                <a href="#" class="text-dark fs-6">Payment Methods</a>
+                            </li>
+                            <a href="#" class="text-dark fs-6"> </a>
+                            <li><a href="#" class="text-dark fs-6"></a><a href="#" class="text-dark fs-6">Money Back Gurantee</a></li>
+                            <li>
+                                <a href="#" class="text-dark fs-6">Customer Service</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-dark fs-6">Terms &amp; Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 text-white">
+                        <h2 class="text-dark fw-bolder">Navigate</h2>
+                        <ul type="none">
+                            <li>
+                                <a href="#" class="text-dark fs-6">My Orders</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-dark fs-6">My Account</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-dark fs-6">Products </a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-dark fs-6">Change Password </a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-dark fs-6">Track Order</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr style="width: 900px; position: relative; right: 2%" />
+                    <div class="text-dark fw-bold fs-5" style="text-align: center">Copyright © 2022-ITI Group 2</div>
+                </div>
+            </div>
+        </footer>
+        <!-- include jquery file -->
+        <script src="./../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="./../node_modules/jquery/dist/jquery.js"></script>
+        <script src="./../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+        <!-- include bootstrap js file from node modules -->
+        <script src="./../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 
-  </body>
+        <script type="module" src="./../js/profile.js"></script>
+        <script type="module" src="./../js/script.js"></script>
+    </body>
 </html>
