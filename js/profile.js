@@ -22,16 +22,10 @@ console.log(user);
     document.querySelector('[name="city"]').value = user.city;
     document.querySelector('[name="country"]').value = user.country;
 
+    document.getElementById("name1").innerHTML = user.firstName;
+    document.getElementById("email1").innerHTML = user.emailAddress;
+
     
-    let oldPassInput = document.querySelector('[name="oldpass"]').value;
-    let newPassInput = document.querySelector('[name="newpass"]').value;
-    let repassInput = document.querySelector('[name="repass"]').value;
-    
-    //valid var's
-    
-    let oldPassValid = passRe.test(oldPassInput);
-    let newPassValid = passRe.test(newPassInput);
-    let repassValid = passRe.test(repassInput);
 
     // console.log(cityInput);
     // console.log(countryInput);
@@ -66,15 +60,40 @@ document.getElementById("userInfo-form").onsubmit = function(e){
     else{
         console.log("success")
 
-        console.log( updateAccount(emailInput,emailInput,firstNameInput,lastNameInput,addressInput,cityInput,countryInput));
+        console.log( updateAccount(user.emailAddress,emailInput,firstNameInput,lastNameInput,addressInput,cityInput,countryInput));
     }
     
 
 
 }
 
-document.getElementById("pass-form").onsubmit = function(){
+document.getElementById("pass-form").onsubmit = function(e){
+    let oldPassInput = document.querySelector('[name="oldpass"]').value;
+    let newPassInput = document.querySelector('[name="newpass"]').value;
+    let repassInput = document.querySelector('[name="repass"]').value;
     
+    //valid var's
+    
+    let oldPassValid = passRe.test(oldPassInput);
+    let newPassValid = passRe.test(newPassInput);
+    let repassValid = passRe.test(repassInput);
+
+    console.log(oldPassInput);
+    console.log(oldPassValid);
+    console.log(newPassInput);
+    console.log(newPassValid);
+    console.log(repassInput);
+    console.log(repassValid);
+
+    if(oldPassValid ==false || newPassValid ==false || repassValid ==false || newPassInput != repassInput ){
+        console.log("pass wrong");
+        e.preventDefault();
+    }
+    else{
+        console.log("pass true");
+
+        console.log(updatePass(user.emailAddress,newPassInput));
+    }
 }
 
 function updateAccount(email,nEmail,nFname,nLname,nAddress,nCity,nCountry) {
@@ -120,6 +139,7 @@ function updateAccount(email,nEmail,nFname,nLname,nAddress,nCity,nCountry) {
 }
 
 function updatePass(email,newPass){
+    
     let data = window.localStorage.getItem("eCommerceUsers");
     if (data) {
         let eCommerceUsers = JSON.parse(data);
