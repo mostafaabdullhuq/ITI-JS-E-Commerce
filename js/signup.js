@@ -222,9 +222,24 @@ document.getElementById("signUp-form").onsubmit = function (e) {
     let cityValid = nameRe.test(cityInput);
     let countryValid = nameRe.test(countryInput);
 
-    if (fnameValid === false || lnameValid === false || emailValid === false || passValid === false || repassValid === false || passInput != repassInput) {
+    
+    if (fnameValid === false || lnameValid === false){
         e.preventDefault();
-    } else {
+        document.getElementById("signup-msg").innerHTML = `<div class="col-12 fw-bold mt-1 p-1 rounded-0" style="color: red">Names must have no numbers or special characters only english letters</div>`;
+    }
+    else if (emailValid === false){
+        e.preventDefault();
+        document.getElementById("signup-msg").innerHTML = `<div class="col-12 fw-bold mt-1 p-1 rounded-0" style="color: red">Please enter your email correctly</div>`;
+    }
+    else if (passValid === false || repassValid === false){
+        e.preventDefault();
+        document.getElementById("signup-msg").innerHTML = `<div class="col-12 fw-bold mt-1 p-1 rounded-0" style="color: red">Passwords must have minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character</div>`;
+    }
+    else if (passInput != repassInput){
+        e.preventDefault();
+        document.getElementById("signup-msg").innerHTML = `<div class="col-12 fw-bold mt-1 p-1 rounded-0" style="color: red">confirmation password does not match</div>`;
+    }
+    else {
         let newuser = new all.User(firstNameInput, lastNameInput, emailInput, passInput, countryInput, cityInput, addressInput);
         let users = new all.Users(users_list).createAccount(newuser);
         console.log(users);
