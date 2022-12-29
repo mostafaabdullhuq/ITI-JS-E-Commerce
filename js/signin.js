@@ -29,12 +29,13 @@ document.getElementById("signinForm").onsubmit = function (e) {
             e.preventDefault();
             document.getElementById("signin-msg").innerHTML = `<div class="col-12 fw-bold mt-1 p-1 rounded-0" style="color: red">Password incorrect</div>`;
         }
+        window.location.href= "./../index.html"
     }
 };
 
-document.getElementById("testbtn").onsubmit = function(){
-    document.getElementById("signin-msg").innerHTML += `<div class="col-12 fw-bold mt-1 p-1 rounded-0">hhhhhhh</div>`
-    console.log("enterd")
-}
+// document.getElementById("testbtn").onsubmit = function(){
+//     document.getElementById("signin-msg").innerHTML += `<div class="col-12 fw-bold mt-1 p-1 rounded-0">hhhhhhh</div>`
+//     console.log("enterd")
+// }
 
 //hupypyvy@mailinator.com

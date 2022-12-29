@@ -161,10 +161,16 @@ export class Users {
                     if (users[index].passWord == pass) {
                         let userToken = crypto.randomUUID();
                         users[index].cookieToken = userToken;
+                        console.log(users[index].cookieToken)
+                        console.log(userToken)
                         deleteCookie("user_id");
                         deleteCookie("user_token");
-                        setCookie("user_id", users[index].emailAddress, 30);
+                        setCookie("user_id", users[index].id, 30);
                         setCookie("user_token", userToken, 30);
+                        // this.syncUpload;
+            
+                        let a = JSON.stringify(users);
+                        window.localStorage.setItem("eCommerceUsers",a);
                         return 'login success'
                     }else{
                         return 'password incorrect';
@@ -243,6 +249,8 @@ export class Users {
         let userID = getCookie("user_id"),
             userToken = getCookie("user_token");
         if (userID && userToken) {
+            console.log(userID);
+            console.log(userToken)
             return this.usersList.find((user) => user.id == userID && user.cookieToken == userToken);
         }
 
@@ -510,9 +518,8 @@ export var ecommerceUsers = new Users();
 // }
 
 //!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
-
 // if no user logged in
-if (!ecommerceUsers.validateLoginCookies()) {
+if (!ecommerceUsers.validateLoginCookies()) { console.log("inside if");
     $(".user-controls-list").html(`
     <li class="border-bottom">
         <a class="dropdown-item py-2" data-bs-toggle="modal" href="#signInModal"> Sign In </a>
@@ -523,7 +530,7 @@ if (!ecommerceUsers.validateLoginCookies()) {
 `);
 }
 // if user is logged in
-else {
+else { console.log("inside else");
     let user = ecommerceUsers.validateLoginCookies();
 
     $(".user-controls-list").html(`
