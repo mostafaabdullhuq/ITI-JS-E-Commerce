@@ -2,8 +2,12 @@
 
 .title{
     color:  var(--border-color-4) ;
-
 }
+
+input:focus {
+    outline: none !important;
+}
+
 input:hover {
     border-color: var(--border-color-4);
 }
