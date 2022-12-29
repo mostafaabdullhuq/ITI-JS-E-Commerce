@@ -13,7 +13,16 @@ let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,
 
 
 let user = new Users().validateLoginCookies();
-console.log(user);
+
+let orderList = new Users().ordersList(user);
+console.log(orderList)
+for (let index = 0; index < orderList.length; index++) {
+        let orderId = orderList[index].id;
+        let orderProdsCount = orderList[index].prodsCount;
+        let orderTotalPrice = orderList[index].totalPrice;
+        addOrder(orderId,orderProdsCount,orderTotalPrice);
+}
+// console.log(user);
 // user.shippingAddr name="address"
     document.querySelector('[name="firstName"]').value = user.firstName;
     document.querySelector('[name="lastName"]').value = user.lastName;
@@ -96,6 +105,9 @@ document.getElementById("pass-form").onsubmit = function(e){
     }
 }
 
+
+
+
 function updateAccount(email,nEmail,nFname,nLname,nAddress,nCity,nCountry) {
     let data = window.localStorage.getItem("eCommerceUsers");
     console.log(nCity);
@@ -160,3 +172,44 @@ function updatePass(email,newPass){
         console.log(eCommerceUsers);
     }
 }
+
+
+
+
+
+
+
+
+                                // <div class="row border pt-1 pb-1 mb-2">
+                                //         <div class="col-lg-8">
+                                //             <div class="card-body">
+                                //                 <h5 class="card-title fs-4">Order #1</h5>
+                                //                 <p class="card-text fs-6">Total: 200$</p>
+                                //                 <p class="card-text fs-6">Order Date : 22/12/2022</p>
+                                //             </div>
+                                //         </div>
+                                //         <div class="col-lg-4">
+                                //             <div class="mt-2"><input type="submit" value="Track order" class="btn rounded-0 btn-form text-uppercase fw-bold fs-5 ps-5 pe-5 p-3" /></div>
+                                //         </div>
+                                // </div>
+
+
+function addOrder(id,products,cost) {
+    document.getElementById("add_order").innerHTML +=
+    `<div class="row border pt-1 pb-1 mb-2">
+    <div class="col-lg-8">
+        <div class="card-body">
+            <h5 class="card-title fs-4">Order ${id}</h5>
+            <p class="card-text fs-6">Total: ${cost}</p>
+            <p class="card-text fs-6">Number of products :${products}</p>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="mt-2"><input type="submit" value="Track order" class="btn rounded-0 btn-form text-uppercase fw-bold fs-5 ps-5 pe-5 p-3" /></div>
+    </div>
+</div>`;
+}
+
+// function addOrder() {
+//         document.getElementById("name1").innerHTML +="<h5 class='card-title fs-4'>Order #1</h5>";
+// }
