@@ -6,17 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- include bootstrap css file from node modules -->
-    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <!-- include fontawesome css file from node modules -->
-    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css"/>
+    <link
+      rel="stylesheet"
+      href="./node_modules/font-awesome/css/font-awesome.min.css"
+    />
     <!-- include css files -->
-    <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
-    <link rel="stylesheet" href="./node_modules/@splidejs/splide/dist/css/splide.min.css"/>
-    <link rel="stylesheet" href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css"/>
+    <link
+      rel="stylesheet"
+      href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/@splidejs/splide/dist/css/splide.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+    />
     <!--for slider -->
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css"
+      rel="stylesheet"
+    />
     <!-- <link rel="stylesheet" href="./css/style.css" /> -->
     <!-- <link rel="stylesheet" href="./css/cart.css" /> -->
     <link rel="stylesheet" href="./css/index.css" />
@@ -28,121 +49,6 @@
     <title>E-Commerce</title>
   </head>
   <body>
-    <!-- head Navbar -->
-    <div class="container-fluid pt-3 pb-3 border border-bottom">
-      <div class="row">
-        <nav id="navbar_top" class="navbar navbar-expand-md fw-bold pt-1 pb-1">
-        <div class="col col-sm-2">
-          <a href="#"><img style="width: 100px; height: 50px"src="./Hagar_logo.svg.png" alt=""/></a>
-        </div>
-        <div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"  aria-expanded="false"  aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-        <div
-          class="collapse navbar-collapse justify-content-around nav-active"
-          id="navbarNavDropdown"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item me-4">
-              <a
-                class="nav-link active text-dark me-4"
-                aria-current="page"
-                href="#"
-                >HOME</a
-              >
-            </li>
-            <li class="nav-item dropdown me-4">
-              <a
-                class="nav-link dropdown-toggle text-dark me-4"
-                id="productConv"
-                href="./docs/categ.html"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                PRODUCTS
-              </a>
-              <ul class="dropdown-menu p-4" id="cat-ul"></ul>
-            </li>
-            <li class="nav-item me-4">
-              <a class="nav-link text-dark me-4" href="#footer">ABOUT</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="#contact">CONTACT</a>
-            </li>
-          </ul>
-        </div>
-    
-        <div class="col col-sm-2 d-flex justify-content-end">
-          <a
-            class="nav-link dropdown-toggle text-dark"
-            href="./docs/categ.html"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <svg
-              class="icon1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              fill="currentColor"
-              class="bi bi-person"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"
-              />
-            </svg>
-          </a>
-          <ul class="dropdown-menu p-2" style="text-align: center">
-            <li class="border-bottom mb-1 pb-1">
-              <a
-                class="icon1"
-                data-bs-toggle="modal"
-                href="#exampleModalToggle2"
-              >
-                Sign In
-              </a>
-            </li>
-            <li>
-              <a
-                class="icon1"
-                data-bs-toggle="modal"
-                href="#exampleModalToggle3"
-              >
-                Sign up
-              </a>
-            </li>
-          </ul>
-
-          <a class="ms-3" href="./docs/cart.html"
-            ><svg
-              class="icon1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              fill="currentColor"
-              class="bi bi-cart"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-              />
-            </svg>
-          </a>
-          <p class="cart-btn text-light cart-items-count">0</p>
-        </div>
-        </nav>
-        </div>
-      
-      </div>
-   
-    </div>
-
-   
-
     <!-- Slider -->
     <div
       id="carouselExampleIndicators"
@@ -315,108 +221,149 @@
       </div>
     </div>
 
-        <!-- Newest Arrivals -->
-        <div class="container mb-4 text-center d-flex flex-column">
-            <h2 class="col-12 text-uppercase fw-bolder">Newest Arrivals</h2>
-            <div class="col-12 btn-row my-5 d-flex justify-content-center flex-wrap ps-3 pe-2 ps-lg-2 pe-lg-0 pt-2 pt-lg-0" id="categ">
-                <a class="btn btn-new index-categ-button rounded-0 col-12 active col-lg me-2 mb-2 mb-lg-0" role="button" id="categId" data-category="all">All</a>
+    <!-- Newest Arrivals -->
+    <div class="container mb-4 text-center d-flex flex-column">
+      <h2 class="col-12 text-uppercase fw-bolder">Newest Arrivals</h2>
+      <div
+        class="col-12 btn-row my-5 d-flex justify-content-center flex-wrap ps-3 pe-2 ps-lg-2 pe-lg-0 pt-2 pt-lg-0"
+        id="categ"
+      >
+        <a
+          class="btn btn-new index-categ-button rounded-0 col-12 active col-lg me-2 mb-2 mb-lg-0"
+          role="button"
+          id="categId"
+          data-category="all"
+          >All</a
+        >
+      </div>
+      <!-- newest arrival products container -->
+      <div
+        class="rounded-0 d-flex flex-wrap justify-content-lg-start justify-content-center ps-3"
+        id="prods-container"
+      ></div>
+    </div>
+    <!-- Feedback -->
+    <div class="container-fluid feed py-5">
+      <h2 class="text-center text-uppercase fw-bolder mb-5">Testimonials</h2>
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="customers-testimonials" class="owl-carousel">
+            <!--TESTIMONIAL 1 -->
+            <div class="item d-flex flex-column shadow-effect">
+              <div class="col text-center">
+                <span class="fs-4 fw-bold col text-center"
+                  >Mostafa Abdullhuq</span
+                >
+              </div>
+              <div class="rating col my-3">
+                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
+                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
+                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
+                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
+                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
+              </div>
+
+              <p
+                class="col text-center mt-1"
+                style="word-break: break-all; opacity: 0.7"
+              >
+                Dramatically maintain clicks-and-mortar solutions without
+                functional solutions. Completely synergize resource taxing
+                relationships via premier niche markets. Professionally
+                cultivate.
+              </p>
             </div>
-            <!-- newest arrival products container -->
-            <div class="rounded-0 d-flex flex-wrap justify-content-lg-start justify-content-center ps-3" id="prods-container"></div>
-        </div>
-        <!-- Feedback -->
-        <div class="container-fluid feed py-5">
-            <h2 class="text-center text-uppercase fw-bolder mb-5">Testimonials</h2>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div id="customers-testimonials" class="owl-carousel">
-                        <!--TESTIMONIAL 1 -->
-                        <div class="item d-flex flex-column shadow-effect">
-                            <div class="col text-center">
-                                <span class="fs-4 fw-bold col text-center">Mostafa Abdullhuq</span>
-                            </div>
-                            <div class="rating col my-3">
-                                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
-                                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
-                                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
-                                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
-                                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
-                            </div>
+            <!--END OF TESTIMONIAL 1 -->
+            <!--TESTIMONIAL 2 -->
+            <div class="item d-flex flex-column shadow-effect">
+              <div class="col text-center">
+                <span class="fs-4 fw-bold col text-center">Zienab Khaled</span>
+              </div>
+              <div class="rating col my-3">
+                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
+                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
+                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
+                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
+              </div>
 
-                            <p class="col text-center mt-1" style="word-break: break-all; opacity: 0.7">
-                                Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
-                                Professionally cultivate.
-                            </p>
-                        </div>
-                        <!--END OF TESTIMONIAL 1 -->
-                        <!--TESTIMONIAL 2 -->
-                        <div class="item d-flex flex-column shadow-effect">
-                            <div class="col text-center">
-                                <span class="fs-4 fw-bold col text-center">Zienab Khaled</span>
-                            </div>
-                            <div class="rating col my-3">
-                                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
-                                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
-                                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
-                                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
-                            </div>
+              <p
+                class="col text-center mt-1"
+                style="word-break: break-all; opacity: 0.7"
+              >
+                Dramatically maintain clicks-and-mortar solutions without
+                functional solutions. Completely synergize resource taxing
+                relationships via premier niche markets. Professionally
+                cultivate.
+              </p>
+            </div>
+            <!--END OF TESTIMONIAL 2 -->
+            <!--TESTIMONIAL 3 -->
+            <div class="item d-flex flex-column shadow-effect">
+              <div class="col text-center">
+                <span class="fs-4 fw-bold col text-center">Hager Ahmed</span>
+              </div>
+              <div class="rating col my-3">
+                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
+                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
+                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
+              </div>
 
-                            <p class="col text-center mt-1" style="word-break: break-all; opacity: 0.7">
-                                Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
-                                Professionally cultivate.
-                            </p>
-                        </div>
-                        <!--END OF TESTIMONIAL 2 -->
-                        <!--TESTIMONIAL 3 -->
-                        <div class="item d-flex flex-column shadow-effect">
-                            <div class="col text-center">
-                                <span class="fs-4 fw-bold col text-center">Hager Ahmed</span>
-                            </div>
-                            <div class="rating col my-3">
-                                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
-                                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
-                                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
-                            </div>
+              <p
+                class="col text-center mt-1"
+                style="word-break: break-all; opacity: 0.7"
+              >
+                Dramatically maintain clicks-and-mortar solutions without
+                functional solutions. Completely synergize resource taxing
+                relationships via premier niche markets. Professionally
+                cultivate.
+              </p>
+            </div>
+            <!--END OF TESTIMONIAL 3 -->
+            <!--TESTIMONIAL 4 -->
+            <div class="item d-flex flex-column shadow-effect">
+              <div class="col text-center">
+                <span class="fs-4 fw-bold col text-center">Sara</span>
+              </div>
+              <div class="rating col my-3">
+                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
+                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
+              </div>
 
-                            <p class="col text-center mt-1" style="word-break: break-all; opacity: 0.7">
-                                Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
-                                Professionally cultivate.
-                            </p>
-                        </div>
-                        <!--END OF TESTIMONIAL 3 -->
-                        <!--TESTIMONIAL 4 -->
-                        <div class="item d-flex flex-column shadow-effect">
-                            <div class="col text-center">
-                                <span class="fs-4 fw-bold col text-center">Sara</span>
-                            </div>
-                            <div class="rating col my-3">
-                                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
-                                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
-                            </div>
+              <p
+                class="col text-center mt-1"
+                style="word-break: break-all; opacity: 0.7"
+              >
+                Dramatically maintain clicks-and-mortar solutions without
+                functional solutions. Completely synergize resource taxing
+                relationships via premier niche markets. Professionally
+                cultivate.
+              </p>
+            </div>
+            <!--END OF TESTIMONIAL 4 -->
+            <!--TESTIMONIAL 5 -->
+            <div class="item d-flex flex-column shadow-effect">
+              <div class="col text-center">
+                <span class="fs-4 fw-bold pe-5 text-start col text-start ps-3"
+                  >Mohammad Abdelkarim</span
+                >
+              </div>
+              <div class="rating col my-3">
+                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
+              </div>
 
-                            <p class="col text-center mt-1" style="word-break: break-all; opacity: 0.7">
-                                Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
-                                Professionally cultivate.
-                            </p>
-                        </div>
-                        <!--END OF TESTIMONIAL 4 -->
-                        <!--TESTIMONIAL 5 -->
-                        <div class="item d-flex flex-column shadow-effect">
-                            <div class="col text-center">
-                                <span class="fs-4 fw-bold pe-5 text-start col text-start ps-3">Mohammad Abdelkarim</span>
-                            </div>
-                            <div class="rating col my-3">
-                                <i class="fa-solid fa-star fs-6" style="color: gold"></i>
-                            </div>
-
-                            <p class="col text-center mt-1" style="word-break: break-all; opacity: 0.7">
-                                Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets.
-                                Professionally cultivate.
-                            </p>
-                        </div>
-                        <!--END OF TESTIMONIAL 5 -->
-                        <!--TESTIMONIAL 1 -->
-                        <!-- <div class="item d-flex flex-column shadow-effect">
+              <p
+                class="col text-center mt-1"
+                style="word-break: break-all; opacity: 0.7"
+              >
+                Dramatically maintain clicks-and-mortar solutions without
+                functional solutions. Completely synergize resource taxing
+                relationships via premier niche markets. Professionally
+                cultivate.
+              </p>
+            </div>
+            <!--END OF TESTIMONIAL 5 -->
+            <!--TESTIMONIAL 1 -->
+            <!-- <div class="item d-flex flex-column shadow-effect">
                             <div class="d-flex col-12 align-items-center">
                                 <span class="fs-4 fw-bold pe-5 text-start col text-start ps-3">Mostafa</span>
                                 <div class="rating col-6 text-end pe-3">
@@ -432,9 +379,9 @@
                                 Professionally cultivate.
                             </p>
                         </div> -->
-                        <!--END OF TESTIMONIAL 1 -->
-                        <!--TESTIMONIAL 2 -->
-                        <!-- <div class="item d-flex flex-column shadow-effect">
+            <!--END OF TESTIMONIAL 1 -->
+            <!--TESTIMONIAL 2 -->
+            <!-- <div class="item d-flex flex-column shadow-effect">
                             <div class="d-flex col-12 align-items-center">
                                 <span class="fs-4 fw-bold pe-5 text-start col text-start ps-3">Hager</span>
                                 <div class="rating col-6 text-end pe-3">
@@ -450,9 +397,9 @@
                                 Professionally cultivate.
                             </p>
                         </div> -->
-                        <!--END OF TESTIMONIAL 2 -->
-                        <!--TESTIMONIAL 3 -->
-                        <!-- <div class="item d-flex flex-column shadow-effect">
+            <!--END OF TESTIMONIAL 2 -->
+            <!--TESTIMONIAL 3 -->
+            <!-- <div class="item d-flex flex-column shadow-effect">
                             <div class="d-flex col-12 align-items-center">
                                 <span class="fs-4 fw-bold pe-5 text-start col text-start ps-3">Zienab</span>
                                 <div class="rating col-6 text-end pe-3">
@@ -468,9 +415,9 @@
                                 Professionally cultivate.
                             </p>
                         </div> -->
-                        <!--END OF TESTIMONIAL 3 -->
-                        <!--TESTIMONIAL 4 -->
-                        <!-- <div class="item d-flex flex-column shadow-effect">
+            <!--END OF TESTIMONIAL 3 -->
+            <!--TESTIMONIAL 4 -->
+            <!-- <div class="item d-flex flex-column shadow-effect">
                             <div class="d-flex col-12 align-items-center">
                                 <span class="fs-4 fw-bold pe-5 text-start col text-start ps-3">Mohamed</span>
                                 <div class="rating col-6 text-end pe-3">
@@ -486,9 +433,9 @@
                                 Professionally cultivate.
                             </p>
                         </div> -->
-                        <!--END OF TESTIMONIAL 4 -->
-                        <!--TESTIMONIAL 5 -->
-                        <!-- <div class="item d-flex flex-column shadow-effect">
+            <!--END OF TESTIMONIAL 4 -->
+            <!--TESTIMONIAL 5 -->
+            <!-- <div class="item d-flex flex-column shadow-effect">
                             <div class="d-flex col-12 align-items-center">
                                 <span class="fs-4 fw-bold pe-5 text-start col text-start ps-3">Sara</span>
                                 <div class="rating col-6 text-end pe-3">
@@ -503,36 +450,74 @@
                                 Professionally cultivate.
                             </p>
                         </div> -->
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-        <!-- form -->
-        <div class="container my-5 d-flex justify-content-center align-items-center flex-column" id="contact">
-            <h2 class="fw-bold mb-5 col text-uppercase text-center">Contact us</h2>
-            <form id="contact-form" action="mailto:itigroup2@iti.gov.eg" class="col-12 col-xl-8 d-flex flex-column">
-                <div class="col d-flex justify-content-center mb-3 form-inputs">
-                    <div class="col me-3 d-flex">
-                        <input type="email" placeholder="Email Address" class="contact-email col" />
-                    </div>
-                    <div class="col d-flex">
-                        <input type="text" placeholder="Subject" class="col" />
-                    </div>
-                </div>
-                <textarea name="message" id="msg" rows="10" placeholder="Message" class="col"></textarea><br />
-                <div class="col controls d-flex justify-content-center">
-                    <div class="col d-flex me-3">
-                        <input type="submit" value="Send Message" class="col contact-submit fw-bold text-uppercase" />
-                    </div>
-                    <div class="col d-flex justify-content-end social py-1">
-                        <a href="http://127.0.0.1:5500/index.html#" class="col fs-2 me-2 d-flex justify-content-center align-items-center"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="http://127.0.0.1:5500/index.html#" class="col fs-2 me-2 d-flex justify-content-center align-items-center"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="http://127.0.0.1:5500/index.html#" class="col fs-2 me-2 d-flex justify-content-center align-items-center"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="http://127.0.0.1:5500/index.html#" class="col fs-2 d-flex justify-content-center align-items-center"><i class="fa-solid fa-globe"></i></a>
-                    </div>
-                </div>
-            </form>
+      </div>
+    </div>
+    <!-- form -->
+    <div
+      class="container my-5 d-flex justify-content-center align-items-center flex-column"
+      id="contact"
+    >
+      <h2 class="fw-bold mb-5 col text-uppercase text-center">Contact us</h2>
+      <form
+        id="contact-form"
+        action="mailto:itigroup2@iti.gov.eg"
+        class="col-12 col-xl-8 d-flex flex-column"
+      >
+        <div class="col d-flex justify-content-center mb-3 form-inputs">
+          <div class="col me-3 d-flex">
+            <input
+              type="email"
+              placeholder="Email Address"
+              class="contact-email col"
+            />
+          </div>
+          <div class="col d-flex">
+            <input type="text" placeholder="Subject" class="col" />
+          </div>
         </div>
+        <textarea
+          name="message"
+          id="msg"
+          rows="10"
+          placeholder="Message"
+          class="col"
+        ></textarea
+        ><br />
+        <div class="col controls d-flex justify-content-center">
+          <div class="col d-flex me-3">
+            <input
+              type="submit"
+              value="Send Message"
+              class="col contact-submit fw-bold text-uppercase"
+            />
+          </div>
+          <div class="col d-flex justify-content-end social py-1">
+            <a
+              href="http://127.0.0.1:5500/index.html#"
+              class="col fs-2 me-2 d-flex justify-content-center align-items-center"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a
+              href="http://127.0.0.1:5500/index.html#"
+              class="col fs-2 me-2 d-flex justify-content-center align-items-center"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a
+              href="http://127.0.0.1:5500/index.html#"
+              class="col fs-2 me-2 d-flex justify-content-center align-items-center"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              href="http://127.0.0.1:5500/index.html#"
+              class="col fs-2 d-flex justify-content-center align-items-center"
+              ><i class="fa-solid fa-globe"></i
+            ></a>
+          </div>
+        </div>
+      </form>
+    </div>
 
     <!-- Footer -->
 
@@ -548,7 +533,7 @@
                 <span class="fw-bold">Phone Number:</span>
                 <a
                   href="http://127.0.0.1:5500/index.html#"
-                  class="text-dark fs-6 "
+                  class="text-dark fs-6"
                   >+11111111111</a
                 >
               </li>
@@ -575,28 +560,28 @@
                 <a
                   href="http://127.0.0.1:5500/index.html#"
                   class="col fs-2 me-2 d-flex justify-content-center align-items-center"
-                  style="text-decoration: none;"
+                  style="text-decoration: none"
                   ><i class="fa-brands fa-facebook-f"></i
                 ></a>
                 <a
                   href="http://127.0.0.1:5500/index.html#"
                   class="col fs-2 me-2 d-flex justify-content-center align-items-center"
-                  style="text-decoration: none;"
+                  style="text-decoration: none"
                   ><i class="fa-brands fa-twitter"></i
                 ></a>
                 <a
                   href="http://127.0.0.1:5500/index.html#"
                   class="col fs-2 me-2 d-flex justify-content-center align-items-center"
-                  style="text-decoration: none;"
+                  style="text-decoration: none"
                   ><i class="fa-brands fa-instagram"></i
                 ></a>
                 <a
                   href="http://127.0.0.1:5500/index.html#"
                   class="col fs-2 d-flex justify-content-center align-items-center"
-                  style="text-decoration: none;"
+                  style="text-decoration: none"
                   ><i class="fa-solid fa-globe"></i
                 ></a>
-                  </div>   
+              </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 mb-4">
@@ -641,7 +626,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-lg-3 text-white ">
+          <div class="col-lg-3 text-white">
             <h2 class="text-dark fw-bolder mb-2">Navigate</h2>
             <ul type="none">
               <li>
@@ -940,8 +925,5 @@
     <!-- <script src="./js/script.js"></script> -->
     <script type="module" src="./js/index.js"></script>
     <!-- <script type="module" src="./js/cart.js"></script> -->
-
-
-
   </body>
 </html>
