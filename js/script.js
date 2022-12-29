@@ -1,4 +1,5 @@
 // when window loads, update the navbar cart items
+// import "./../node_modules/animate.css/animate.min.css";
 
 // a function to create a new cookie
 export function setCookie(cname, cvalue, exdays) {
@@ -67,6 +68,10 @@ export var isEmailValid = (emailAddress) => {
 
 // function to update the cart items in the navbar
 export function UpdateNavCart(cartItems) {
+    $(".user-nav-cart").addClass("animate__animated animate__rubberBand animate__faster");
+    setTimeout(() => {
+        $(".user-nav-cart").removeClass("animate__animated animate__rubberBand");
+    }, 300);
     $(".user-nav-cart").attr("data-cart-items", cartItems);
 }
 
@@ -116,35 +121,34 @@ export class Users {
 
     */
 
-createAccount(userData){
-    // initialize the return response object
-    let response = {
-        isCreated: true,
-        error: "",
-    };
-    // loop through all users
-    this.usersList.forEach((user) => {
-        // if the user's email is the same as the email of the user being created
-        if (userData.emailAddress == user.emailAddress) {
-            // cannot create account because email duplication
-            response.isCreated = false;
-            response.error = "Email Address is already exists.";
-            console.log(userData.emailAddress);
+    createAccount(userData) {
+        // initialize the return response object
+        let response = {
+            isCreated: true,
+            error: "",
+        };
+        // loop through all users
+        this.usersList.forEach((user) => {
+            // if the user's email is the same as the email of the user being created
+            if (userData.emailAddress == user.emailAddress) {
+                // cannot create account because email duplication
+                response.isCreated = false;
+                response.error = "Email Address is already exists.";
+                console.log(userData.emailAddress);
+            }
+        });
+
+        // if user is created successfully
+        if (response.isCreated) {
+            // add the user to the users list
+            this.usersList.push(userData);
+
+            // update the localstorage
+            this.syncUpload;
         }
-        
-    });
-
-    // if user is created successfully
-    if (response.isCreated) {
-        // add the user to the users list
-        this.usersList.push(userData);
-
-        // update the localstorage
-        this.syncUpload;
+        // return the response object
+        return response;
     }
-    // return the response object
-    return response;
-}
     /*
         [DESC]
             a method to login to account with email and password
@@ -425,53 +429,53 @@ export var ecommerceUsers = new Users();
 //!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
 
 // // check if there's a user logged in
-// let user = ecommerceUsers.validateLoginCookies();
+let user = ecommerceUsers.validateLoginCookies();
 
 // // if user is not logged in
-// if (!user) {
-//     // create new user object
-//     let user = new User("Group", "Two", "group2@iti.gov.eg", "Admin@1234", "Egypt", "Alexandria", "Lorem ipsum 24 Bld 2", "+101203215478");
+if (!user) {
+    // create new user object
+    let user = new User("Group", "Two", "group2@iti.gov.eg", "Admin@1234", "Egypt", "Alexandria", "Lorem ipsum 24 Bld 2", "+101203215478");
 
-//     // create account from user object
-//     ecommerceUsers.createAccount(user);
+    // create account from user object
+    ecommerceUsers.createAccount(user);
 
-//     // login to user account
-//     user = ecommerceUsers.loginAccount(user.emailAddress, user.passWord);
+    // login to user account
+    user = ecommerceUsers.loginAccount(user.emailAddress, user.passWord);
 
-//     // add items to user cart
-//     if (user.cart.prodsCount === 0) {
-//         ecommerceUsers.updateCart(user, [
-//             {
-//                 id: 1,
-//                 title: "lorem ipsum datae alla lorem ipsum datae alla",
-//                 price: 100,
-//                 qty: 1,
-//                 image: "https://images.unsplash.com/photo-1570831739435-6601aa3fa4fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1452&q=80",
-//             },
-//             {
-//                 id: 2,
-//                 title: "Product 2",
-//                 price: 200,
-//                 qty: 2,
-//                 image: "https://images.unsplash.com/photo-1555487505-8603a1a69755?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
-//             },
-//             {
-//                 id: 3,
-//                 title: "Product 3",
-//                 price: 300,
-//                 qty: 3,
-//                 image: "https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
-//             },
-//             {
-//                 id: 4,
-//                 title: "Product 4",
-//                 price: 400,
-//                 qty: 4,
-//                 image: "https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
-//             },
-//         ]);
-//     }
-// }
+    // add items to user cart
+    // if (user.cart.prodsCount === 0) {
+    //     ecommerceUsers.updateCart(user, [
+    //         {
+    //             id: 1,
+    //             title: "lorem ipsum datae alla lorem ipsum datae alla",
+    //             price: 100,
+    //             qty: 1,
+    //             image: "https://images.unsplash.com/photo-1570831739435-6601aa3fa4fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1452&q=80",
+    //         },
+    //         {
+    //             id: 2,
+    //             title: "Product 2",
+    //             price: 200,
+    //             qty: 2,
+    //             image: "https://images.unsplash.com/photo-1555487505-8603a1a69755?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
+    //         },
+    //         {
+    //             id: 3,
+    //             title: "Product 3",
+    //             price: 300,
+    //             qty: 3,
+    //             image: "https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+    //         },
+    //         {
+    //             id: 4,
+    //             title: "Product 4",
+    //             price: 400,
+    //             qty: 4,
+    //             image: "https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+    //         },
+    //     ]);
+    // }
+}
 
 //!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
 

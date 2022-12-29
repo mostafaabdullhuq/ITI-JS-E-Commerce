@@ -73,7 +73,9 @@ $(function () {
                     $(this).val(+prodQty);
                 }
             });
-
+            $(".product-img").on("click", function () {
+                this.requestFullscreen({ navigationUI: "show" });
+            });
             $(".add-to-cart").on("click", function (e) {
                 if (user) {
                     let newQuantity = false;
