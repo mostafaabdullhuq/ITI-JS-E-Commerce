@@ -51,6 +51,7 @@ document.getElementById("signUp-form").onsubmit = function (e) {
         document.getElementById("signup-msg").innerHTML = `<div class="col-12 fw-bold mt-1 p-1 rounded-0" style="color: red">confirmation password does not match</div>`;
     }
     else {
+        // console.log("success");
         let newuser = new all.User(firstNameInput, lastNameInput, emailInput, passInput, countryInput, cityInput, addressInput);
         let users = new all.Users(users_list).createAccount(newuser);
         console.log(users);

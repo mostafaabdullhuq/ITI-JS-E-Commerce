@@ -149,7 +149,20 @@ export class Users {
         // return the response object
         return response;
     }
-    //////////////////////////////////////////////////////////
+    /*
+        [DESC]
+            a method to login to account with email and password
+
+        [Arguments]
+            - emailAddress: user email address
+            - passWord: user password
+        EX: 
+            Users.loginAccount(emailAddress="johnmaxi@gmail.com", passWord="John@12345")
+
+        [Return]
+            - object of type user if the user is found
+            - false if the user is not found
+    */
     loginAccount(email,pass) {
         let data = window.localStorage.getItem("eCommerceUsers");
         if (data) {
@@ -187,20 +200,7 @@ export class Users {
     }
     
 
-    /*
-        [DESC]
-            a method to login to account with email and password
-
-        [Arguments]
-            - emailAddress: user email address
-            - passWord: user password
-        EX: 
-            Users.loginAccount(emailAddress="johnmaxi@gmail.com", passWord="John@12345")
-
-        [Return]
-            - object of type user if the user is found
-            - false if the user is not found
-    */
+    
 
     // loginAccount(emailAddress, passWord) {
     //     console.log("in login");
@@ -526,7 +526,7 @@ export var ecommerceUsers = new Users();
 
 //!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
 // if no user logged in
-if (!ecommerceUsers.validateLoginCookies()) { console.log("inside if");
+if (!ecommerceUsers.validateLoginCookies()) { 
     $(".user-controls-list").html(`
     <li class="border-bottom">
         <a class="dropdown-item py-2" data-bs-toggle="modal" href="#signInModal"> Sign In </a>
@@ -537,7 +537,7 @@ if (!ecommerceUsers.validateLoginCookies()) { console.log("inside if");
 `);
 }
 // if user is logged in
-else { console.log("inside else");
+else { 
     let user = ecommerceUsers.validateLoginCookies();
 
     $(".user-controls-list").html(`

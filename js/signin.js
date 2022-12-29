@@ -12,10 +12,15 @@ document.getElementById("signinForm").onsubmit = function (e) {
     let emailValid = emailRe.test(emailInput);
     let passValid = passRe.test(passInput);
 
-    if (emailValid === false || passValid === false) {
+    if (emailValid === false) {
+        e.preventDefault();
+        document.getElementById("signin-msg").innerHTML = `<div class="col-12 fw-bold mt-1 p-1 rounded-0" style="color: red">Enter a correct email format</div>`;
+    } 
+    else if(passValid === false){
         e.preventDefault();
         document.getElementById("signin-msg").innerHTML = `<div class="col-12 fw-bold mt-1 p-1 rounded-0" style="color: red">Password Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character</div>`;
-    } else {
+    }
+    else {
         // checkLocalStorage(emailInput,passInput);
         let users = new all.Users().loginAccount(emailInput, passInput);
         // let users = new all.Users().checkLocalStorage(emailInput, passInput);
@@ -29,7 +34,7 @@ document.getElementById("signinForm").onsubmit = function (e) {
             e.preventDefault();
             document.getElementById("signin-msg").innerHTML = `<div class="col-12 fw-bold mt-1 p-1 rounded-0" style="color: red">Password incorrect</div>`;
         }
-        window.location.href= "./../index.html"
+        // window.location.href= "./../index.html"
     }
 };
 
