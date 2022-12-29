@@ -166,8 +166,38 @@
         </footer>
 
         <!-- Quick View PopUp -->
+        <div id="quickviewpopup" tabindex="-1">
+            <div class="modal-content product-item pe-4 d-flex flex-row col justify-content-between product rounded-0">
+                <button type="button" class="btn-close close-modal" aria-label="Close"></button>
+                <!-- ----------image-------- -->
+                <div class="product-img modal-img col" data-prod-id=""></div>
+                <!-- --------------product name ,price & rate btn------ -->
+                <div class="detail justify-content-center d-flex flex-column col align-items-start ms-3">
+                    <!--? product title -->
 
-        <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1">
+                    <h3 class="title modal-title fw-bold" style="word-break: break-all"></h3>
+
+                    <!--? product price -->
+                    <div class="d-flex align-items-center w-100 my-3">
+                        <span class="prod-price fs-1 modal-price fw-bold col me-3"></span>
+                        <div class="rating col d-flex justify-content-end"></div>
+                    </div>
+
+                    <!--? product quantity -->
+
+                    <div class="prod-qty d-flex w-100 flex-column">
+                        <div class="controls d-flex align-items-center col-12 px-4 py-2">
+                            <i class="prod-qty-remove cell fs-4 fa-solid fa-minus border-0 p-1" data-prod-id=""></i>
+                            <input type="text" class="flex-grow-1 prod-qty-value text-center fw-bold border-0 fs-4 w-25" data-prod-id="" value="1" />
+                            <i class="prod-qty-add cell fs-4 fa-solid fa-plus border-0 p-1" data-prod-id=""></i>
+                        </div>
+                        <div class="button add-to-cart btn col-12 text-center py-3 rounded-0 px-4 text-uppercase mt-2" data-prod-id="">Add to cart</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content" style="height: 90%; width: 150%; position: absolute; top: 0; bottom: 0; right: 0; left: -25%">
                     <div class="modal-body d-flex row">
@@ -208,7 +238,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- include jquery file -->
         <script src="./../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

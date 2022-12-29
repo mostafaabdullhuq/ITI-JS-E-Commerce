@@ -301,12 +301,19 @@ export class Users {
 
     // check if product exists in cart before adding to the cart
     isProdInCart(user, prod) {
+        console.log("in isProdInCart" + JSON.stringify(prod));
+        console.log(user.cart.prodsList);
         // check if there's a product with the same id, title, price and image in the cart
-        let isInCart = user.cart.prodsList.find((p) => p.id === prod.id && p.image === prod.image && p.title === prod.title && p.price === prod.price),
+        let isInCart = user.cart.prodsList.find(function (p) {
+                if (p.id === prod.id && p.title === prod.title && p.image === prod.image && p.price === prod.price) {
+                    return p;
+                }
+            }),
             // get the index of the product in the cart if found
             prodIndex = isInCart ? user.cart.prodsList.findIndex((p) => p == isInCart) : -1;
 
         // return the results
+        console.log("isInCart: " + JSON.stringify(isInCart) + " prodIndex: " + prodIndex);
         return [isInCart, prodIndex];
     }
 
