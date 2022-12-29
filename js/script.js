@@ -431,7 +431,7 @@ export var ecommerceUsers = new Users();
 // // check if there's a user logged in
 let user = ecommerceUsers.validateLoginCookies();
 
-// if user is not logged in
+// // if user is not logged in
 if (!user) {
     // create new user object
     let user = new User("Group", "Two", "group2@iti.gov.eg", "Admin@1234", "Egypt", "Alexandria", "Lorem ipsum 24 Bld 2", "+101203215478");

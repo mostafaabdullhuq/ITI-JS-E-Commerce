@@ -16,7 +16,7 @@
         <title>Profile</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg py-4 border-bottom">
+        <nav class="navbar navbar-expand-lg py-4">
             <div class="container-fluid">
                 <a class="d-none d-lg-block navbar-brand text-uppercase col-xl-2 col-lg-3 fs-5 fw-bolder text-center" href="/index.html">E-Commerce</a>
                 <button
@@ -33,21 +33,21 @@
                 <div class="collapse navbar-collapse mt-2 mt-lg-0 col me-3" id="navbarSupportedContent">
                     <ul class="navbar-nav col me-auto mb-2 mb-lg-0 d-flex justify-content-center">
                         <li class="nav-item me-3">
-                            <a class="nav-link text-dark text-uppercase fw-bold active" aria-current="page" href="../index.html">Home</a>
+                            <a class="nav-link text-dark text-uppercase fw-bold active" aria-current="page" href="/index.html">Home</a>
                         </li>
                         <li class="nav-item dropdown me-3">
-                            <a class="nav-link dropdown-toggle text-dark text-uppercase fw-bold" href="./categ.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products </a>
+                            <a class="nav-link dropdown-toggle text-dark text-uppercase fw-bold" href="/docs/categ.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products </a>
                             <ul class="dropdown-menu rounded-0 py-0" id="cat-ul">
                                 <li>
-                                    <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2" href="./categ.html">All Products</a>
+                                    <a style="text-transform: capitalize; font-weight: 550" class="text-center border-bottom dropdown-item py-2" href="/docs/categ.html">All Products</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item me-3">
-                            <a class="nav-link text-dark text-uppercase fw-bold" href="#footer">About</a>
+                            <a class="nav-link text-dark text-uppercase fw-bold" href="/index.html#footer">About</a>
                         </li>
                         <li class="nav-item me-3">
-                            <a href="#footer" class="nav-link text-dark text-uppercase fw-bold">Contact</a>
+                            <a href="/index.html#contact" class="nav-link text-dark text-uppercase fw-bold">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -56,12 +56,12 @@
                 <div class="col-xl-2 col-lg-3 dropdown col d-flex text-center align-items-center right-nav-side">
                     <div class="d-flex col justify-content-center">
                         <!-- profile dropdown -->
-                        <a class="nav-link profile-info dropdown-toggle text-center text-dark fs-5" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link profile-info dropdown-toggle text-center text-dark fs-5" href="/docs/profile.html" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-user"></i>
                         </a>
-                        <ul class="dropdown-menu user-controls-list rounded-0" style="text-align: center"></ul>
+                        <ul class="dropdown-menu user-controls-list dropdown p-0 rounded-0" style="text-align: center"></ul>
                         <!-- cart dropdown -->
-                        <a class="ms-3 user-nav-cart text-dark text-start fs-5" href="./cart.html" data-cart-items="0"><i class="fa-solid fa-cart-shopping"></i> </a>
+                        <a class="ms-3 user-nav-cart text-dark text-start fs-5" href="/docs/cart.html" data-cart-items="0"><i class="fa-solid fa-cart-shopping"></i> </a>
                     </div>
                 </div>
             </div>
@@ -72,8 +72,8 @@
                 <div class="col-md-3 mb-2">
                     <div class="d-flex flex-column align-items-center">
                         <img class="rounded-circle" width="150px" src="../imgs/profile-picture_640.png" />
-                        <span class="font-weight-bold fs-4">Group2</span>
-                        <span class="text-black-50 fs-4">test_email@group2.com</span>
+                        <span id="name1" class="font-weight-bold fs-4">Group2</span>
+                        <span id="email1" class="text-black-50 fs-4">test_email@group2.com</span>
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -128,7 +128,7 @@
                             </h2>
                             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                                 <div class="accordion-body">
-                                    <form id="fff">
+                                    <form id="pass-form">
                                         <div class="col-md-12"><input type="password" class="form-control fs-5 rounded-0 mb-3 p-3" placeholder="Current Password" name="oldpass" /></div>
                                         <div class="col-md-12"><input type="password" class="form-control fs-5 rounded-0 mb-3 p-3" placeholder="New password" name="newpass" /></div>
                                         <div class="col-md-12"><input type="password" class="form-control fs-5 rounded-0 mb-3 p-3" placeholder="Confirm New password" name="repass" /></div>
@@ -153,8 +153,8 @@
                                 </button>
                             </h2>
                             <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-                                <div class="accordion-body">
-                                    <div class="row border pt-1 pb-1 mb-2">
+                                <div id="add_order" class="accordion-body">
+                                    <!-- <div class="row border pt-1 pb-1 mb-2">
                                         <div class="col-lg-8">
                                             <div class="card-body">
                                                 <h5 class="card-title fs-4">Order #1</h5>
@@ -177,7 +177,7 @@
                                         <div class="col-lg-4">
                                             <div class="mt-2"><input type="submit" value="Track order" class="btn rounded-0 btn-form text-uppercase fw-bold fs-5 ps-5 pe-5 p-3" /></div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

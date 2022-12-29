@@ -157,6 +157,15 @@ if (user) {
 
         if (prods.length > 0) {
             window.location.href = "./../docs/checkout.html";
+        } else {
+            console.log("in empty");
+            $("#empty-checkout").fadeIn(500);
+            $("#empty-checkout .continue-shopping").on("click", (e) => {
+                window.location.href = "/docs/categ.html";
+            });
+            $("#empty-checkout .btn-close").on("click", (e) => {
+                $("#empty-checkout").fadeOut(500);
+            });
         }
     });
 
