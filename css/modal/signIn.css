@@ -2,8 +2,14 @@
 
 .title{
     color:  var(--border-color-4) ;
-
 }
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
 input:hover {
     border-color: var(--border-color-4);
 }

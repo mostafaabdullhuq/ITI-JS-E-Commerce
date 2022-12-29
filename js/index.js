@@ -184,7 +184,9 @@ $(function () {
             categories.forEach((category) => {
                 categorylnk += `
             <li>
-            <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2 text-center" href="/docs/categ.html?filter=${category}">${category}</a>
+            <a style="text-transform: capitalize; font-weight: 550" class="border-bottom dropdown-item py-2 text-center" href="/docs/categ.html?filter=${category
+                .replace(" ", "-")
+                .replace("'", "")}">${category}</a>
             </li>
             `;
             });

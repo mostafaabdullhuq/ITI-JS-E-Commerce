@@ -681,7 +681,7 @@ nav .dropdown li:hover {
     border-radius: 0%;
     background-size: contain !important;
     background-repeat: no-repeat !important;
-    background-position: center center !important;
+    background-position: center left !important;
     -webkit-border-radius: 0%;
     -moz-border-radius: 0%;
     -ms-border-radius: 0%;
