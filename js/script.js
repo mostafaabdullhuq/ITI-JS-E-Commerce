@@ -478,11 +478,11 @@ export var ecommerceUsers = new Users();
 // if no user logged in
 if (!ecommerceUsers.validateLoginCookies()) {
     $(".user-controls-list").html(`
-    <li class="border-bottom mb-1 pb-1">
-        <a class="icon1" data-bs-toggle="modal" href="#signInModal"> Sign In </a>
+    <li class="border-bottom">
+        <a class="dropdown-item py-2" data-bs-toggle="modal" href="#signInModal"> Sign In </a>
     </li>
     <li>
-        <a class="icon1" data-bs-toggle="modal" href="#signUpModal"> Sign up </a>
+        <a class="dropdown-item py-2" data-bs-toggle="modal" href="#signUpModal"> Sign up </a>
     </li>
 `);
 }
