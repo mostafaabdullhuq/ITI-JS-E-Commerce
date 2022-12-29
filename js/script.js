@@ -1,4 +1,5 @@
 // when window loads, update the navbar cart items
+// import "./../node_modules/animate.css/animate.min.css";
 
 // a function to create a new cookie
 export function setCookie(cname, cvalue, exdays) {
@@ -67,6 +68,10 @@ export var isEmailValid = (emailAddress) => {
 
 // function to update the cart items in the navbar
 export function UpdateNavCart(cartItems) {
+    $(".user-nav-cart").addClass("animate__animated animate__rubberBand animate__faster");
+    setTimeout(() => {
+        $(".user-nav-cart").removeClass("animate__animated animate__rubberBand");
+    }, 300);
     $(".user-nav-cart").attr("data-cart-items", cartItems);
 }
 
@@ -116,35 +121,34 @@ export class Users {
 
     */
 
-createAccount(userData){
-    // initialize the return response object
-    let response = {
-        isCreated: true,
-        error: "",
-    };
-    // loop through all users
-    this.usersList.forEach((user) => {
-        // if the user's email is the same as the email of the user being created
-        if (userData.emailAddress == user.emailAddress) {
-            // cannot create account because email duplication
-            response.isCreated = false;
-            response.error = "Email Address is already exists.";
-            console.log(userData.emailAddress);
+    createAccount(userData) {
+        // initialize the return response object
+        let response = {
+            isCreated: true,
+            error: "",
+        };
+        // loop through all users
+        this.usersList.forEach((user) => {
+            // if the user's email is the same as the email of the user being created
+            if (userData.emailAddress == user.emailAddress) {
+                // cannot create account because email duplication
+                response.isCreated = false;
+                response.error = "Email Address is already exists.";
+                console.log(userData.emailAddress);
+            }
+        });
+
+        // if user is created successfully
+        if (response.isCreated) {
+            // add the user to the users list
+            this.usersList.push(userData);
+
+            // update the localstorage
+            this.syncUpload;
         }
-        
-    });
-
-    // if user is created successfully
-    if (response.isCreated) {
-        // add the user to the users list
-        this.usersList.push(userData);
-
-        // update the localstorage
-        this.syncUpload;
+        // return the response object
+        return response;
     }
-    // return the response object
-    return response;
-}
     /*
         [DESC]
             a method to login to account with email and password
