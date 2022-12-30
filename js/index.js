@@ -310,7 +310,10 @@ $(function () {
                     UpdateNavCart(user.cart.prodsCount);
                 } else {
                     ////// show the login popup
-                    $("#exampleModalToggle2").fadeIn();
+                    console.log("user not logged in");
+                    $("#signInModal").fadeIn(200,function(){
+                        $("#signInModal").modal("show");
+                    });
                     $("#quickviewpopup").fadeOut(0);
                 }
             });

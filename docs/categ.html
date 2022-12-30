@@ -197,6 +197,41 @@
             </div>
         </div>
 
+        <!-- sign in popup -->
+        <div class="modal fade" id="signInModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="card border-0 shadow rounded-3">
+                                <div class="card-body p-4 p-sm-5">
+                                    <form id="signinForm">
+                                        <h5 class="card-title text-center mb-5 fw-bolder fs-4 title">Sign In</h5>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <input type="email" class="form-control rounded-0 mb-3 fs-5" placeholder="Email Address" value="" name="email" />
+                                            </div>
+                                            <div class="col-12">
+                                                <input type="password" class="form-control rounded-0 mb-3 fs-5" placeholder="Password" value="" name="pass" />
+                                            </div>
+                                            <!-- <div class="col-12">
+                                                <button class="btn col-12 btn-form btn-login text-uppercase fw-bold mt-3 ms-0 rounded-0 fs-5" type="Submit">Sign In</button>
+                                                <p class="fs-4 mt-3 text-center">New Customer? <a href="#exampleModalToggle2" class="text-dark">Sign Up</a></p>
+                                            </div> -->
+                                            <div id="signin-msg " class="col-12">
+                                            <button id="testbtn" class="btn col-12 btn-form btn-login text-uppercase fw-bold mt-3 fs-5 rounded-0" type="Submit">Sign In</button>
+                                            <p class="fs-4 mt-3 text-center">New Customer? <a href="#signUpModal" class="text-dark" style="text-decoration: underline;">Sign Up</a></p>
+                                        </div>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- <div id="quickviewpopup" class="modal modal-dialog-centered" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content" style="height: 90%; width: 150%; position: absolute; top: 0; bottom: 0; right: 0; left: -25%">
