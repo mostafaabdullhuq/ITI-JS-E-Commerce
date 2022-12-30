@@ -163,44 +163,36 @@ export class Users {
             - object of type user if the user is found
             - false if the user is not found
     */
-    loginAccount(email,pass) {
+    loginAccount(email, pass) {
         let data = window.localStorage.getItem("eCommerceUsers");
         if (data) {
             let users = JSON.parse(data);
             for (let index = 0; index < users.length; index++) {
                 console.log(users.length);
-                console.log(users[index]);                
-                if(users[index].emailAddress == email){
+                console.log(users[index]);
+                if (users[index].emailAddress == email) {
                     if (users[index].passWord == pass) {
                         let userToken = crypto.randomUUID();
                         users[index].cookieToken = userToken;
-                        console.log(users[index].cookieToken)
-                        console.log(userToken)
+                        console.log(users[index].cookieToken);
+                        console.log(userToken);
                         deleteCookie("user_id");
                         deleteCookie("user_token");
                         setCookie("user_id", users[index].id, 30);
                         setCookie("user_token", userToken, 30);
                         // this.syncUpload;
-            
+
                         let a = JSON.stringify(users);
-                        window.localStorage.setItem("eCommerceUsers",a);
-                        return 'login success'
-                    }else{
-                        return 'password incorrect';
+                        window.localStorage.setItem("eCommerceUsers", a);
+                        return "login success";
+                    } else {
+                        return "password incorrect";
                     }
-    
                 }
-    
-                
             }
-                return 'email incorrect';
-            
-            
+            return "email incorrect";
         }
     }
-    
-
-    
 
     // loginAccount(emailAddress, passWord) {
     //     console.log("in login");
@@ -250,7 +242,7 @@ export class Users {
             userToken = getCookie("user_token");
         if (userID && userToken) {
             console.log(userID);
-            console.log(userToken)
+            console.log(userToken);
             return this.usersList.find((user) => user.id == userID && user.cookieToken == userToken);
         }
 
@@ -526,7 +518,7 @@ export var ecommerceUsers = new Users();
 
 //!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
 // if no user logged in
-if (!ecommerceUsers.validateLoginCookies()) { 
+if (!ecommerceUsers.validateLoginCookies()) {
     $(".user-controls-list").html(`
     <li class="border-bottom">
         <a class="dropdown-item py-2" data-bs-toggle="modal" href="#signInModal"> Sign In </a>
@@ -537,7 +529,7 @@ if (!ecommerceUsers.validateLoginCookies()) {
 `);
 }
 // if user is logged in
-else { 
+else {
     let user = ecommerceUsers.validateLoginCookies();
 
     $(".user-controls-list").html(`
