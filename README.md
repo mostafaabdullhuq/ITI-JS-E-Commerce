@@ -35,10 +35,11 @@ You can't add any product to your bag before you first create an account.</br>
 
 ### Products Page
 You can go to Products page by clicking on "Products" in the navbar in Home page.
+<img src="https://user-images.githubusercontent.com/117679026/210113579-9e5659f9-7555-42f9-bb90-1921152f2708.jpeg">
 
 
 
 
-### Products Page 
+
 
 
