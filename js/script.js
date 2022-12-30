@@ -498,7 +498,8 @@ if (!ecommerceUsers.validateLoginCookies()) {
                                                 <button class="btn col-12 btn-form btn-login text-uppercase fw-bold mt-3 ms-0 rounded-0 fs-5" type="Submit">Sign In</button>
                                                 <p class="fs-4 mt-3 text-center">New Customer? <a href="#exampleModalToggle2" class="text-dark">Sign Up</a></p>
                                             </div> -->
-                                <div id="signin-msg " class="col-12">
+                                <div id="signin-msg" class="col-12"></div>
+                                <div>
                                     <button id="testbtn" class="btn col-12 btn-form btn-login text-uppercase fw-bold fs-5 p-3 rounded-0" type="Submit">Sign In</button>
                                     <p class="fs-5 mt-3 text-center">New Customer? <span class="fs-4 fw-bold" id="create-acc-link" style="text-decoration: underline;color: var(--ltn_secondary-color);cursor:pointer;">Sign Up</span></p>
                                 </div>
