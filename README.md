@@ -60,7 +60,7 @@ By clicking on <b>Product name</b> you can preview the product in product info p
 
 ## Checkout Page
 <img src="https://user-images.githubusercontent.com/117679026/210114024-fdde99fd-682f-46a2-98a6-d5b6ac517b48.jpeg">
-
+<img src="https://user-images.githubusercontent.com/117679026/210115616-cf10982e-3587-4656-be16-6b4d0678c78a.jpeg">
 ##
 
 
