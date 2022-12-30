@@ -138,3 +138,11 @@ p {
 .prod-price {
     color: var(--ltn__primary-color-3);
 }
+
+.detail .title {
+    color: var(--ltn__primary-color-3) !important;
+}
+
+.social i {
+    color: white !important;
+}

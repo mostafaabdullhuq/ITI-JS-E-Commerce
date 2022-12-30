@@ -265,10 +265,8 @@ $(function () {
                     UpdateNavCart(user.cart.prodsCount);
                 } else {
                     // show the login popup
-                    $("#signInModal").fadeIn(200, function () {
-                        $("#signInModal").modal("show");
-                    });
                     $("#quickviewpopup").fadeOut(0);
+                    $("#signin-trigger-button").trigger("click");
                 }
             });
         });

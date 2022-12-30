@@ -122,3 +122,7 @@ i {
 .accordion-button:not(.collapsed) h5 {
     color: white !important;
 }
+
+#create-acc-link {
+    color: var(--ltn__secondary-color) !important;
+}

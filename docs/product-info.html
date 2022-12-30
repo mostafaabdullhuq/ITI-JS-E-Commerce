@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
         <link rel="stylesheet" href="./../css/index.css" />
         <link rel="stylesheet" href="./../css/product-info.css" />
+        <link rel="stylesheet" href="./../css/modal/signIn.css" />
         <title>Product Info</title>
     </head>
     <body>
@@ -150,11 +151,104 @@
             </div>
             <!-- end product reviews -->
         </div>
+
+        <!-- sign in popup -->
+        <div class="modal fade" id="signInModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-0">
+                    <div class="card border-0 shadow rounded-3">
+                        <div class="card-body px-3 px-lg-4 py-5">
+                            <form id="signinForm">
+                                <h5 class="card-title text-center mb-4 fw-bolder fs-4 title">Already Have An Account?</h5>
+                                <div class="col-12 mb-3">
+                                    <input type="email" class="form-control rounded-0 p-3" placeholder="Email Address" value="" name="email" />
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <input type="password" class="form-control rounded-0 p-3" placeholder="Password" value="" name="pass" />
+                                </div>
+                                <!-- <div class="col-12">
+                                                <button class="btn col-12 btn-form btn-login text-uppercase fw-bold mt-3 ms-0 rounded-0 fs-5" type="Submit">Sign In</button>
+                                                <p class="fs-4 mt-3 text-center">New Customer? <a href="#exampleModalToggle2" class="text-dark">Sign Up</a></p>
+                                            </div> -->
+                                <div id="signin-msg " class="col-12">
+                                    <button id="testbtn" class="btn col-12 btn-form btn-login text-uppercase fw-bold fs-5 p-3 rounded-0" type="Submit">Sign In</button>
+                                    <p class="fs-4 mt-3 text-center">New Customer? <a href="#signUpModal" class="text-dark" style="text-decoration: underline">Sign Up</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="bd-footer" id="footer">
+            <div class="container py-5">
+                <div class="row foot ps-4">
+                    <div class="col-lg-4 col-md-6 col-sm-12-justify-content-center offset-lg-1 mb-4">
+                        <h2 class="text-dark fw-bolder">Contact Us</h2>
+                        <ul type="none">
+                            <li>
+                                <span class="fw-bold">Phone Number:</span>
+                                <a href="#" class="text-dark fs-6">+11111111111</a>
+                            </li>
+                            <li><span class="fw-bold">Email:</span><a href="#" class="text-dark fs-6"> group2@gmail.com</a></li>
+                            <li><span class="fw-bold">Address:</span><a href="#" class="text-dark fs-6">123 Alexandria</a></li>
+                        </ul>
+                        <div class="col d-flex social mt-1 py-1">
+                            <a href="#" style="text-decoration: none" class="col fs-2 me-2 d-flex justify-content-center align-items-center"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" style="text-decoration: none" class="col fs-2 me-2 d-flex justify-content-center align-items-center"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#" style="text-decoration: none" class="col fs-2 me-2 d-flex justify-content-center align-items-center"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" style="text-decoration: none" class="col fs-2 d-flex justify-content-center align-items-center"><i class="fa-solid fa-globe"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <h2 class="text-dark fw-bolder">Need Help?</h2>
+                        <ul type="none">
+                            <li>
+                                <a href="#" class="text-dark fs-6">Payment Methods</a>
+                            </li>
+                            <a href="#" class="text-dark fs-6"> </a>
+                            <li><a href="#" class="text-dark fs-6"></a><a href="#" class="text-dark fs-6">Money Back Gurantee</a></li>
+                            <li>
+                                <a href="#" class="text-dark fs-6">Customer Service</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-dark fs-6">Terms &amp; Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 text-white">
+                        <h2 class="text-dark fw-bolder">Navigate</h2>
+                        <ul type="none">
+                            <li>
+                                <a href="#" class="text-dark fs-6">My Orders</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-dark fs-6">My Account</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-dark fs-6">Products </a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-dark fs-6">Change Password </a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-dark fs-6">Track Order</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr style="width: 900px; position: relative; right: 2%" />
+                    <div class="text-dark fw-bold fs-5" style="text-align: center">Copyright © 2022-ITI Group 2</div>
+                </div>
+            </div>
+        </footer>
+
         <!-- page content end -->
         <script src="./../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="./../node_modules/jquery/dist/jquery.min.js"></script>
         <script src="./../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
         <script src="./../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="module" src="./../js/signin.js"></script>
+        <script type="module" src="./../js/signup.js"></script>
         <script type="module" src="./../js/script.js"></script>
         <script type="module" src="./../js/index.js"></script>
         <script type="module" src="./../js/product-info.js"></script>

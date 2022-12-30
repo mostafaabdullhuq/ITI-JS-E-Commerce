@@ -11,8 +11,9 @@ let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,
 
 let users_list = [];
 
-document.getElementById("signUp-form").onsubmit = function (e) {
+$("body").on("submit", "#signUp-form", function (e) {
     //get inputs
+    console.log("here");
     let firstNameInput = document.querySelector('[name="firstName"]').value;
     let lastNameInput = document.querySelector('[name="lastName"]').value;
     // let usernameInput = document.querySelector('[name="username"]').value;
@@ -52,4 +53,4 @@ document.getElementById("signUp-form").onsubmit = function (e) {
         let newuser = new all.User(firstNameInput, lastNameInput, emailInput, passInput, countryInput, cityInput, addressInput);
         let users = new all.Users(users_list).createAccount(newuser);
     }
-};
+});
