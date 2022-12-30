@@ -1,7 +1,7 @@
 # ITI-JS-E-Commerce
-An eCommerce web application developed by 5 ITI students Using:</br>
+An E-Commerce web application developed by 5 ITI students Using:</br>
 HTML5 , CSS3 , JQuery , Bootstrap5, JavaScript and OOP.</br>
-This page can be considered as a base for any eCommerce applications , as it fits all users requirements.
+This page can be considered as a base for any E-Commerce applications , as it fits all users requirements.
 
 
 ## Getting started
@@ -12,6 +12,12 @@ This page can be considered as a base for any eCommerce applications , as it fit
 ```
 npm install 
 ```
+###### API used as a test
+```
+https://fakestoreapi.com/products
+https://fakestoreapi.com
+```
+
 
 ## OverView
 The site consists mainly of: <br>
@@ -47,8 +53,13 @@ By clicking on <b>Product name</b> you can preview the product in product info p
 ## Product Info Page
 <img src="https://user-images.githubusercontent.com/117679026/210114598-6d9fff3f-d852-42fb-8f1b-ddfa64bb1855.jpeg">
 
+## Shipping Cart page
+<img src="https://user-images.githubusercontent.com/117679026/210114657-3a77f3ba-2eab-42c4-9e0a-a60397355c6d.jpeg">
+
 ## Checkout Page
-<img src="http://hubusercontent.com/117679026/210114048-f138b394-c835-40a5-83cd-1db9bc69b42f.jpeg">
+<img src="https://user-images.githubusercontent.com/117679026/210114024-fdde99fd-682f-46a2-98a6-d5b6ac517b48.jpeg">
+
+##
 
 
 
