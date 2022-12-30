@@ -403,24 +403,28 @@ export class Users {
 
     */
 
-    changePassword(user, newPass) {
-        // check if password is valid and meet the requirements
-        let passValidation = isPassValid(newPass);
+    changePassword(user, currentPass, newPass) {
+        if (user.passWord === currentPass) {
+            // check if password is valid and meet the requirements
+            let passValidation = isPassValid(newPass);
 
-        // if password is valid and met the requirements
-        if (passValidation[0]) {
-            // update the user password
-            user.passWord = newPass;
+            // if password is valid and met the requirements
+            if (passValidation[0]) {
+                // update the user password
+                user.passWord = newPass;
 
-            // update the localstorage
-            this.syncUpload;
+                // update the localstorage
+                this.syncUpload;
 
-            return [true, user];
-        }
+                return [true, user];
+            }
 
-        // if password is not valid or doesn't meet the requirements
-        else {
-            return passValidation;
+            // if password is not valid or doesn't meet the requirements
+            else {
+                return passValidation;
+            }
+        } else {
+            return [false, "Current password is incorrect"];
         }
     }
 }
