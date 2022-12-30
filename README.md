@@ -39,7 +39,7 @@ You can go to Products page by clicking on "Products" in the navbar in Home page
 <img src="https://user-images.githubusercontent.com/117679026/210113660-ae472c49-5813-4dba-afff-f913fc737dd2.jpeg"></br>
 By clicking on <b>Quick View</b> you can preview the product and add it to your cart if you liked it.</br> 
 <img src="https://user-images.githubusercontent.com/117679026/210114003-3438fdc3-4980-41fc-9710-ea68620d2453.jpeg">
-<img src="">
+<img src="(https://user-images.githubusercontent.com/117679026/210114359-a4849cbc-4a9d-429b-9e05-aeb8e9972e28.jpeg">
 
 
 
