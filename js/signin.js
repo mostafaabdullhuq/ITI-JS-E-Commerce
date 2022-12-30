@@ -5,7 +5,8 @@ let emailRe = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([
 //REGEX for password :  Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
 let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-document.getElementById("signinForm").onsubmit = function (e) {
+$("body").on("submit", "#signinForm", function (e) {
+    console.log("here in login");
     let emailInput = document.querySelector('[name="email"]').value;
     let passInput = document.querySelector('[name="pass"]').value;
 
@@ -31,4 +32,4 @@ document.getElementById("signinForm").onsubmit = function (e) {
             document.getElementById("signin-msg").innerHTML = `<div class="col-12 fw-bold mt-1 p-1 rounded-0" style="color: red">Password incorrect</div>`;
         }
     }
-};
+});

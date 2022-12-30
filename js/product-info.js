@@ -90,8 +90,8 @@ $(function () {
                     UpdateNavCart(user.cart.prodsCount);
                 } else {
                     // show the login popup
-                    $("#exampleModalToggle2").fadeIn();
                     $("#quickviewpopup").fadeOut(0);
+                    $("#signin-trigger-button").trigger("click");
                 }
             });
         })

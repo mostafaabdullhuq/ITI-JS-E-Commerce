@@ -586,16 +586,19 @@ nav i:hover,
 .user-controls-list li,
 .user-controls-list li a {
     font-weight: 550;
+    color: var(--ltn__primary-color) !important;
 }
 
 nav .dropdown li a:hover,
-nav .dropdown li:hover {
-    color: white;
+nav .dropdown li:hover,
+.user-controls-list li:hover {
+    color: white !important;
     background-color: var(--ltn__secondary-color);
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
+    cursor: pointer;
     -o-transition: all 0.3s ease-in-out;
 }
 
