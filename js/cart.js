@@ -13,7 +13,6 @@ if (user) {
         // if no products in cart
         if (prods.length === 0) {
             // show empty cart message
-            // $(".cart-prods").html("<h3 class='mt-5'>Your cart is empty</h3>");
         }
         // if products in cart
         else {
@@ -109,7 +108,6 @@ if (user) {
                     // get the product id and quantity values
                     prodId = $(this).attr("data-prod-id");
                     prodQty = $(this).val() == 0 || isNaN($(this).val()) ? 1 : $(this).val();
-                    console.log("prodQty: " + prodQty);
                 }
                 // if the quantity is more than 999, max it to 999
                 if (+prodQty > 999) prodQty = 999;
@@ -120,7 +118,6 @@ if (user) {
                 prods.forEach((prod) => {
                     if (prod.id == prodId) {
                         prod.qty = +prodQty;
-                        console.log(prodQty);
                         prodPrice = prod.price;
                     }
                 });
@@ -159,7 +156,6 @@ if (user) {
         if (prods.length > 0) {
             window.location.href = "./../docs/checkout.html";
         } else {
-            console.log("in empty");
             $("#empty-checkout").fadeIn(500);
             $("#empty-checkout .continue-shopping").on("click", (e) => {
                 window.location.href = "/docs/categ.html";

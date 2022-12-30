@@ -134,7 +134,6 @@ export class Users {
                 // cannot create account because email duplication
                 response.isCreated = false;
                 response.error = "Email Address is already exists.";
-                console.log(userData.emailAddress);
             }
         });
 
@@ -168,14 +167,10 @@ export class Users {
         if (data) {
             let users = JSON.parse(data);
             for (let index = 0; index < users.length; index++) {
-                console.log(users.length);
-                console.log(users[index]);
                 if (users[index].emailAddress == email) {
                     if (users[index].passWord == pass) {
                         let userToken = crypto.randomUUID();
                         users[index].cookieToken = userToken;
-                        console.log(users[index].cookieToken);
-                        console.log(userToken);
                         deleteCookie("user_id");
                         deleteCookie("user_token");
                         setCookie("user_id", users[index].id, 30);
@@ -195,7 +190,6 @@ export class Users {
     }
 
     // loginAccount(emailAddress, passWord) {
-    //     console.log("in login");
     //     let user = this.usersList.find((user) => {
     //         return user.emailAddress.toLowerCase() === emailAddress.toLowerCase() && user.passWord === passWord;
     //     });
@@ -241,8 +235,6 @@ export class Users {
         let userID = getCookie("user_id"),
             userToken = getCookie("user_token");
         if (userID && userToken) {
-            console.log(userID);
-            console.log(userToken);
             return this.usersList.find((user) => user.id == userID && user.cookieToken == userToken);
         }
 
@@ -333,8 +325,6 @@ export class Users {
 
     // check if product exists in cart before adding to the cart
     isProdInCart(user, prod) {
-        console.log("in isProdInCart" + JSON.stringify(prod));
-        console.log(user.cart.prodsList);
         // check if there's a product with the same id, title, price and image in the cart
         let isInCart = user.cart.prodsList.find(function (p) {
                 if (p.id === prod.id && p.title === prod.title && p.image === prod.image && p.price === prod.price) {
@@ -345,7 +335,6 @@ export class Users {
             prodIndex = isInCart ? user.cart.prodsList.findIndex((p) => p == isInCart) : -1;
 
         // return the results
-        console.log("isInCart: " + JSON.stringify(isInCart) + " prodIndex: " + prodIndex);
         return [isInCart, prodIndex];
     }
 
@@ -465,58 +454,6 @@ export class Order {
 // create new Users Object to store all website users
 export var ecommerceUsers = new Users();
 
-//!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
-
-// // // check if there's a user logged in
-// let user = ecommerceUsers.validateLoginCookies();
-
-// // // if user is not logged in
-// if (!user) {
-//     // create new user object
-//     let user = new User("Group", "Two", "group2@iti.gov.eg", "Admin@1234", "Egypt", "Alexandria", "Lorem ipsum 24 Bld 2", "+101203215478");
-
-//     // create account from user object
-//     ecommerceUsers.createAccount(user);
-
-//     // login to user account
-//     user = ecommerceUsers.loginAccount(user.emailAddress, user.passWord);
-
-//     // add items to user cart
-//     // if (user.cart.prodsCount === 0) {
-//     //     ecommerceUsers.updateCart(user, [
-//     //         {
-//     //             id: 1,
-//     //             title: "lorem ipsum datae alla lorem ipsum datae alla",
-//     //             price: 100,
-//     //             qty: 1,
-//     //             image: "https://images.unsplash.com/photo-1570831739435-6601aa3fa4fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1452&q=80",
-//     //         },
-//     //         {
-//     //             id: 2,
-//     //             title: "Product 2",
-//     //             price: 200,
-//     //             qty: 2,
-//     //             image: "https://images.unsplash.com/photo-1555487505-8603a1a69755?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
-//     //         },
-//     //         {
-//     //             id: 3,
-//     //             title: "Product 3",
-//     //             price: 300,
-//     //             qty: 3,
-//     //             image: "https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
-//     //         },
-//     //         {
-//     //             id: 4,
-//     //             title: "Product 4",
-//     //             price: 400,
-//     //             qty: 4,
-//     //             image: "https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
-//     //         },
-//     //     ]);
-//     // }
-// }
-
-//!!!!!!!!! FOR TESTING ONLY PLEASE REMOVE BEFORE PUBLISHING
 // if no user logged in
 if (!ecommerceUsers.validateLoginCookies()) {
     $(".user-controls-list").html(`
@@ -552,8 +489,6 @@ else {
 
 $(function () {
     $("#user-info").on("click", function () {
-        console.log("clicked");
-
         window.location.href = "./../docs/profile.html";
     });
 });

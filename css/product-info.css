@@ -106,9 +106,6 @@ p {
 .product-img {
     max-width: calc(var(--cart_prod_size) + 100px);
     min-height: 400px !important;
-    /* max-height: calc(var(--cart_prod_size) + 100px); */
-    /* min-width: calc(var(--cart_prod_size));
-    min-height: calc(var(--cart_prod_size) + 100px); */
     border-radius: 0%;
     background-size: contain !important;
     background-repeat: no-repeat !important;
