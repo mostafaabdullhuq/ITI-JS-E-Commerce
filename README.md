@@ -33,6 +33,7 @@ The site consists mainly of: <br>
 
 ### Home Page 
 Home page consists of The Newest Arrivals, Customers Feedback and a Contact form.</br> 
+<img src="https://i.imgur.com/8vm7P1W.png">
 You can't add any product to your bag before you first create an account.</br>
 <img src="https://user-images.githubusercontent.com/117679026/210112576-caacfbdf-4da8-459d-a46c-6c5544cd69ec.jpeg" >
 <img src="https://user-images.githubusercontent.com/117679026/210113079-93999d56-8707-4333-9b09-c962505df099.jpeg">
@@ -42,6 +43,7 @@ You can't add any product to your bag before you first create an account.</br>
 ### Products Page
 You can go to Products page by clicking on <b>Products</b> in the navbar in Home page.
 <img src="https://user-images.githubusercontent.com/117679026/210113579-9e5659f9-7555-42f9-bb90-1921152f2708.jpeg">
+<img src="https://i.imgur.com/lMmpHMd.png">
 <img src="https://user-images.githubusercontent.com/117679026/210113660-ae472c49-5813-4dba-afff-f913fc737dd2.jpeg"></br>
 By clicking on <b>Quick View</b> you can preview the product and add it to your cart if you liked it.</br> 
 <img src="https://user-images.githubusercontent.com/117679026/210114003-3438fdc3-4980-41fc-9710-ea68620d2453.jpeg">
