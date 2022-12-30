@@ -45,7 +45,10 @@ By clicking on <b>Quick View</b> you can preview the product and add it to your 
 By clicking on <b>Product name</b> you can preview the product in product info page.</br>
 
 ## Product Info Page
-<img src="">
+<img src="https://user-images.githubusercontent.com/117679026/210114598-6d9fff3f-d852-42fb-8f1b-ddfa64bb1855.jpeg">
+
+## Checkout Page
+<img src="http://hubusercontent.com/117679026/210114048-f138b394-c835-40a5-83cd-1db9bc69b42f.jpeg">
 
 
 
