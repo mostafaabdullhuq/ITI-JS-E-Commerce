@@ -52,37 +52,9 @@ $(function () {
                 });
                 // add products fetched to the dom
                 $("#prods-container").html(prodsCards);
-                // Product PopUp
-
-                // $("#prods-container").on("click", ".view", function (e) {
-                //     console.log("hereeeeee");
-                //     let productElement = $(this).parents(".prod"),
-                //         prodImage = productElement.find(".image-container")[0].getAttribute("data-prod-image"),
-                //         prodTitle = productElement.find(".prod-title")[0].textContent,
-                //         prodPrice = productElement.find(".price span")[0].textContent,
-                //         prodStarCount = productElement.find("i.fa-star").length;
-                //     product.id = +this.getAttribute("data-prod-id");
-                //     product.image = prodImage;
-                //     product.title = prodTitle;
-                //     product.price = +prodPrice.replace("$", "");
-
-                //     console.log(`You Are Viewing: ${JSON.stringify(product)}`);
-                //     $("#quickviewpopup .prod-qty-value").val(1);
-
-                //     $("#quickviewpopup .modal-title").text(prodTitle);
-                //     $("#quickviewpopup .modal-price").text(prodPrice);
-                //     $("#quickviewpopup .modal-img").attr("data-image-src", prodImage);
-                //     $("#quickviewpopup .modal-img").css("background", `url("${prodImage}")`);
-                //     $("#quickviewpopup .modal-rating").html("");
-                //     $("#quickviewpopup .modal-rating").append('<i class="fa-solid fa-star" style="color:gold;"></i>'.repeat(Math.round(prodStarCount)));
-                //     $("#quickviewpopup").fadeIn(200, function () {
-                //         console.log("in fade in");
-                //     });
-                // });
             })
-            .catch((e) => {
-                console.log("some error happend");
-                console.log(e);
+            .catch((newestFetchErr) => {
+                console.Error(`Fetching Newest Arrivals Error: ${newestFetchErr}`);
             });
     }
 
@@ -125,9 +97,8 @@ $(function () {
                         });
                     });
                 })
-                .catch((e) => {
-                    console.log("ERROR");
-                    console.log(e);
+                .catch((categFetchErr) => {
+                    console.Error(`Fetching Categories Error: ${categFetchErr}`);
                 });
         }
     });
@@ -138,8 +109,6 @@ $(function () {
         if (window.scrollY > navbar.offsetHeight) {
             navbar.classList.add("fixed-top", "border-bottom", "bg-white");
             navbar.style.backgroundColor = "white";
-            // document.getElementById("navbar_top").style.boxShadow = "2px 10px 4px rgb(133, 132, 132)";
-            // let navbar_height = document.querySelector(".navbar").offsetHeight;
             document.body.style.paddingTop = navbar.offsetHeight + "px";
         } else {
             navbar.classList.remove("fixed-top", "border-bottom", "bg-white");
@@ -239,11 +208,8 @@ $(function () {
     });
     $(".prod-qty-value").on("input", function (e, prodQty) {
         {
-            console.log("in trigger");
             if (!prodQty || isNaN(prodQty)) {
-                console.log("in if");
                 prodQty = $(this).val() == 0 || isNaN($(this).val()) ? 1 : $(this).val();
-                console.log("prodQty: " + prodQty);
             }
             if (+prodQty > 999) prodQty = 999;
             else if (+prodQty < 1) prodQty = 1;
@@ -271,7 +237,6 @@ $(function () {
         product.title = prodTitle;
         product.price = +prodPrice.replace("$", "");
 
-        console.log(`You Are Viewing: ${JSON.stringify(product)}`);
         $("#quickviewpopup .prod-qty-value").val(1);
         $("#quickviewpopup .modal-title").text(prodTitle);
         $("#quickviewpopup .modal-price").text(prodPrice);
@@ -282,89 +247,35 @@ $(function () {
         $("#quickviewpopup").fadeIn(200, function () {
             $(".add-to-cart").on("click", function (e) {
                 e.stopPropagation();
-                console.log("in add to cart");
                 if (user) {
                     let newQuantity = false;
                     let qtyInput = $(this).siblings(".controls").children(".prod-qty-value");
                     let prodQty = +$(qtyInput).val(),
                         userProdList = user.cart.prodsList;
-                    console.log(`Current Product: ${JSON.stringify(product)}`);
                     let isInCart = ecommerceUsers.isProdInCart(user, product);
-                    console.log("Input Quantity: " + prodQty);
-                    // console.log("Is In Cart: " + isInCart);
                     if (isInCart[0]) {
-                        console.log("Quantity In Cart: " + isInCart[0].qty);
                         newQuantity = isInCart[0].qty + prodQty;
                         userProdList[isInCart[1]].qty = newQuantity;
-                        console.log("New Quantity: " + newQuantity);
-                        // console.log(product);
                     } else {
                         userProdList.push(product);
                     }
-                    // console.log(product);
 
-                    //! here!!!!!!!!!!!!!!!!!!!!!!!!!!
                     product.qty = newQuantity ? newQuantity : prodQty;
-                    console.log("Prods List: " + JSON.stringify(userProdList));
                     ecommerceUsers.updateCart(user, userProdList);
                     UpdateNavCart(user.cart.prodsCount);
                 } else {
-                    ////// show the login popup
-                    $("#exampleModalToggle2").fadeIn();
+                    // show the login popup
+                    $("#signInModal").fadeIn(200, function () {
+                        $("#signInModal").modal("show");
+                    });
                     $("#quickviewpopup").fadeOut(0);
                 }
             });
         });
     });
 });
-// localStorage.clear();
 $(function () {
     $("#quickviewpopup .close-modal").on("click", function (e) {
         $("#quickviewpopup").fadeOut(200);
     });
 });
-
-/*
-
-        <div id="quickviewpopup" tabindex="-1">
-            <div class="modal-content product-item pe-4 d-flex flex-row col justify-content-between product rounded-0">
-                <button type="button" class="btn-close close-modal" aria-label="Close"></button>
-                <!-- ----------image-------- -->
-                <div class="product-img modal-img col" data-prod-id="2" style="background: url('https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg')"></div>
-                <!-- --------------product name ,price & rate btn------ -->
-                <div class="detail justify-content-center d-flex flex-column col align-items-start ms-3">
-                    <!--? product title -->
-
-                    <h3 class="title modal-title fw-bold" style="word-break: break-all">
-                        Mens Casual Premium Slim Fit T-ShirtsMens Casual Premium Slim Fit T-ShirtsMens Casual Premium Slim Fit T-ShirtsMens
-                    </h3>
-
-                    <!--? product price -->
-                    <div class="d-flex align-items-center w-100 my-3">
-                        <span class="prod-price fs-1 modal-price fw-bold col me-3">$22.3</span>
-                        <div class="rating col d-flex justify-content-end">
-                            <i class="fa-solid fa-star fs-4 text-end" style="color: gold !important"></i><i class="fa-solid fa-star fs-4 text-end" style="color: gold !important"></i
-                            ><i class="fa-solid fa-star fs-4 text-end" style="color: gold !important"></i><i class="fa-solid fa-star fs-4 text-end" style="color: gold !important"></i>
-                        </div>
-                    </div>
-
-                    <!--? product quantity -->
-
-                    <div class="prod-qty d-flex w-100 flex-column">
-                        <div class="controls d-flex align-items-center col-12 px-4 py-2" data-dashlane-rid="e57ed92aaa144668" data-form-type="other">
-                            <i class="prod-qty-remove cell fs-4 fa-solid fa-minus border-0 p-1" data-prod-id="2"></i>
-                            <input
-                                type="text"
-                                class="flex-grow-1 prod-qty-value text-center fw-bold border-0 fs-4 w-25"
-                                data-prod-id="2"
-                                value="1"
-                                data-dashlane-rid="2e7cd989401b8d46"
-                                data-form-type="other"
-                            />
-                            <i class="prod-qty-add cell fs-4 fa-solid fa-plus border-0 p-1" data-prod-id="2"></i>
-                        </div>
-                        <div class="button add-to-cart btn col-12 text-center py-3 rounded-0 px-4 text-uppercase mt-2" data-prod-id="2">Add to cart</div>
-                    </div>
-                </div>
-            </div>
-        </div>*/

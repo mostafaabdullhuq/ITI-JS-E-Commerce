@@ -15,9 +15,6 @@
         <link rel="stylesheet" href="./../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
         <!--for slider -->
         <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet" />
-        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet" /> -->
-        <!-- <link rel="stylesheet" href="./css/style.css" /> -->
-        <!-- <link rel="stylesheet" href="./css/cart.css" /> -->
         <link rel="stylesheet" href="./css/index.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,7 +22,6 @@
         <link rel="stylesheet" href="./css/modal/product_modal.css" />
         <link rel="stylesheet" href="./css/modal/product_modal.css" />
         <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css" />
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
 
         <title>E-Commerce</title>
     </head>
@@ -47,7 +43,7 @@
                 <div class="collapse navbar-collapse mt-2 mt-lg-0 col me-3" id="navbarSupportedContent">
                     <ul class="navbar-nav col me-auto mb-2 mb-lg-0 d-flex justify-content-center">
                         <li class="nav-item me-3">
-                            <a class="nav-link text-dark text-uppercase fw-bold active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link text-dark text-uppercase fw-bold active" aria-current="page" href="/index.html">Home</a>
                         </li>
                         <li class="nav-item dropdown me-3">
                             <a class="nav-link dropdown-toggle text-dark text-uppercase fw-bold" href="/docs/categ.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products </a>
@@ -58,10 +54,10 @@
                             </ul>
                         </li>
                         <li class="nav-item me-3">
-                            <a class="nav-link text-dark text-uppercase fw-bold" href="#footer">About</a>
+                            <a class="nav-link text-dark text-uppercase fw-bold" href="/index.html#footer">About</a>
                         </li>
                         <li class="nav-item me-3">
-                            <a href="#contact" class="nav-link text-dark text-uppercase fw-bold">Contact</a>
+                            <a href="/index.html#contact" class="nav-link text-dark text-uppercase fw-bold">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -175,7 +171,6 @@
             <!-- newest arrival products container -->
             <div class="rounded-0 d-flex flex-wrap justify-content-lg-start justify-content-center ps-3" id="prods-container">
                 <!-- just to show if page take too much time to load -->
-
                 <div class="prod col me-3" data-prod-id="1" data-prod-category="men's clothing">
                     <div class="product-item mb-4 d-flex flex-column">
                         <div class="prod-info d-flex flex-column mb-2 col-12">
@@ -443,31 +438,25 @@
         <div class="modal fade" id="signInModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content rounded-0">
-                    <div class="container">
-                        <div class="row">
-                            <div class="card border-0 shadow rounded-3">
-                                <div class="card-body p-4 p-sm-5">
-                                    <form id="signinForm">
-                                        <h5 class="card-title text-center mb-5 fw-bolder fs-4 title">Sign In</h5>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <input type="email" class="form-control rounded-0 mb-3 fs-5" placeholder="Email Address" value="" name="email" />
-                                            </div>
-                                            <div class="col-12">
-                                                <input type="password" class="form-control rounded-0 mb-3 fs-5" placeholder="Password" value="" name="pass" />
-                                            </div>
-                                            <!-- <div class="col-12">
+                    <div class="card border-0 shadow rounded-3">
+                        <div class="card-body px-3 px-lg-4 py-5">
+                            <form id="signinForm">
+                                <h5 class="card-title text-center mb-4 fw-bolder fs-4 title">Already Have An Account?</h5>
+                                <div class="col-12 mb-3">
+                                    <input type="email" class="form-control rounded-0 p-3" placeholder="Email Address" value="" name="email" />
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <input type="password" class="form-control rounded-0 p-3" placeholder="Password" value="" name="pass" />
+                                </div>
+                                <!-- <div class="col-12">
                                                 <button class="btn col-12 btn-form btn-login text-uppercase fw-bold mt-3 ms-0 rounded-0 fs-5" type="Submit">Sign In</button>
                                                 <p class="fs-4 mt-3 text-center">New Customer? <a href="#exampleModalToggle2" class="text-dark">Sign Up</a></p>
                                             </div> -->
-                                            <div id="signin-msg " class="col-12">
-                                            <button id="testbtn" class="btn col-12 btn-form btn-login text-uppercase fw-bold mt-3 fs-5 rounded-0" type="Submit">Sign In</button>
-                                            <p class="fs-4 mt-3 text-center">New Customer? <a href="#signUpModal" class="text-dark" style="text-decoration: underline;">Sign Up</a></p>
-                                        </div>
-                                    </div>
-                                    </form>
+                                <div id="signin-msg " class="col-12">
+                                    <button id="testbtn" class="btn col-12 btn-form btn-login text-uppercase fw-bold fs-5 p-3 rounded-0" type="Submit">Sign In</button>
+                                    <p class="fs-4 mt-3 text-center">New Customer? <a href="#signUpModal" class="text-dark" style="text-decoration: underline">Sign Up</a></p>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -481,42 +470,33 @@
                     <div class="container">
                         <div class="row">
                             <div class="card border-0 shadow rounded-3">
-                                <div class="card-body p-4 p-sm-5">
-                                    <h5 class="card-title text-center mb-5 fw-bolder fs-4 title">Sign Up</h5>
+                                <div class="card-body px-3 px-lg-4 py-5">
+                                    <h5 class="card-title text-center mb-4 fw-bolder fs-4 title">Create New Account</h5>
                                     <form id="signUp-form">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <input type="text" class="form-control rounded-0" placeholder="First Name" value="" name="firstName" />
+                                        <div class="col d-flex mb-2">
+                                            <div class="col me-2">
+                                                <input type="text" class="form-control rounded-0 p-3" placeholder="First Name" value="" name="firstName" />
                                             </div>
-                                            <div class="col-6">
-                                                <input type="text" class="form-control rounded-0" value="" placeholder="Last Name" name="lastName" />
-                                            </div>
-                                        </div>
-                                        <!-- <form action=""> -->
-                                        <div class="row mt-4">
-                                            <!-- <div class="col-md-12">
-                                                <input type="text" class="form-control rounded-0" placeholder="Enter Username" value="" name="username" />
-                                            </div> -->
-                                            <div class="col-md-12"><input type="email" class="form-control rounded-0" placeholder="Enter Email" value="" name="newemail" /> <br /></div>
-                                            <div class="col-md-12"><input type="password" class="form-control rounded-0" placeholder="Password" value="" name="newpass" /><br /></div>
-                                            <div class="col-md-12"><input type="password" class="form-control rounded-0" placeholder="Confirm Password" value="" name="repass" /><br /></div>
-                                            <div class="col-md-12">
-                                                <input type="text" class="form-control rounded-0" placeholder="Enter Your Address" value="" required name="address" />
-                                            </div>
-                                            <br />
-                                            <div class="row mt-4 ps-0">
-                                                <div class="col-6 ps-0 me-0">
-                                                    <input type="text" class="form-control me-0 rounded-0" placeholder="Country" value="" name="country" />
-                                                </div>
-                                                <div class="col-6">
-                                                    <input type="text" class="form-control rounded-0" value="" placeholder="City" name="city" />
-                                                </div>
-                                            </div>
-                                            <div id="signup-msg"></div>
-                                            <div class="d-grid">
-                                                <button class="btn btn-form btn-login rounded-0 text-uppercase fw-bold mt-4" type="submit">Sign up</button>
+                                            <div class="col">
+                                                <input type="text" class="form-control rounded-0 p-3" value="" placeholder="Last Name" name="lastName" />
                                             </div>
                                         </div>
+                                        <div class="col-12 mb-2"><input type="email" class="form-control rounded-0 p-3" placeholder="Email Address" value="" name="newemail" /></div>
+                                        <div class="col-12 mb-2"><input type="password" class="form-control rounded-0 p-3" placeholder="Password" value="" name="newpass" /></div>
+                                        <div class="col-12 mb-2"><input type="password" class="form-control rounded-0 p-3" placeholder="Confirm Password" value="" name="repass" /></div>
+                                        <div class="col-12 mb-2">
+                                            <input type="text" class="form-control rounded-0 p-3" placeholder="Shipping Address" value="" required name="address" />
+                                        </div>
+                                        <div class="col d-flex">
+                                            <div class="col me-2">
+                                                <input type="text" class="form-control p-3 rounded-0" placeholder="Country" value="" name="country" />
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" class="form-control p-3 rounded-0" value="" placeholder="City" name="city" />
+                                            </div>
+                                        </div>
+                                        <div id="signup-msg" class="text-center text-capitalize"></div>
+                                        <button class="btn btn-form btn-login rounded-0 text-uppercase fw-bold mt-3 col-12 p-3" type="submit">Sign up</button>
                                     </form>
                                 </div>
                             </div>
@@ -532,7 +512,7 @@
             <div class="modal-content product-item ps-4 pe-4 d-flex flex-row col justify-content-between product rounded-0">
                 <button type="button" class="btn-close close-modal" aria-label="Close"></button>
                 <!-- ----------image-------- -->
-                <div class="product-img modal-img col" data-prod-id=""></div>
+                <div class="product-img modal-img col my-2" data-prod-id=""></div>
                 <!-- --------------product name ,price & rate btn------ -->
                 <div class="detail justify-content-center d-flex flex-column col align-items-start ms-3">
                     <!--? product title -->
@@ -559,50 +539,6 @@
             </div>
         </div>
 
-        <!-- 
-        <div id="quickviewpopup" class="d-block modal modal-dialog-centered" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content rounded-0" style="height: 90%; width: 150%; position: absolute; top: 0; bottom: 0; right: 0; left: -25%">
-                    <div class="modal-body d-flex row">
-                        <img
-                            class="col-6 img-thumbnail modal-img"
-                            style="max-width: 50%; height: 88%"
-                            src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/35591/1.jpg?5142"
-                            alt=""
-                            srcset=""
-                        />
-                        <div class="col-6 mt-3 d-flex text-center flex-column">
-                            <button type="button" class="btn-close" style="position: absolute" data-bs-dismiss="modal" aria-label="Close"></button>
-                            <div class="col-12 d-flex text-center flex-column">
-                                <button type="button" class="btn-close" style="position: absolute" data-bs-dismiss="modal" aria-label="Close"></button>
-                                <h4 class="modal-title col fw-bolder mb-3 mt-5">Product name</h4>
-                                <div class="d-flex text-center justify-content-center col">
-                                    <h3 class="modal-price me-5 fs-4 mt-3 mb-5">$1000</h3>
-                                    <div class="modal-rating mt-3">
-                                        <i class="fa-solid fa-star pb-2"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                    <br />
-                                </div>
-
-                                <div class="prod-qty col mt-5">
-                                    <i class="prod-qty-remove fs-4 col-2 fa-solid fa-minus text-start"></i>
-                                    <input type="text" class="text-center fw-bold prod-qty-value border fs-4 col-6 p-0" value="1" />
-                                    <i class="prod-qty-add fs-4 col-2 fa-solid fa-plus text-end"></i>
-                                </div>
-                                <div class="d-flex justify-content-center mt-4">
-                                    <button class="add-to-cart btn btn2 col text-center p-2 fs-4 bg-dark text-white rounded-0">Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
         <!-- include jquery file -->
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
         <script src="/node_modules/jquery/dist/jquery.js"></script>
@@ -610,10 +546,6 @@
         <!-- include bootstrap js file from node modules -->
         <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <!-- include javascript files -->
-        <!-- <script src="./js/script.js"></script> -->
-        <!-- <script type="module" src="./js/cart.js"></script> -->
-        <!-- <script src="./node_modules/animate.css/animate.min.css"></script> -->
-
         <script type="module" src="./js/index.js"></script>
         <script type="module" src="./js/signin.js"></script>
         <script type="module" src="./js/signup.js"></script>
