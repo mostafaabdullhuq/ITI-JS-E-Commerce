@@ -3,7 +3,7 @@ import { ecommerceUsers, UpdateNavCart } from "./script.js";
 let user = ecommerceUsers.validateLoginCookies();
 
 // fetch only 8 products from api
-if (window.location.href.search("/index.html") !== -1) {
+if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
     fetch("https://fakestoreapi.com/products?limit=9")
         // when promise complete , return the response converted to json
         .then((res) => res.json())
@@ -61,7 +61,7 @@ if (window.location.href.search("/index.html") !== -1) {
 }
 
 // fetch categories in newest arrivals buttons
-if (window.location.href.search("/index.html") !== -1) {
+if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
     fetch("https://fakestoreapi.com/products/categories")
         .then((response) => response.json())
         .then((categories) => {
