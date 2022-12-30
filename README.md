@@ -4,7 +4,7 @@ HTML5 , CSS3 , JQuery , Bootstrap5, JavaScript and OOP.</br>
 This page can be considered as a base for any E-Commerce applications , as it fits all users requirements.
 
 
-## Getting started
+## Getting Started
 ##### First make sure that you download node.js .
 
 ###### NPM installations of dependencies
@@ -19,7 +19,7 @@ https://fakestoreapi.com
 ```
 
 
-## OverView
+## Overview
 The site consists mainly of: <br>
 1. Home Page.</br>
 2. Products Page.</br>
@@ -61,7 +61,9 @@ By clicking on <b>Product name</b> you can preview the product in product info p
 ## Checkout Page
 <img src="https://user-images.githubusercontent.com/117679026/210114024-fdde99fd-682f-46a2-98a6-d5b6ac517b48.jpeg">
 <img src="https://user-images.githubusercontent.com/117679026/210115616-cf10982e-3587-4656-be16-6b4d0678c78a.jpeg">
-##
+
+## Profile Page
+<img src="https://i.imgur.com/V8B0dko.png">
 
 
 
