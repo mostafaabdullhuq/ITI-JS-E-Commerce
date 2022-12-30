@@ -27,5 +27,6 @@ The site consists mainly of: <br>
 
 ### Home Page 
 <img src="https://user-images.githubusercontent.com/117679026/210112576-caacfbdf-4da8-459d-a46c-6c5544cd69ec.jpeg" >
-<img src="">
+<img src="https://user-images.githubusercontent.com/117679026/210113079-93999d56-8707-4333-9b09-c962505df099.jpeg">
+<img src=""
 
