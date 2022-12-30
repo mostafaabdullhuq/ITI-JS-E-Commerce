@@ -133,10 +133,11 @@ if (user) {
             // if value of item changes
             else {
                 // if the event is triggered from the input itself
-                if (!prodQty || !prodId) {
+                if (!prodQty || !prodId || isNaN(prodQty)) {
                     // get the product id and quantity values
                     prodId = $(this).attr("data-prod-id");
-                    prodQty = $(this).val() == 0 ? 1 : $(this).val();
+                    prodQty = $(this).val() == 0 || isNaN($(this).val())  ? 1 : $(this).val();
+                    console.log("prodQty: " + prodQty);
                 }
                 // if the quantity is more than 999, max it to 999
                 if (+prodQty > 999) prodQty = 999;
