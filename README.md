@@ -26,7 +26,12 @@ The site consists mainly of: <br>
 ## Snapshots
 
 ### Home Page 
+Home page consists of The Newest Arrivals, Customers Feedback and a Contact form.</br> 
+You can't add any product to your bag before you first create an account.</br>
 <img src="https://user-images.githubusercontent.com/117679026/210112576-caacfbdf-4da8-459d-a46c-6c5544cd69ec.jpeg" >
 <img src="https://user-images.githubusercontent.com/117679026/210113079-93999d56-8707-4333-9b09-c962505df099.jpeg">
-<img src=""
+<img src="https://user-images.githubusercontent.com/117679026/210113154-de2d85eb-0a4d-470c-87b6-ceb2c4870aa0.jpeg">
+
+### Products Page 
+
 
