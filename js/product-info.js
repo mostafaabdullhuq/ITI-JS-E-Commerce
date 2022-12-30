@@ -9,12 +9,13 @@ if (windowURL.split("?").length === 1) {
 }
 let prodID = window.location.href.split("?")[1].split("=")[1] || 1;
 
-$(function () {
-    let prod = "",
-        product = false; // 1.fetching product image
-    fetch(`https://fakestoreapi.com/products/${prodID}`)
-        .then((res) => res.json())
-        .then((product) => {
+let prod = "",
+    product = false; // 1.fetching product image
+
+fetch(`https://fakestoreapi.com/products/${prodID}`)
+    .then((res) => res.json())
+    .then((product) => {
+        $(function () {
             prod = `
                 <!-- ----------image-------- -->
                 <div class="product-img col" data-prod-id="2" style="background: url('${product.image}')">
@@ -94,23 +95,25 @@ $(function () {
                     $("#signin-trigger-button").trigger("click");
                 }
             });
-        })
-        .catch((prodInfoFetchErr) => {
-            console.Error(`Error Fetching Product Information: ${prodInfoFetchErr}`);
         });
+    })
+    .catch((prodInfoFetchErr) => {
+        console.error(`Error Fetching Product Information: ${prodInfoFetchErr}`);
+    });
 
-    // 3.fetching description
-    fetch(`https://fakestoreapi.com/products/${prodID}`)
-        .then((res) => res.json())
-        .then((product) => {
+// 3.fetching description
+fetch(`https://fakestoreapi.com/products/${prodID}`)
+    .then((res) => res.json())
+    .then((product) => {
+        $(function () {
             prod = `
                 <h2 class="fw-bolder mb-3">Description</h2>
                 <p class="desc py-3 px-4 rounded-1">${product.description}</p>
                 `;
 
             $("#descr").html(prod);
-        })
-        .catch((descFetchErr) => {
-            console.Error(`Error Fetching Description: ${descFetchErr}`);
         });
-});
+    })
+    .catch((descFetchErr) => {
+        console.error(`Error Fetching Description: ${descFetchErr}`);
+    });

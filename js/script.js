@@ -515,7 +515,6 @@ if (!ecommerceUsers.validateLoginCookies()) {
         // show to signin module
         $("#signInModal").modal("show");
         $("#create-acc-link").on("click", function () {
-            console.log("clicked signup");
             // if signup module is not in the page, add it to the page
             if (!$("#signUpModal").length) {
                 $(document.body).append(
@@ -657,7 +656,7 @@ $(function () {
 });
 
 // $(function popup() {
-    
+
 //         $(".add-to-cart").on("click", function () {
 //             if (!ecommerceUsers.validateLoginCookies()){
 
@@ -694,5 +693,5 @@ $(function () {
 //             $("#quickviewpopup").fadeOut(0);
 //         }
 //         })
-    
+
 // })
