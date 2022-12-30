@@ -162,51 +162,59 @@ export class Users {
             - object of type user if the user is found
             - false if the user is not found
     */
-    loginAccount(email, pass) {
-        let data = window.localStorage.getItem("eCommerceUsers");
-        if (data) {
-            let users = JSON.parse(data);
-            for (let index = 0; index < users.length; index++) {
-                if (users[index].emailAddress == email) {
-                    if (users[index].passWord == pass) {
-                        let userToken = crypto.randomUUID();
-                        users[index].cookieToken = userToken;
-                        deleteCookie("user_id");
-                        deleteCookie("user_token");
-                        setCookie("user_id", users[index].id, 30);
-                        setCookie("user_token", userToken, 30);
-                        // this.syncUpload;
+    // loginAccount(email, pass) {
+    //     let data = window.localStorage.getItem("eCommerceUsers");
+    //     if (data) {
+    //         let users = JSON.parse(data);
+    //         for (let index = 0; index < users.length; index++) {
+    //             if (users[index].emailAddress == email) {
+    //                 if (users[index].passWord == pass) {
+    //                     let userToken = crypto.randomUUID();
+    //                     users[index].cookieToken = userToken;
+    //                     deleteCookie("user_id");
+    //                     deleteCookie("user_token");
+    //                     setCookie("user_id", users[index].id, 30);
+    //                     setCookie("user_token", userToken, 30);
+    //                     // this.syncUpload;
 
-                        let a = JSON.stringify(users);
-                        window.localStorage.setItem("eCommerceUsers", a);
-                        return "login success";
-                    } else {
-                        return "password incorrect";
-                    }
-                }
-            }
-            return "email incorrect";
-        }
-    }
-
-    // loginAccount(emailAddress, passWord) {
-    //     let user = this.usersList.find((user) => {
-    //         return user.emailAddress.toLowerCase() === emailAddress.toLowerCase() && user.passWord === passWord;
-    //     });
-
-    //     if (user) {
-    //         let userToken = crypto.randomUUID();
-    //         user.cookieToken = userToken;
-    //         deleteCookie("user_id");
-    //         deleteCookie("user_token");
-    //         setCookie("user_id", user.id, 30);
-    //         setCookie("user_token", userToken, 30);
+    //                     let a = JSON.stringify(users);
+    //                     window.localStorage.setItem("eCommerceUsers", a);
+    //                     return "login success";
+    //                 } else {
+    //                     return "password incorrect";
+    //                 }
+    //             }
+    //         }
+    //         return "email incorrect";
     //     }
-
-    //     this.syncUpload;
-
-    //     return user;
     // }
+
+    loginAccount(emailAddress, passWord) {
+        let returnMsg = false;
+        let userEmailValid = this.usersList.find((user) => {
+            return user.emailAddress.toLowerCase() === emailAddress.toLowerCase();
+        });
+        if (userEmailValid) {
+            let userPassValid = userEmailValid.passWord === passWord ? userEmailValid : false;
+            if (userPassValid) {
+                let userToken = crypto.randomUUID();
+                userPassValid.cookieToken = userToken;
+                deleteCookie("user_id");
+                deleteCookie("user_token");
+                setCookie("user_id", userPassValid.id, 30);
+                setCookie("user_token", userToken, 30);
+                returnMsg = "login success";
+            } else {
+                returnMsg = "password incorrect";
+            }
+        } else {
+            returnMsg = "email incorrect";
+        }
+
+        this.syncUpload;
+
+        return returnMsg;
+    }
 
     /*
         [DESC]
