@@ -1,7 +1,7 @@
 # ITI-JS-E-Commerce
-An E-Commerce web application developed by 5 ITI students Using:</br>
+An E-Commerce website developed by 5 ITI students Using:</br>
 HTML5 , CSS3 , JQuery , Bootstrap5, JavaScript and OOP.</br>
-This page can be considered as a base for any E-Commerce applications , as it fits all users requirements.
+This page can be considered as a base for any E-Commerce websites, as it fits all users requirements.
 
 
 ## Getting Started
