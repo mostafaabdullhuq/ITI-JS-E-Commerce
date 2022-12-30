@@ -35,7 +35,7 @@ if (user) {
         else {
             let fullNameInput = $("#checkout-full-name"),
                 addressInput = $("#checkout-address"),
-                countrySelect = $("select.country-select"),
+                countryInput = $("#checkout-country"),
                 cityInput = $("#checkout-city"),
                 phoneInput = $("#phone");
             // fill the shipping details inputs
@@ -46,7 +46,7 @@ if (user) {
                 addressInput.val(user.shippingAddr);
             }
             if (user.country) {
-                countrySelect.val(user.country);
+                countryInput.val(user.country);
             }
             if (user.city) {
                 cityInput.val(user.city);
@@ -136,7 +136,7 @@ if (user) {
                 if (!prodQty || !prodId || isNaN(prodQty)) {
                     // get the product id and quantity values
                     prodId = $(this).attr("data-prod-id");
-                    prodQty = $(this).val() == 0 || isNaN($(this).val())  ? 1 : $(this).val();
+                    prodQty = $(this).val() == 0 || isNaN($(this).val()) ? 1 : $(this).val();
                     console.log("prodQty: " + prodQty);
                 }
                 // if the quantity is more than 999, max it to 999
@@ -188,7 +188,7 @@ if (user) {
         e.preventDefault();
 
         // check if all inputs have values and if there's products in cart
-        let inputsHaveValues = [$("#checkout-full-name"), $("#checkout-address"), $("select.country-select"), $("#checkout-city"), $("#phone")].every(function (item) {
+        let inputsHaveValues = [$("#checkout-full-name"), $("#checkout-address"), $("#checkout-country"), $("#checkout-city"), $("#phone")].every(function (item) {
             return item.val();
         });
         if (inputsHaveValues && user.cart.prodsList.length !== 0) {
