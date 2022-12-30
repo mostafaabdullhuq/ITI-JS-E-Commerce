@@ -15,14 +15,13 @@ categParam = categParam ? categParam : "all";
 
 // this is a comment for syncing
 
-$(function () {
-    //fetching all products
-    fetch("https://fakestoreapi.com/products?")
-        .then((response) => response.json())
-        .then((products) => {
-            let prods = "";
-            products.forEach((product) => {
-                prods += `
+//fetching all products
+fetch("https://fakestoreapi.com/products?")
+    .then((response) => response.json())
+    .then((products) => {
+        let prods = "";
+        products.forEach((product) => {
+            prods += `
                 <div class="col-sm-9 col-md-8 col-lg-4 prod prod-info " data-prod-id="${product.id}" data-prod-category="${product.category.replace(" ", "-").replace("'", "")}">
                   <div class="product-item prod-info "  style="height:550px;">
                     <div href="#shop-single.html" class="card product-img image-container rounded-0 d-flex justify-content-center" style="cursor:pointer;" data-prod-image="${product.image}">
@@ -45,26 +44,30 @@ $(function () {
               </div>
               
               `;
-            });
+        });
+        $(function () {
             $("#prods-container").html("");
             $("#prods-container").append(prods);
             $(`#categBar .categ-item[data-category="${categParam}"]`).trigger("click");
-        })
-        .catch((prodFetchErr) => {
-            console.Error(`Products Fetch Error: ${prodFetchErr}`);
         });
+    })
+    .catch((prodFetchErr) => {
+        console.error(`Products Fetch Error: ${prodFetchErr}`);
+    });
 
-    //fetching categories in dropdowns menu
-    fetch("https://fakestoreapi.com/products/categories")
-        .then((res) => res.json())
-        .then((categories) => {
-            let categs = "";
-            categories.forEach((category) => {
-                categs += `<li class="dropdown-item py-2 text-center text-capitalize categ-item" data-category="${category.replace("'", "").replace(" ", "-")}">
+//fetching categories in dropdowns menu
+fetch("https://fakestoreapi.com/products/categories")
+    .then((res) => res.json())
+    .then((categories) => {
+        let categs = "";
+        categories.forEach((category) => {
+            categs += `
+<li class="dropdown-item py-2 text-center text-capitalize categ-item" data-category="${category.replace("'", "").replace(" ", "-")}">
        ${category}
-       </li>
-       `;
-            });
+</li>
+`;
+        });
+        $(function () {
             $("#prodNav").append(categs);
             $("#categBar").append(categs);
 
@@ -94,7 +97,7 @@ $(function () {
             });
             $(`#categBar .categ-item[data-category="${categParam}"]`).trigger("click");
         });
-});
+    });
 
 $("#prods-container").on("click", ".title", function () {
     window.location.href = `/docs/product-info.html?product_id=${this.getAttribute("data-prod-id")}`;
@@ -137,12 +140,13 @@ desc.addEventListener("click", function () {
       
       `;
             });
-
-            $("#prods-container").html("");
-            $("#prods-container").append(prods);
+            $(function () {
+                $("#prods-container").html("");
+                $("#prods-container").append(prods);
+            });
         })
         .catch((sortingErr) => {
-            console.Error(`Error Sorting1: ${sortingErr}`);
+            console.error(`Error Sorting1: ${sortingErr}`);
         });
 });
 //------------ sorting ascending ------------------//
@@ -179,11 +183,12 @@ asc.addEventListener("click", function () {
       
       `;
             });
-            $("#prods-container").html("");
-            $("#prods-container").append(prods);
+            $(function () {
+                $("#prods-container").html("");
+                $("#prods-container").append(prods);
+            });
         })
         .catch((sortingErr) => {
-            console.Error(`Error Sorting2: ${sortingErr}`);
+            console.error(`Error Sorting2: ${sortingErr}`);
         });
 });
-// });
