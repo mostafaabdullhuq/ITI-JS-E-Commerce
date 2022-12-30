@@ -22,7 +22,10 @@ The site consists mainly of: <br>
 5. Checkout Products Page.</br>
 6. Profile page.</br>
 
+
 ## Snapshots
 
 ### Home Page 
-<div> <img src="" >
+<img src="https://user-images.githubusercontent.com/117679026/210112576-caacfbdf-4da8-459d-a46c-6c5544cd69ec.jpeg" >
+<img src="">
+
