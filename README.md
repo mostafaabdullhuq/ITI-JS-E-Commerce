@@ -18,6 +18,13 @@ https://fakestoreapi.com/products
 https://fakestoreapi.com
 ```
 
+## Local storage and Cookies
+
+When user sign up a validation is done on the data he entered and then stored at the local storage </br>
+then user sign in and his data is double checked whether it is the same values at the local storage or not</br>
+If the double ckeck was valid , Cookies are created. User also can update his data in the profile page.
+
+
 ## Overview
 The site consists mainly of: <br>
 1. Home Page.</br>
