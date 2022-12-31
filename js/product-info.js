@@ -4,9 +4,11 @@ import { ecommerceUsers, UpdateNavCart } from "./script.js";
 let user = ecommerceUsers.validateLoginCookies();
 
 let windowURL = window.location.href;
-if (windowURL.split("?").length === 1) {
-    window.location.href = "./../index.html";
+
+if (windowURL.split("?")[1].split("=")[1] >20  || windowURL.split("?")[1].split("=")[1]<1) {
+    location.replace("./../docs/categ.html");
 }
+
 let prodID = window.location.href.split("?")[1].split("=")[1] || 1;
 
 let prod = "",
