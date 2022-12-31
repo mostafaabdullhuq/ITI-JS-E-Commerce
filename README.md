@@ -4,11 +4,7 @@ An E-Commerce website developed by 5 ITI students Using:</br>
 HTML5 , CSS3 , JQuery , Bootstrap5, JavaScript and OOP.</br>
 This site can be considered as a base for any E-Commerce websites, as it fits all users requirements.
 
-## Live Demo
-
-```
-[Click Here](https://www.your-site.works/)
-```
+-   #### Website Live Preview: [Click Here](https://www.your-site.works/)
 
 ## Getting Started
 
