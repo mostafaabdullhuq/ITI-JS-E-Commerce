@@ -9,7 +9,7 @@ let usernameRe = /^\S{2,}$/;
 // email validation REGEX
 let emailRe = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
 //REGEX for password :  Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
-let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+let passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d\@\$\!\%\*\?\&\#\.\-\_]{8,}$/;
 
 let user = new Users().validateLoginCookies();
 
@@ -106,7 +106,6 @@ function updatePass(email, newPass) {
         }
     }
 }
-
 
 function addOrder(id, products, cost) {
     document.getElementById("add_order").innerHTML += `<div class="row border pt-1 pb-1 mb-2">
