@@ -198,6 +198,7 @@ export class Users {
         });
         if (userEmailValid) {
             let userPassValid = userEmailValid.passWord === passWord ? userEmailValid : false;
+
             if (userPassValid) {
                 let userToken = crypto.randomUUID();
                 userPassValid.cookieToken = userToken;

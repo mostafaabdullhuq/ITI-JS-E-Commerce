@@ -107,6 +107,7 @@ function updatePass(email, newPass) {
     }
 }
 
+
 function addOrder(id, products, cost) {
     document.getElementById("add_order").innerHTML += `<div class="row border pt-1 pb-1 mb-2">
     <div class="col-lg-8">
