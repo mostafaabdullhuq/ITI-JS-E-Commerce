@@ -3,17 +3,22 @@ import { ecommerceUsers, UpdateNavCart } from "./script.js";
 // check if user logged in
 let user = ecommerceUsers.validateLoginCookies();
 
+// get url of window
 let windowURL = window.location.href;
 
-if (windowURL.split("?")[1].split("=")[1] >20  || windowURL.split("?")[1].split("=")[1]<1) {
+// if window has no parameters
+if (windowURL.split("?")[1].split("=")[1] > 20 || windowURL.split("?")[1].split("=")[1] < 1) {
+    // redirect to products page
     location.replace("./../docs/categ.html");
 }
 
+// get product id from url
 let prodID = window.location.href.split("?")[1].split("=")[1] || 1;
 
 let prod = "",
-    product = false; // 1.fetching product image
+    product = false;
 
+// fetch required product from api
 fetch(`https://fakestoreapi.com/products/${prodID}`)
     .then((res) => res.json())
     .then((product) => {
@@ -48,12 +53,19 @@ fetch(`https://fakestoreapi.com/products/${prodID}`)
                     </div>
                 </div>
                 `;
+
+            // add the product to html
             $(".product-item").html(prod);
 
+            // when user clicks - icon
             $(".prod-qty-remove").on("click", function () {
+                // get product quantity from input
                 let prodQty = +$(this).siblings(".prod-qty-value").val();
                 {
+                    // decrement the quantity of the product
                     prodQty -= 1;
+
+                    // trigger the event of
                     $(this).siblings(".prod-qty-value").trigger("input", [prodQty]);
                 }
             });

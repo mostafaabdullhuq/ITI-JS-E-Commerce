@@ -1,6 +1,3 @@
-// when window loads, update the navbar cart items
-// import "./../node_modules/animate.css/animate.min.css";
-
 // a function to create a new cookie
 export function setCookie(cname, cvalue, exdays) {
     const d = new Date();
@@ -150,6 +147,7 @@ export class Users {
         // return the response object
         return response;
     }
+
     /*
         [DESC]
             a method to login to account with email and password
@@ -164,33 +162,6 @@ export class Users {
             - object of type user if the user is found
             - false if the user is not found
     */
-    // loginAccount(email, pass) {
-    //     let data = window.localStorage.getItem("eCommerceUsers");
-    //     if (data) {
-    //         let users = JSON.parse(data);
-    //         for (let index = 0; index < users.length; index++) {
-    //             if (users[index].emailAddress == email) {
-    //                 if (users[index].passWord == pass) {
-    //                     let userToken = crypto.randomUUID();
-    //                     users[index].cookieToken = userToken;
-    //                     deleteCookie("user_id");
-    //                     deleteCookie("user_token");
-    //                     setCookie("user_id", users[index].id, 30);
-    //                     setCookie("user_token", userToken, 30);
-    //                     // this.syncUpload;
-
-    //                     let a = JSON.stringify(users);
-    //                     window.localStorage.setItem("eCommerceUsers", a);
-    //                     return "login success";
-    //                 } else {
-    //                     return "password incorrect";
-    //                 }
-    //             }
-    //         }
-    //         return "email incorrect";
-    //     }
-    // }
-
     loginAccount(emailAddress, passWord) {
         let returnMsg = false;
         let userEmailValid = this.usersList.find((user) => {
@@ -655,44 +626,3 @@ $(function () {
         window.location.href = "./../docs/profile.html";
     });
 });
-
-// $(function popup() {
-
-//         $(".add-to-cart").on("click", function () {
-//             if (!ecommerceUsers.validateLoginCookies()){
-
-//             $("#signInModal").html(`
-//             <div class="modal-dialog modal-dialog-centered">
-//                 <div class="modal-content rounded-0">
-//                     <div class="card border-0 shadow rounded-3">
-//                         <div class="card-body px-3 px-lg-4 py-5">
-//                             <form id="signinForm">
-//                                 <h5 class="card-title text-center mb-4 fw-bolder fs-4 title">Already Have An Account?</h5>
-//                                 <div class="col-12 mb-3">
-//                                     <input type="email" class="form-control rounded-0 p-3" placeholder="Email Address" value="" name="email" />
-//                                 </div>
-//                                 <div class="col-12 mb-3">
-//                                     <input type="password" class="form-control rounded-0 p-3" placeholder="Password" value="" name="pass" />
-//                                 </div>
-//                                 <!-- <div class="col-12">
-//                                                 <button class="btn col-12 btn-form btn-login text-uppercase fw-bold mt-3 ms-0 rounded-0 fs-5" type="Submit">Sign In</button>
-//                                                 <p class="fs-4 mt-3 text-center">New Customer? <a href="#exampleModalToggle2" class="text-dark">Sign Up</a></p>
-//                                             </div> -->
-//                                 <div id="signin-msg " class="col-12">
-//                                     <button id="testbtn" class="btn col-12 btn-form btn-login text-uppercase fw-bold fs-5 p-3 rounded-0" type="Submit">Sign In</button>
-//                                     <p class="fs-4 mt-3 text-center">New Customer? <a href="#signUpModal" class="text-dark" style="text-decoration: underline">Sign Up</a></p>
-//                                 </div>
-//                             </form>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>`)
-//             // show the login popup
-//             $("#signInModal").fadeIn(200, function () {
-//                 $("#signInModal").modal("show");
-//             });
-//             $("#quickviewpopup").fadeOut(0);
-//         }
-//         })
-
-// })

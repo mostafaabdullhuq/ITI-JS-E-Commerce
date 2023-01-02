@@ -1,4 +1,4 @@
-import { Users, setCookie, getCookie } from "./script.js";
+import { Users } from "./script.js";
 
 //.............................................. validation .............................................................
 
