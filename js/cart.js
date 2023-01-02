@@ -16,9 +16,15 @@ if (user) {
         }
         // if products in cart
         else {
+            // variable to store products html
             let prodsHTML = "";
+
+            // loop over all products from user cart
             prods.forEach((prod) => {
+                // if product quantity is more than 1, add the minus icon, else add the trash icon
                 let prodQtyShapeClass = prod.qty > 1 ? "fa-minus" : "fa-trash-can";
+
+                // add the product html to the products html variable
                 prodsHTML += `
                         <!-- product -->
                         <div class="prod row py-4 align-items-center justify-content-between" data-prod-id="${prod.id}">
@@ -45,6 +51,7 @@ if (user) {
                         </div>
                         `;
             });
+
             // add the products to the page
             $(".cart-prods").append(prodsHTML);
 
@@ -66,15 +73,22 @@ if (user) {
                     .slideUp(1000, function () {
                         this.remove();
                     });
+
+                // send signal to input to change it's value
                 $(this).siblings(".prod-qty-value").trigger("input", [0, prodId]);
             }
+
             // if quantity is more than 1
             else {
                 // decrease product quantity
                 prodQty -= 1;
+
+                // send signal to input to change it's value
                 $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
             }
         });
+
+        // when user click on product increase qty button
         $(".prod-qty-add").on("click", function () {
             // get product id
             let prodId = $(this).attr("data-prod-id"),
@@ -83,8 +97,12 @@ if (user) {
 
             // increase product quantity
             prodQty += 1;
+
+            // send signal to input to change it's value
             $(this).siblings(".prod-qty-value").trigger("input", [prodQty, prodId]);
         });
+
+        // set the initial product price to zero
         let prodPrice = 0;
 
         // when input value trigger changes
@@ -143,6 +161,8 @@ if (user) {
 
             // update user cart in localstorage
             ecommerceUsers.updateCart(user, userCart.prodsList);
+
+            // update the navbar cart
             UpdateNavCart(userCart.prodsCount);
 
             // update right section values
@@ -150,26 +170,42 @@ if (user) {
         });
     });
 
+    // when user click on checkout button
     $(".checkout-button").on("click", function () {
+        // get user products
         let prods = userCart.prodsList;
 
+        // if user has products in cart
         if (prods.length > 0) {
+            // redirect the user to checkout page
             window.location.href = "./../docs/checkout.html";
-        } else {
+        }
+        // if user doesn't have any products in cart
+        else {
+            // show the empty cart popup
             $("#empty-checkout").fadeIn(500);
+
+            // set an event for the empty cart popup continue shopping button
             $("#empty-checkout .continue-shopping").on("click", (e) => {
+                // redirect the user to products page
                 window.location.href = "/docs/categ.html";
             });
+
+            // when x button is clicked in empty cart popup
             $("#empty-checkout .btn-close").on("click", (e) => {
+                // hide the empty cart popup
                 $("#empty-checkout").fadeOut(500);
             });
         }
     });
 
+    // when user click on continue shopping button
     $(".continue-shopping-button").on("click", function () {
+        // redirect the user to products page
         window.location.href = "./../docs/categ.html";
     });
 
+    // a function to update the right side of the cart page
     function updateCartRight() {
         // update right section items count and subtotal
         $(".cart-items-count").text(userCart.prodsCount ?? 0);
@@ -177,7 +213,7 @@ if (user) {
     }
 }
 
-// if not logged in
+// if user not logged in
 else {
     // redirect to login page
     window.location.href = "./../index.html";
